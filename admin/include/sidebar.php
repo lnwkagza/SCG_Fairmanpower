@@ -13,30 +13,18 @@
                         <span class="mtext"><i class="fa-solid fa-gauge-high fa-lg"></i> Dashboard</span>
                     </a>
                 </li>
-                <li class="dropdown">
-                    <a href="javascript:;" class="dropdown-toggle">
-                        <i class="fa-solid fa-sitemap fa-lg"></i>
-                        <span class="mtext">โครงสร้างองค์กร</span>
+                <li>
+                    <a href="org1_Business_unit.php" class="dropdown-toggle no-arrow">
+                        <span class="mtext"><i class="fa-solid fa-sitemap fa-lg"></i> โครงสร้างองค์กร</span>
                     </a>
-                    <ul class="submenu">
-                        <li><a href="org1_Business_unit.php" class="dropdown-toggle no-arrow">Business-Unit</a></li>
-                        <li><a href="org2_Sub_Business_unit.php" class="dropdown-toggle no-arrow">Sub-business-unit</a></li>
-                        <li><a href="org3_Organizaion.php" class="dropdown-toggle no-arrow">Organization-ID</a></li>
-                        <li><a href="org4_Company.php" class="dropdown-toggle no-arrow">Company บริษัท</a></li>
-                        <li><a href="org5_Location.php" class="dropdown-toggle no-arrow">Location สำนักงาน</a></li>
-                        <li><a href="org6_Division.php" class="dropdown-toggle no-arrow">Division</a></li>
-                        <li><a href="org7_Department.php" class="dropdown-toggle no-arrow">Department แผนก</a></li>
-                        <li><a href="org8_Section.php" class="dropdown-toggle no-arrow">Section หน่วยงาน</a></li>
-                        <li><a href="org9_Costcenter.php" class="dropdown-toggle no-arrow">Cost-Center</a></li>
-                    </ul>
                 </li>
                 <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle">
                         <i class="fa-solid fa-users-gear fa-lg"></i><span class="mtext"> ข้อมูลพนักงาน</span>
                     </a>
                     <ul class="submenu">
+                        <li><a href="listemployee_Create.php" class="dropdown-toggle no-arrow"><i class="fa-solid fa-user-plus"></i> เพิ่มพนักงานใหม่</a></li>
                         <li><a href="listemployee.php" class="dropdown-toggle no-arrow"><i class="fa-solid fa-people-group"></i> พนักงานทั้งหมด</a></li>
-                        <li><a href="listemployee_Create.php" class="dropdown-toggle no-arrow"><i class="fa-solid fa-user-plus"></i> ข้อมูลพนักงานเบื้องต้น</a></li>
                         <li><a href="listemployee_Manager.php" class="dropdown-toggle no-arrow"><i class="fa-solid fa-user-tie"></i> ผู้จัดการ | report-to</a></li>
                     </ul>
                 </li>
@@ -75,7 +63,7 @@
                 </li>
                 <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle">
-                    <i class="fa-solid fa-chalkboard fa-lg"></i><span class="mtext">&nbsp;&nbsp;Training</span>
+                        <i class="fa-solid fa-chalkboard fa-lg"></i><span class="mtext">&nbsp;&nbsp;Training</span>
                     </a>
                     <ul class="submenu">
                         <li><a href="../training-subsubmain/admin/web/admincoursetargetpage.php" class="dropdown-toggle no-arrow">หลักสูตรที่ต้องเรียนรู้</a></li>
@@ -90,7 +78,7 @@
                 </li>
                 <li>
                     <a href="../Evaluate/addmin_main.php" class="dropdown-toggle no-arrow">
-                        <span class="mtext"><i class="fa-solid fa-clipboard-check fa-xl"></i>  ประเมินผล</span>
+                        <span class="mtext"><i class="fa-solid fa-clipboard-check fa-xl"></i> ประเมินผล</span>
                     </a>
                 </li>
                 <li>
