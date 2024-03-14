@@ -19,8 +19,8 @@
                                     <a class="btn-back" href='listemployee_Create.php'>
                                         <i class="fa-solid fa-circle-left fa-xl"></i> |
                                     </a>
+                                    <li class="breadcrumb-item"><a href="listemployee_Create.php"> <i class="fa-solid fa-user-plus"></i> เพิ่มพนักงานใหม่</a></li>
                                     <li class="breadcrumb-item"><a href="listemployee.php"><i class="fa-solid fa-people-group"></i> พนักงานทั้งหมด</a></li>
-                                    <li class="breadcrumb-item"><a href="listemployee_Create.php"> <i class="fa-solid fa-user-plus"></i> ข้อมูลพนักงานเบื้องต้น</a></li>
                                     <li class="breadcrumb-item active" aria-current="page"><i class="fa-solid fa-user-tie"></i> ผู้จัดการ - Report-to</li>
                                 </ol>
                             </nav>

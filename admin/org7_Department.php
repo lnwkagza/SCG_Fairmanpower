@@ -15,6 +15,21 @@
                     <div class="row">
                         <div class="col-md-12 col-sm-12">
                             <div class="title">
+
+                                <div class="row" style="justify-content: space-between; align-items: center;">
+                                    <div class="col-md-3 col-sm-1 text-left">
+                                    </div>
+                                    <div class="col-md-3 col-sm-1 text-right">
+                                        <a class="btn-back" href='org6_Division.php'>
+                                            <i class="fa-solid fa-circle-left fa-xl">
+                                            </i>
+                                        </a>
+                                        <a class="btn-back" href='org8_Section.php'>
+                                            <i class="fa-solid fa-circle-right fa-xl"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
                                 <h3>ข้อมูลโครงสร้างองค์กร : Department (แผนก)</h3>
                                 <p class="text-primary">โครงสร้างทั้ง 9 ลำดับขั้นจะเริ่มเรียงจากซ้าย-ขวาเสมอ
 
@@ -163,20 +178,6 @@
                     </div>
                     <div class="col-lg-12 col-md-6 col-sm-12 mb-30">
                         <div class="card-box pd-30 pt-10 height-100-p">
-                            <div class="row" style="justify-content: space-between; align-items: center;">
-                                <div class="col-md-3 col-sm-1 text-left">
-                                </div>
-                                <div class="col-md-3 col-sm-1 text-right">
-                                    <a class="btn-back" href='org6_Division.php'>
-                                        <i class="fa-solid fa-circle-left fa-xl">
-                                        </i>
-                                    </a>
-                                    <a class="btn-back" href='org8_Section.php'>
-                                        <i class="fa-solid fa-circle-right fa-xl"></i>
-                                    </a>
-                                </div>
-                            </div>
-
                             <h2 class="h4 text-blue">รายการ แผนก ทั้งหมดในระบบ</h2>
                             <p class="text-danger">* หมายเหตุ : หากต้องการลบ แผนก จะต้องลบ Section ที่เกี่ยวข้องก่อนเสมอ</p>
 
