@@ -22,19 +22,18 @@
                                             <i class="fa-solid fa-circle-left fa-xl" style="color: gray">
                                             </i>
                                         </a>
-                                        <a class="btn-back" href='org2_Sub_Business_unit.php'>
+                                        <a class="btn-back" href='org2_Sub_position_unit.php'>
                                             <i class="fa-solid fa-circle-right fa-xl"></i>
                                         </a>
                                     </div>
                                 </div>
-                                <h3>ข้อมูลโครงสร้างองค์กร : Business Unit (หน่วยธุรกิจ)</h3>
-                                <p class="text-primary">โครงสร้างทั้ง 9 ลำดับขั้นจะเริ่มเรียงจากซ้าย-ขวาเสมอ
+                                <h3 class="pb-2">ข้อมูลสร้างตำแหน่งต่างๆ : Position (ตำแหน่ง)</h3>
 
                             </div>
                             <nav aria-label="breadcrumb" role="navigation">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item active" aria-current="page">Business Unit</li>
-                                    <li class="breadcrumb-item"><a href="org2_Sub_Business_unit.php">Sub-business-unit</a></li>
+                                    <li class="breadcrumb-item"><a href="org1_Business_unit.php">Business Unit</a></li>
+                                    <li class="breadcrumb-item"><a href="org2_Sub_position_unit.php">Sub-position-unit</a></li>
                                     <li class="breadcrumb-item"><a href="org3_Organizaion.php">Organization-ID</a></li>
                                     <li class="breadcrumb-item"><a href="org4_Company.php">Company</a></li>
                                     <li class="breadcrumb-item"><a href="org5_Location.php">Location</a></li>
@@ -42,7 +41,7 @@
                                     <li class="breadcrumb-item"><a href="org7_Department.php">Department</a></li>
                                     <li class="breadcrumb-item"><a href="org8_Section.php">Section</a></li>
                                     <li class="breadcrumb-item"><a href="org9_Costcenter.php">Cost-Center</a></li>
-                                    <li class="breadcrumb-item"><a href="org10_Position.php">Position</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Position</li>
                                 </ol>
                             </nav>
 
@@ -53,24 +52,23 @@
                     <div class="col-lg-9 col-md-6 col-sm-12 mb-30">
                         <div class="card-box pd-30 pt-10 height-100-p">
                             <div class="pb-3">
-                                <h2 class="pt-3 h4 text-blue">รายการ Business Unit ทั้งหมดในระบบ</h2>
-                                <p class="text-danger">* หมายเหตุ : หากต้องการลบระดับ Business Unit จะต้องลบหน่วยงานย่อยของ Sub-Business-Unit ให้หมดก่อน</p>
+                                <h2 class="pt-3 h4 text-blue">รายการ Position ทั้งหมดในระบบ</h2>
                                 <table class="data-table table stripe hover nowrap">
                                     <thead>
                                         <tr>
                                             <th>ลำดับ</th>
-                                            <th>Business ID</th>
-                                            <th>Business Unit (TH)</th>
-                                            <th>Business Unit (ENG)</th>
+                                            <th>Position ID</th>
+                                            <th>Position Name (TH)</th>
+                                            <th>Position Name (ENG)</th>
                                             <th class="datatable-nosort">จัดการ</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <!-- SELECT ค่า Business -->
+                                        <!-- SELECT ค่า position -->
 
                                         <?php
                                         // เตรียมคำสั่ง SQL
-                                        $sql = "SELECT * FROM business";
+                                        $sql = "SELECT * FROM position";
                                         $params = array();
                                         // ดึงข้อมูลจากฐานข้อมูล
                                         $i = 1;
@@ -85,14 +83,14 @@
                                             echo "<tr>";
                                             echo "<td>" . $i++ . "</td>";
 
-                                            echo "<td>" . $row["business_id"] . "</td>";
+                                            echo "<td>" . $row["position_id"] . "</td>";
                                             echo "<td>" . $row["name_thai"] . "</td>";
                                             echo "<td>" . $row["name_eng"] . "</td>";
 
                                             echo '<td><div class="flex">',
-                                            '<button type="button" name="delete_business" class="delete-btn_Org" onclick="confirmDelete(\'' . $row['business_id'] . '\');"><i class="fa-solid fa-trash-can"></i></button>';
+                                            '<button type="button" name="delete_position" class="delete-btn_Org" onclick="confirmDelete_Position(\'' . $row['position_id'] . '\');"><i class="fa-solid fa-trash-can"></i></button>';
 
-                                            echo "<button type='button' class='edit-btn_Org' onclick='openEdit_Business_Modal(\"" . $row['business_id'] . "\", \"" . $row['name_thai'] . "\", \"" . $row['name_eng'] . "\");'>";
+                                            echo "<button type='button' class='edit-btn_Org' onclick='openEdit_Position_Modal(\"" . $row['position_id'] . "\", \"" . $row['name_thai'] . "\", \"" . $row['name_eng'] . "\");'>";
                                             echo "<i class='fa-solid fa-pencil'></i>";
                                             echo "</button>";
 
@@ -106,36 +104,36 @@
                     </div>
 
                     <!-- Modal Start -->
-                    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="editPositionModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="editModalLabel">แก้ไขรายชื่อ Business Unit</h5>
+                                    <h5 class="modal-title" id="editModalLabel">แก้ไขรายชื่อ position Unit</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
                                 <div class="modal-body">
                                     <!-- Form for editing data -->
-                                    <form id="update_business" method="post" action="org1_Business_unit.php">
-                                        <input name="business_id" type="hidden" id="editBusinessIdInput">
+                                    <form id="update_position" method="post" action="org10_Position.php">
+                                        <input name="position_id" type="hidden" id="editPositioIdInput">
                                         <div class="form-group">
-                                            <label for="editNameThai">ชื่อ Business Unit (TH)</label>
-                                            <input type="text" class="form-control" id="editNameThai" name="name_thai" required autocomplete="off">
+                                            <label for="editPositionNameThai">ชื่อ Position name (TH)</label>
+                                            <input type="text" class="form-control" id="editPositionNameThai" name="name_thai" required autocomplete="off">
                                         </div>
                                         <div class="form-group">
-                                            <label for="editNameEng">ชื่อ Business Unit (ENG)</label>
-                                            <input type="text" class="form-control" id="editNameEng" name="name_eng" required autocomplete="off">
+                                            <label for="editPositionNameEng">ชื่อ position Unit (ENG)</label>
+                                            <input type="text" class="form-control" id="editPositionNameEng" name="name_eng" required autocomplete="off">
                                         </div>
                                         <div class="text-right">
-                                            <button class="btn btn-primary" onclick="update_businessForm(event);">บันทึกการแก้ไข</button>
+                                            <button class="btn btn-primary" onclick="update_positionForm(event);">บันทึกการแก้ไข</button>
                                         </div>
                                     </form>
                                     <!-- script -->
                                     <script>
-                                        function update_businessForm(event) {
+                                        function update_positionForm(event) {
                                             event.preventDefault();
-                                            console.log("UPDATE business Form send!");
+                                            console.log("UPDATE position Form send!");
                                             const swalWithBootstrapButtons = Swal.mixin({
                                                 customClass: {
                                                     confirmButton: "green-swal",
@@ -144,20 +142,20 @@
                                                 buttonsStyling: false
                                             });
                                             swalWithBootstrapButtons.fire({
-                                                title: 'ยืนยันแก้ไข Business Unit',
-                                                text: 'Business Unit จะถูกแก้ไขใหม่ตามที่ระบุ',
+                                                title: 'ยืนยันแก้ไข position Unit',
+                                                text: 'position Unit จะถูกแก้ไขใหม่ตามที่ระบุ',
                                                 icon: 'warning',
                                                 showCancelButton: true,
                                                 confirmButtonText: 'ใช่ ,ยืนยัน',
                                                 cancelButtonText: 'ยกเลิก',
                                             }).then((response) => {
                                                 if (response.isConfirmed) {
-                                                    var formData = $('#update_business').serialize();
+                                                    var formData = $('#update_position').serialize();
                                                     console.log("Form Data: ", formData); // Log ค่า FormData ที่จะส่งไป
 
                                                     $.ajax({
                                                         type: "POST",
-                                                        url: "Back_End_ajax/Org/business_update.php",
+                                                        url: "Back_End_ajax/Org/position_update.php",
                                                         data: formData,
                                                         dataType: "json", // ระบุว่าต้องการรับข้อมูลเป็น JSON
                                                         success: function(response) {
@@ -165,8 +163,8 @@
                                                             if (response.status === 'success') {
                                                                 swalWithBootstrapButtons.fire({
                                                                     icon: 'success',
-                                                                    title: 'แก้ไข Business Unit สำเร็จ!',
-                                                                    text: 'ข้อมูล Business Unit ถูกแก้ไขเรียบร้อย',
+                                                                    title: 'แก้ไขสำเร็จ!',
+                                                                    text: 'ข้อมูลถูกแก้ไขเรียบร้อย',
                                                                 }).then(() => {
                                                                     location.reload();
                                                                 });
@@ -203,19 +201,19 @@
                         <div class="card-box pd-30 pt-10 height-50-p">
                             <h2 class="mb-30 h4"></h2>
                             <section>
-                                <form method="post" id="insert_business">
+                                <form method="post" id="insert_position">
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label>ชื่อย่อ หรือ Business ID </label>
-                                                <input name="business_id" placeholder="ตัวอย่างเช่น CBM" type="text" class="form-control" required="true" oninput="this.value = this.value.toUpperCase()" autocomplete="off">
+                                                <label>Position ID </label>
+                                                <input name="position_id" placeholder="ตัวอย่างเช่น 66725" type="text" class="form-control" required="true" oninput="this.value = this.value.toUpperCase()" autocomplete="off">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label>ชื่อ Business Unit (TH)</label>
+                                                <label>ชื่อ Position Name (TH)</label>
                                                 <input name="name_thai" type="text" class="form-control" required="true" autocomplete="off">
                                             </div>
                                         </div>
@@ -223,22 +221,22 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label>ชื่อ Business Unit (ENG)</label>
+                                                <label>ชื่อ Position Name (ENG)</label>
                                                 <input name="name_eng" type="text" class="form-control" required="true" autocomplete="off">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-sm-12 text-center">
                                         <div class="dropdown">
-                                            <button class="btn btn-primary" onclick="insert_businessForm(event);">เพิ่ม Business-Unit</button>
+                                            <button class="btn btn-primary" onclick="insert_positionForm(event);">เพิ่ม Position-Unit</button>
                                         </div>
                                     </div>
                                 </form>
                                 <!-- script -->
                                 <script>
-                                    function insert_businessForm(event) {
+                                    function insert_positionForm(event) {
                                         event.preventDefault();
-                                        console.log("INSERT business Form send!");
+                                        console.log("INSERT position Form send!");
                                         const swalWithBootstrapButtons = Swal.mixin({
                                             customClass: {
                                                 confirmButton: "green-swal",
@@ -247,20 +245,20 @@
                                             buttonsStyling: false
                                         });
                                         swalWithBootstrapButtons.fire({
-                                            title: 'ยืนยันการเพิ่ม Business Unit',
-                                            text: 'Business Unit จะถูกเพิ่มลงฐานข้อมูลในระบบ',
+                                            title: 'ยืนยันการเพิ่ม',
+                                            text: 'จะถูกเพิ่มลงฐานข้อมูลในระบบ',
                                             icon: 'warning',
                                             showCancelButton: true,
                                             confirmButtonText: 'ใช่ ,ยืนยัน',
                                             cancelButtonText: 'ยกเลิก',
                                         }).then((response) => {
                                             if (response.isConfirmed) {
-                                                var formData = $('#insert_business').serialize();
+                                                var formData = $('#insert_position').serialize();
                                                 console.log("Form Data: ", formData); // Log ค่า FormData ที่จะส่งไป
 
                                                 $.ajax({
                                                     type: "POST",
-                                                    url: "Back_End_ajax/Org/business_add.php",
+                                                    url: "Back_End_ajax/Org/position_add.php",
                                                     data: formData,
                                                     dataType: "json", // ระบุว่าต้องการรับข้อมูลเป็น JSON
                                                     success: function(response) {
@@ -279,9 +277,9 @@
                                                             });
                                                             Toast.fire({
                                                                 icon: "success",
-                                                                title: "แก้ไขข้อมูล Business Unit สำเร็จ"
+                                                                title: "แก้ไขข้อมูล Position สำเร็จ"
                                                             }).then(() => {
-                                                                location.href = 'org2_Sub_Business_unit.php';
+                                                                location.reload();
                                                             });
 
                                                         } else {

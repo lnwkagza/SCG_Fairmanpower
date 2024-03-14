@@ -3,16 +3,16 @@ require_once('../../../config/connection.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $business_id = $_POST['business_id'];
+    $position_id = $_POST['position_id'];
     $nameTH = $_POST['name_thai'];
     $nameENG = $_POST['name_eng'];
 
     // คำสั่ง SQL ในรูปแบบของ prepared statement
-    $sql = "INSERT INTO business (business_id, name_thai, name_eng) VALUES (?, ?, ?)";
+    $sql = "INSERT INTO position (position_id, name_thai, name_eng) VALUES (?, ?, ?)";
 
     // เตรียม prepared statement
     $stmt = sqlsrv_prepare($conn, $sql, array(
-        &$business_id,
+        &$position_id,
         &$nameTH,
         &$nameENG
 

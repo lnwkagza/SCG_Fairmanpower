@@ -43,7 +43,9 @@
                                     <li class="breadcrumb-item"><a href="org7_Department.php">Department</a></li>
                                     <li class="breadcrumb-item"><a href="org8_Section.php">Section</a></li>
                                     <li class="breadcrumb-item"><a href="org9_Costcenter.php">Cost-Center</a></li>
-                                </ol>
+                                
+                                    <li class="breadcrumb-item"><a href="org10_Position.php">Position</a></li>
+</ol>
                             </nav>
                         </div>
                     </div>
@@ -316,7 +318,7 @@
                                                         icon: "success",
                                                         title: "เพิ่ม Location (สำนักงาน) สำเร็จ"
                                                     }).then(() => {
-                                                        location.reload();
+                                                        location.href = 'org6_Division.php';
                                                     });
 
                                                 } else {

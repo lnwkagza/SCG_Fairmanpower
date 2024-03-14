@@ -185,6 +185,13 @@
         $('#editModal').modal('show');
     }
 
+    function openEdit_Position_Modal(position_id, name_thai, name_eng) {
+        document.getElementById('editPositioIdInput').value = position_id;
+        document.getElementById('editPositionNameThai').value = name_thai;
+        document.getElementById('editPositionNameEng').value = name_eng;
+        $('#editPositionModal').modal('show');
+    }
+
     // <!-- Add Modal for OpenEdit_SubBusiness -->
     function openEdit_SubBusiness_Modal(business_id, sub_business_id, name_thai, name_eng) {
         document.getElementById('editBusinessIdInput').value = business_id;
@@ -823,6 +830,66 @@
                                 icon: 'success',
                                 title: 'ลบข้อมูลสำเร็จ!',
                                 text: 'หมายเลข Organization ID ถูกลบออกจากระบบแล้ว',
+                            }).then(() => {
+                                // ทำการรีเฟรชหน้าหลังจากลบสำเร็จ
+                                location.reload();
+                            });
+                        } else {
+                            swalWithBootstrapButtons.fire({
+                                icon: 'error',
+                                title: 'เกิดข้อผิดพลาด!',
+                                text: 'ไม่สามารถลบข้อมูลได้ ',
+                            });
+                        }
+                    },
+                    error: function() {
+                        swalWithBootstrapButtons.fire({
+                            icon: 'error',
+                            title: 'เกิดข้อผิดพลาด!',
+                            text: 'ไม่สามารถเชื่อมต่อกับเซิร์ฟเวอร์ได้',
+                        });
+                    }
+                });
+            }
+        });
+    }
+
+
+    function confirmDelete_Position(position_id) {
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+                confirmButton: "delete-swal",
+                cancelButton: "edit-swal"
+            },
+            buttonsStyling: false
+        });
+        swalWithBootstrapButtons.fire({
+            title: 'คุณแน่ใจหรือไม่?',
+            text: 'คุณต้องการลบ Position นี้ใช่หรือไม่?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'ใช่, ลบ!',
+            cancelButtonText: 'ยกเลิก'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // ส่ง request ไปยังไฟล์ PHP ที่ทำการลบข้อมูล
+                $.ajax({
+                    type: 'POST',
+                    url: 'org10_Position_Delete.php',
+                    data: {
+                        delete_position: true,
+                        position_id: position_id
+                    },
+                    success: function(response) {
+                        // ตรวจสอบคำตอบที่ได้จาก PHP
+                        var result = JSON.parse(response);
+                        if (result.status === 'success') {
+                            swalWithBootstrapButtons.fire({
+                                icon: 'success',
+                                title: 'ลบข้อมูลสำเร็จ!',
+                                text: 'Position ถูกลบออกจากระบบแล้ว',
                             }).then(() => {
                                 // ทำการรีเฟรชหน้าหลังจากลบสำเร็จ
                                 location.reload();

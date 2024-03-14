@@ -3,18 +3,21 @@ require_once('../../../config/connection.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $business_id = $_POST['business_id'];
+    $position_id = $_POST['position_id'];
     $nameTH = $_POST['name_thai'];
     $nameENG = $_POST['name_eng'];
 
     // คำสั่ง SQL ในรูปแบบของ prepared statement
-    $sql = "INSERT INTO business (business_id, name_thai, name_eng) VALUES (?, ?, ?)";
+    $sql = "UPDATE position SET 
+    name_thai = ?,
+    name_eng = ?
+    WHERE position_id = ?";
 
     // เตรียม prepared statement
     $stmt = sqlsrv_prepare($conn, $sql, array(
-        &$business_id,
         &$nameTH,
-        &$nameENG
+        &$nameENG,
+        &$position_id
 
     ));
 
