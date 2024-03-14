@@ -23,6 +23,20 @@
 				<div class="title pb-2 ">
 					<h3 class="text-primary h3 mb-0">รายการพนักงานทั้งหมด</h3>
 				</div>
+				<nav aria-label="breadcrumb" role="navigation" class="mb-3">
+					<ol class="breadcrumb">
+						<a class="btn-back" href='listemployee_Create.php'>
+							<i class="fa-solid fa-circle-left fa-xl"></i> |
+						</a>
+						<li class="breadcrumb-item"><a href="listemployee_Create.php"> <i class="fa-solid fa-user-plus"></i> เพิ่มพนักงานใหม่</a></li>
+						<li class="breadcrumb-item active" aria-current="page"><i class="fa-solid fa-people-group"></i> พนักงานทั้งหมด</li>
+						<li class="breadcrumb-item"><a href="listemployee_Manager.php"><i class="fa-solid fa-user-tie"></i> ผู้จัดการ - Report-to</a></li>
+						<a class="btn-back" href='listemployee_Manager.php'>
+							| <i class="fa-solid fa-circle-right fa-xl"></i>
+						</a>
+
+					</ol>
+				</nav>
 				<div class="row">
 					<div class="col-xl-2 col-lg-2 col-md-5 mb-10">
 						<div>

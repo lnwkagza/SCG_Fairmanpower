@@ -16,13 +16,10 @@
                             </div>
                             <nav aria-label="breadcrumb" role="navigation" class="pt-3">
                                 <ol class="breadcrumb">
-                                    <a class="btn-back" href='listemployee.php'>
-                                        <i class="fa-solid fa-circle-left fa-xl"></i> |
-                                    </a>
                                     <li class="breadcrumb-item active" aria-current="page"><i class="fa-solid fa-user-plus"></i> เพิ่มพนักงานใหม่</li>
                                     <li class="breadcrumb-item"><a href="listemployee.php"><i class="fa-solid fa-people-group"></i> พนักงานทั้งหมด</a></li>
                                     <li class="breadcrumb-item"><a href="listemployee_Manager.php"><i class="fa-solid fa-user-tie"></i> ผู้จัดการ - Report-to</a></li>
-                                    <a class="btn-back" href='listemployee_Manager.php'>
+                                    <a class="btn-back" href='listemployee.php'>
                                         | <i class="fa-solid fa-circle-right fa-xl"></i>
                                     </a>
 
