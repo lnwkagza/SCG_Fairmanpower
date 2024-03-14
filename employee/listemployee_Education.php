@@ -111,7 +111,7 @@
                                 <div class="col-md-6 col-sm-12">
                                     <div class="form-group">
                                         <label>ใบรับรองการศึกษา</label>
-                                        <input name="certificate_degree" type="file" id="certificate_degree" class="form-control" accept="application/pdf" disabled />
+                                        <input name="certificate_degree" type="file" id="certificate_degree" class="form-control" accept="application/pdf"  />
                                     </div>
                                 </div>
                                 <div class="col-md-6">
