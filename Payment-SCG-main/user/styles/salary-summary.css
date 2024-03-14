@@ -1,0 +1,100 @@
+.navbar{    /* แถบบนสุด*/
+    display: flex;
+    box-shadow: 0 0 5px 2px #76747480; /*กำหนดเงาใต้กล่องของแถบบนสุด*/   
+    align-items: center;
+    height: 55px;
+    background-color: #1a6ec1; 
+
+}
+
+#backIcon{   /* รุปปุ่มย้อนกลับ*/
+    width: 100%;
+    max-width: 30px;
+    height: auto;
+}
+
+.navbar span{         /*ข้อความในแถบ navbar*/ 
+    font-size: 20px;
+    font-weight: bolder;
+    margin: auto;
+    color: #ffffff;
+}
+
+
+/*.........................ตารางที่1....................................*/
+
+.tb table{   
+    width: 100%;
+    color: #555555;
+    font-size: 10px;
+    border-collapse: collapse;
+}
+
+.tb thead{ 
+    background-color: #5cacc8;
+    color: white;
+}
+
+th,td{
+    padding: 5px;
+}
+
+.tb th, .tb td {
+    border: 1px solid #d0cdcd; 
+    border-width: 0 1px; /* ลบเส้นแนวนอน */
+}
+
+.tb td:nth-child(2),.tb td:nth-child(4) {  /*จำนวนเงิน(บาท) ให้ชิดขวา*/
+    text-align: right;
+}
+
+.tb1{  /*2แถวสุดท้ายในตาราง ช่องรายได้รวม*/
+    font-weight: bold;
+    background-color: #efefef;
+    border-bottom: 1px solid #d0cdcd;
+}
+
+.tb2{  /*ช่องเงินรับสุทธิ*/
+    display: flex;
+    justify-content: space-between;
+}
+
+.tb2 span{
+    font-size: 10px;
+}
+
+.ct{  /*คลาสที่ทำให้ข้อมูลในตารางอยู่ตรงกลาง*/
+    text-align: center;
+}
+
+/*.........................ตารางที่1....................................*/
+.tb-b{
+    padding-bottom: 10px;
+}
+
+.tb-b table{   
+    width: 100%;
+    color: #555555;
+    text-align: center;
+    font-size: 7px;
+    border-collapse: collapse;
+}
+
+.tb-b thead{ 
+    background-color: #5cacc8;
+    color: white;
+    /* white-space: nowrap; */
+}
+
+.tb-b tr,td,th{
+    border: 1px solid #b5b4b4;
+}
+
+.dt-search input {
+    width: 10px;
+    padding: 5px;
+}
+.dt-length select {
+    width: 1px;
+    padding: 2px;
+  }

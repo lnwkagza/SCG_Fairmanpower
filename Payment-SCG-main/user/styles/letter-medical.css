@@ -1,0 +1,20 @@
+.navbar{    /* แถบบนสุด*/
+    display: flex;
+    box-shadow: 0 0 5px 2px #76747480; /*กำหนดเงาใต้กล่องของแถบบนสุด*/   
+    align-items: center;
+    height: 55px;
+    background-color: #1a6ec1; 
+}
+
+#backIcon{   /* รุปปุ่มย้อนกลับ*/
+    width: 100%;
+    max-width: 30px;
+    height: auto;
+}
+
+.navbar span{         /*ข้อความในแถบ navbar*/ 
+    font-size: 20px;
+    font-weight: bolder;
+    margin: auto;
+    color: #ffffff;
+}

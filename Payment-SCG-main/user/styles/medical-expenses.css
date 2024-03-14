@@ -1,0 +1,102 @@
+.navbar{    /* แถบบนสุด*/
+    display: flex;
+    box-shadow: 0 0 5px 2px #76747480; /*กำหนดเงาใต้กล่องของแถบบนสุด*/   
+    align-items: center;
+    height: 55px;
+    background-color: #1a6ec1; 
+
+}
+
+#backIcon{   /* รุปปุ่มย้อนกลับ*/
+    width: 100%;
+    max-width: 30px;
+    height: auto;
+}
+
+.navbar span{         /*ข้อความในแถบ navbar*/ 
+    font-size: 20px;
+    font-weight: bolder;
+    margin: auto;
+    color: #ffffff;
+}
+
+.content{
+    padding: 10px;
+}
+
+.btn{   /*ปุ่ม*/
+    display: flex;
+    margin-top: 10px;
+    font-size: 3vmin;
+    font-weight: bold;
+    width: 35%;
+    background-color: #1a6ec1;
+    padding: 5px;
+    border-radius: 10px;
+    margin-left: auto;
+}
+
+.btn a{   /*สไลต์ข้อความของปุ่ม*/
+    display: flex;
+    align-items: center;
+    color: white; 
+    text-decoration: none; 
+    margin: auto;
+}
+
+.tb{
+    margin-top: 10px;
+    margin-bottom: 100px;
+}
+
+.tb table{   
+    width: 100%;
+    color: #555555;
+    font-size: 10px;
+    border-collapse: collapse;
+}
+
+.tb thead{ 
+    background-color: #1a6ec1;
+    color: white;
+}
+
+th,td{
+    padding: 5px;
+}
+
+.tb th, .tb td {
+    border: 1px solid #d0cdcd; 
+}
+
+.data-l{
+    display: flex;
+    flex-direction: column;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+td i.fa-file-pdf {  /*ปรับขนาดรูป pdf*/
+    font-size: 20px; 
+    color: black;
+    display: flex;
+    justify-content: center;
+}
+
+
+.data-r{   /*ข้อมูลในคอลัมน์ สถานะ*/
+    display: flex;
+    flex-direction: column;
+}
+
+.waiting{   /*รออนุมัติ*/
+    font-weight: bold;
+    color: #1a6ec1;
+}
+
+.approv{  /*อนุมัติแล้ว*/
+    font-weight: bold;
+    color: #0e9923;
+}

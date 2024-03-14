@@ -1,0 +1,174 @@
+.card-box-2{   /*กล่องสีฟ้า*/
+    background-color: #cbeaef ;
+    border-radius: 10px;
+    border: 2px solid #5db5d2;
+    
+}
+
+.bar{  /*แถบเมนูสีขาว*/
+    background-color: #ffff ;
+    box-shadow: 10px 10px 10px #5350501a;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-radius: 5px;
+    font-weight: bolder;
+    margin-top: 10px;
+    position: relative;
+}
+
+.pdf-excel{   /*ปุ่ม export file pdf,exel*/
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+    margin-top: 10px;
+
+}
+
+#pdf{
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.5s ease-in-out;
+    height: 35px;
+    width: 90px;
+    color: #bf0f0f;
+    box-shadow: 0px 2px 15px -6px #000000;
+    transition: 0.3s ease-in-out;
+    background-image: linear-gradient(#f6e7e7, #f6e7e7);
+    border-radius: 10px;
+    border: 3px solid #bf0f0f !important;
+}
+
+#pdf:hover {
+    font-size: 17px;
+    font-weight: bold;
+    transition: 0.5s ease-in-out;
+    color: #f0f8ff;
+    box-shadow: 0px 2px 15px -6px #000000;
+    transition: 0.3s ease-in-out;
+    background-image: linear-gradient(#ed7c7c, #bf0f0f);
+    border: 3px solid #ffffff !important;
+
+}
+
+#excel{
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.5s ease-in-out;
+    height: 35px;
+    width: 115px;
+    color: #04af3d;
+    box-shadow: 0px 2px 15px -6px #000000;
+    transition: 0.3s ease-in-out;
+    background-image: linear-gradient(#e4f3e9, #e4f3e9);
+    border-radius: 10px;
+    border: 3px solid #04af3d !important;
+}
+
+#excel:hover {
+    font-size: 17px;
+    font-weight: bold;
+    transition: 0.5s ease-in-out;
+    color: #f0f8ff;
+    box-shadow: 0px 2px 15px -6px #000000;
+    transition: 0.3s ease-in-out;
+    background-image: linear-gradient(#62ab7a, #04af3d);
+    border: 3px solid #ffffff !important;
+
+}
+
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    height: 100px;
+    overflow-y: auto;
+}
+
+th{
+    font-size: 15px;
+    white-space: nowrap; /* จำกัดการขึ้นบรรทัดในเซลล์ */
+
+}
+
+thead{
+    background-color: #5cacc8;
+    color: white;
+    text-align: center;
+    position: sticky;
+    top: 0;
+}
+ 
+td {
+    background-color: azure;
+    white-space: nowrap; /* จำกัดการขึ้นบรรทัดในเซลล์ */
+}
+  
+
+#closeSetBtn{
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.5s ease-in-out;
+    height: 40px;
+    width: 130px;
+    color: #2897e6;
+    box-shadow: 0px 2px 15px -6px #000000;
+    transition: 0.3s ease-in-out;
+    background-image: linear-gradient(#f0f8ff, #f0f8ff);
+    border-radius: 10px;
+    border: 3px solid #92c9f1 !important;
+}
+
+#closeSetBtn:hover {
+    font-size: 19px;
+    font-weight: bold;
+    transition: 0.5s ease-in-out;
+    color: #f0f8ff;
+    box-shadow: 0px 2px 15px -6px #000000;
+    transition: 0.3s ease-in-out;
+    background-image: linear-gradient(#83d6f2, #6892c4);
+    border: 3px solid #ffffff !important;
+
+}
+
+.bar{   /*แถบสีขาว*/
+    background-color: #ffff ;
+    box-shadow: 10px 10px 10px #5350501a;
+    font-size: 18px;
+    display: flex;
+    padding: 5px;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-radius: 5px;
+    font-weight: bolder;
+    color: #555555;
+    margin-top: 10px;
+    
+    
+}
+
+#b-2{   /*คำว่างวดเต็มในแถบ bar*/
+    margin-left: 50px;
+}
+
+.b-bar{   /* class input ว/ด/ป และ ด/ป*/
+    display: flex;
+    justify-content: right;
+    margin-top: 10px;
+    color: #555555;
+}
+
+.d-m-y input,.m-y input{  /* กล่อง input ว/ด/ป และ ด/ป*/
+    border: none;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 160px;
+    height: 40px;
+    color: #555555;
+    box-shadow: 10px 10px 10px #5350501a;
+}
+

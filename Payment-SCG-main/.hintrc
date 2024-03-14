@@ -1,0 +1,41 @@
+{
+  "extends": [
+    "development"
+  ],
+  "hints": {
+    "compat-api/css": [
+      "default",
+      {
+        "ignore": [
+          "-webkit-text-size-adjust",
+          "backdrop-filter",
+          "text-decoration-skip-ink",
+          "@-ms-viewport"
+        ]
+      }
+    ],
+    "axe/text-alternatives": [
+      "default",
+      {
+        "image-alt": "off"
+      }
+    ],
+    "no-inline-styles": "off"
+  },
+  "browserslist": [
+    "defaults",
+    "not ie 11",
+    "not and_chr <= 120",
+    "not and_ff <= 119",
+    "not chrome <= 120",
+    "not edge <= 120",
+    "not firefox <= 121",
+    "not ios_saf <= 17.1",
+    "not opera <= 104",
+    "not safari <= 17.2",
+    "not samsung <= 23"
+  ]
+}
+
+
+

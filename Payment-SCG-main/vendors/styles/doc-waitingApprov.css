@@ -1,0 +1,183 @@
+.card-box{   /*กล่องสีฟ้า*/
+    background-color: #cbeaef ;
+    border: 2px solid #5db5d2;
+    
+}
+
+.bar{   /*แถบเมนูสีขาว*/
+    background-color: #ffff ;
+    box-shadow: 10px 10px 10px #5350501a;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-around;
+    padding: 5px;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-radius: 5px;
+    font-weight: bolder;
+    margin-top: 10px;
+}
+
+.approv{    /*ปุ่มอนุมัติทั้งหมด และไม่อนุมัติทั้งหมด*/
+    margin-top: 10px;
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+}
+
+#approv1{  /*อนุมัติทั้งหมด*/
+    border: none;
+    background-color: #49a549;
+    border-radius: 10px;
+    color: #ffff;
+    width: 130px;
+    height: 30px;
+}
+
+#approv1 i{
+    padding-right: 3px;
+}
+
+#approv2{   /*ไม่อนุมัติทั้งหมด*/
+    border: none;
+    background-color: #C80A0A;
+    border-radius: 10px;
+    color: #ffff;
+    width: 130px;
+    height: 30px;
+}
+
+#approv2 i{
+    padding-right: 3px;
+}
+
+.t-tb{  /*แถบเมนูและตาราง*/
+    display: flex;
+    margin-top: 10px;
+}
+
+.program{    /*แถบเมนู*/
+    display: flex;
+    flex-direction: column;
+    width: 12%;
+    height: 190px;
+    background-color: #ffff;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: relative;
+    text-align: end;
+}
+
+.program a {
+    margin-bottom: 10px; /* ปรับค่าตามที่ต้องการ */
+}
+
+.bug{   /*วงกลมแสดงจำนวนรายการค้างอนุมัติ*/
+    width: 13px; 
+    height: 13px; 
+    padding: 2px;
+    text-align: center;
+    background-color: red;
+    color: #ffffff;
+    margin: auto;
+    border-radius: 50%;
+    font-size: 7px;
+    position: absolute;
+    top: 5px;
+    right: 3px;
+}
+
+.data-table {  /*ตาราง*/
+    width: 100%; 
+    margin-left: 10px;
+}
+
+.data-table thead th {
+    font-size: 20px;
+    color: white;
+}
+
+thead{
+    background-color: #3AA9C1;
+    color: #ffffff;
+}
+  
+tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+th{
+    text-align: center;
+} 
+
+.data-table th,
+.data-table td {
+    border: 1px solid #ffffff; 
+}
+
+.data-table input[type="checkbox"] {  /* ปรับแต่งสไตล์ของ checkbox */
+    width: 20px; 
+    height: 20px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.data-table tbody td input[type="checkbox"] {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.center-checkbox td {
+    text-align: center;
+}
+
+#checkAll{   /*checkbox หัวตาราง*/
+    margin-top: 0; 
+    width: 20px; 
+    height: 20px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#approv-child {   /*ปุ่มอนุมัติและไม่อนุมัติในตาราง*/
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    gap: 10px;
+}
+
+#approv1-child{  /*อนุมัติ*/
+    border: none;
+    background-color: #49a549;
+    border-radius: 10px;
+    color: #ffff;
+    width: 80px;
+    height: 25px;
+}
+
+#approv1-child i{
+    padding-right: 3px;
+}
+
+#approv2-child{  /*ไม่อนุมัติ*/
+    border: none;
+    background-color: #C80A0A;
+    border-radius: 10px;
+    color: #ffff;
+    width: 80px;
+    height: 25px;
+}
+
+#approv2-child i{
+    padding-right: 3px;
+}
+

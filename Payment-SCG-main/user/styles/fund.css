@@ -1,0 +1,63 @@
+.navbar{    /* แถบบนสุด*/
+    display: flex;
+    box-shadow: 0 0 5px 2px #76747480; /*กำหนดเงาใต้กล่องของแถบบนสุด*/   
+    align-items: center;
+    height: 55px;
+    background-color: #1a6ec1; 
+
+}
+
+#backIcon{   /* รุปปุ่มย้อนกลับ*/
+    width: 100%;
+    max-width: 30px;
+    height: auto;
+}
+
+.navbar span{         /*ข้อความในแถบ navbar*/ 
+    font-size: 20px;
+    font-weight: bolder;
+    margin: auto;
+    color: #ffffff;
+}
+
+.content{   /*ปุ่ม*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    font-size: 3.6vmin;
+    margin-top: 20px;
+}
+
+.btn-head { /*สไลต์ของปุ่ม*/
+    width: 40%;
+    background-color: #ee964b; 
+    padding: 5px; 
+    border-radius: 20px; 
+
+}
+
+.btn-head span {   /*สไลต์ข้อความของปุ่ม*/
+    display: flex;
+    color: white; 
+    text-decoration: none;
+    justify-content: center; 
+}
+
+.btn-blue { /*สไลต์ของปุ่ม*/
+    width: 100%;
+    background-color: #0a57b7; 
+    padding: 7px; 
+    border-radius: 20px; 
+    align-items: center;
+}
+
+.btn-blue a {   /*สไลต์ข้อความของปุ่ม*/
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white; 
+    text-decoration: none; 
+    padding-left: 5px;
+}

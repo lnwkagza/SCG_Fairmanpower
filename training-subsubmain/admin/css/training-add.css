@@ -1,0 +1,473 @@
+body{
+    color: #616061;
+}
+
+#head{
+    font-size: 3vmin;
+    font-weight: bold;
+    color: #616061;
+}
+
+.mainclass{
+    padding: 20px;
+}
+
+.head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#add{
+    margin-bottom: 20px;
+    font-size: 3vmin;
+    color: #5cacc8;
+    font-weight: bold;
+}
+
+.data{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.row1{
+    margin-top: 20px;
+}
+
+.row1,.row2,.row3{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    font-size: 16px;
+}
+
+.row4{
+    display: flex;
+    flex-direction: column;
+}
+
+.name,.start,.end,.hour,.location,.type,.notify,.objective,.project-topic,.row4{
+    display: flex;
+    flex-direction: column;
+}
+
+input,select{
+    border: 1px solid #d4d4d4;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 13px;
+    height: 40px;
+    color: #616061;
+}
+
+textarea{
+    border: 1px solid #d4d4d4;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 13px;
+    height: 100px;
+    color: #616061;
+}
+
+.name input{
+    width: 23vw;
+}
+
+.start input{
+    width: 15vw;
+}
+
+.end input{
+    width: 15vw;
+}
+
+.hour{
+    width: 15vw;
+}
+
+.location input{
+    width: 23vw;
+}
+
+.type select{
+    width: 23vw;
+}
+
+.notify select{
+    width: 23vw;
+}
+
+.objective textarea,.project-topic textarea{
+    width: 35vw;
+}
+
+.row4-1,.row4-2,.row4-3{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.row4-1 input,.row4-2 input,.row4-3 input{
+    width: 35vw;
+}
+
+#code{
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.data-t{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.cost-center,.internal-order,.cost-element{
+    display: flex;
+    flex-direction: column;
+}
+
+.cost-center input,.internal-order input,.cost-element input{
+    border-radius: 5px;
+    border: 1px solid #d4d4d4;
+    padding: 5px;
+    font-size: 13px;
+    width: 23vw;
+}
+
+.data-b{
+    display: flex;
+    flex-direction: column;
+}
+
+.c-row1,.c-row2,.c-row3,.c-row4,.c-row5{
+    display: flex;
+    gap: 20px;
+    margin-left: 5%;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+#name{
+    width: 100px;
+}
+
+.c-row1 input,.c-row2 input,.c-row3 input,.c-row4 input,.c-row5 input{
+    border-radius: 5px;
+    border: 1px solid #d4d4d4;
+    padding: 5px;
+    font-size: 13px;
+}
+
+.to{
+    color: #5cacc8;
+    font-weight: bold;
+}
+
+input[type="checkbox"] {
+    width: 20px; 
+    height: 20px; 
+}
+
+.people{
+    width: 50px;
+}
+
+.result{
+    margin-left: calc(5% + 38px);
+    display: flex;
+    gap: 20px;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.result #cost{
+    width: 100px;
+}
+
+.channel1,.channel2{
+    width: 150px;
+}
+
+/* ใช้ไว้เพื่อซ่อนปุ่มของ input type number */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield; /* ใน Firefox */
+}
+
+
+.channel1-1{
+    background-color: #efeeee;
+    width: 150px;
+}
+
+.channel2-1{
+    background-color: #efeeee;
+    width: 150px;
+}
+
+.channel2-2{
+    width: 150px;
+    margin-left: 208px;
+}
+
+.datatable{
+    margin-bottom: 30px;
+}
+
+table{
+    width: 100%;
+    margin-top: 15px;
+    color: #555555;
+}
+
+thead{ 
+    background-color: #5cacc8;
+    color: white;
+}
+
+tbody{
+    font-size: 1.8vmin;
+}
+
+th,td{
+    padding: 8px;
+    border: 1px solid #dddddd;
+}
+
+.datatable table th:first-child,
+.datatable table td:first-child {
+    text-align: center;
+}
+
+/* ทำให้คอลัมน์ที่สองของตารางชิดซ้าย */
+.datatable table th:nth-child(2),
+.datatable table td:nth-child(2) {
+    text-align: left;
+}
+
+.datatable th input[type="checkbox"],
+.datatable td input[type="checkbox"] {
+    margin-right: -100px; 
+    margin-left: -100px;
+}
+
+input[type="checkbox"] {
+    width: 18px; 
+    height: 18px; 
+}
+
+
+.save{
+    background-color: #5cacc8;
+    padding: 8px 25px;
+    color: rgb(255, 255, 255);
+    font-size: 2.3vmin;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 3px solid #c6e5f0;
+    margin-bottom: 30px;
+
+    &:hover {
+        background-color: #489AE0;
+        border: 3px solid #c6e5f0; 
+    }
+}
+
+a.save {
+    float: right;
+}
+
+a.save:hover {
+    color: #ffffff;
+}
+
+.course-closed{
+    display: flex;
+    justify-content: end;
+    padding-right: 1.5%;
+    font-weight: bold;
+}
+
+.button{
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-r{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.button-r .approv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #5cacc8;
+    border: 3px solid #c6e5f0;
+    width: 150px;
+    height: 40px;
+    border-radius: 5px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 2.3vmin;
+
+    &:hover {
+        background-color: #489AE0; 
+    }
+}
+
+.button-r .edit{  /*ปุ่มแก้ไข*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #dfa006;
+    border: 3px solid #e6b53d;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 2.3vmin;
+
+    &:hover {
+        background-color: #df8e06; 
+    }
+}
+
+.button-r button{  /*ปุ่มลบ*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FF1E1E;
+    border: 3px solid #ff4f4f;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 2.3vmin;
+
+    &:hover {
+        background-color: #ea0000; 
+    }
+}
+
+.button-r label{
+    padding-top: 2%;
+}
+
+
+.button-l button{  /*ปุ่มย้อนกลับ*/
+    border-radius: 5px;
+    color: #616061;
+    font-weight: bold;
+}
+
+.btn-export{
+    display: flex;
+    gap: 10px;
+}
+
+#excel{
+    background-color: #207245;
+    border: 3px solid #50917e;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 2.3vmin;
+
+    &:hover {
+        background-color: #154a2d; 
+    }
+}
+
+#pdf{
+    background-color: #b30b00;
+    border: 3px solid #c43853;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 2.3vmin;
+
+    &:hover {
+        background-color: #800800; 
+    }
+}
+
+/*--------------------------------สไลต์ของปุ่มเลือกภาษา--------------------------------------*/
+.toggle-switch{
+    margin: 10px;
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+}
+
+.toggle-1 {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.toggle-1__input {
+    display: none;
+}
+
+.toggle-1__button {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 15px;
+    line-height: 20px;
+    width: 100px;
+    height: 40px;
+    color: white;
+    background-color: #5cacc8;
+    border: solid 1px #5cacc8;
+    border-radius: 5px;
+    transition: all 0.3 ease;
+}
+
+.toggle-1__button::before {
+    position: absolute;
+    display: flex;
+    align-items: center;
+  
+    top: 4px;
+    left: 40px;
+    height: 30px;
+    padding: 0 15px;
+  
+    content: "ON";
+    background: white;
+    border-radius: 5px;
+    color: #555555;
+    transition: all 0.3s ease;
+  }
+
+  .toggle-1__input:checked + .toggle-1__button {
+    background: #5cacc8;
+    border: solid 1px #5cacc8;
+}
+
+.toggle-1__input:checked + .toggle-1__button::before {
+    content: 'OFF';
+    left: 5px;
+    color:#555555;
+}
+
+/*--------------------------------จบสไลต์ของปุ่มเลือกภาษา--------------------------------------*/

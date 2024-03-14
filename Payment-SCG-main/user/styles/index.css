@@ -1,0 +1,248 @@
+.main-container{
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+}
+
+.inform-box{
+    background-image: linear-gradient(#0eaadc, #2177c5);
+    width: 100%;
+    color: #fff;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding-bottom: 10px;
+    font-weight: bold;
+}
+
+.l{   /*คลาสชื่อมุมบนซ้าย*/
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    padding-top: 10px;
+    margin-bottom: 10px;
+}
+
+#em {  /*รูปคนมุมบนซ้าย*/
+    width: 15%; 
+    height: auto; 
+    margin-right: 15px;
+}
+
+.ct{  /*รหัส+ชื่อ*/
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+}
+
+.c{  /*ข้อมูลตรงกลาง (อีโมจิ+วันที่+ปุ่มเงินเดือน)*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.c i.fa-comments-dollar {  /*ปรับขนาดเงินธนบัตร*/
+    font-size: 20px; 
+}
+
+.c button{  /*ปุ่มเงินเดือน*/
+    border: none;
+    padding: 5px;
+    width: 30%;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    color: #0a57b7;
+    background-color: #ffffff;
+}
+
+.b{   /*ข้อมูลพนักงานด้านล่าง*/
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-left: 20px;
+    font-size: 13px;
+}
+
+.card{  /*การ์ดข้อมุลพนักงาน ยื่นขอ...*/
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    padding: 10px 10px 10px 10px;
+    border: 1px solid #c9ccd0;
+    border-radius: 10px;
+    margin-top: 15px;
+    width: 90%;
+    color: #555555;
+}
+
+.picSpan{ /*รูป+ข้อความอนุมัติ*/
+    display: flex;
+    gap: 20px;
+}
+
+.picSpan i.fa-circle-check {  /*ปรับขนาดรูปเกียร์*/
+    font-size: 30px; 
+    color: green;
+}
+
+.span{  /*คลาสข้อความอนุมัติแล้ว+วันที่+เวลา*/
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+}
+
+.date{  /*วันที่+เวลา*/
+    display: flex;
+    gap: 20px;
+    font-weight: lighter;
+}
+
+#inCompany{  /*ข้อความคำว่า ภายในบริษัท*/
+    display: flex;
+    justify-content: end;
+    color: green;
+    font-weight: bold;
+}
+
+.center{  /*การ์ดข้อมุลพนักงาน ข้อมูลตรงกลาง*/
+    display: flex;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#ep {  /*รูปคนมุมซ้ายในการ์ด*/
+    width: 20%; 
+    height: 20%; 
+    margin-right: 15px;
+}
+
+.info{  /*ข้อมูล*/
+    display: flex;
+    flex-direction: column;
+    font-size: 10px;
+}
+
+#change-color{  /*ข้อความคำว่าอนุมัติ*/
+    color: green;
+}
+
+hr {
+    border: 1px solid #c9ccd0; 
+}
+
+.bottom{   /*ข้อความ รายละเอียด*/
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+.bottom i.fa-question {  /*ปรับขนาดรูปเครื่องหมายคำถาม*/
+    color: #0a57b7
+}
+
+.alink{   /*ปุ่ม*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+    font-size: 20px;
+    margin-bottom: 100px;
+}
+
+.fund,.salary-summary,.request-documents,.benefit { /*สไลต์ของปุ่ม*/
+    width: 90%;
+    background-color: #0a57b7; 
+    padding: 10px; 
+    border-radius: 20px; 
+}
+
+.fund a,.salary-summary a,.request-documents a,.benefit a {   /*สไลต์ข้อความของปุ่ม*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: white; 
+    text-decoration: none; 
+}
+
+    /*...................ส่วนของ popup .................*/
+    
+    .popup{    /*กำหนดขนาดกรอบและตำแหน่งของป๊อปอัพ*/
+        width: 80%;
+        background-color: #ffffff;
+        color: #555555;
+        border-radius: 10px;
+        border: 1px solid #ea0f0f; 
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%,-50%) scale(0.1);
+        text-align: center;
+        padding: 0 30px 30px;
+        font-weight: bolder;
+        visibility: hidden;
+        transition: transform 0.4s, top 0.4s;
+    }
+    
+    .open-popup{
+        visibility: visible;
+        top: 50%;
+        transform: translate(-50%,-50%) scale(1);
+    
+    }
+    
+    .popup img{  /*รูปเครื่องหมายตกใจสีเหลือง*/
+        width: 20%;
+        height: auto;
+    
+    }
+
+    #x{  /*รูปกากบาท เพื่อกดปิดป๊อปอัพ*/
+        width: 5%;
+        height: auto;
+        position: absolute;
+        top: 10px; 
+        right: 10px; 
+        cursor: pointer;
+    }
+
+    #password{  /*ช่องใส่รหัส*/
+        margin-top: 10px;
+        border: 1px solid #d0cdcd; 
+        border-radius: 10px;
+        padding: 5px;
+        width: 50%;
+    }
+       
+    #submit {      /*ปุ่มยืนยันในป๊อปอัปสลิปเงินเดือน*/    
+        margin: auto;
+        margin-top: 8px;
+        text-align: center; 
+        border-radius: 50px; 
+        background-color:#1a6ec1;
+        color: #ffffff;
+        text-decoration: none;  
+        font-weight: bold;
+        box-shadow: 0px 5px 5px #808080cc;    
+    } 
+
+    #send{  /*ปุ่มยืนยันในป๊อปอัปสรุปเงินเดือน*/
+        margin: auto;
+        margin-top: 8px;
+        text-align: center; 
+        border-radius: 50px; 
+        background-color:#1a6ec1;
+        color: #ffffff;
+        text-decoration: none;  
+        font-weight: bold;
+        box-shadow: 0px 5px 5px #808080cc; 
+        border: none;
+        padding: 5px;
+        width: 30%;
+    }
+    
+    /*.......................................................*/

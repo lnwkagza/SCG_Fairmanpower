@@ -1,0 +1,183 @@
+.row1{  /*แถวที่1 สลิปเงินเดือนและปุ่มกดดาวน์โหลดกับปริ้นท์*/
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid rgb(220, 216, 216);
+    padding: 8px;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-top: 15px;
+    color: #555555;
+}
+
+.row1-l{  /*ข้อความสลิปเงินเดือนพนักงาน*/
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.f1{  /*ข้อความตัวเลข*/
+    color: #338ac6;
+}
+
+.row1-r{  /*คลาสปุ่มกดดาวน์โหลดกับปริ้นท์*/
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    
+}
+
+#btn1{  /*ปุ่มดาวน์โหลด*/
+    background-color: blue;
+    color: white;
+    width: 120px;
+    height: 25px;
+    border: none;
+    border-radius: 5px;
+}
+
+#btn2{  /*ปุ่มปริ้นท์*/
+    background-color: red;
+    color: white;
+    width: 110px;
+    height: 25px;
+    border: none;
+    border-radius: 5px;
+}
+
+.row2{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    color: #555555;
+}
+
+.row2-l{  /* แถว2 ข้อมูลบนตารางฝั่งซ้าย*/
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+}
+
+.row2-l1{   /*ข้อความคำว่า (ชื่อ)และข้อมูลพนักงาน*/
+    font-size: 18px;
+    font-weight: bold;
+    
+}
+
+.row2-l2{  /*คลาสข้อมุลพนักงาน*/
+    display: flex;
+    gap: 15px;
+}
+
+.left{   /*หัวข้อ ข้อมูลพนักงาน*/
+    display: flex;
+    flex-direction: column;
+}
+
+.right{  /*ข้อมูลพนักงาน*/
+    display: flex;
+    flex-direction: column;
+}
+
+.row2-r{  /*แถว2 ข้อมูลบนตารางฝั่งขวา*/
+    display: flex;
+    flex-direction: column;
+}
+
+.row2-r1{  /*ข้อความคำว่า สลิปเงินเดือนและรวมเงินเดือน*/
+    font-weight: bold;
+}
+
+.tb{
+    color: #555555;
+}
+
+/*.........................ตารางที่1....................................*/
+
+.tb table{   
+    width: 100%;
+    margin-top: 15px;
+    color: #555555;
+}
+
+.tb thead{ 
+    background-color: #5cacc8;
+    color: white;
+}
+
+th,td{
+    padding: 5px;
+}
+
+.tb th, .tb td {
+    border: 1px solid #d0cdcd; 
+    border-width: 0 1px; /* ลบเส้นแนวนอน */
+}
+
+.tb td:nth-child(2),.tb td:nth-child(4) {  /*จำนวนเงิน(บาท) ให้ชิดขวา*/
+    text-align: right;
+}
+
+.tb1{  /*2แถวสุดท้ายในตาราง ช่องรายได้รวม*/
+    font-weight: bold;
+    background-color: #efefef;
+    border-bottom: 1px solid #d0cdcd;
+}
+
+.tb2{  /*ช่องเงินรับสุทธิ*/
+    display: flex;
+    justify-content: space-between;
+}
+
+.ct{  /*คลาสที่ทำให้ข้อมูลในตารางอยู่ตรงกลาง*/
+    text-align: center;
+}
+
+/*.........................ตารางที่1....................................*/
+
+.tb-b table{   
+    width: 100%;
+    margin-top: 15px;
+    color: #555555;
+    text-align: center;
+}
+
+.tb-b thead{ 
+    background-color: #5cacc8;
+    color: white;
+}
+
+.tb-b tr,td,th{
+    border: 1px solid #b5b4b4;
+}
+
+/*.........................หมดตาราง....................................*/
+
+#sp{  /*รวมรายได้ทั้งปี 2023*/
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 15px;
+    color: #555555;
+}
+
+.backward{  /*คลาสปุ่มย้อนกลับ*/
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.backward button{   /*ปุ่มย้อนกลับ*/
+    border: none;
+    border-radius: 5px;
+    box-shadow: 10px 10px 10px #5350501a;
+    background-color: red;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 5px;
+}
+
+
+
+
+
+
+

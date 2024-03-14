@@ -1,0 +1,105 @@
+
+
+
+.btn-approve {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.btn-confirm {
+    /* สีพื้นหลัง */
+    background-color:  #60D3AA;
+    /* สีตัวอักษร */
+    color: #fff;
+    /* ขอบ */
+    border: 2px solid #e4f0e9 ;
+    /* ขอบเส้นโค้ง */
+    border-radius: 15px;
+    /* ขนาดตัวอักษร */
+    font-size: 20px;
+    /* ขนาดของปุ่ม */
+    padding: 15px 20px;
+    /* การแสดงผลเมื่อ hover */
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    box-shadow: 1px 1px 2px rgba(31, 214, 123, 0.5);
+    border: none;
+}
+
+.btn-confirm :hover {
+    /* สีพื้นหลังเมื่อโฮเวอร์ */
+    background-color: #32ce8d;
+    /* สีตัวอักษรเมื่อโฮเวอร์ */
+    color: #fff;
+    border: none;
+}
+
+.btn-confirm:disabled {
+    background-color: lightgray;
+    border: 1px solid #b3b3b3;
+    border: none;
+
+}
+
+.btn-cancle {
+    /* สีพื้นหลัง */
+    background-image: linear-gradient(#C42D2D, #CD4F4F);
+    /* สีตัวอักษร */
+    color: #fff;
+    /* ขอบ */
+    border: 1px solid #a72828;
+    /* ขอบเส้นโค้ง */
+    border-radius: 15px;
+    /* ขนาดตัวอักษร */
+    font-size: 20px;
+    /* ขนาดของปุ่ม */
+    padding: 15px 20px;
+    /* การแสดงผลเมื่อ hover */
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    border: none;
+}
+
+.btn-cancle:hover {
+    /* สีพื้นหลังเมื่อโฮเวอร์ */
+    font-weight: bold;
+    transition: 0.5s ease-in-out;
+    color: #C42D2D;
+    box-shadow: 0px 2px 15px -6px #000000;
+    transition: 0.3s ease-in-out;
+    background-image: linear-gradient(#ffffff, #ffffff);
+    border: 1px solid #C42D2D !important;
+
+}
+
+.swal2-confirm {
+    font: 30px, #fff;
+    background-color: #0ece3b !important;
+    /* สีพื้นหลังปุ่ม */
+    border-color: #0ece3b !important;
+    /* สีเส้นขอบปุ่ม */
+}
+
+.swal2-confirm:hover {
+    background-color: #218838 !important;
+    /* สีพื้นหลังเมื่อ hover ที่ปุ่ม */
+    border-color: #218838 !important;
+    /* สีเส้นขอบเมื่อ hover ที่ปุ่ม */
+}
+
+.swal2-cancel {
+    font: 30px, #fff;
+    background-color: #ce0e0e !important;
+    /* สีพื้นหลังปุ่ม */
+    border-color: #ce0e0e !important;
+    /* สีเส้นขอบปุ่ม */
+}
+
+.swal2-cancel:hover {
+    background-color: #882121 !important;
+    /* สีพื้นหลังเมื่อ hover ที่ปุ่ม */
+    border-color: #882121 !important;
+    /* สีเส้นขอบเมื่อ hover ที่ปุ่ม */
+}

@@ -1,0 +1,397 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Chakra Petch', sans-serif;
+}
+body{
+    height: 100vh;
+    background-color: #49b3e1;
+}
+
+.container{
+    position: relative;
+}
+
+.mainname{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5vmax;
+    color: white;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+    background-color: transparent;
+    text-shadow: 2px 2px 2px #0000004a;
+    overflow: hidden;
+    font-weight: bold;
+}
+
+.dot1{
+    position: fixed;
+    top: 1%;
+    padding: 20%;
+    border-radius: 100%;
+    background-color: #C0ECFF;
+    transform: translate(-50%);
+    opacity: 0.3;
+}
+.dot2{
+    position: fixed;
+    top: 1%;
+    padding: 10%;
+    border-radius: 100%;
+    background-color: #B4EFE9;
+    transform: translate(420%, -50%);
+    opacity: 0.4;
+}
+.dot3{
+    position: fixed;
+    top: 1%;
+    padding: 10%;
+    border-radius: 100%;
+    background-color: #B4EFE9;
+    transform: translate(460%, 20%);
+    opacity: 0.2;
+}
+.imageuser{
+    position: absolute;
+    background-color: white;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    border-radius: 100%;
+    padding: 8px;
+}
+.imageuser .profile{
+    border-radius: 100%;
+    width: auto;
+    height: 25vh;
+}
+.conresu{
+    position: absolute;
+    background-color: #F7FAFF;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    top: 30%;
+    width: 100%;
+    height: 80%;
+}
+.form{
+    justify-content: center;
+    background-color: transparent;
+    color: #02134B;
+    font-weight: bold;
+}
+.resuma{
+    font-size: 1.5vmax;
+    margin-top: 15vmax;
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 5%;
+    background-color: transparent;
+}
+.data{
+    background-color: transparent;
+    margin-top: 6px;
+    color: #555555;
+}
+
+.button{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 3%;
+    background-color: transparent;
+}
+
+.button a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4eabd0;
+    border : 3px solid #c6e5f0;
+    border-radius: 15px;
+    padding: 5%;
+    margin: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.manu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    font-size: 3vmin;
+    color: #ffffff;
+ 
+    
+}
+.button i{
+    background-color: transparent;
+    color: #f1eeee;
+    font-size: 7vw;
+}
+
+.button .bx-book{
+    margin-right: 5px;
+}
+.button .bi-journal-text{
+    margin-right: 5px;
+}
+.button .bi-book{
+    margin-right: 5px;
+}
+.button .bi-bar-chart-line-fill{
+    margin-right: 5px;
+}
+.button .bi-ui-checks{
+    margin-right: 5px;
+}
+.button .bi-pie-chart-fill{
+    margin-right: 5px;
+}
+
+
+/*-----------------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------*/
+/*Tablet Ipad*/
+/*-----------------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------*/
+@media (min-width: 481px) and (max-width: 1024px) {
+.resuma{
+        font-size: 1.7vmax;
+        margin-top: 20vmax;
+        width: 100%;
+        padding-left: 10%;
+        padding-right: 5%;
+        background-color: transparent;
+    }
+    
+.button{
+    position: absolute;
+    top: 18vmax;
+    left: 45vw;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    margin: 3%;
+    width: 40vw;
+    background-color: transparent;
+}
+
+.button a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4eabd0;
+    border : 3px solid #c6e5f0;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px 2px rgb(204, 204, 204);
+    margin: 10px;
+    text-align: center;
+    text-decoration: none;
+    width: 20vw;
+}
+.button .manu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+    background-color: transparent;
+    border: none;
+    font-size: 1.6vw;
+    text-shadow: 2px 2px 2px #8f8f8f4a;
+ 
+    
+}
+.button i{
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 3vw;
+}
+
+}
+
+
+/*-----------------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------*/
+/*Desktop*/
+/*-----------------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------*/
+@media (min-width: 1025px){
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Chakra Petch', sans-serif;
+    }
+    body{
+        height: 100vh;
+        background-color: #49b3e1;
+    }
+    
+    .container{
+        position: relative;
+    }
+    
+    .mainname{
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 5vmax;
+        color: white;
+        width: 100%;
+        text-align: center;
+        z-index: 1;
+        background-color: transparent;
+        text-shadow: 2px 2px 2px #0000004a;
+        overflow: hidden;
+        font-weight: bold;
+    }
+    
+    .dot1{
+        position: fixed;
+        top: 1%;
+        padding: 20%;
+        border-radius: 100%;
+        background-color: #C0ECFF;
+        transform: translate(-50%);
+        opacity: 0.3;
+    }
+    .dot2{
+        position: fixed;
+        top: 1%;
+        padding: 10%;
+        border-radius: 100%;
+        background-color: #B4EFE9;
+        transform: translate(420%, -50%);
+        opacity: 0.4;
+    }
+    .dot3{
+        position: fixed;
+        top: 1%;
+        padding: 10%;
+        border-radius: 100%;
+        background-color: #B4EFE9;
+        transform: translate(460%, 20%);
+        opacity: 0.2;
+    }
+    .imageuser{
+        position: absolute;
+        background-color: white;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        border-radius: 100%;
+        padding: 8px;
+    }
+    .imageuser .profile{
+        border-radius: 100%;
+        width: auto;
+        height: 25vh;
+    }
+    .conresu{
+        position: absolute;
+        background-color: #F7FAFF;
+        border-top-right-radius: 25px;
+        border-top-left-radius: 25px;
+        top: 35%;
+        width: 100%;
+        height: 100%;
+    }
+    .form{
+        justify-content: center;
+        background-color: transparent;
+        color: #02134B;
+        font-weight: bold;
+    }
+    .data{
+        background-color: transparent;
+        margin-top: 6px;
+        color: #555555;
+    }
+    
+    .button .bx-book{
+        margin-right: 5px;
+    }
+    .button .bi-journal-text{
+        margin-right: 5px;
+    }
+    .button .bi-book{
+        margin-right: 5px;
+    }
+    .button .bi-bar-chart-line-fill{
+        margin-right: 5px;
+    }
+    .button .bi-ui-checks{
+        margin-right: 5px;
+    }
+    .button .bi-pie-chart-fill{
+        margin-right: 5px;
+    }
+    
+    .resuma{
+        font-size: 1.7vmax;
+        margin-top: 10vmax;
+        width: 100%;
+        padding-left: 10%;
+        padding-right: 5%;
+        background-color: transparent;
+    }
+    
+.button{
+    position: absolute;
+    top: 7vmax;
+    left: 48vw;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    margin: 3%;
+    width: 40vw;
+    background-color: transparent;
+}
+
+.button a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4eabd0;
+    border : 3px solid #c6e5f0;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px 2px rgb(204, 204, 204);
+    margin: 10px;
+    text-align: center;
+    text-decoration: none;
+    width: 20vw;
+    cursor: pointer;
+}
+.button .manu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+    background-color: transparent;
+    border: none;
+    font-size: 1.6vw;
+    text-shadow: 2px 2px 2px #8f8f8f4a;
+    cursor: pointer;
+ 
+    
+}
+.button i{
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 3vw;
+    cursor: pointer;
+}
+
+}

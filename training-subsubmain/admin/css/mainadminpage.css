@@ -1,0 +1,104 @@
+.info{
+    width: 50%;
+    height: 10vh;
+    background-color: #4eabd0;
+    border: 5px solid #c6e5f0;
+    margin-left: auto;
+    border-radius: 5px;
+}
+
+.info span{
+    display: flex;
+    justify-content: center;
+    align-items: center !important;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    padding-top: 1.5vh;
+}
+
+/* .imageuser{
+    margin: auto;
+} */
+
+.profile{  /*รูป*/
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 100%;
+    margin-top: 20px;
+    /* margin: auto; */
+}
+
+.info-main{
+    display: flex;
+
+}
+
+.info-l{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    /* background-color: aquamarine; */
+}
+
+.info-r{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    /* background-color: rgb(5, 43, 30); */
+}
+
+.data-name{
+    font-size: 6vmin;
+    font-weight: bold;
+    margin-top: 3%;
+}
+
+.data{
+    margin-bottom: 10px;
+}
+
+.data-position{
+    font-size: 3vmin;
+    margin-top: 1%;
+}
+
+.form{
+    font-size: 2.5vmin;
+    padding-top: 10%;
+}
+
+
+.button{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: auto;
+    margin-top: 10%;
+    margin-bottom: 5%;
+
+
+    width: 100%;
+    /* background-color: aquamarine; */
+}
+
+.button-t,.button-b{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.button a button{
+    width: 18vw;
+    height: 8vh;
+    background-color: #4eabd0;
+    border: 3px solid #c6e5f0;
+    border-radius: 5px;
+    color: white;
+
+}

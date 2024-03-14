@@ -1,0 +1,214 @@
+.navbar{    /* แถบบนสุด*/
+    display: flex;
+    box-shadow: 0 0 5px 2px #76747480; /*กำหนดเงาใต้กล่องของแถบบนสุด*/   
+    align-items: center;
+    height: 55px;
+    background-color: #1a6ec1; 
+
+}
+
+#backIcon{   /* รุปปุ่มย้อนกลับ*/
+    width: 100%;
+    max-width: 30px;
+    height: auto;
+}
+
+.navbar span{         /*ข้อความในแถบ navbar*/ 
+    font-size: 20px;
+    font-weight: bolder;
+    margin: auto;
+    color: #ffffff;
+}
+
+span{
+    color: #555555;
+    font-size: 10px;
+}
+
+p{
+    font-size: 5px;
+}
+
+.head-span{  /*คลาสข้อความหลักบนสุด (สลิปเงินเดือน+เลขที่)*/
+    display: flex;
+    flex-direction: column;
+    padding: 10px 10px 0px 10px;
+}
+
+.h1 span,.h2 span{  /*คลาสข้อความหลักบนสุด (สลิปเงินเดือน+เลขที่)*/
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.font-blue{  /*เลขสลิป+เลขที่*/
+    color: #338ac6;
+}
+
+.btn{  /*ปุ่มดาวน์โหลด+ปริ้นท์*/
+    display: flex;
+    justify-content: end;
+    gap: 5px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+    
+}
+
+#download{  /*ปุ่มดาวน์โหลด*/
+    border: none;
+    width: 20%;
+    padding: 5px;
+    font-size: 10px;
+    font-weight: bold;
+    border-radius: 5px;
+    background-color: #0d6bc1;
+    color: #ffffff;
+}
+
+#print{  /*ปุ่มปริ้นท์*/
+    border: none;
+    width: 15%;
+    padding: 5px;
+    font-size: 10px;
+    font-weight: bold;
+    border-radius: 5px;
+    background-color: #e02424;
+    color: #ffffff;
+}
+
+.box-slip{  /*สลิป*/
+    box-shadow: 0 4px 5px 2px #76747480;
+    width: 98%;
+    padding: 10px 10px 10px 10px;
+    margin: auto;
+    margin-bottom: 100px;
+}
+
+.box-slip span{
+    font-size: 7px;
+}
+
+.pay-slip{   /*ข้อความ สลิปเงินเดือน + Pay Slip*/
+    display: flex;
+    flex-direction: column;
+    text-align: end;
+    margin-bottom: 5px;
+}
+
+.pay-slip span{
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.info{  /*ข้อมูลบนตารางทั้งหมด*/
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-l{ /*ข้อมูลบนตารางฝั่งซ้าย*/
+    display: flex;
+    gap: 15px;
+}
+
+.font-small {  /*head eng*/
+    font-size: 5px;
+}
+
+.section{  /*หัวข้อ*/
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.info-r{  /*ข้อมูลบนตารางฝั่งขวา (เลขที่+วันที่ชำระ)*/
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.sp{  /*ข้อความบนหัวตารางด้านซ้าย*/
+    font-size: 10px;
+    font-weight: bold;
+    margin-top: 15px;
+    color: #555555;
+}
+
+/*.........................ตารางที่1....................................*/
+
+.tb table{   
+    width: 100%;
+    color: #555555;
+    font-size: 8px;
+    border-collapse: collapse;
+    margin-top: 5px;
+}
+
+.tb thead{ 
+    background-color: #5cacc8;
+    color: white;
+}
+
+th,td{
+    padding: 5px;
+}
+
+.tb th, .tb td {
+    border: 1px solid #d0cdcd; 
+    border-width: 0 1px; /* ลบเส้นแนวนอน */
+}
+
+.tb td:nth-child(2),.tb td:nth-child(4) {  /*จำนวนเงิน(บาท) ให้ชิดขวา*/
+    text-align: right;
+}
+
+.tb1{  /*2แถวสุดท้ายในตาราง ช่องรายได้รวม*/
+    font-weight: bold;
+    background-color: #efefef;
+    border-bottom: 1px solid #d0cdcd;
+}
+
+.tb2{  /*ช่องเงินรับสุทธิ*/
+    display: flex;
+    justify-content: space-between;
+}
+
+.tb2 span{
+    font-size: 10px;
+}
+
+.ct{  /*คลาสที่ทำให้ข้อมูลในตารางอยู่ตรงกลาง*/
+    text-align: center;
+}
+
+/*.........................ตารางที่1....................................*/
+.tb-b{
+    padding-bottom: 10px;
+}
+
+.tb-b table{   
+    width: 100%;
+    color: #555555;
+    text-align: center;
+    font-size: 8px;
+    border-collapse: collapse;
+}
+
+.tb-b thead{ 
+    background-color: #5cacc8;
+    color: white;
+    /* white-space: nowrap; */
+}
+
+.tb-b tr,td,th{
+    border: 1px solid #b5b4b4;
+}
+
+/*.........................หมดตาราง....................................*/
+
+
+.income-deduct-column {
+    width: 30%; /* ปรับความกว้างตามที่คุณต้องการ */
+}
+.table-bordered {
+    border-bottom: 1px solid #ddd;
+  }

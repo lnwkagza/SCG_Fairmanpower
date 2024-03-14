@@ -1,0 +1,95 @@
+.card-box{  /*กล่องสีฟ้า*/
+    background-color: #cbeaef ;
+    border: 2px solid #5db5d2;
+    height: 400px;
+    
+}
+
+.report{  /*กล่องสีขาวคลุมทั้งหมดในรายงาน*/
+    background-color: #ffff ;
+    box-shadow: 10px 10px 10px #5350501a;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 10px;
+    font-weight: bolder;
+    color: #555555;
+    border: 2px solid #c3c1c1;
+    margin-top: 10px;
+    height: 300px;
+}
+
+.report-r1{   /*ข้อความคำว่าสรุปรายงานบันทึกบัญชีและ input m/y*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* font-weight: bolder; */
+}
+
+.report-r1 span{   /*ข้อความคำว่าสรุปรายงานบันทึกบัญชี*/
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.report-r1 input{   /*input m/y*/
+    border: none;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 160px;
+    height: 40px;
+    color: #ffffff;
+    background-color: #555555;
+    box-shadow: 10px 10px 10px #5350501a;
+}
+
+.exportFile-r1{ /*จัดระเบียบกล่องไฟล์แถวที่1*/
+    display: flex;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.r1{  /*กล่องไฟล์แถว1*/
+    display: flex;
+    flex-direction: column;
+    width: 340px;
+    height: 100px;
+    border: 2px solid #c3c1c1;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.r1 span { 
+    font-size: 16px;
+    font-weight: lighter;
+}
+
+.sendFile{  /*pdf/excel/text*/
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+#pdf1{  /*รายงานการคำนวณเงินเดือนสุทธิงวดปกติ*/
+    width: 90px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    color: #ffff;
+    background-color: #de3f3f;
+    font-weight: bold;
+}
+
+#excel1{   /*รายงานการคำนวณเงินเดือนสุทธิงวดปกติ*/
+    width: 90px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    color: #ffff;
+    background-color: #3cb43c;
+    font-weight: bold;
+}

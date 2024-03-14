@@ -1,0 +1,108 @@
+.card-box{  /*กล่องสีขาว*/
+    background-color: #ffffff ;
+    border: 1px solid #a9abac;
+    
+}
+
+.ct{   /*คอนเทนต์บนตาราง*/
+    display: flex;
+    justify-content: space-between;
+}
+
+.content-l {  /*คอนเทนต์บนตารางฝั่งซ้าย*/
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.content-l span{ /*ข้อความใน คอนเทนต์บนตารางฝั่งซ้าย*/
+    font-weight: bold;
+    color: #555555;
+}
+
+#sp1{  /*ข้อความ การจ่ายเงินเดือน*/
+    color: #338ac6;
+    font-size: 20px;
+}
+
+#sp2{  /*ข้อความ วันที่*/
+    font-weight: lighter;
+}
+
+.rowcontent{   /*เนื้อหาแถวที่2*/
+    display: flex;
+    gap: 50px;
+}
+
+.c2{   /*วันที่จ่าย*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.c3{   /*ช่วงวันที่*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content-r{  /*คอนเทนต์บนตารางฝั่งขวา*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-r img{  /*รูปชำระแล้ว*/
+    width: 100px;
+}
+
+table{   /*ตาราง*/
+    width: 100%;
+    margin-top: 15px;
+    text-align: center;
+    color: #555555;
+}
+
+thead{ 
+    background-color: #5cacc8;
+    color: white;
+}
+
+th,td{
+    padding: 8px;
+}
+
+tr{
+    border: 1px solid #b5b4b4;
+}
+
+.tb td:nth-child(3) {  /*ชื่อ-สกุล ให้ชิดซ้าย*/
+    text-align: left;
+}
+
+.tb td:nth-child(1) {  /*ดูสลิป ให้ตัวหนา*/
+    font-weight: bolder;
+}
+
+.backward{   /*คลาสปุ่มย้อนกลับ*/
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.backward button{   /*ปุ่มย้อนกลับ*/
+    border: none;
+    border-radius: 5px;
+    box-shadow: 10px 10px 10px #5350501a;
+    background-color: red;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.slip{  /*คำว่าดูสลิป*/
+    color: #338ac6;
+}
+
+
+
+

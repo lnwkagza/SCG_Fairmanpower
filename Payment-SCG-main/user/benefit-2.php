@@ -1,0 +1,29 @@
+<!-- ประกันอุบัติเหตุส่วนเพิ่ม -->
+<?php include('../user/include/header.php') ?>
+<link rel="stylesheet" href="styles/benefit-2.css">
+
+<body>
+    <div class="main-container">
+        <!-- แถบบนสุด -->
+        <div class="navbar">
+            <!-- รูปปุ่มย้อนกลับไปหน้าก่อนหน้า -->
+            <div>
+                <a href="#" onclick="goBack()">
+                    <img id="backIcon" src="bw.png">
+                </a>
+            </div>
+            <span>ประกันอุบัติเหตุส่วนเพิ่ม</span>
+        </div>
+
+        <div class="content">
+            <span>ประกันอุบัติเหตุส่วนเพิ่ม</span>
+
+        </div>
+
+        <?php include('../user/include/footer.php') ?>
+    </div>
+    <!-- js -->
+
+</body>
+
+</html>

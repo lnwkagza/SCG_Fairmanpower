@@ -1,0 +1,86 @@
+*{
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    font-family: 'Chakra Petch', sans-serif;
+}
+.navbar{
+    position: fixed;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    width: 100vw;
+    height: 10vh;
+    top: 0;
+    right:0;
+    background-color: rgb(255, 255, 255);
+    z-index:0;
+}
+.search-container{
+    position: absolute;
+    margin-right: 30vw;
+    width: 20vw;
+    
+}
+.searcs{
+    background-color: #F9FAFC;
+    display: flex;
+    justify-content: left;
+    border-radius: 15px;
+    width:30vh;
+    height: 4vh;
+    padding: 10px;
+    box-shadow: 0 2px 3px 1px rgb(204, 204, 204);
+
+}
+.searcs .searcsbar{
+    border: none;
+    margin-right: 5px;
+    font-size: 1.5vw;
+    color: #328DC8;
+    background-color: transparent;
+}
+.searcs input{
+    border: none;
+    width: 20vw;
+}
+
+.Notifications{
+    border: none;
+    font-size: 2vw;
+    color: #f8b53a;
+    background-color: transparent;
+}
+
+.profile{
+    display: flex;
+    justify-content: right;
+    width: 20vw;
+}
+.imageuser {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 3%;
+}
+.imageuser .imageprofile{
+    border-radius: 10px;
+}
+.data{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 2vw;
+    font-family: 'Prompt', sans-serif;
+}
+.nameprofile{
+    margin-top: 1vh;
+    font-size: 1.5vmax;
+    color: #02134B;
+    text-shadow: 2px 1px 5px #0000004a;
+}
+
+.role{
+    font-size: 1vmax;
+    color: gray;
+}
