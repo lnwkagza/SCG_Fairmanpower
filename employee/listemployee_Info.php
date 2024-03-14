@@ -158,7 +158,7 @@
                                         <div class="form-group">
                                             <label>เลขประจำตัวผู้เสียภาษี</label>
                                             <div class="flex">
-                                                <input name="spourse_tax_id" type="number" placeholder="XXXXXXXXXXXXX" class="form-control wizard-required" value="<?php echo $e_info["spourse_tax_id"]; ?>" maxlength="8" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" autocomplete="off">
+                                                <input name="spourse_tax_id" type="number" placeholder="XXXXXXXXXXXXX" class="form-control wizard-required" value="<?php echo $e_info["spourse_tax_id"]; ?>" maxlength="13" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" autocomplete="off">
                                             </div>
                                         </div>
                                     </div>
