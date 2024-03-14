@@ -113,11 +113,11 @@ if (
 	section.name_thai as section, department.name_thai as department 
 	
 	FROM employee
-	INNER JOIN cost_center ON cost_center.cost_center_id = employee.cost_center_organization_id
-	INNER JOIN section ON section.section_id = cost_center.section_id
-	INNER JOIN department ON department.department_id = section.department_id
-	INNER JOIN permission ON permission.permission_id = employee.permission_id
-	INNER JOIN contract_type ON contract_type.contract_type_id = employee.contract_type_id WHERE employee.card_id = ?";
+	LEFT JOIN cost_center ON cost_center.cost_center_id = employee.cost_center_organization_id
+	LEFT JOIN section ON section.section_id = cost_center.section_id
+	LEFT JOIN department ON department.department_id = section.department_id
+	LEFT JOIN permission ON permission.permission_id = employee.permission_id
+	LEFT JOIN contract_type ON contract_type.contract_type_id = employee.contract_type_id WHERE employee.card_id = ?";
 
 	$params = array($card_id);
 	$stmt = sqlsrv_query($conn, $sql2, $params);

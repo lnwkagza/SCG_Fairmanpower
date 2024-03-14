@@ -42,13 +42,13 @@ if (
 		pm.permission_id as pm_id,                                    									
 		pm.name as pm_name                                                                       
 		FROM manager m                                                                        
-		INNER JOIN employee e ON m.card_id = e.card_id                                                                       
-		INNER JOIN employee em ON m.manager_card_id = em.card_id
-		INNER JOIN cost_center ON cost_center.cost_center_id = em.cost_center_organization_id
-		INNER JOIN section ON section.section_id = cost_center.section_id
-		INNER JOIN department ON department.department_id = section.department_id
-		INNER JOIN permission p ON p.permission_id = e.permission_id
-		INNER JOIN permission pm ON pm.permission_id = em.permission_id
+		LEFT JOIN employee e ON m.card_id = e.card_id                                                                       
+		LEFT JOIN employee em ON m.manager_card_id = em.card_id
+		LEFT JOIN cost_center ON cost_center.cost_center_id = em.cost_center_organization_id
+		LEFT JOIN section ON section.section_id = cost_center.section_id
+		LEFT JOIN department ON department.department_id = section.department_id
+		LEFT JOIN permission p ON p.permission_id = e.permission_id
+		LEFT JOIN permission pm ON pm.permission_id = em.permission_id
 		WHERE m.card_id = ? ";
 	$mparams = array($card_id);
 	$mstmt = sqlsrv_query($conn, $msql, $mparams);
@@ -77,13 +77,13 @@ if (
 			pm.permission_id as pm_id,                                    									
 			pm.name as pm_name                                                                       
 			FROM report_to m                                                                        
-			INNER JOIN employee e ON m.card_id = e.card_id                                                                       
-			INNER JOIN employee em ON m.report_to_card_id = em.card_id
-			INNER JOIN cost_center ON cost_center.cost_center_id = em.cost_center_organization_id
-			INNER JOIN section ON section.section_id = cost_center.section_id
-			INNER JOIN department ON department.department_id = section.department_id
-			INNER JOIN permission p ON p.permission_id = e.permission_id
-			INNER JOIN permission pm ON pm.permission_id = em.permission_id
+			LEFT JOIN employee e ON m.card_id = e.card_id                                                                       
+			LEFT JOIN employee em ON m.report_to_card_id = em.card_id
+			LEFT JOIN cost_center ON cost_center.cost_center_id = em.cost_center_organization_id
+			LEFT JOIN section ON section.section_id = cost_center.section_id
+			LEFT JOIN department ON department.department_id = section.department_id
+			LEFT JOIN permission p ON p.permission_id = e.permission_id
+			LEFT JOIN permission pm ON pm.permission_id = em.permission_id
 			WHERE m.card_id = ? ";
 	$r_params = array($card_id);
 	$r_stmt = sqlsrv_query($conn, $r_sql, $r_params);

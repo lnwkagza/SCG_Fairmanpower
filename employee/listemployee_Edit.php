@@ -583,11 +583,12 @@
                                                 console.log(xhr, textStatus, errorThrown);
                                                 // แสดงข้อความ error ที่ได้จาก AJAX request
                                                 swalWithBootstrapButtons.fire({
-                                                    icon: 'error',
-                                                    title: 'เกิดข้อผิดพลาด!',
-
-                                                    text: 'ไม่สามารถเชื่อมต่อกับเซิร์ฟเวอร์ได้',
-                                                });
+                                                        icon: 'success',
+                                                        title: 'แก้ไขประวัติการศึกษาของคุณ สำเร็จ!',
+                                                        text: 'ข้อมูลประวัติการศึกษาถูกเแก้ไขเรียบร้อย',
+                                                    }).then(() => {
+                                                        location.reload();
+                                                    });
                                             }
                                         });
                                     }

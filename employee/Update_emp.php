@@ -1,5 +1,5 @@
 <?php
-require_once('C:\xampp\htdocs\SCG_Fairmanpower\config\connection.php');
+require_once('..\config\connection.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
