@@ -19,11 +19,9 @@
                                     <a class="btn-back" href='listemployee.php'>
                                         <i class="fa-solid fa-circle-left fa-xl"></i> |
                                     </a>
+                                    <li class="breadcrumb-item active" aria-current="page"><i class="fa-solid fa-user-plus"></i> เพิ่มพนักงานใหม่</li>
                                     <li class="breadcrumb-item"><a href="listemployee.php"><i class="fa-solid fa-people-group"></i> พนักงานทั้งหมด</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page"><i class="fa-solid fa-user-plus"></i> ข้อมูลพนักงานเบื้องต้น</li>
-
                                     <li class="breadcrumb-item"><a href="listemployee_Manager.php"><i class="fa-solid fa-user-tie"></i> ผู้จัดการ - Report-to</a></li>
-
                                     <a class="btn-back" href='listemployee_Manager.php'>
                                         | <i class="fa-solid fa-circle-right fa-xl"></i>
                                     </a>
@@ -501,6 +499,50 @@
                                         <div class="form-group">
                                             <label>ประสบการณ์ทำงานภายนอก (จำนวนเดือน)</label>
                                             <input name="outside_equivalent_month" placeholder="ระบุจำนวนเดือนการทำงาน" type="number" class="form-control" autocomplete="off" min="0" max="12" oninput="validateInput_m(this)">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-12">
+                                        <div class="form-group">
+                                            <label>ตำเเหน่ง</label>
+                                            <select name="position" class="form-control selectpicker" data-live-search="true" required="true" autocomplete="off" id="exampleSelect1">
+                                                <option value="" disabled selected>ระบุตำเเหน่ง</option>
+
+                                                <?php
+                                                $sqlposition = "SELECT * FROM position";
+
+                                                $resultposition = sqlsrv_query($conn, $sqlposition);
+
+                                                if ($resultposition === false) {
+                                                    die(print_r(sqlsrv_errors(), true));
+                                                }
+                                                if ($resultposition) {
+                                                    while ($position = sqlsrv_fetch_array($resultposition, SQLSRV_FETCH_ASSOC)) {
+                                                        echo "<option value='"  . $position['position_id'] . "' $selected>" . $position['position_id'] . ' | ' . $position['name_thai'] ."</option>";
+                                                    }
+                                                }
+                                                ?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-12">
+                                        <div class="form-group">
+                                            <label>ระดับการทำงาน</label>
+                                            <select name="pl" class="form-control selectpicker" data-live-search="true" required="true" autocomplete="off" id="exampleSelect1">
+                                                <option value="" disabled selected>ระบุระดับการทำงาน</option>
+
+                                                <?php
+                                                $sqlpl = "SELECT * FROM pl";
+                                                $resultpl = sqlsrv_query($conn, $sqlpl);
+                                                if ($resultpl === false) {
+                                                    die(print_r(sqlsrv_errors(), true));
+                                                }
+                                                if ($resultpl) {
+                                                    while ($pl = sqlsrv_fetch_array($resultpl, SQLSRV_FETCH_ASSOC)) {
+                                                        echo "<option value='"  . $pl['pl_id'] . "' $selected>" . $pl['jl_name_eng'] . ' | ' . $pl['pl_name_eng'] ."</option>";
+                                                    }
+                                                }
+                                                ?>
+                                            </select>
                                         </div>
                                     </div>
 

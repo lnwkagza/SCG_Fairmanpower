@@ -237,14 +237,14 @@
 								section.name_thai as section, department.name_thai as department, company.name_thai as com, location.name as lo, division.name_thai as di
 								
 								FROM employee
-								INNER JOIN  cost_center ON cost_center.cost_center_id = employee.cost_center_organization_id
-								INNER JOIN section ON section.section_id = cost_center.section_id
-								INNER JOIN department ON department.department_id = section.department_id
-								INNER JOIN division ON division.division_id = department.division_id
-								INNER JOIN location ON location.location_id = division.location_id
-								INNER JOIN company ON company.company_id = location.company_id
-								INNER JOIN permission ON permission.permission_id = employee.permission_id
-								INNER JOIN contract_type ON contract_type.contract_type_id = employee.contract_type_id";
+								LEFT JOIN  cost_center ON cost_center.cost_center_id = employee.cost_center_organization_id
+								LEFT JOIN section ON section.section_id = cost_center.section_id
+								LEFT JOIN department ON department.department_id = section.department_id
+								LEFT JOIN division ON division.division_id = department.division_id
+								LEFT JOIN location ON location.location_id = division.location_id
+								LEFT JOIN company ON company.company_id = location.company_id
+								LEFT JOIN permission ON permission.permission_id = employee.permission_id
+								LEFT JOIN contract_type ON contract_type.contract_type_id = employee.contract_type_id";
 
 							$params = array();
 							$totalRows = 0;
