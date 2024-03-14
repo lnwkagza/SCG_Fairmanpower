@@ -101,8 +101,8 @@
                                     </div>
                                     <div class="col-md-2 col-sm-12">
                                         <div class="form-group">
-                                            <label>วันเกิดพนักงาน</label>
-                                            <input name="birth_date" type="date" class="form-control" autocomplete="off">
+                                            <label>วันเกิดพนักงาน<h5 class="text-danger"> * </h5></label>
+                                            <input name="birth_date" type="date" class="form-control" required="true" autocomplete="off">
                                         </div>
                                     </div>
                                 </div>
