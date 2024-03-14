@@ -1,3 +1,4 @@
+
 <?php
 require_once('C:\xampp\htdocs\SCG_Fairmanpower\config\connection.php');
 
@@ -44,9 +45,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $work_per_day = isset($_POST['work_per_day']) ? $_POST['work_per_day'] : null;
     $outside_equivalent_year = isset($_POST['outside_equivalent_year']) ? $_POST['outside_equivalent_year'] : null;
     $outside_equivalent_month = isset($_POST['outside_equivalent_month']) ? $_POST['outside_equivalent_month'] : null;
-    $position = isset($_POST['position']) ? $_POST['position'] : null;
-    $pl = isset($_POST['pl']) ? $_POST['pl'] : null;
-    
+    $position_id = isset($_POST['position']) ? $_POST['position'] : null;
+    $pl_id = isset($_POST['pl']) ? $_POST['pl'] : null;
+    $currentDateTime = date("Y-m-d");
+
     // ค่าไม่ว่าง ทำการ insert ข้อมูล
     $sql = "INSERT INTO employee
         (card_id,
@@ -144,22 +146,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $sql1 = "INSERT INTO position_info
         (card_id,
-        posiyion_id)
-        VALUES (?, ?)";
+        position_id,start_date)
+        VALUES (?, ?, ?)";
 
     $stmt1 = sqlsrv_prepare($conn, $sql1, array(
         &$card_id,
-        &$position));
+        &$position_id,
+        &$currentDateTime));
     $result1 = sqlsrv_execute($stmt1);
 
     $sql2 = "INSERT INTO pl_info
         (card_id,
-        pl_id)
-        VALUES (?, ?)";
+        pl_id,start_date)
+        VALUES (?, ?, ?)";
 
     $stmt2 = sqlsrv_prepare($conn, $sql2, array(
         &$card_id,
-        &$position));
+        &$pl_id,
+        &$currentDateTime));
     $result2 = sqlsrv_execute($stmt2);
 
     // ตรวจสอบสถานะการ execute

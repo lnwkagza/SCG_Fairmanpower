@@ -318,12 +318,12 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-3 col-sm-12">
+                                    <!-- <div class="col-md-3 col-sm-12">
                                         <div class="form-group">
                                             <label>ผู้จัดการ</label>
                                             <input type="text" class="form-control" readonly>
                                         </div>
-                                    </div>
+                                    </div> -->
 
                                     <div class="col-md-3 col-sm-12">
                                         <div class="form-group">
@@ -364,12 +364,12 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-3 col-sm-12">
+                                    <!-- <div class="col-md-3 col-sm-12">
                                         <div class="form-group">
                                             <label>Report - to</label>
                                             <input type="text" class="form-control" autocomplete="off" readonly>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
 
                                 <div class="row">
