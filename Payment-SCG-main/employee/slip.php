@@ -38,8 +38,6 @@
                     </div>
                 </div>
                 <?php
-                echo mpdf\Mpdf::VERSION;
-
 
                 require_once __DIR__ . '/vendor/autoload.php';
 
