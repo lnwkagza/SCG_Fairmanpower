@@ -13,7 +13,8 @@
 
     <?php
     $currentDateTime = date('Y-m-d'); // วันที่และเวลาปัจจุบันในรูปแบบ Y-m-d H:i:s
-    echo $currentDateTime;
+    $month = $_GET['month'];
+    $year = $_GET['year'];
     ?>
 
 <div class="main-container">
@@ -59,7 +60,7 @@
                 ?>
                 <div class="row">
                     <div class="col-lg-12 col-md-6 col-sm-12 mb-30">
-                        <div class="card-box pd-30 pt-20" style="height: 150mm; ">
+                        <div class="card-box pd-30 pt-20" >
                             <div class="row">
                                 <span style="font-size: 25px; font-weight: bold;">บริษัท แฟร์ แมนพาวเวอร์ จำกัด (มหาชน)</span>
                                 <div style="display: flex; flex-direction: column; text-align: end; margin-bottom: 5px; margin-left: auto;">
@@ -69,12 +70,13 @@
                             </div>
                             <div class="info" style="display: flex; justify-content: space-between;">
                                 <div class="info-l" style="display: flex; gap: 15px;">
-                                    <div class="section" style="display: flex; flex-direction: column; font-size: 14px;">
-                                        <span>ชื่อ : นาย ทดสอบ ระบบ (Tax ID : 21518949856)<br></span>
-                                        <span>รหัสพนักงาน : BL10221<br></span>
-                                        <span>หน่วยงาน : Digital Transformation<br></span>
-                                        <span>ตำแหน่ง : หัวหน้า<br></span>
-                                        <span>วันที่เริ่มงาน : 18 January 2023</span>
+                                <div class="section" style="display: flex; flex-direction: column; font-size: 14px;">
+                                        <span style="font-size: 14px;">ชื่อ : <?php echo $prefix . ' ' . $fname . ' ' . $lname ?> <br></span>
+                                        <span style="font-size: 14px;">รหัสประจำตัวผู้เสียภาษี : <?php echo $row['tax_id'] ?> <br></span>
+                                        <span style="font-size: 14px;">รหัสพนักงาน : <?php echo $row['scg_employee_id'] ?> <br></span>
+                                        <span style="font-size: 14px;">หน่วยงาน : <?php echo $row['section'] ?> <br></span>
+                                        <span style="font-size: 14px;">ตำแหน่ง : <?php echo $row['permission'] ?> <br></span>
+                                        <span style="font-size: 14px;">วันที่เริ่มงาน : <?php echo $row['scg_hiring_date']->format('D, d M Y') ?></span>
                                     </div>
 
                                 </div>
@@ -96,12 +98,12 @@
                                                 <?php
                                                 // เตรียมคำสั่ง SQL
                                                 $sql = "SELECT * FROM log_salary
-                                                            WHERE card_id = '1234'
-                                                            AND MONTH(datetime) = MONTH(GETDATE())
-                                                            AND YEAR(datetime) = YEAR(GETDATE());
+                                                            WHERE card_id = ?
+                                                            AND MONTH(datetime) = $month
+                                                            AND YEAR(datetime) = $year;
                                                     ";
                                                 // เพิ่มเงื่อนไขค้นหา
-                                                $params = array();
+                                                $params = array($card_id);
 
                                                 // ดึงข้อมูลจากฐานข้อมูล
                                                 $stmt = sqlsrv_query($conn, $sql, $params);
@@ -122,12 +124,12 @@
                                                 <?php
                                                 // เตรียมคำสั่ง SQL
                                                 $sql = "SELECT * FROM log_salary
-                                                            WHERE card_id = '1234'
-                                                            AND MONTH(datetime) = MONTH(GETDATE())
-                                                            AND YEAR(datetime) = YEAR(GETDATE());
+                                                            WHERE card_id = ?
+                                                            AND MONTH(datetime) = $month
+                                                            AND YEAR(datetime) = $year;
                                                     ";
                                                 // เพิ่มเงื่อนไขค้นหา
-                                                $params = array();
+                                                $params = array($card_id);
 
                                                 // ดึงข้อมูลจากฐานข้อมูล
                                                 $stmt = sqlsrv_query($conn, $sql, $params);
@@ -157,12 +159,12 @@
                                                 <?php
                                                 // เตรียมคำสั่ง SQL
                                                 $sql = "SELECT * FROM log_sum_salary
-                                                            WHERE log_sum_salary.card_id = '1234'
-                                                            AND MONTH(date) = MONTH(GETDATE())
-                                                            AND YEAR(date) = YEAR(GETDATE());
+                                                            WHERE log_sum_salary.card_id = ?
+                                                            AND MONTH(date) = $month
+                                                            AND YEAR(date) = $year;
                                                     ";
                                                 // เพิ่มเงื่อนไขค้นหา
-                                                $params = array();
+                                                $params = array($card_id);
 
                                                 // ดึงข้อมูลจากฐานข้อมูล
                                                 $stmt = sqlsrv_query($conn, $sql, $params);
@@ -183,12 +185,12 @@
                                                 <?php
                                                 // เตรียมคำสั่ง SQL
                                                 $sql = "SELECT * FROM log_sum_salary
-                                                            WHERE log_sum_salary.card_id = '1234'
-                                                            AND MONTH(date) = MONTH(GETDATE())
-                                                            AND YEAR(date) = YEAR(GETDATE());
+                                                            WHERE log_sum_salary.card_id = ?
+                                                            AND MONTH(date) = $month
+                                                            AND YEAR(date) = $year;
                                                     ";
                                                 // เพิ่มเงื่อนไขค้นหา
-                                                $params = array();
+                                                $params = array($card_id);
 
                                                 // ดึงข้อมูลจากฐานข้อมูล
                                                 $stmt = sqlsrv_query($conn, $sql, $params);

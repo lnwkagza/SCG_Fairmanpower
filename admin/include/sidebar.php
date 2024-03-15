@@ -13,9 +13,10 @@
                         <span class="mtext"><i class="fa-solid fa-gauge-high fa-lg"></i> Dashboard</span>
                     </a>
                 </li>
-                <li>
+                <li class="dropdown">
                     <a href="org1_Business_unit.php" class="dropdown-toggle no-arrow">
-                        <span class="mtext"><i class="fa-solid fa-sitemap fa-lg"></i> โครงสร้างองค์กร</span>
+                        <i class="fa-solid fa-sitemap fa-lg"></i>
+                        <span class="mtext">โครงสร้างองค์กร</span>
                     </a>
                 </li>
                 <li class="dropdown">
@@ -28,6 +29,8 @@
                         <li><a href="listemployee_Manager.php" class="dropdown-toggle no-arrow"><i class="fa-solid fa-user-tie"></i> ผู้จัดการ | report-to</a></li>
                     </ul>
                 </li>
+
+
                 <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle">
                         <i class="fa-solid fa-circle-dollar-to-slot fa-lg"></i><span class="mtext">&nbsp;&nbsp;เงินเดือน</span>
@@ -35,32 +38,20 @@
                     <ul class="submenu">
                         <li>
                             <a href="../Payment-SCG-main/admin/employee_payment.php" class="dropdown-toggle no-arrow">
-                                <span class="mtext"><i class="fa-solid fa-users"></i>&nbsp;&nbsp;เงินเดือนพนักงาน</span>
+                                <span class="mtext"><i class="fa-solid fa-users"></i>&nbsp;&nbsp;คำนวณเงินเดือน</span>
                             </a>
                         </li>
                         <li>
                             <a href="../Payment-SCG-main/admin/income.php" href="deduct.php" class="dropdown-toggle no-arrow">
-                                <span class="mtext"><i class="fa-solid fa-download"></i></i>&nbsp;&nbsp;รายการเงินรับ</span>
+                                <span class="mtext"><i class="fa-solid fa-gear fa-xl"></i>&nbsp;&nbsp;ตั้งค่า</span>
                             </a>
                         </li>
-                        <li>
-                            <a href="../Payment-SCG-main/admin/deduct.php" class="dropdown-toggle no-arrow">
-                                <span class="mtext"><i class="fa-solid fa-upload"></i></i>&nbsp;&nbsp;รายการเงินจ่าย</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="../Payment-SCG-main/admin/calculator_payment2.php" class="dropdown-toggle no-arrow">
-                                <span class="mtext"><i class="fa-solid fa-calculator"></i></i>&nbsp;&nbsp;คำนวณเงินเดือน</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="../Payment-SCG-main/admin/history_payment.php" class="dropdown-toggle no-arrow">
-                                <span class="mtext"><i class="fa-solid fa-clock-rotate-left"></i>&nbsp;&nbsp;ประวัติการคำนวณ</span>
-                            </a>
-                        </li>
+                        
 
                     </ul>
                 </li>
+
+                
                 <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle">
                         <i class="fa-solid fa-chalkboard fa-lg"></i><span class="mtext">&nbsp;&nbsp;Training</span>

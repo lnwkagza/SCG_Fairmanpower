@@ -17,7 +17,7 @@
     $currentDateTime = date('Y-m-d'); // วันที่และเวลาปัจจุบันในรูปแบบ Y-m-d H:i:s
     echo $currentDateTime;
     ?>
-    <script>
+   <script>
         function exportToExcel() {
             // รับตารางทั้งหมด
             var table = document.getElementById("myTable");
@@ -89,7 +89,7 @@
                                 <a style="color:#338ac6;">สรุปผลการคำนวณ <i class="fa-regular fa-file"></i></a>
                             </div>
                             <div class="row pt-2 justify-content-end pr-3">
-                                <button type="submit" id="closeSetBtn" onclick="window.location.href='insert_result1.php'" class="ml-auto">ทำการปิดงวด</button>
+                                <button type="submit" id="closeSetBtn" onclick="window.location.href='insert_result2.php'" class="ml-auto">ทำการปิดงวด</button>
                             </div>
                             <div class="row pt-2">
                                 <div class="col-lg-12 col-md-8 col-sm-8">
@@ -191,26 +191,26 @@
                                                         echo "<td>" . $row["position"] . "</td>";
                                                         echo "<td>" . "จำนวนกี่วัน" . "</td>";
                                                         echo "<td>" . "จำนวนกี่วัน"  . "</td>";
-                                                        echo "<td class='text-center'>" . $row["salary_amount"] . "</td>";
+                                                        echo "<td class='text-center'>" . number_format($row["salary_amount"],2) . "</td>";
                                                         if ($row["itamount"] !== NULL) {
                                                             echo "<td class='text-center'>" . $row["income_type"] . "</td>";
                                                         } else {
-                                                            echo "<td class='text-center'>" . "ไม่มีรายการ" . "</td>";
+                                                            echo "<td class='text-center'></td>";
                                                         }
                                                         if ($row["itamount"] !== NULL) {
-                                                            echo "<td class='text-center'>" . $row["itamount"] . "</td>";
+                                                            echo "<td class='text-center'>" . number_format($row["itamount"], 2) . "</td>";
                                                         } else {
-                                                            echo "<td class='text-center'>" . "0" . "</td>";
+                                                            echo "<td class='text-center'></td>";
                                                         }
                                                         if ($row["dtamount"] !== NULL) {
                                                             echo "<td class='text-center'>" . $row["deduct_type"] . "</td>";
                                                         } else {
-                                                            echo "<td class='text-center'>" . "ไม่มีรายการ" . "</td>";
+                                                            echo "<td class='text-center'></td>";
                                                         }
                                                         if ($row["dtamount"] !== NULL) {
-                                                            echo "<td class='text-center'>" . $row["dtamount"] . "</td>";
+                                                            echo "<td class='text-center'>" .  number_format($row["dtamount"],2) . "</td>";
                                                         } else {
-                                                            echo "<td class='text-center'>" . "0" . "</td>";
+                                                            echo "<td class='text-center'></td>";
                                                         }
                                                         echo '</tr></td>';
                                                     }
@@ -302,19 +302,19 @@
                                                         echo "<td>" . $row["company"] . "</td>";
                                                         echo "<td>" . $row["department"] . "</td>";
                                                         echo "<td>" . $row["position"] . "</td>";
-                                                        echo "<td class='text-center'>" . $row["salary_per_month"] . "</td>";
+                                                        echo "<td class='text-center'>" .  number_format($row["salary_per_month"],2) . "</td>";
                                                         if ($row["total_income"] !== NULL) {
-                                                            echo "<td class='text-center'>" . $row["total_income"] . "</td>";
+                                                            echo "<td class='text-center'>" .  number_format($row["total_income"],2) . "</td>";
                                                         } else {
                                                             echo "<td class='text-center'>" . 0 . "</td>";
                                                         }
                                                         if ($row["total_deduction"] !== NULL) {
-                                                            echo "<td class='text-center'>" . $row["total_deduction"] . "</td>";
+                                                            echo "<td class='text-center'>" .  number_format($row["total_deduction"],2) . "</td>";
                                                         } else {
                                                             echo "<td class='text-center'>" . 0 . "</td>";
                                                         }
                                                         $sum_payment = $row["salary_per_month"] + $row["total_income"] - $row["total_deduction"];
-                                                        echo "<td class='text-center'>$sum_payment </td>";
+                                                        echo "<td class='text-center'>" . number_format($sum_payment,2)."</td>";
                                                         echo '</tr></td>';
                                                     }
                                                     ?>

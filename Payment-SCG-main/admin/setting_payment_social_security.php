@@ -49,22 +49,24 @@
                                 </div>
                             </div>
                             <div class="pb-10">
-                                <table class="data-table2 table stripe hover nowrap">
-                                    <thead>
-                                        <tr>
-                                            <th class="datatable-nosort col-1" style="text-align: center;">อัตราประกันสังคม <i class="fa-solid fa-sort"></i></th>
-                                            <th class="datatable-nosort col-9">
-                                                Company / Division / Department / Section / Cost Center / ประเภทพนักงาน / ระดับการทำงาน / ตำแหน่ง
-                                                <i class="fa-solid fa-sort"></i>
-                                            </th>
-                                            <th class="datatable-nosort " style='text-align: right; padding-right: 50px;'>การจัดการ</th>
-                                        </tr>
-                                    </thead>
+                            <div class="table-responsive mt-2">
+                                    <table class="data-table2 table stripe hover nowrap">
+                                        <thead>
+                                            <tr>
+                                                <th style="text-align: center;">อัตราประกันสังคม</th>
+                                                <th style="text-align: center;">รหัสพนักงาน </th>
+                                                <th style="text-align: center;">ชื่อ-สกุล </th>
+                                                <th style="text-align: cemter;">การจัดการ</th>
+                                                <th>
+                                                    Company / Division / Department / Section / Cost Center / ประเภทพนักงาน / ระดับการทำงาน / ตำแหน่ง
+                                                </th>
+                                            </tr>
+                                        </thead>
                                     <tbody>
                                         <!-- SELECT ค่า cicle -->
                                         <?php
                                         // เตรียมคำสั่ง SQL
-                                        $sql = "SELECT social_security.social_security_id as social_security_id,social_security, employee.card_id as card_id, company.name_thai as company,division.name_thai as division,department.name_thai as department,section.name_thai as section,cost_center.cost_center_code as cost_center,contract_type.name_thai as contract_type,pl.pl_name_thai as pl,position.name_thai as position , prefix_thai, firstname_thai, lastname_thai FROM social_security  
+                                        $sql = "SELECT social_security.social_security_id as social_security_id,scg_employee_id,social_security, employee.card_id as card_id, company.name_thai as company,division.name_thai as division,department.name_thai as department,section.name_thai as section,cost_center.cost_center_code as cost_center,contract_type.name_thai as contract_type,pl.pl_name_thai as pl,position.name_thai as position , prefix_thai, firstname_thai, lastname_thai FROM social_security  
                                         INNER JOIN employee ON employee.card_id = social_security.card_id  
                                         LEFT JOIN cost_center ON cost_center.cost_center_id  = employee.cost_center_organization_id
                                         LEFT JOIN section ON section.section_id = cost_center.section_id 
@@ -88,7 +90,8 @@
                                         while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
                                             echo "<tr>";
                                             echo "<td  style='text-align: center;''>" . $row["social_security"] . '  %' . "</td>";
-                                            echo "<td class='col-md-8'>" . $row["company"] . ' / ' . $row["division"] . ' / ' . $row["department"] . ' / ' . $row["section"] . ' / ' . $row["cost_center"] . ' / ' . $row["contract_type"] . ' / ' . $row["pl"] . ' / ' . $row["position"] . ' / ' . $row["prefix_thai"] . $row["firstname_thai"] . '  ' . $row["lastname_thai"] . "</td>";
+                                            echo "<td >" . $row["scg_employee_id"] . "</td>";
+                                            echo "<td>" . $row["prefix_thai"] . $row["firstname_thai"] . '  ' . $row["lastname_thai"] . "</td>";
                                             echo "<td><div class='flex'  style='justify-content: right; padding-right: 35px;'>",
                                             '<button type="button" name="delete_social_security" class="delete-btn-pay" onclick="confirmDeleteSocial_security(\'' . $row['social_security_id'] . '\');"><i class="fa-solid fa-trash-can"></i></button> &nbsp;';
                                             echo "<button type='button' class='edit-btn-pay' onclick='openEdit_Social_security_Setting_Modal
@@ -111,11 +114,14 @@
                                             );'>";
                                             echo "<div ><i class='fa-solid fa-pencil'></i>";
                                             echo "</button>";
+                                            echo "<td>" . $row["company"] . ' / ' . $row["division"] . ' / ' . $row["department"] . ' / ' . $row["section"] . ' / ' . $row["cost_center"] . ' / ' . $row["contract_type"] . ' / ' . $row["pl"] . ' / ' . $row["position"] . "</td>";
+                                            echo "</tr>";
                                         }
                                         // ปิดการเชื่อมต่อ
                                         ?>
                                     </tbody>
                                 </table>
+                            </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-5 col-sm-5">

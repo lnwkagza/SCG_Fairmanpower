@@ -12,6 +12,64 @@
                         <span class="mtext"><i class="fa-solid fa-house fa-lg"></i> หน้าหลัก</span>
                     </a>
                 </li>
+                <li>
+                    <a class="dropdown-toggle no-arrow" href="../time-attendance/home/homepage-employee.php">
+                        <i class="fa-solid fa-list-check"></i>
+                        <span class="mtext">การเข้า-ออกงาน</span>
+                    </a>
+                </li>
+
+                <li class="dropdown">
+                    <a href="javascript:;" class="dropdown-toggle">
+                        <i class="fa-solid fa-sitemap fa-lg"></i>
+                        <span class="mtext">กะการทำงาน</span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="../time-attendance/shift/shift-employee-test.php">ตารางกะการทำงาน</a></li>
+                        <li><a href="../time-attendance/shift/shift-request-employee-test.php">รายการขออนุมัติ</a></li>
+                        <li><a href="../time-attendance/shift/shift-progress-step1-employee.php">จัดการทีม</a></li>
+                        <li><a href="../time-attendance/shift/shift-progress-step2-employee.php">แก้ไขรูปแบบการทำงาน</a></li>
+                        <li><a href="../time-attendance/shift/shift-progress-step3-employee.php">ล็อคเหลี่ยมการทำงาน</a></li>
+                        <li><a href="../time-attendance/shift/shift-progress-step4-employee.php">สลับกะการทำงาน</a></li>
+                        <li><a href="../time-attendance/shift/shift-progress-step5-employee.php">เปลี่ยนกะการทำงาน</a></li>
+                        <li><a href="../time-attendance/shift/shift-progress-step6-employee.php">เพิ่มกะการทำงาน</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="javascript:;" class="dropdown-toggle">
+                        <i class="fa-solid fa-person-walking-luggage"></i>
+                        <span class="mtext">การลา</span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="../time-attendance/leave/leave-rights-employee.php"><i class="fa-solid fa-people-group"></i>
+                                สิทธิวันลาคงเหลือ</a>
+                        </li>
+                        <li><a href="../time-attendance/leave/leave-request-employee.php"><i class="fa-solid fa-user-plus"></i>
+                                ทำรายการลา</a></li>
+                        <li><a href="../time-attendance/leave/leave-history-employee.php"><i class="fa-solid fa-user-tie"></i> ประวัติการลา</a>
+                        </li>
+                        <li><a href="../time-attendance/leave/leave-team-employee.php"><i class="fa-solid fa-people-arrows"></i>
+                                ปฏิทินการลาทีม</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="javascript:;" class="dropdown-toggle">
+                        <i class="fa-regular fa-calendar-check"></i>
+                        <span class="mtext">วันหยุด</span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="../time-attendance/dayoff/day-off-employee.php">ตารางวันหยุดทีม</a></li>
+                        <li><a href="../time-attendance/dayoff/day-off-change-history-employee.php">ประวัติการขอเปลี่ยนวันหยุด</a></li>
+                        <li><a href="../time-attendance/dayoff/day-off-change-employee.php">ขอเปลี่ยนรูปแบบวันหยุดและการทำงาน</a></li>
+                        <li><a href="../time-attendance/dayoff/day-off-tradition-employee.php">วันหยุดตามประเพณี</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="../time-attendance/ot/ot-employee.php" class="dropdown-toggle no-arrow">
+                        <span class="mtext"><i class="fa-solid fa-clipboard-check fa-xl"></i> OT</span>
+                    </a>
+                </li>
                 <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle">
                     <i class="fa-solid fa-circle-dollar-to-slot"></i><span class="mtext">&nbsp;&nbsp;เงินเดือน</span>

@@ -1,4 +1,4 @@
-<?php include('../employee/include/header.php') ?>
+<?php include('../admin/include/header.php') ?>
 
 
 <style>
@@ -29,8 +29,8 @@
 
 <body>
 
-    <?php include('../employee/include/navbar.php') ?>
-    <?php include('../employee/include/sidebar.php') ?>
+    <?php include('../admin/include/navbar.php') ?>
+    <?php include('../admin/include/sidebar.php') ?>
     <?php include('../admin/include/scripts.php') ?>
 
     <div class="main-container">

@@ -49,22 +49,24 @@
                                 </div>
                             </div>
                             <div class="pb-10">
-                                <table class="data-table2 table stripe hover nowrap">
-                                    <thead>
-                                        <tr>
-                                            <th class="datatable-nosort col-1" style="text-align: center;">งวดการจ่าย <i class="fa-solid fa-sort"></i></th>
-                                            <th class="datatable-nosort col-9">
-                                                Company / Division / Department / Section / Cost Center / ประเภทพนักงาน / ระดับการทำงาน / ตำแหน่ง
-                                                <i class="fa-solid fa-sort"></i>
-                                            </th>
-                                            <th class="datatable-nosort " style='text-align: right; padding-right: 50px;'>การจัดการ</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <!-- SELECT ค่า cicle -->
-                                        <?php
-                                        // เตรียมคำสั่ง SQL
-                                        $sql = "SELECT split_id,split_set.split as split, employee.card_id as card_id, company.name_thai as company,division.name_thai as division,department.name_thai as department,section.name_thai as section,cost_center.cost_center_code as cost_center,contract_type.name_thai as contract_type,pl.pl_name_thai as pl,position.name_thai as position , prefix_thai, firstname_thai, lastname_thai FROM split  
+                                <div class="table-responsive mt-2">
+                                    <table class="data-table2 table stripe hover nowrap">
+                                        <thead>
+                                            <tr>
+                                                <th style="text-align: center;">งวดการจ่าย</th>
+                                                <th style="text-align: center;">รหัสพนักงาน </th>
+                                                <th style="text-align: center;">ชื่อ-สกุล </th>
+                                                <th style="text-align: cemter;">การจัดการ</th>
+                                                <th>
+                                                    Company / Division / Department / Section / Cost Center / ประเภทพนักงาน / ระดับการทำงาน / ตำแหน่ง
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- SELECT ค่า cicle -->
+                                            <?php
+                                            // เตรียมคำสั่ง SQL
+                                            $sql = "SELECT split_id,split_set.split as split,scg_employee_id, employee.card_id as card_id, company.name_thai as company,division.name_thai as division,department.name_thai as department,section.name_thai as section,cost_center.cost_center_code as cost_center,contract_type.name_thai as contract_type,pl.pl_name_thai as pl,position.name_thai as position , prefix_thai, firstname_thai, lastname_thai FROM split  
                                         INNER JOIN split_set ON split_set.split_set_id  = split.split_set_id 
                                         INNER JOIN employee ON employee.card_id = split.card_id  
                                         LEFT JOIN cost_center ON cost_center.cost_center_id  = employee.cost_center_organization_id
@@ -78,21 +80,22 @@
                                         LEFT JOIN pl ON pl.pl_id = pl_info.pl_id 
                                         LEFT JOIN position_info ON position_info.card_id  = split.card_id
                                         LEFT JOIN position ON position.position_id  = position_info.position_id";
-                                        $params = array();
-                                        // ดึงข้อมูลจากฐานข้อมูล
-                                        $stmt = sqlsrv_query($conn, $sql, $params);
-                                        // ตรวจสอบการทำงานของคำสั่ง SQL
-                                        if ($stmt === false) {
-                                            die(print_r(sqlsrv_errors(), true));
-                                        }
+                                            $params = array();
+                                            // ดึงข้อมูลจากฐานข้อมูล
+                                            $stmt = sqlsrv_query($conn, $sql, $params);
+                                            // ตรวจสอบการทำงานของคำสั่ง SQL
+                                            if ($stmt === false) {
+                                                die(print_r(sqlsrv_errors(), true));
+                                            }
 
-                                        while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
-                                            echo "<tr>";
-                                            echo "<td  style='text-align: center;''>" . $row["split"] . '  งวด' . "</td>";
-                                            echo "<td class='col-md-8'>" . $row["company"] . ' / ' . $row["division"] . ' / ' . $row["department"] . ' / ' . $row["section"] . ' / ' . $row["cost_center"] . ' / ' . $row["contract_type"] . ' / ' . $row["pl"] . ' / ' . $row["position"] . ' / ' . $row["prefix_thai"] . $row["firstname_thai"] . '  ' . $row["lastname_thai"] . "</td>";
-                                            echo "<td><div class='flex'  style='justify-content: right; padding-right: 35px;'>",
-                                            '<button type="button" name="delete_split" class="delete-btn-pay" onclick="confirmDeleteSplit(\'' . $row['split_id'] . '\');"><i class="fa-solid fa-trash-can"></i></button> &nbsp;';
-                                            echo "<button type='button' class='edit-btn-pay' onclick='openEdit_Split_Setting_Modal
+                                            while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
+                                                echo "<tr>";
+                                                echo "<td  style='text-align: center;''>" . $row["split"] . '  งวด' . "</td>";
+                                                echo "<td >" . $row["scg_employee_id"] . "</td>";
+                                                echo "<td>" . $row["prefix_thai"] . $row["firstname_thai"] . '  ' . $row["lastname_thai"] . "</td>";
+                                                echo "<td><div class='flex'  style='justify-content: right; padding-right: 35px;'>",
+                                                '<button type="button" name="delete_split" class="delete-btn-pay" onclick="confirmDeleteSplit(\'' . $row['split_id'] . '\');"><i class="fa-solid fa-trash-can"></i></button> &nbsp;';
+                                                echo "<button type='button' class='edit-btn-pay' onclick='openEdit_Split_Setting_Modal
                                             (
                                             \"" . $row['split_id'] . "\",
                                             \"" . $row['card_id'] . "\",
@@ -110,13 +113,16 @@
                                             \"" . $row['position'] . "\"
                                             
                                             );'>";
-                                            echo "<div ><i class='fa-solid fa-pencil'></i>";
-                                            echo "</button>";
-                                        }
-                                        // ปิดการเชื่อมต่อ
-                                        ?>
-                                    </tbody>
-                                </table>
+                                                echo "<div ><i class='fa-solid fa-pencil'></i>";
+                                                echo "</button>";
+                                                echo "<td>" . $row["company"] . ' / ' . $row["division"] . ' / ' . $row["department"] . ' / ' . $row["section"] . ' / ' . $row["cost_center"] . ' / ' . $row["contract_type"] . ' / ' . $row["pl"] . ' / ' . $row["position"] . "</td>";
+                                                echo "</tr>";
+                                            }
+                                            // ปิดการเชื่อมต่อ
+                                            ?>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-5 col-sm-5">
@@ -2453,6 +2459,7 @@
                                             if ($resultDropdown_type === false) {
                                                 die(print_r(sqlsrv_errors(), true));
                                             }
+
                                             if ($resultDropdown_type) {
                                                 while ($row_dropdown = sqlsrv_fetch_array($resultDropdown_type, SQLSRV_FETCH_ASSOC)) {
                                                     $selected = ($row_dropdown['split'] == $row['split']) ? "selected" : "";
@@ -2460,6 +2467,7 @@
                                                 }
                                             }
                                             ?>
+
                                         </select>
                                         <div class="mt-3">
                                             <h6><label>Organization :</label></h6>

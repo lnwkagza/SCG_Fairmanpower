@@ -19,7 +19,7 @@
                     <div class="row">
                         <div class="col-md-12 col-sm-12">
                             <div class="title">
-                                <h3>คำนวณเงินเดือน : Calculator Payment</h3>
+                                <h3>คำนวณเงินเดือน : Calculator Payment (แบ่งงวด)</h3>
                             </div>
                             <nav aria-label="breadcrumb" role="navigation">
                                 <ol class="breadcrumb">
@@ -45,7 +45,7 @@
 
                             <div class="row1">
                                 <ol>
-                                    <button type="button" class="move-split">แบ่งงวด</button>
+                                    <button type="button" class="move-split" disabled>แบ่งงวด</button>
                                     <button type="button" class="split" onclick="window.location.href='calculator_payment1.php'">เต็มงวด</button>
                                 </ol>
                                 <div class="push">

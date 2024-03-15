@@ -1,7 +1,7 @@
 <?php
 
 // ... โค้ดที่มีอยู่ในไฟล์
-require_once('..\config\connection.php');
+require_once('..\..\config\connection.php');
 
 // -- DELETE  ค่า income ตาม income_id -->
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

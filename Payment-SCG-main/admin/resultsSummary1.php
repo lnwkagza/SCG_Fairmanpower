@@ -181,14 +181,14 @@
                                                         echo "<td>" . $row["position"] . "</td>";
                                                         echo "<td>" . "จำนวนกี่วัน" . "</td>";
                                                         echo "<td>" . "จำนวนกี่วัน"  . "</td>";
-                                                        echo "<td class='text-center'>" . $row["salary_amount"] . "</td>";
+                                                        echo "<td class='text-center'>" . number_format($row["salary_amount"],2) . "</td>";
                                                         if ($row["itamount"] !== NULL) {
                                                             echo "<td class='text-center'>" . $row["income_type"] . "</td>";
                                                         } else {
                                                             echo "<td class='text-center'>" . "ไม่มีรายการ" . "</td>";
                                                         }
                                                         if ($row["itamount"] !== NULL) {
-                                                            echo "<td class='text-center'>" . $row["itamount"] . "</td>";
+                                                            echo "<td class='text-center'>" .number_format($row["itamount"],2) . "</td>";
                                                         } else {
                                                             echo "<td class='text-center'>" . "0" . "</td>";
                                                         }
@@ -198,7 +198,7 @@
                                                             echo "<td class='text-center'>" . "ไม่มีรายการ" . "</td>";
                                                         }
                                                         if ($row["dtamount"] !== NULL) {
-                                                            echo "<td class='text-center'>" . $row["dtamount"] . "</td>";
+                                                            echo "<td class='text-center'>" . number_format($row["dtamount"], 2) . "</td>";
                                                         } else {
                                                             echo "<td class='text-center'>" . "0" . "</td>";
                                                         }

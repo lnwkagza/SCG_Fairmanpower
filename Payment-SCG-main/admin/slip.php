@@ -1,12 +1,12 @@
-<?php include('../employee/include/header.php') ?>
+<?php include('../admin/include/header.php') ?>
 <link rel="stylesheet" href="../vendors/styles/resultsSummary.css">
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <!-- <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script> -->
 
 <body>
 
-    <?php include('../employee/include/navbar.php') ?>
-    <?php include('../employee/include/sidebar.php') ?>
+    <?php include('../admin/include/navbar.php') ?>
+    <?php include('../admin/include/sidebar.php') ?>
     <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 

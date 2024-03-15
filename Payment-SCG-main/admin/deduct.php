@@ -35,8 +35,8 @@
                         <div class="col-md-12 col-sm-12">
                             <nav aria-label="breadcrumb" role="navigation">
                                 <ol class="breadcrumb">
-                                <button  type="button" class="btn income-deduct-btn-pay-split" onclick="window.location.href='income.php'">รายการเงินรับ</button>&nbsp;&nbsp;
-                                <button  type="button" class="btn income-deduct-btn-pay" >รายการเงินจ่าย</button>
+                                    <button type="button" class="btn income-deduct-btn-pay-split" onclick="window.location.href='income.php'">รายการเงินรับ</button>&nbsp;&nbsp;
+                                    <button type="button" class="btn income-deduct-btn-pay">รายการเงินจ่าย</button>
                                 </ol>
                             </nav>
                         </div>
@@ -58,29 +58,29 @@
                                     </div>
                                 </div>
                                 <div class="pb-10">
-                                    <table class="data-table2 table stripe hover nowrap">
-                                        <thead>
-                                            <tr>
-                                                <th class="datatable-nosort" style="text-align: center;">ประเภท <i class="fa-solid fa-sort"></i></th>
-                                                <th class="datatable-nosort" style="text-align: center;">ชื่อ-สกุล <i class="fa-solid fa-sort"></i></th>
-                                                <th class="datatable-nosort">
-                                                    กลุ่มเป้าหมาย : Company / Division / Department /
-                                                    Section / Cost Center
-                                                    ประเภทพนักงาน / ระดับการทำงาน / ตำแหน่ง / รายชื่อพนักงาน
-                                                    <i class="fa-solid fa-sort"></i>
-                                                </th>
-                                                <th class="datatable-nosort" style="text-align: center;">จำนวนเงิน <br>(บาท) <i class="fa-solid fa-sort"></i></th>
-                                                <th class="datatable-nosort" style="text-align: center;">คำนวณเงินจ่ายทั้งปี <i class="fa-solid fa-sort"></th>
-                                                <th class="datatable-nosort" style="text-align: center;">หมายเหตุ <i class="fa-solid fa-sort"></th>
-                                                <th class="datatable-nosort" style="text-align: center;">เปิดใช้งาน</th>
-                                                <th class="datatable-nosort" style="text-align: center;">การจัดการ</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <!-- SELECT ค่า deduct_target -->
-                                            <?php
-                                            // เตรียมคำสั่ง SQL
-                                            $sql = "SELECT employee.card_id as card_id,scg_employee_id,deduct_target_id,evidence_name,deduct_type.deduct_type as deduct_type, amount,whole_year.whole_year as whole_year,active,reason,company.name_thai as company,division.name_thai as division,department.name_thai as department,section.name_thai as section,cost_center.cost_center_code as cost_center,contract_type.name_thai as contract_type,pl.pl_name_thai as pl,position.name_thai as position , prefix_thai, firstname_thai, lastname_thai FROM deduct_target  
+                                    <div class="table-responsive mt-2">
+                                        <table class="data-table2 table stripe hover nowrap">
+                                            <thead>
+                                                <tr>
+                                                    <th style="text-align: center;">ประเภท</th>
+                                                    <th style="text-align: center;">ชื่อ-สกุล</th>
+                                                    <th style="text-align: center;">จำนวนเงิน (บาท) </th>
+                                                    <th style="text-align: center;">คำนวณเงินจ่ายทั้งปี</th>
+                                                    <th style="text-align: center;">หมายเหตุ </th>
+                                                    <th style="text-align: center;">เปิดใช้งาน</th>
+                                                    <th style="text-align: center;">การจัดการ</th>
+                                                    <th>
+                                                        กลุ่มเป้าหมาย : Company / Division / Department /
+                                                        Section / Cost Center
+                                                        ประเภทพนักงาน / ระดับการทำงาน / ตำแหน่ง
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <!-- SELECT ค่า deduct_target -->
+                                                <?php
+                                                // เตรียมคำสั่ง SQL
+                                                $sql = "SELECT employee.card_id as card_id,scg_employee_id,deduct_target_id,evidence_name,deduct_type.deduct_type as deduct_type, amount,whole_year.whole_year as whole_year,active,reason,company.name_thai as company,division.name_thai as division,department.name_thai as department,section.name_thai as section,cost_center.cost_center_code as cost_center,contract_type.name_thai as contract_type,pl.pl_name_thai as pl,position.name_thai as position , prefix_thai, firstname_thai, lastname_thai FROM deduct_target  
                                         INNER JOIN deduct_type ON deduct_type.deduct_type_id = deduct_target.deduct_type_id 
                                         INNER JOIN employee ON employee.card_id = deduct_target.card_id 
                                         LEFT JOIN cost_center ON cost_center.cost_center_id  = employee.cost_center_organization_id
@@ -96,39 +96,38 @@
                                         LEFT JOIN position ON position.position_id  = position_info.position_id
                                         LEFT JOIN whole_year ON whole_year.whole_year_id  = deduct_target.whole_year_id";
 
-                                            $params = array();
-                                            // ดึงข้อมูลจากฐานข้อมูล
-                                            $stmt = sqlsrv_query($conn, $sql, $params);
-                                            // ตรวจสอบการทำงานของคำสั่ง SQL
-                                            if ($stmt === false) {
-                                                die(print_r(sqlsrv_errors(), true));
-                                            }
-
-                                            // แสดงผลลัพธ์ในรูปแบบของตาราง HTML
-                                            while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
-                                                echo "<tr>";
-                                                echo "<td class='col-md-1' style='text-align: center;''>" . $row["deduct_type"] . "</td>";
-                                                echo "<td class='col-md-2'>"  . $row["prefix_thai"] . $row["firstname_thai"] . '  ' . $row["lastname_thai"] . "</td>";
-                                                echo "<td class='col-md-4'>"  . $row["company"] . ' / ' . $row["division"] . ' / ' . $row["department"] . ' / ' . $row["section"] . ' / ' . $row["cost_center"] . ' / ' . $row["contract_type"] . ' / ' . $row["pl"] . ' / ' . $row["position"] . "</td>";
-                                                echo "<td class='col-md-1' style='text-align: center;''>" . $row["amount"] . "</td>";
-                                                echo "<td class='col-md-1' style='text-align: center;''>" . $row["whole_year"] . "</td>";
-                                                echo "<td class='col-md-2' style='text-align: center;''>" . $row["reason"] . "</td>";
-                                                echo "<td class='col-md-1'>";
-                                                if ($row["active"] == 0) {
-                                                    echo '<div class="custom-control custom-switch custom-switch-sm d-flex justify-content-center">';
-                                                    echo '<input type="checkbox" class="custom-control-input toggleSwitch" id="toggleSwitch_' . $row['deduct_target_id'] . '" data-deduct-target-id="' . $row['deduct_target_id'] . '">';
-                                                    echo '<label class="custom-control-label" for="toggleSwitch_' . $row['deduct_target_id'] . '"></label>';
-                                                    echo '</div>';
-                                                } else if ($row["active"] == 1) {
-                                                    echo '<div class="custom-control custom-switch custom-switch-sm d-flex justify-content-center">';
-                                                    echo '<input type="checkbox" class="custom-control-input toggleSwitch" id="toggleSwitch_' . $row['deduct_target_id'] . '" data-deduct-target-id="' . $row['deduct_target_id'] . '" checked>';
-                                                    echo '<label class="custom-control-label" for="toggleSwitch_' . $row['deduct_target_id'] . '"></label>';
-                                                    echo '</div>';
+                                                $params = array();
+                                                // ดึงข้อมูลจากฐานข้อมูล
+                                                $stmt = sqlsrv_query($conn, $sql, $params);
+                                                // ตรวจสอบการทำงานของคำสั่ง SQL
+                                                if ($stmt === false) {
+                                                    die(print_r(sqlsrv_errors(), true));
                                                 }
-                                                echo '</td >';
-                                                echo "<td><div class='flex'  style='justify-content: right;'>",
-                                                '<button type="button" name="delete_deduct_target" class="delete-btn-pay" onclick="confirmDeleteDeduct_target(\'' . $row['deduct_target_id'] . '\');"><i class="fa-solid fa-trash-can"></i></button> &nbsp;';
-                                                echo "<button type='button' class='edit-btn' onclick='openEdit_Deduct_Target_Modal(
+
+                                                // แสดงผลลัพธ์ในรูปแบบของตาราง HTML
+                                                while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
+                                                    echo "<tr>";
+                                                    echo "<td class='col-md-1' style='text-align: center;''>" . $row["deduct_type"] . "</td>";
+                                                    echo "<td class='col-md-2'>"  . $row["prefix_thai"] . $row["firstname_thai"] . '  ' . $row["lastname_thai"] . "</td>";
+                                                    echo "<td class='col-md-1' style='text-align: center;''>" . $row["amount"] . "</td>";
+                                                    echo "<td class='col-md-1' style='text-align: center;''>" . $row["whole_year"] . "</td>";
+                                                    echo "<td class='col-md-2' style='text-align: center;''>" . $row["reason"] . "</td>";
+                                                    echo "<td class='col-md-1'>";
+                                                    if ($row["active"] == 0) {
+                                                        echo '<div class="custom-control custom-switch custom-switch-sm d-flex justify-content-center">';
+                                                        echo '<input type="checkbox" class="custom-control-input toggleSwitch" id="toggleSwitch_' . $row['deduct_target_id'] . '" data-deduct-target-id="' . $row['deduct_target_id'] . '">';
+                                                        echo '<label class="custom-control-label" for="toggleSwitch_' . $row['deduct_target_id'] . '"></label>';
+                                                        echo '</div>';
+                                                    } else if ($row["active"] == 1) {
+                                                        echo '<div class="custom-control custom-switch custom-switch-sm d-flex justify-content-center">';
+                                                        echo '<input type="checkbox" class="custom-control-input toggleSwitch" id="toggleSwitch_' . $row['deduct_target_id'] . '" data-deduct-target-id="' . $row['deduct_target_id'] . '" checked>';
+                                                        echo '<label class="custom-control-label" for="toggleSwitch_' . $row['deduct_target_id'] . '"></label>';
+                                                        echo '</div>';
+                                                    }
+                                                    echo '</td >';
+                                                    echo "<td><div class='flex'  style='justify-content: right;'>",
+                                                    '<button type="button" name="delete_deduct_target" class="delete-btn-pay" onclick="confirmDeleteDeduct_target(\'' . $row['deduct_target_id'] . '\');"><i class="fa-solid fa-trash-can"></i></button> &nbsp;';
+                                                    echo "<button type='button' class='edit-btn' onclick='openEdit_Deduct_Target_Modal(
                                             \"" . $row['deduct_target_id'] . "\",
                                             \"" . $row['prefix_thai'] . "\",
                                             \"" . $row['firstname_thai'] . "\",
@@ -146,61 +145,62 @@
                                             \"" . $row['whole_year'] . "\",
                                             \"" . $row['reason'] . "\"
                                             );'>";
-                                                echo "<i class='fa-solid fa-pencil'></i>";
-                                                echo "</button> &nbsp;";
-                                                echo "<a href='flie/" . $row['evidence_name'] . "' download>";
-                                                echo "<button type='button' class='dowload-btn'>";
-                                                echo "<i class='fa-solid fa-file'></i>";
-                                                echo "</button>";
-                                                echo "</a>";
-                                                echo '</tr>';
-                                            }
-                                            ?>
-                                            <script>
-                                                $(document).ready(function() {
-                                                    $('.toggleSwitch').change(function() {
-                                                        var isChecked = $(this).prop('checked');
-                                                        var deductTargetId = $(this).data('deduct-target-id');
+                                                    echo "<i class='fa-solid fa-pencil'></i>";
+                                                    echo "</button> &nbsp;";
+                                                    echo "<a href='flie/" . $row['evidence_name'] . "' download>";
+                                                    echo "<button type='button' class='dowload-btn'>";
+                                                    echo "<i class='fa-solid fa-file'></i>";
+                                                    echo "</button>";
+                                                    echo "</a>";
+                                                    echo "<td class='col-md-4'>"  . $row["company"] . ' / ' . $row["division"] . ' / ' . $row["department"] . ' / ' . $row["section"] . ' / ' . $row["cost_center"] . ' / ' . $row["contract_type"] . ' / ' . $row["pl"] . ' / ' . $row["position"] . "</td>";
+                                                    echo '</tr>';
+                                                }
+                                                ?>
+                                                <script>
+                                                    $(document).ready(function() {
+                                                        $('.toggleSwitch').change(function() {
+                                                            var isChecked = $(this).prop('checked');
+                                                            var deductTargetId = $(this).data('deduct-target-id');
 
-                                                        // ส่งข้อมูลไปยังไฟล์ PHP ด้วย AJAX request
-                                                        $.ajax({
-                                                            url: 'deduct_update_active.php',
-                                                            method: 'POST',
-                                                            data: {
-                                                                isChecked: isChecked,
-                                                                deductTargetId: deductTargetId
-                                                            },
-                                                            success: function(response) {
-                                                                console.log('การอัพเดตข้อมูลสำเร็จ');
-                                                            },
-                                                            error: function(xhr, status, error) {
-                                                                console.error('เกิดข้อผิดพลาดในการส่งข้อมูลไปยังฐานข้อมูล');
-                                                            }
+                                                            // ส่งข้อมูลไปยังไฟล์ PHP ด้วย AJAX request
+                                                            $.ajax({
+                                                                url: 'deduct_update_active.php',
+                                                                method: 'POST',
+                                                                data: {
+                                                                    isChecked: isChecked,
+                                                                    deductTargetId: deductTargetId
+                                                                },
+                                                                success: function(response) {
+                                                                    console.log('การอัพเดตข้อมูลสำเร็จ');
+                                                                },
+                                                                error: function(xhr, status, error) {
+                                                                    console.error('เกิดข้อผิดพลาดในการส่งข้อมูลไปยังฐานข้อมูล');
+                                                                }
+                                                            });
                                                         });
                                                     });
-                                                });
-                                            </script>
+                                                </script>
 
-                                            <?php
+                                                <?php
 
-                                            // -- DELETE  ค่า deduct_target ตาม deduct_target_id -->
+                                                // -- DELETE  ค่า deduct_target ตาม deduct_target_id -->
 
-                                            if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete_deduct_target'])) {
+                                                if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete_deduct_target'])) {
 
-                                                $deduct_target_id = $_POST['deduct_target_id'];
-                                                $sql = "DELETE FROM deduct_target WHERE deduct_target_id = ?";
-                                                $params = array($deduct_target_id);
+                                                    $deduct_target_id = $_POST['deduct_target_id'];
+                                                    $sql = "DELETE FROM deduct_target WHERE deduct_target_id = ?";
+                                                    $params = array($deduct_target_id);
 
-                                                $stmt = sqlsrv_prepare($conn, $sql, $params);
-                                                if ($stmt === false) {
-                                                    die(print_r(sqlsrv_errors(), true));
-                                                }
+                                                    $stmt = sqlsrv_prepare($conn, $sql, $params);
+                                                    if ($stmt === false) {
+                                                        die(print_r(sqlsrv_errors(), true));
+                                                    }
 
-                                                $result = sqlsrv_execute($stmt);
-                                                if ($result === false) {
-                                                    die(print_r(sqlsrv_errors(), true));
-                                                } else {
-                                                    echo '<script type="text/javascript">
+                                                    $result = sqlsrv_execute($stmt);
+                                                    if ($result === false) {
+                                                        die(print_r(sqlsrv_errors(), true));
+                                                    } else {
+                                                        echo '<script type="text/javascript">
                                                             const swalWithBootstrapButtons = Swal.mixin({
                                                                 customClass: {
                                                                     confirmButton: "delete-swal",
@@ -216,13 +216,14 @@
 
                                                             })
                                                         </script>';
-                                                    echo "<meta http-equiv='refresh' content='2'>";
-                                                    exit();
+                                                        echo "<meta http-equiv='refresh' content='2'>";
+                                                        exit();
+                                                    }
                                                 }
-                                            }
-                                            ?>
-                                        </tbody>
-                                    </table>
+                                                ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -4871,7 +4872,7 @@
                                 <div class="modal-body">
                                     <!-- Form for editing data -->
                                     <form id="editForm" method="post" action="deduct.php" enctype="multipart/form-data">
-                                        <input type="hidden" id="deduct_target_id" name="deduct_target_id" >
+                                        <input type="hidden" id="deduct_target_id" name="deduct_target_id">
                                         <div class="form-group d-flex justify-content-center">
                                             <input type="text" class="col-12" id="editcard_id" name="card_id" autocomplete="off" disabled style="border: none; background-color: transparent; font-size: 25px; font-weight: bold; text-align: center;">
                                         </div>
@@ -4954,7 +4955,7 @@
                                             <input type="number" class="form-control" id="editamount" name="amount" autocomplete="off">
                                         </div>
                                         <div class="form-group">
-                                            <h6><label for="editwhole_year">คำนวณเงินจ่ายทั้งปี</label></h6>
+                                        <h6><label for="editwhole_year">คำนวณเงินจ่ายทั้งปี</label></h6>
                                             <select type="text" class="custom-select" id="editwhole_year" name="whole_year" required="true" autocomplete="off">
                                             <option value="" selected disabled>เลือกคำนวณเงินจ่าย</option>
                                                 <?php
@@ -4970,12 +4971,13 @@
                                                     }
                                                 }
                                                 ?>
+
                                             </select>
                                         </div>
 
                                         <div class="form-group">
                                             <h6><label for="editreason">หมายเหตุ</label></h6>
-                                            <input type="text" class="form-control" id="editreason"  placeholder="กรอกหมายเหตุ" name="reason" autocomplete="off">
+                                            <input type="text" class="form-control" id="editreason" placeholder="กรอกหมายเหตุ" name="reason" autocomplete="off">
                                         </div>
                                         <div class="form-group">
                                             <div class="form-group">
@@ -4991,26 +4993,26 @@
                                     // -- UPDATE employee_payment based on employee_payment_id -->
 
                                     // -- UPDATE deduct Type on deduct_id -->
-                                if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                                    if (isset($_POST['update_deduct_target'])) {
-                                        $deduct_target_id  = $_POST['deduct_target_id'];
-                                        $amount = $_POST['amount'];
-                                        $whole_year = $_POST['whole_year'];
-                                        $reason = $_POST['reason'];
-                                        $targetDir = "flie/";
-                                        $targetFile = $targetDir . $_FILES["file"]["name"];
-                                        $file_type = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
+                                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                                        if (isset($_POST['update_deduct_target'])) {
+                                            $deduct_target_id  = $_POST['deduct_target_id'];
+                                            $amount = $_POST['amount'];
+                                            $whole_year = $_POST['whole_year'];
+                                            $reason = $_POST['reason'];
+                                            $targetDir = "flie/";
+                                            $targetFile = $targetDir . $_FILES["file"]["name"];
+                                            $file_type = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
 
-                                        if (move_uploaded_file($_FILES["file"]["tmp_name"], $targetFile)) {
-                                            $filename = $_FILES["file"]["name"];
-                                        // อัปเดตค่าของฟิลด์ deduct_type
-                                        $sqlUpdate = "UPDATE deduct_target SET amount = '$amount',whole_year_id = '$whole_year',reason = '$reason',evidence_name = '$filename',evidence_data = '$targetFile' WHERE deduct_target_id = '$deduct_target_id'";
-                                        $stmt = sqlsrv_query($conn, $sqlUpdate);
+                                            if (move_uploaded_file($_FILES["file"]["tmp_name"], $targetFile)) {
+                                                $filename = $_FILES["file"]["name"];
+                                                // อัปเดตค่าของฟิลด์ deduct_type
+                                                $sqlUpdate = "UPDATE deduct_target SET amount = '$amount',whole_year_id = '$whole_year',reason = '$reason',evidence_name = '$filename',evidence_data = '$targetFile' WHERE deduct_target_id = '$deduct_target_id'";
+                                                $stmt = sqlsrv_query($conn, $sqlUpdate);
 
-                                        if ($stmt === false) {
-                                            die(print_r(sqlsrv_errors(), true));
-                                        } else {
-                                            echo '<script type="text/javascript">
+                                                if ($stmt === false) {
+                                                    die(print_r(sqlsrv_errors(), true));
+                                                } else {
+                                                    echo '<script type="text/javascript">
                                             const Toast = Swal.mixin({
                                                 toast: true,
                                                 position: "top-end",
@@ -5028,19 +5030,18 @@
                                             });
                                             </script>';
 
-                                            echo "<meta http-equiv='refresh' content='1'>";
+                                                    echo "<meta http-equiv='refresh' content='1'>";
 
-                                            exit; // จบการทำงานของสคริปต์ทันทีหลังจาก redirect
-                                        }
+                                                    exit; // จบการทำงานของสคริปต์ทันทีหลังจาก redirect
+                                                }
+                                            } else {
+                                                $sqlUpdate = "UPDATE deduct_target SET amount = '$amount',whole_year_id = '$whole_year',reason = '$reason' WHERE deduct_target_id = '$deduct_target_id'";
+                                                $stmt = sqlsrv_query($conn, $sqlUpdate);
 
-                                    } else {
-                                        $sqlUpdate = "UPDATE deduct_target SET amount = '$amount',whole_year_id = '$whole_year',reason = '$reason' WHERE deduct_target_id = '$deduct_target_id'";
-                                        $stmt = sqlsrv_query($conn, $sqlUpdate);
-
-                                        if ($stmt === false) {
-                                            die(print_r(sqlsrv_errors(), true));
-                                        } else {
-                                            echo '<script type="text/javascript">
+                                                if ($stmt === false) {
+                                                    die(print_r(sqlsrv_errors(), true));
+                                                } else {
+                                                    echo '<script type="text/javascript">
                                             const Toast = Swal.mixin({
                                                 toast: true,
                                                 position: "top-end",
@@ -5058,13 +5059,13 @@
                                             });
                                             </script>';
 
-                                            echo "<meta http-equiv='refresh' content='1'>";
+                                                    echo "<meta http-equiv='refresh' content='1'>";
 
-                                            exit; // จบการทำงานของสคริปต์ทันทีหลังจาก redirect
+                                                    exit; // จบการทำงานของสคริปต์ทันทีหลังจาก redirect
+                                                }
+                                            }
                                         }
                                     }
-                                    }
-                                }
                                     ?>
                                 </div>
                             </div>

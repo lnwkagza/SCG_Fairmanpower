@@ -37,24 +37,24 @@
                         <div class="title">
                             <h2 class="h3 mb-0 text-blue mt-2">เงินเดือนพนักงานทั้งหมด</h2>
                             <div class="pb-20 mt-2 ">
-                                <table class="data-table2 table stripe hover nowrap">
-                                    <thead>
-                                        <tr>
-                                            <th class="datatable-nosort">เลขที่ <i class="fa-solid fa-sort"></i></th>
-                                            <th class="datatable-nosort col-2">ชื่อ-สกุล <i class="fa-solid fa-sort"></i></th>
-                                            <th class="datatable-nosort col-7">
-                                                Company / Division / Department / Section / Cost Center / ประเภทพนักงาน / ระดับการทำงาน / ตำแหน่ง
-                                                <i class="fa-solid fa-sort"></i>
-                                            </th>
-                                            <th class="datatable-nosort " style="text-align: center;">จัดการเงินเดือน </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
+                                <div class="table-responsive mt-2">
+                                    <table class="data-table2 table stripe hover nowrap">
+                                        <thead>
+                                            <tr>
+                                                <th>เลขที่</th>
+                                                <th>ชื่อ-สกุล</th>
+                                                <th>
+                                                    Company / Division / Department / Section / Cost Center / ประเภทพนักงาน / ระดับการทำงาน / ตำแหน่ง
+                                                </th>
+                                                <th style="text-align: center;">จัดการเงินเดือน </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
 
-                                        <!-- SELECT ค่า employee_payment -->
-                                        <?php
-                                        // เตรียมคำสั่ง SQL
-                                        $sql = "SELECT employee_payment_id,employee.card_id as card_id, scg_employee_id, prefix_thai,firstname_thai,lastname_thai,nickname_thai,evidence_name,company.name_thai as company,division.name_thai as division,department.name_thai as department,section.name_thai as section,cost_center.cost_center_code as cost_center,contract_type.name_thai as contract_type,pl.pl_name_thai as pl,position.name_thai as position ,salary_per_month,salary_per_day,salary_per_hour,comment,time_set FROM employee
+                                            <!-- SELECT ค่า employee_payment -->
+                                            <?php
+                                            // เตรียมคำสั่ง SQL
+                                            $sql = "SELECT employee_payment_id,employee.card_id as card_id, scg_employee_id, prefix_thai,firstname_thai,lastname_thai,nickname_thai,evidence_name,company.name_thai as company,division.name_thai as division,department.name_thai as department,section.name_thai as section,cost_center.cost_center_code as cost_center,contract_type.name_thai as contract_type,pl.pl_name_thai as pl,position.name_thai as position ,salary_per_month,salary_per_day,salary_per_hour,comment,time_set FROM employee
                                         LEFT JOIN cost_center ON cost_center.cost_center_id  = employee.cost_center_organization_id
                                         LEFT JOIN section ON section.section_id = cost_center.section_id 
                                         LEFT JOIN department ON department.department_id = section.department_id 
@@ -67,25 +67,25 @@
                                         LEFT JOIN position_info ON position_info.card_id  = employee.card_id
                                         LEFT JOIN position ON position.position_id  = position_info.position_id
                                         LEFT JOIN employee_payment ON employee_payment.card_id = employee.card_id";
-                                        // เพิ่มเงื่อนไขค้นหา
-                                        $params = array();
-                                        // ดึงข้อมูลจากฐานข้อมูล
-                                        $stmt = sqlsrv_query($conn, $sql, $params);
-                                        // ตรวจสอบการทำงานของคำสั่ง SQL
-                                        if ($stmt === false) {
-                                            die(print_r(sqlsrv_errors(), true));
-                                        }
-                                        // แสดงผลลัพธ์ในรูปแบบของตาราง HTML
-                                        while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
-                                            echo "<tr >";
-                                            echo "<td >" . $row["scg_employee_id"] . "</td>";
-                                            echo "<td >" . $row["prefix_thai"] . '' . $row["firstname_thai"] . ' ' . $row["lastname_thai"] . ' (' . $row["nickname_thai"] . ')' . "</td>";
-                                            echo "<td >"  . $row["company"] . ' / ' . $row["division"] . ' / ' . $row["department"] . ' / ' . $row["section"] . ' / ' . $row["cost_center"] . '<br>' . $row["contract_type"] . ' / ' . $row["pl"] . ' / ' . $row["position"] . "</td>";
+                                            // เพิ่มเงื่อนไขค้นหา
+                                            $params = array();
+                                            // ดึงข้อมูลจากฐานข้อมูล
+                                            $stmt = sqlsrv_query($conn, $sql, $params);
+                                            // ตรวจสอบการทำงานของคำสั่ง SQL
+                                            if ($stmt === false) {
+                                                die(print_r(sqlsrv_errors(), true));
+                                            }
+                                            // แสดงผลลัพธ์ในรูปแบบของตาราง HTML
+                                            while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
+                                                echo "<tr >";
+                                                echo "<td >" . $row["scg_employee_id"] . "</td>";
+                                                echo "<td >" . $row["prefix_thai"] . '' . $row["firstname_thai"] . ' ' . $row["lastname_thai"] . ' (' . $row["nickname_thai"] . ')' . "</td>";
+                                                echo "<td >"  . $row["company"] . ' / ' . $row["division"] . ' / ' . $row["department"] . ' / ' . $row["section"] . ' / ' . $row["cost_center"] . '<br>' . $row["contract_type"] . ' / ' . $row["pl"] . ' / ' . $row["position"] . "</td>";
 
-                                            if ($row['salary_per_month'] or $row['salary_per_day'] or $row['salary_per_hour'] !== NULL) {
-                                                echo "<td class='d-flex justify-content-center table-sm'><button type='button' class='add-btn-disabled' disabled>";
-                                            } else {
-                                                echo "<td class='d-flex justify-content-center table-sm'><button type='button' class='add-btn' onclick='openInsert_Employee_Payment_Modal(
+                                                if ($row['salary_per_month'] or $row['salary_per_day'] or $row['salary_per_hour'] !== NULL) {
+                                                    echo "<td class='d-flex justify-content-center table-sm'><button type='button' class='add-btn-disabled' disabled>";
+                                                } else {
+                                                    echo "<td class='d-flex justify-content-center table-sm'><button type='button' class='add-btn' onclick='openInsert_Employee_Payment_Modal(
                                                 \"" . $row['card_id'] . "\",
                                                 \"" . $row['employee_payment_id'] . "\",
                                                 \"" . $row['prefix_thai'] . "\",
@@ -104,27 +104,28 @@
                                                 \"" . $row['salary_per_hour'] . "\",
                                                 \"" . $row['comment'] . "\",
                                                 );'>";
+                                                }
+                                                echo "<i class='fa-solid fa-plus'></i>";
+                                                echo "</button>&nbsp;";
+                                                echo "<button type='button' class='edit-btn' onclick='openEdit_Employee_Payment(\"" . urlencode($row['employee_payment_id']) . "\", \"" . urlencode($row["card_id"]) . "\");'>";
+                                                echo "<i class='fa-solid fa-pencil'></i>";
+                                                echo "</button>&nbsp;";
+                                                if ($row['evidence_name'] !== NULL) {
+                                                    echo "<a href='flie/" . $row['evidence_name'] . "' download>";
+                                                    echo "<button type='button' class='dowload-btn'>";
+                                                    echo "<i class='fa-solid fa-file'></i>";
+                                                    echo "</button>";
+                                                    echo "</a>";
+                                                } else {
+                                                    echo "<button type='button' class='dowload-btn-disabled'>";
+                                                    echo "<i class='fa-solid fa-file'></i>";
+                                                    echo "</button>";
+                                                }
+                                                echo '</tr></td>';
                                             }
-                                            echo "<i class='fa-solid fa-plus'></i>";
-                                            echo "</button>&nbsp;";
-                                            echo "<button type='button' class='edit-btn' onclick='openEdit_Employee_Payment(\"" . urlencode($row['employee_payment_id']) . "\", \"" . urlencode($row["card_id"]) . "\");'>";
-                                            echo "<i class='fa-solid fa-pencil'></i>";
-                                            echo "</button>&nbsp;";
-                                            if ($row['evidence_name'] !== NULL){
-                                                echo "<a href='flie/" . $row['evidence_name'] . "' download>";
-                                                echo "<button type='button' class='dowload-btn'>";
-                                                echo "<i class='fa-solid fa-file'></i>";
-                                                echo "</button>";
-                                                echo "</a>";
-                                            } else {
-                                                echo "<button type='button' class='dowload-btn-disabled'>";
-                                                echo "<i class='fa-solid fa-file'></i>";
-                                                echo "</button>";
-                                            }
-                                            echo '</tr></td>';
-                                        }
-                                        ?>
-                                </table>
+                                            ?>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -214,21 +215,21 @@
                                     </div>
                                     <div class="row ml-1">
                                         <div class="form-group">
-                                        <h6><label for="editsalary_per_month">ค่าแรง/เดือน</label><
-                                            <input type="number" class="form-control" id="editsalary_per_month" placeholder="กรอกเงินเดือน" name="salary_per_month" required autocomplete="off">
+                                            <h6><label for="editsalary_per_month">ค่าแรง/เดือน</label>
+                                                <input type="number" class="form-control" id="editsalary_per_month" placeholder="กรอกเงินเดือน" name="salary_per_month" required autocomplete="off">
                                         </div>
                                         <div class="form-group ml-3">
-                                        <h6><label for="editsalary_per_day">ค่าแรง/วัน</label></h6>
+                                            <h6><label for="editsalary_per_day">ค่าแรง/วัน</label></h6>
                                             <input type="number" class="form-control" id="editsalary_per_day" placeholder="รายเดือนหารด้วย30วัน" name="salary_per_day" required autocomplete="off">
                                         </div>
                                     </div>
                                     <div class="row ml-1">
                                         <div class="form-group ">
-                                        <h6><label for="editsalary_per_hour">ค่าแรง/ชั่วโมง</label></h6>
+                                            <h6><label for="editsalary_per_hour">ค่าแรง/ชั่วโมง</label></h6>
                                             <input type="number" class="form-control" id="editsalary_per_hour" placeholder="รายวันหารด้วย8ชั่วโมง" name="salary_per_hour" required autocomplete="off">
                                         </div>
                                         <div class="form-group ml-3">
-                                        <h6><label for="editcomment">หมายเหตุ</label></h6>
+                                            <h6><label for="editcomment">หมายเหตุ</label></h6>
                                             <input type="text" class="form-control" id="editcomment" placeholder="กรุณากรอกหมายเหตุ" name="comment" required autocomplete="off">
                                         </div>
                                     </div>

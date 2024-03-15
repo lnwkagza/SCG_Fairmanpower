@@ -3,24 +3,6 @@
 
 <?php include('../user/include/scripts.php') ?>
 
-
-<?php
-require_once('C:\xampp\htdocs\Payment\config\connection.php');
-// ตรวจสอบว่ามี Session 'line_id' หรือไม่ และค่าของ 'line_id' ไม่เป็นค่าว่าง
-
-if (
-    isset($_SESSION['line_id'], $_SESSION['card_id'], $_SESSION['prefix_thai'], $_SESSION['firstname_thai'], $_SESSION['lastname_thai']) &&
-    !empty($_SESSION['line_id']) && !empty($_SESSION['card_id']) && !empty($_SESSION['prefix_thai']) &&
-    !empty($_SESSION['firstname_thai']) && !empty($_SESSION['lastname_thai'])
-) {
-    $line_id = $_SESSION['line_id'];
-    $card_id = $_SESSION['card_id'];
-    $prefix = $_SESSION['prefix_thai'];
-    $fname = $_SESSION['firstname_thai'];
-    $lname = $_SESSION['lastname_thai'];
-}
-?>
-
 <link rel="stylesheet" href="styles/salary-summary.css">
 
 <body>
@@ -100,10 +82,10 @@ if (
                         <?php
                         // เตรียมคำสั่ง SQL
                         $sql = "SELECT * FROM log_salary
-                                    WHERE card_id = '1234';
+                                    WHERE card_id = ?;
                             ";
                         // เพิ่มเงื่อนไขค้นหา
-                        $params = array();
+                        $params = array($card_id);
 
                         // ดึงข้อมูลจากฐานข้อมูล
                         $stmt = sqlsrv_query($conn, $sql, $params);

@@ -40,29 +40,31 @@
                                         <div class="col-2"></div>
                                         <div class="text-right col-3">
                                             <button onclick="openCircle_Setting_Modal()" type="button" class="btn insert-btn-pay" data-dismiss="modal">
-                                                + เพิ่มการตั้งค่ารอบเดือน
+                                                + เพิ่มการตั้งค่างวดเดือน
                                             </button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="pb-10">
-                                <table class="data-table2 table stripe hover nowrap">
-                                    <thead>
-                                        <tr>
-                                            <th class="datatable-nosort col-1" style="text-align: center;">รอบวันที่ <i class="fa-solid fa-sort"></i></th>
-                                            <th class="datatable-nosort col-9">
-                                                Company / Division / Department / Section / Cost Center / ประเภทพนักงาน / ระดับการทำงาน / ตำแหน่ง
-                                                <i class="fa-solid fa-sort"></i>
-                                            </th>
-                                            <th class="datatable-nosort " style='text-align: right; padding-right: 50px;'>การจัดการ</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <!-- SELECT ค่า cicle -->
-                                        <?php
-                                        // เตรียมคำสั่ง SQL
-                                        $sql = "SELECT circle_id,circle_set.circle as circle, employee.card_id as card_id, company.name_thai as company,division.name_thai as division,department.name_thai as department,section.name_thai as section,cost_center.cost_center_code as cost_center,contract_type.name_thai as contract_type,pl.pl_name_thai as pl,position.name_thai as position , prefix_thai, firstname_thai, lastname_thai FROM circle  
+                                <div class="table-responsive mt-2">
+                                    <table class="data-table2 table stripe hover nowrap">
+                                        <thead>
+                                            <tr>
+                                                <th style="text-align: center;">รอบวันที่ </th>
+                                                <th style="text-align: center;">รหัสพนักงาน </th>
+                                                <th style="text-align: center;">ชื่อ-สกุล </th>
+                                                <th style="text-align: cemter;">การจัดการ</th>
+                                                <th>
+                                                    Company / Division / Department / Section / Cost Center / ประเภทพนักงาน / ระดับการทำงาน / ตำแหน่ง
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- SELECT ค่า cicle -->
+                                            <?php
+                                            // เตรียมคำสั่ง SQL
+                                            $sql = "SELECT circle_id,circle_set.circle as circle,scg_employee_id, employee.card_id as card_id, company.name_thai as company,division.name_thai as division,department.name_thai as department,section.name_thai as section,cost_center.cost_center_code as cost_center,contract_type.name_thai as contract_type,pl.pl_name_thai as pl,position.name_thai as position , prefix_thai, firstname_thai, lastname_thai FROM circle  
                                         LEFT JOIN circle_set ON circle_set.circle_set_id  = circle.circle_set_id 
                                         LEFT JOIN employee ON employee.card_id = circle.card_id 
                                         LEFT JOIN cost_center ON cost_center.cost_center_id  = employee.cost_center_organization_id
@@ -76,21 +78,22 @@
                                         LEFT JOIN pl ON pl.pl_id = pl_info.pl_id 
                                         LEFT JOIN position_info ON position_info.card_id  = circle.card_id
                                         LEFT JOIN position ON position.position_id  = position_info.position_id";
-                                        $params = array();
-                                        // ดึงข้อมูลจากฐานข้อมูล
-                                        $stmt = sqlsrv_query($conn, $sql, $params);
-                                        // ตรวจสอบการทำงานของคำสั่ง SQL
-                                        if ($stmt === false) {
-                                            die(print_r(sqlsrv_errors(), true));
-                                        }
+                                            $params = array();
+                                            // ดึงข้อมูลจากฐานข้อมูล
+                                            $stmt = sqlsrv_query($conn, $sql, $params);
+                                            // ตรวจสอบการทำงานของคำสั่ง SQL
+                                            if ($stmt === false) {
+                                                die(print_r(sqlsrv_errors(), true));
+                                            }
 
-                                        while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
-                                            echo "<tr>";
-                                            echo "<td  style='text-align: center;''>" . $row["circle"] . "</td>";
-                                            echo "<td class='col-md-8'>" . $row["company"] . ' / ' . $row["division"] . ' / ' . $row["department"] . ' / ' . $row["section"] . ' / ' . $row["cost_center"] . ' / ' . $row["contract_type"] . ' / ' . $row["pl"] . ' / ' . $row["position"] . ' / ' . $row["prefix_thai"] . $row["firstname_thai"] . '  ' . $row["lastname_thai"] . "</td>";
-                                            echo "<td><div class='flex'  style='justify-content: right; padding-right: 35px;'>",
-                                            '<button type="button" name="delete_circle" class="delete-btn-pay" onclick="confirmDeleteCircle(\'' . $row['circle_id'] . '\');"><i class="fa-solid fa-trash-can"></i></button> &nbsp;';
-                                            echo "<button type='button' class='edit-btn-pay' onclick='openEdit_Circle_Setting_Modal
+                                            while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
+                                                echo "<tr>";
+                                                echo "<td  style='text-align: center;''>" . $row["circle"] . "</td>";
+                                                echo "<td >" . $row["scg_employee_id"] . "</td>";
+                                                echo "<td>" . $row["prefix_thai"] . $row["firstname_thai"] . '  ' . $row["lastname_thai"] . "</td>";
+                                                echo "<td><div class='flex'  style='justify-content: right; padding-right: 35px;'>",
+                                                '<button type="button" name="delete_circle" class="delete-btn-pay" onclick="confirmDeleteCircle(\'' . $row['circle_id'] . '\');"><i class="fa-solid fa-trash-can"></i></button> &nbsp;';
+                                                echo "<button type='button' class='edit-btn-pay' onclick='openEdit_Circle_Setting_Modal
                                             (
                                             \"" . $row['circle_id'] . "\",
                                             \"" . $row['card_id'] . "\",
@@ -108,13 +111,16 @@
                                             \"" . $row['position'] . "\"
                                             
                                             );'>";
-                                            echo "<div ><i class='fa-solid fa-pencil'></i>";
-                                            echo "</button>";
-                                        }
-                                        // ปิดการเชื่อมต่อ
-                                        ?>
-                                    </tbody>
-                                </table>
+                                                echo "<div ><i class='fa-solid fa-pencil'></i>";
+                                                echo "</button>";
+                                                echo "<td>" . $row["company"] . ' / ' . $row["division"] . ' / ' . $row["department"] . ' / ' . $row["section"] . ' / ' . $row["cost_center"] . ' / ' . $row["contract_type"] . ' / ' . $row["pl"] . ' / ' . $row["position"] . "</td>";
+                                                echo "</tr>";
+                                            }
+                                            // ปิดการเชื่อมต่อ
+                                            ?>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-5 col-sm-5">
@@ -2440,8 +2446,8 @@
                                         </div>
                                         <h6><label for="circle_set_id">รอบวันที่</label></h6>
                                         <select id="circle_set_id" name="circle_set_id" class="custom-select" required="true" autocomplete="off">
-                                        <option value="" selected disabled>เลือกรอบวันที่</option>
-                                            <?php
+                                        <option value="">เลือกรอบวันที่</option>
+                                        <?php
                                             $sqlDropdown_type = "SELECT * FROM circle_set";
                                             echo $sqlDropdown_type; // แสดงคำสั่ง SQL เพื่อตรวจสอบ
                                             $resultDropdown_type = sqlsrv_query($conn, $sqlDropdown_type);

@@ -17,6 +17,7 @@
                         <div class="col-md-12 col-sm-12">
                             <div class="title">
                                 <h3>ตั้งค่ารายรับ</h3>
+
                             </div>
                             <nav aria-label="breadcrumb" role="navigation">
                                 <ol class="breadcrumb">
@@ -24,6 +25,7 @@
                                     <li class="breadcrumb-item"><a href="setting_payment_deduct.php">ตั้งค่ารายจ่าย</a></li>
 
                                 </ol>
+
                             </nav>
                         </div>
                     </div>
@@ -40,16 +42,8 @@
                             <table class="data-table2 table stripe hover nowrap">
                                 <thead>
                                     <tr>
-                                        <th class="datatable-nosort">ชื่อรายการ</th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                        <th class="datatable-nosort">&nbsp;การจัดการ</th>
-
+                                        <th>ชื่อรายการ</th>
+                                        <th>การจัดการ</th>
                                     </tr>
                                     </tread>
                                 <tbody>
@@ -67,14 +61,7 @@
                                     // แสดงผลลัพธ์ในรูปแบบของตาราง HTML
                                     while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
                                         echo "<tr>";
-                                        echo "<td class = 'col-8'>" . $row["income_type"] . "</td>";
-                                        echo "<td></td>";
-                                        echo "<td></td>";
-                                        echo "<td></td>";
-                                        echo "<td></td>";
-                                        echo "<td></td>";
-                                        echo "<td></td>";
-                                        echo "<td></td>";
+                                        echo "<td class = 'col-11'>" . $row["income_type"] . "</td>";
                                         echo "<td><div class='flex'>",
                                         '<form method="post" action="setting_payment_income.php">',
                                         '<input type="hidden" name="income_type_id" value="' . $row['income_type_id'] . '">',

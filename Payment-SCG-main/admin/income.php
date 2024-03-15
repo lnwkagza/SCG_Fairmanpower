@@ -36,8 +36,8 @@
                         <div class="col-md-12 col-sm-12">
                             <nav aria-label="breadcrumb" role="navigation">
                                 <ol class="breadcrumb">
-                                <button  type="button" class="btn income-deduct-btn-pay" >รายการเงินรับ</button>&nbsp;&nbsp;
-                                <button  type="button" class="btn income-deduct-btn-pay-split" onclick="window.location.href='deduct.php'">รายการเงินจ่าย</button>
+                                    <button type="button" class="btn income-deduct-btn-pay">รายการเงินรับ</button>&nbsp;&nbsp;
+                                    <button type="button" class="btn income-deduct-btn-pay-split" onclick="window.location.href='deduct.php'">รายการเงินจ่าย</button>
                                 </ol>
                             </nav>
                         </div>
@@ -59,28 +59,29 @@
                                     </div>
                                 </div>
                                 <div class="pb-10">
-                                    <table class="data-table2 table stripe hover nowrap">
-                                        <thead>
-                                            <tr>
+                                    <div class="table-responsive mt-2">
+                                        <table class="data-table2 table stripe hover nowrap">
+                                            <thead>
+                                                <tr>
                                                 <th style="text-align: center;">ประเภท</th>
                                                 <th style="text-align: center;">ชื่อ-นามสกุล</th>
-                                                <th>
-                                                    กลุ่มเป้าหมาย : Company / Division / Department /
-                                                    Section / Cost Center
-                                                    ประเภทพนักงาน / ระดับการทำงาน / ตำแหน่ง / รายชื่อพนักงาน
-                                                </th>
                                                 <th style="text-align: center;">จำนวนเงิน <br>(บาท)</th>
                                                 <th style="text-align: center;">คำนวณเงินได้ทั้งปี </th>
                                                 <th style="text-align: center;">หมายเหตุ </th>
                                                 <th style="text-align: center;">เปิดใช้งาน</th>
                                                 <th style="text-align: center;">การจัดการ</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <!-- SELECT ค่า income_target -->
-                                            <?php
-                                            // เตรียมคำสั่ง SQL
-                                            $sql = "SELECT employee.card_id as card_id,income_target_id,evidence_name,income_type.income_type as income_type, amount,whole_year.whole_year as whole_year,active,reason,company.name_thai as company,division.name_thai as division,department.name_thai as department,section.name_thai as section,cost_center.cost_center_code as cost_center,contract_type.name_thai as contract_type,pl.pl_name_thai as pl,position.name_thai as position , prefix_thai, firstname_thai, lastname_thai FROM income_target  
+                                                <th>
+                                                    กลุ่มเป้าหมาย : Company / Division / Department /
+                                                    Section / Cost Center
+                                                    ประเภทพนักงาน / ระดับการทำงาน / ตำแหน่ง / รายชื่อพนักงาน
+                                                </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <!-- SELECT ค่า income_target -->
+                                                <?php
+                                                // เตรียมคำสั่ง SQL
+                                                $sql = "SELECT employee.card_id as card_id,income_target_id,evidence_name,income_type.income_type as income_type, amount,whole_year.whole_year as whole_year,active,reason,company.name_thai as company,division.name_thai as division,department.name_thai as department,section.name_thai as section,cost_center.cost_center_code as cost_center,contract_type.name_thai as contract_type,pl.pl_name_thai as pl,position.name_thai as position , prefix_thai, firstname_thai, lastname_thai FROM income_target  
                                         INNER JOIN income_type ON income_type.income_type_id = income_target.income_type_id 
                                         INNER JOIN employee ON employee.card_id = income_target.card_id 
                                         LEFT JOIN cost_center ON cost_center.cost_center_id  = employee.cost_center_organization_id
@@ -96,39 +97,38 @@
                                         LEFT JOIN position ON position.position_id  = position_info.position_id
                                         LEFT JOIN whole_year ON whole_year.whole_year_id  = income_target.whole_year_id";
 
-                                            $params = array();
-                                            // ดึงข้อมูลจากฐานข้อมูล
-                                            $stmt = sqlsrv_query($conn, $sql, $params);
-                                            // ตรวจสอบการทำงานของคำสั่ง SQL
-                                            if ($stmt === false) {
-                                                die(print_r(sqlsrv_errors(), true));
-                                            }
-
-                                            // แสดงผลลัพธ์ในรูปแบบของตาราง HTML
-                                            while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
-                                                echo "<tr>";
-                                                echo "<td class='col-md-1' style='text-align: center;''>" . $row["income_type"] . "</td>";
-                                                echo "<td class='col-md-2'>" . $row["prefix_thai"] . $row["firstname_thai"] . '  ' . $row["lastname_thai"] . "</td>";
-                                                echo "<td class='col-md-4'>"  . $row["company"] . ' / ' . $row["division"] . ' / ' . $row["department"] . ' / ' . $row["section"] . ' / ' . $row["cost_center"] . ' / ' . $row["contract_type"] . ' / ' . $row["pl"] . ' / ' . $row["position"] . ' / ' . $row["prefix_thai"] . $row["firstname_thai"] . '  ' . $row["lastname_thai"] . "</td>";
-                                                echo "<td class='col-md-1' style='text-align: center;''>" . $row["amount"] . "</td>";
-                                                echo "<td class='col-md-1' style='text-align: center;''>" . $row["whole_year"] . "</td>";
-                                                echo "<td class='col-md-2' style='text-align: center;''>" . $row["reason"] . "</td>";
-                                                echo "<td class='col-md-1'>";
-                                                if ($row["active"] == 0) {
-                                                    echo '<div class="custom-control custom-switch custom-switch-sm d-flex justify-content-center">';
-                                                    echo '<input type="checkbox" class="custom-control-input toggleSwitch" id="toggleSwitch_' . $row['income_target_id'] . '" data-income-target-id="' . $row['income_target_id'] . '">';
-                                                    echo '<label class="custom-control-label" for="toggleSwitch_' . $row['income_target_id'] . '"></label>';
-                                                    echo '</div>';
-                                                } else if ($row["active"] == 1) {
-                                                    echo '<div class="custom-control custom-switch custom-switch-sm d-flex justify-content-center">';
-                                                    echo '<input type="checkbox" class="custom-control-input toggleSwitch" id="toggleSwitch_' . $row['income_target_id'] . '" data-income-target-id="' . $row['income_target_id'] . '" checked>';
-                                                    echo '<label class="custom-control-label" for="toggleSwitch_' . $row['income_target_id'] . '"></label>';
-                                                    echo '</div>';
+                                                $params = array();
+                                                // ดึงข้อมูลจากฐานข้อมูล
+                                                $stmt = sqlsrv_query($conn, $sql, $params);
+                                                // ตรวจสอบการทำงานของคำสั่ง SQL
+                                                if ($stmt === false) {
+                                                    die(print_r(sqlsrv_errors(), true));
                                                 }
-                                                echo "</td>";
-                                                echo "<td><div class='flex'  style='justify-content: right;'>",
-                                                '<button type="button" name="delete_income_target" class="delete-btn-pay" onclick="confirmDeleteIncome_target(\'' . $row['income_target_id'] . '\');"><i class="fa-solid fa-trash-can"></i></button> &nbsp;';
-                                                echo "<button type='button' class='edit-btn' onclick='openEdit_Income_Target_Modal(
+
+                                                // แสดงผลลัพธ์ในรูปแบบของตาราง HTML
+                                                while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
+                                                    echo "<tr>";
+                                                    echo "<td class='col-md-1' style='text-align: center;''>" . $row["income_type"] . "</td>";
+                                                    echo "<td class='col-md-2'>" . $row["prefix_thai"] . $row["firstname_thai"] . '  ' . $row["lastname_thai"] . "</td>";
+                                                    echo "<td class='col-md-1' style='text-align: center;''>" . $row["amount"] . "</td>";
+                                                    echo "<td class='col-md-1' style='text-align: center;''>" . $row["whole_year"] . "</td>";
+                                                    echo "<td class='col-md-2' style='text-align: center;''>" . $row["reason"] . "</td>";
+                                                    echo "<td class='col-md-1'>";
+                                                    if ($row["active"] == 0) {
+                                                        echo '<div class="custom-control custom-switch custom-switch-sm d-flex justify-content-center">';
+                                                        echo '<input type="checkbox" class="custom-control-input toggleSwitch" id="toggleSwitch_' . $row['income_target_id'] . '" data-income-target-id="' . $row['income_target_id'] . '">';
+                                                        echo '<label class="custom-control-label" for="toggleSwitch_' . $row['income_target_id'] . '"></label>';
+                                                        echo '</div>';
+                                                    } else if ($row["active"] == 1) {
+                                                        echo '<div class="custom-control custom-switch custom-switch-sm d-flex justify-content-center">';
+                                                        echo '<input type="checkbox" class="custom-control-input toggleSwitch" id="toggleSwitch_' . $row['income_target_id'] . '" data-income-target-id="' . $row['income_target_id'] . '" checked>';
+                                                        echo '<label class="custom-control-label" for="toggleSwitch_' . $row['income_target_id'] . '"></label>';
+                                                        echo '</div>';
+                                                    }
+                                                    echo "</td>";
+                                                    echo "<td><div class='flex'  style='justify-content: right;'>",
+                                                    '<button type="button" name="delete_income_target" class="delete-btn-pay" onclick="confirmDeleteIncome_target(\'' . $row['income_target_id'] . '\');"><i class="fa-solid fa-trash-can"></i></button> &nbsp;';
+                                                    echo "<button type='button' class='edit-btn' onclick='openEdit_Income_Target_Modal(
                                                 \"" . $row['income_target_id'] . "\",
                                                 \"" . $row['prefix_thai'] . "\",
                                                 \"" . $row['firstname_thai'] . "\",
@@ -146,61 +146,62 @@
                                                 \"" . $row['whole_year'] . "\",
                                                 \"" . $row['reason'] . "\"
                                                 );'>";
-                                                echo "<i class='fa-solid fa-pencil'></i>";
-                                                echo "</button> &nbsp;";
-                                                echo "<a href='flie/" . $row['evidence_name'] . "' download>";
-                                                echo "<button type='button' class='dowload-btn'>";
-                                                echo "<i class='fa-solid fa-file'></i>";
-                                                echo "</button>";
-                                                echo "</a>";
-                                                echo '</tr>';
-                                            }
-                                            ?>
-                                            <script>
-                                                $(document).ready(function() {
-                                                    $('.toggleSwitch').change(function() {
-                                                        var isChecked = $(this).prop('checked');
-                                                        var incomeTargetId = $(this).data('income-target-id');
+                                                    echo "<i class='fa-solid fa-pencil'></i>";
+                                                    echo "</button> &nbsp;";
+                                                    echo "<a href='flie/" . $row['evidence_name'] . "' download>";
+                                                    echo "<button type='button' class='dowload-btn'>";
+                                                    echo "<i class='fa-solid fa-file'></i>";
+                                                    echo "</button>";
+                                                    echo "</a>";
+                                                    echo "<td class='col-md-4'>"  . $row["company"] . ' / ' . $row["division"] . ' / ' . $row["department"] . ' / ' . $row["section"] . ' / ' . $row["cost_center"] . ' / ' . $row["contract_type"] . ' / ' . $row["pl"] . ' / ' . $row["position"] . "</td>";
+                                                    echo '</tr>';
+                                                }
+                                                ?>
+                                                <script>
+                                                    $(document).ready(function() {
+                                                        $('.toggleSwitch').change(function() {
+                                                            var isChecked = $(this).prop('checked');
+                                                            var incomeTargetId = $(this).data('income-target-id');
 
-                                                        // ส่งข้อมูลไปยังไฟล์ PHP ด้วย AJAX request
-                                                        $.ajax({
-                                                            url: 'income_update_active.php',
-                                                            method: 'POST',
-                                                            data: {
-                                                                isChecked: isChecked,
-                                                                incomeTargetId: incomeTargetId
-                                                            },
-                                                            success: function(response) {
-                                                                console.log('การอัพเดตข้อมูลสำเร็จ');
-                                                            },
-                                                            error: function(xhr, status, error) {
-                                                                console.error('เกิดข้อผิดพลาดในการส่งข้อมูลไปยังฐานข้อมูล');
-                                                            }
+                                                            // ส่งข้อมูลไปยังไฟล์ PHP ด้วย AJAX request
+                                                            $.ajax({
+                                                                url: 'income_update_active.php',
+                                                                method: 'POST',
+                                                                data: {
+                                                                    isChecked: isChecked,
+                                                                    incomeTargetId: incomeTargetId
+                                                                },
+                                                                success: function(response) {
+                                                                    console.log('การอัพเดตข้อมูลสำเร็จ');
+                                                                },
+                                                                error: function(xhr, status, error) {
+                                                                    console.error('เกิดข้อผิดพลาดในการส่งข้อมูลไปยังฐานข้อมูล');
+                                                                }
+                                                            });
                                                         });
                                                     });
-                                                });
-                                            </script>
+                                                </script>
 
-                                            <?php
+                                                <?php
 
-                                            // -- DELETE  ค่า income_target ตาม income_target_id -->
+                                                // -- DELETE  ค่า income_target ตาม income_target_id -->
 
-                                            if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete_income_target'])) {
+                                                if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete_income_target'])) {
 
-                                                $income_target_id = $_POST['income_target_id'];
-                                                $sql = "DELETE FROM income_target WHERE income_target_id = ?";
-                                                $params = array($income_target_id);
+                                                    $income_target_id = $_POST['income_target_id'];
+                                                    $sql = "DELETE FROM income_target WHERE income_target_id = ?";
+                                                    $params = array($income_target_id);
 
-                                                $stmt = sqlsrv_prepare($conn, $sql, $params);
-                                                if ($stmt === false) {
-                                                    die(print_r(sqlsrv_errors(), true));
-                                                }
+                                                    $stmt = sqlsrv_prepare($conn, $sql, $params);
+                                                    if ($stmt === false) {
+                                                        die(print_r(sqlsrv_errors(), true));
+                                                    }
 
-                                                $result = sqlsrv_execute($stmt);
-                                                if ($result === false) {
-                                                    die(print_r(sqlsrv_errors(), true));
-                                                } else {
-                                                    echo '<script type="text/javascript">
+                                                    $result = sqlsrv_execute($stmt);
+                                                    if ($result === false) {
+                                                        die(print_r(sqlsrv_errors(), true));
+                                                    } else {
+                                                        echo '<script type="text/javascript">
                                                             const swalWithBootstrapButtons = Swal.mixin({
                                                                 customClass: {
                                                                     confirmButton: "delete-swal",
@@ -216,13 +217,14 @@
 
                                                             })
                                                         </script>';
-                                                    echo "<meta http-equiv='refresh' content='2'>";
-                                                    exit();
+                                                        echo "<meta http-equiv='refresh' content='2'>";
+                                                        exit();
+                                                    }
                                                 }
-                                            }
-                                            ?>
-                                        </tbody>
-                                    </table>
+                                                ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -4976,13 +4978,13 @@
 
                                         <div class="form-group">
                                             <h6><label for="editreason">หมายเหตุ</label></h6>
-                                            <input type="text" class="form-control" placeholder="กรอกหมายเหตุ" id="editreason" name="reason" autocomplete="off">
+                                            <input type="text" class="form-control" id="editreason"  placeholder="กรอกหมายเหตุ" name="reason" autocomplete="off">
                                         </div>
                                         <div class="form-group">
                                             <div class="form-group">
-                                            <h6><label for="editfile">แนบหลักฐาน (ถ้ามี)</label></h6>
-                                            <input type="file" id="editfile" name="file" class="form-control">
-                                        </div>
+                                                <h6><label for="editfile">แนบหลักฐาน (ถ้ามี)</label></h6>
+                                                <input type="file" id="editfile" name="file" class="form-control">
+                                            </div>
                                             <div class="text-right mt-3">
                                                 <button type="submit" class="btn btn-primary" name="update_income_target">บันทึกการแก้ไข</button>
                                             </div>
@@ -4992,26 +4994,31 @@
                                     // -- UPDATE employee_payment based on employee_payment_id -->
 
                                     // -- UPDATE Income Type on income_id -->
-                                if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                                     if (isset($_POST['update_income_target'])) {
-                                        $income_target_id  = $_POST['income_target_id'];
-                                        $amount = $_POST['amount'];
-                                        $whole_year = $_POST['whole_year'];
-                                        $reason = $_POST['reason'];
-                                        $targetDir = "flie/";
-                                        $targetFile = $targetDir . $_FILES["file"]["name"];
-                                        $file_type = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
+                                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                                        if (isset($_POST['update_income_target'])) {
+                                            $income_target_id  = $_POST['income_target_id'];
+                                            $amount = $_POST['amount'];
+                                            $whole_year = $_POST['whole_year'];
+                                            $reason = $_POST['reason'];
+                                            $targetDir = "flie/";
+                                            $targetFile = $targetDir . $_FILES["file"]["name"];
+                                            $file_type = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
 
-                                        if (move_uploaded_file($_FILES["file"]["tmp_name"], $targetFile)) {
-                                            $filename = $_FILES["file"]["name"];
-                                        // อัปเดตค่าของฟิลด์ income_type
-                                        $sqlUpdate = "UPDATE income_target SET amount = '$amount', whole_year_id = '$whole_year', reason = '$reason', evidence_name = '$filename', evidence_data = '$targetFile' WHERE income_target_id = '$income_target_id'";
-                                        $stmt = sqlsrv_query($conn, $sqlUpdate);
 
-                                        if ($stmt === false) {
-                                            die(print_r(sqlsrv_errors(), true));
-                                        } else {
-                                            echo '<script type="text/javascript">
+                                            if (move_uploaded_file($_FILES["file"]["tmp_name"], $targetFile)) {
+                                                $filename = $_FILES["file"]["name"];
+
+                                                header('Location: deduct.php');
+
+
+                                                // อัปเดตค่าของฟิลด์ income_type
+                                                $sqlUpdate = "UPDATE income_target SET amount = '$amount', whole_year_id = '$whole_year', reason = '$reason', evidence_name = '$filename', evidence_data = '$targetFile' WHERE income_target_id = '$income_target_id'";
+                                                $stmt = sqlsrv_query($conn, $sqlUpdate);
+
+                                                if ($stmt === false) {
+                                                    die(print_r(sqlsrv_errors(), true));
+                                                } else {
+                                                    echo '<script type="text/javascript">
                                             const Toast = Swal.mixin({
                                                 toast: true,
                                                 position: "top-end",
@@ -5029,18 +5036,18 @@
                                             });
                                             </script>';
 
-                                            echo "<meta http-equiv='refresh' content='1'>";
+                                                    echo "<meta http-equiv='refresh' content='1'>";
 
-                                            exit; // จบการทำงานของสคริปต์ทันทีหลังจาก redirect
-                                        }
-                                    } else {
-                                        $sqlUpdate = "UPDATE income_target SET amount = '$amount',whole_year_id = '$whole_year',reason = '$reason' WHERE income_target_id = '$income_target_id'";
-                                        $stmt = sqlsrv_query($conn, $sqlUpdate);
+                                                    exit; // จบการทำงานของสคริปต์ทันทีหลังจาก redirect
+                                                }
+                                            } else {
+                                                $sqlUpdate = "UPDATE income_target SET amount = '$amount',whole_year_id = '$whole_year',reason = '$reason' WHERE income_target_id = '$income_target_id'";
+                                                $stmt = sqlsrv_query($conn, $sqlUpdate);
 
-                                        if ($stmt === false) {
-                                            die(print_r(sqlsrv_errors(), true));
-                                        } else {
-                                            echo '<script type="text/javascript">
+                                                if ($stmt === false) {
+                                                    die(print_r(sqlsrv_errors(), true));
+                                                } else {
+                                                    echo '<script type="text/javascript">
                                             const Toast = Swal.mixin({
                                                 toast: true,
                                                 position: "top-end",
@@ -5058,13 +5065,13 @@
                                             });
                                             </script>';
 
-                                            echo "<meta http-equiv='refresh' content='1'>";
+                                                    echo "<meta http-equiv='refresh' content='1'>";
 
-                                            exit; // จบการทำงานของสคริปต์ทันทีหลังจาก redirect
+                                                    exit; // จบการทำงานของสคริปต์ทันทีหลังจาก redirect
+                                                }
+                                            }
                                         }
                                     }
-                                }
-                            }
                                     ?>
                                 </div>
                             </div>

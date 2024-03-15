@@ -48,23 +48,24 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="pb-10">
+                            <div class="table-responsive mt-2">
                                 <table class="data-table2 table stripe hover nowrap">
                                     <thead>
                                         <tr>
-                                            <th class="datatable-nosort col-1" style="text-align: center;">หัวสลีป <i class="fa-solid fa-sort"></i></th>
-                                            <th class="datatable-nosort col-9">
+                                            <th style="text-align: center;">หัวสลีป</th>
+                                            <th style="text-align: center;">รหัสพนักงาน </th>
+                                            <th style="text-align: center;">ชื่อ-สกุล </th>
+                                            <th style="text-align: cemter;">การจัดการ</th>
+                                            <th>
                                                 Company / Division / Department / Section / Cost Center / ประเภทพนักงาน / ระดับการทำงาน / ตำแหน่ง
-                                                <i class="fa-solid fa-sort"></i>
                                             </th>
-                                            <th class="datatable-nosort " style='text-align: right; padding-right: 50px;'>การจัดการ</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <!-- SELECT ค่า cicle -->
                                         <?php
                                         // เตรียมคำสั่ง SQL
-                                        $sql = "SELECT form_id,form_set.form as form, employee.card_id as card_id, company.name_thai as company,division.name_thai as division,department.name_thai as department,section.name_thai as section,cost_center.cost_center_code as cost_center,contract_type.name_thai as contract_type,pl.pl_name_thai as pl,position.name_thai as position , prefix_thai, firstname_thai, lastname_thai FROM form  
+                                        $sql = "SELECT form_id,form_set.form as form,scg_employee_id, employee.card_id as card_id, company.name_thai as company,division.name_thai as division,department.name_thai as department,section.name_thai as section,cost_center.cost_center_code as cost_center,contract_type.name_thai as contract_type,pl.pl_name_thai as pl,position.name_thai as position , prefix_thai, firstname_thai, lastname_thai FROM form  
                                         INNER JOIN form_set ON form_set.form_set_id  = form.form_set_id 
                                         INNER JOIN employee ON employee.card_id = form.card_id  
                                         LEFT JOIN cost_center ON cost_center.cost_center_id  = employee.cost_center_organization_id
@@ -90,7 +91,8 @@
                                             echo "<tr>";
                                             $form_setValue = ($row["form"] === 0) ? "บริษัท" : (($row["form"] === 1) ? "สำนักงานสาขา" : $row["form"]);
                                             echo "<td  style='text-align: center;''>" . $form_setValue . "</td>";
-                                            echo "<td class='col-md-8'>" . $row["company"] . ' / ' . $row["division"] . ' / ' . $row["department"] . ' / ' . $row["section"] . ' / ' . $row["cost_center"] . ' / ' . $row["contract_type"] . ' / ' . $row["pl"] . ' / ' . $row["position"] . ' / ' . $row["prefix_thai"] . $row["firstname_thai"] . '  ' . $row["lastname_thai"] . "</td>";
+                                            echo "<td >" . $row["scg_employee_id"] . "</td>";
+                                            echo "<td>" . $row["prefix_thai"] . $row["firstname_thai"] . '  ' . $row["lastname_thai"] . "</td>";
                                             echo "<td><div class='flex'  style='justify-content: right; padding-right: 35px;'>",
                                             '<button type="button" name="delete_form" class="delete-btn-pay" onclick="confirmDeleteForm(\'' . $row['form_id'] . '\');"><i class="fa-solid fa-trash-can"></i></button> &nbsp;';
                                             echo "<button type='button' class='edit-btn-pay' onclick='openEdit_Form_Setting_Modal
@@ -113,78 +115,81 @@
                                             );'>";
                                             echo "<div ><i class='fa-solid fa-pencil'></i>";
                                             echo "</button>";
+                                            echo "<td>" . $row["company"] . ' / ' . $row["division"] . ' / ' . $row["department"] . ' / ' . $row["section"] . ' / ' . $row["cost_center"] . ' / ' . $row["contract_type"] . ' / ' . $row["pl"] . ' / ' . $row["position"] . "</td>";
+                                            echo "</tr>";
                                         }
                                         // ปิดการเชื่อมต่อ
                                         ?>
                                     </tbody>
                                 </table>
                             </div>
-                            <div class="row">
-                                <div class="col-md-5 col-sm-5">
-                                    <div class="form-group">
-                                        <label style="font-size:24px;"><b></b></label>
-                                        <div class="justify-content-left">
-                                            <button style="font-size:20px;" onclick="location.href='setting_payment_general.php'" type="button" class="btn btn-default" data-dismiss="modal"><i class="fa-solid fa-circle-left"> </i> ย้อนกลับ</button>
-                                            <!-- color:#AAAAAA -->
-                                        </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5 col-sm-5">
+                                <div class="form-group">
+                                    <label style="font-size:24px;"><b></b></label>
+                                    <div class="justify-content-left">
+                                        <button style="font-size:20px;" onclick="location.href='setting_payment_general.php'" type="button" class="btn btn-default" data-dismiss="modal"><i class="fa-solid fa-circle-left"> </i> ย้อนกลับ</button>
+                                        <!-- color:#AAAAAA -->
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Modal Start -->
-                    <div class="modal fade" id="insertformModal" tabindex="-1" role="dialog" aria-labelledby="insertformModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <div class="text-light-green">
-                                        <h4><label>+ เพิ่มการตั้งค่าแบบฟอร์ม </label></h4>
-                                    </div>
+                <!-- Modal Start -->
+                <div class="modal fade" id="insertformModal" tabindex="-1" role="dialog" aria-labelledby="insertformModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div class="text-light-green">
+                                    <h4><label>+ เพิ่มการตั้งค่าแบบฟอร์ม </label></h4>
                                 </div>
-                                <div class="modal-body">
-                                    <h6>หัวสลีป</h6>
-                                    <form method="post" action="setting_payment_form.php">
-                                        <section>
-                                            <div class="col-md-7 col-sm-7">
-                                                <div class="form-group pt-1">
-                                                    <select id="form_setDropdown" name="form_set_id" class="custom-select" required="true" autocomplete="off">
-                                                        <option value="" disabled selected>เลือกแบบฟอร์ม</option>
+                            </div>
+                            <div class="modal-body">
+                                <h6>หัวสลีป</h6>
+                                <form method="post" action="setting_payment_form.php">
+                                    <section>
+                                        <div class="col-md-7 col-sm-7">
+                                            <div class="form-group pt-1">
+                                                <select id="form_setDropdown" name="form_set_id" class="custom-select" required="true" autocomplete="off">
+                                                    <option value="" disabled selected>เลือกแบบฟอร์ม</option>
+                                                    <?php
+                                                    $sqlDropdown_type = "SELECT * FROM form_set";
+                                                    $resultDropdown_type = sqlsrv_query($conn, $sqlDropdown_type);
+
+                                                    if ($resultDropdown_type === false) {
+                                                        die(print_r(sqlsrv_errors(), true));
+                                                    }
+                                                    if ($resultDropdown_type) {
+                                                        while ($row = sqlsrv_fetch_array($resultDropdown_type, SQLSRV_FETCH_ASSOC)) {
+                                                            $form_setValue = ($row["form"] === 0) ? "บริษัท" : (($row["form"] === 1) ? "สำนักงานสาขา" : $row["form"]);
+                                                            echo "<option value='" . $row['form_set_id'] . "'>" . $form_setValue . "</option>";
+                                                        }
+                                                    }
+                                                    ?>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <h6>กลุ่มเป้าหมาย</h6>
+                                        <div class="mt-2 ml-2">
+                                            <h6>Organization :</h6>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="mt-2 ml-5">
+                                                Company&nbsp;
+                                            </div>
+                                            <div class="ml-4 col-md-7 col-sm-12">
+                                                <div class="form-group">
+                                                    <select id="company" name="company_id" class="custom-select" aria-label="Default select example" autocomplete="off">
                                                         <?php
-                                                        $sqlDropdown_type = "SELECT * FROM form_set";
-                                                        $resultDropdown_type = sqlsrv_query($conn, $sqlDropdown_type);
-
-                                                        if ($resultDropdown_type === false) {
-                                                            die(print_r(sqlsrv_errors(), true));
-                                                        }
-                                                        if ($resultDropdown_type) {
-                                                            while ($row = sqlsrv_fetch_array($resultDropdown_type, SQLSRV_FETCH_ASSOC)) {
-                                                                $form_setValue = ($row["form"] === 0) ? "บริษัท" : (($row["form"] === 1) ? "สำนักงานสาขา" : $row["form"]);
-                                                                echo "<option value='" . $row['form_set_id'] . "'>" . $form_setValue . "</option>";
-                                                            }
-                                                        }
-                                                        ?>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <h6>กลุ่มเป้าหมาย</h6>
-                                            <div class="mt-2 ml-2">
-                                                <h6>Organization :</h6>
-                                            </div>
-
-                                            <div class="row">
-                                                <div class="mt-2 ml-5">
-                                                    Company&nbsp;
-                                                </div>
-                                                <div class="ml-4 col-md-7 col-sm-12">
-                                                    <div class="form-group">
-                                                        <select id="company" name="company_id" class="custom-select" aria-label="Default select example" autocomplete="off">
-                                                            <?php
-                                                            if (isset($_POST['employee'])) {
-                                                                // Receive the selected division from the AJAX request
-                                                                $selectedEmployee = $_POST['employee'];
-                                                                // Query to retrieve departments based on the selected division
-                                                                $sqlDropdown_type = "SELECT company.* FROM company
+                                                        if (isset($_POST['employee'])) {
+                                                            // Receive the selected division from the AJAX request
+                                                            $selectedEmployee = $_POST['employee'];
+                                                            // Query to retrieve departments based on the selected division
+                                                            $sqlDropdown_type = "SELECT company.* FROM company
                                                         INNER JOIN location ON location.company_id  = company.company_id
                                                         INNER JOIN division ON division.location_id = location.location_id
                                                         INNER JOIN department ON department.division_id = division.division_id
@@ -192,764 +197,539 @@
                                                         INNER JOIN cost_center ON cost_center.section_id = section.section_id
                                                         INNER JOIN employee ON employee.cost_center_organization_id = cost_center.cost_center_id 
                                                         WHERE employee.card_id =  ?";
-                                                                $params = array($selectedEmployee);
-                                                                $resultDropdown_type = sqlsrv_query($conn, $sqlDropdown_type, $params);
-                                                                $optionsCompany = '';
-                                                                if ($resultDropdown_type === false) {
-                                                                    // Handle query errors
-                                                                    die(print_r(sqlsrv_errors(), true));
-                                                                }
-                                                                // Generate the options for the department dropdown
-                                                                // $options = "<option value=''>All</option>";
-                                                                while ($row = sqlsrv_fetch_array($resultDropdown_type, SQLSRV_FETCH_ASSOC)) {
-                                                                    $optionsCompany .= "<option value='" . $row['company_id'] . "'>" . $row['name_thai'] . "</option>";
-                                                                }
-                                                                // Echo only the department options
-                                                                echo $optionsCompany;
+                                                            $params = array($selectedEmployee);
+                                                            $resultDropdown_type = sqlsrv_query($conn, $sqlDropdown_type, $params);
+                                                            $optionsCompany = '';
+                                                            if ($resultDropdown_type === false) {
+                                                                // Handle query errors
+                                                                die(print_r(sqlsrv_errors(), true));
                                                             }
-                                                            if (empty($_POST['employee'])) {
-                                                                $sqlDropdown_type = "SELECT * FROM company";
-                                                                $resultDropdown_type = sqlsrv_query($conn, $sqlDropdown_type);
-                                                                echo '<option value="" selected>All</option>';
-                                                                if ($resultDropdown_type === false) {
-                                                                    die(print_r(sqlsrv_errors(), true));
-                                                                }
-
-                                                                while ($row = sqlsrv_fetch_array($resultDropdown_type, SQLSRV_FETCH_ASSOC)) {
-
-                                                                    echo "<option value='" . $row['company_id'] . "' >" . $row['name_thai'] . "</option>";
-                                                                }
+                                                            // Generate the options for the department dropdown
+                                                            // $options = "<option value=''>All</option>";
+                                                            while ($row = sqlsrv_fetch_array($resultDropdown_type, SQLSRV_FETCH_ASSOC)) {
+                                                                $optionsCompany .= "<option value='" . $row['company_id'] . "'>" . $row['name_thai'] . "</option>";
                                                             }
-                                                            ?>
-                                                        </select>
-                                                    </div>
+                                                            // Echo only the department options
+                                                            echo $optionsCompany;
+                                                        }
+                                                        if (empty($_POST['employee'])) {
+                                                            $sqlDropdown_type = "SELECT * FROM company";
+                                                            $resultDropdown_type = sqlsrv_query($conn, $sqlDropdown_type);
+                                                            echo '<option value="" selected>All</option>';
+                                                            if ($resultDropdown_type === false) {
+                                                                die(print_r(sqlsrv_errors(), true));
+                                                            }
+
+                                                            while ($row = sqlsrv_fetch_array($resultDropdown_type, SQLSRV_FETCH_ASSOC)) {
+
+                                                                echo "<option value='" . $row['company_id'] . "' >" . $row['name_thai'] . "</option>";
+                                                            }
+                                                        }
+                                                        ?>
+                                                    </select>
                                                 </div>
                                             </div>
-                                            <div class="row">
-                                                <div class="mt-2 ml-5">
-                                                    Division&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                </div>
-                                                <div class="ml-3 col-md-7 col-sm-12">
-                                                    <div class="form-group">
-                                                        <select id="division" name="division_id" class="custom-select" aria-label="Default select example" autocomplete="off">
-                                                            <?php
-                                                            session_start();
-                                                            if (isset($_POST['company'])) {
-                                                                // Receive the selected division from the AJAX request
+                                        </div>
+                                        <div class="row">
+                                            <div class="mt-2 ml-5">
+                                                Division&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            </div>
+                                            <div class="ml-3 col-md-7 col-sm-12">
+                                                <div class="form-group">
+                                                    <select id="division" name="division_id" class="custom-select" aria-label="Default select example" autocomplete="off">
+                                                        <?php
+                                                        session_start();
+                                                        if (isset($_POST['company'])) {
+                                                            // Receive the selected division from the AJAX request
 
-                                                                $selectedCompany = $_POST['company'];
-                                                                $_SESSION['sessioncompany'] = $selectedCompany;
+                                                            $selectedCompany = $_POST['company'];
+                                                            $_SESSION['sessioncompany'] = $selectedCompany;
 
-                                                                if ($selectedCompany != "") {
-                                                                    // Query to retrieve departments based on the selected division
-                                                                    $sqlDropdown_type = "SELECT division.* FROM division 
+                                                            if ($selectedCompany != "") {
+                                                                // Query to retrieve departments based on the selected division
+                                                                $sqlDropdown_type = "SELECT division.* FROM division 
                                                             INNER JOIN location ON location.location_id = division.location_id
                                                             INNER JOIN company ON company.company_id = location.company_id
                                                             WHERE company.company_id = ?";
-                                                                    $params = array($selectedCompany);
-                                                                    $resultDropdown_type = sqlsrv_query($conn, $sqlDropdown_type, $params);
-                                                                    $optionsDivision = '';
-                                                                    if ($resultDropdown_type === false) {
-                                                                        // Handle query errors
-                                                                        die(print_r(sqlsrv_errors(), true));
-                                                                    }
-                                                                    // Generate the options for the department dropdown
-                                                                    $optionsDivision = "<option value=''>All</option>";
-                                                                    while ($row = sqlsrv_fetch_array($resultDropdown_type, SQLSRV_FETCH_ASSOC)) {
-                                                                        $optionsDivision .= "<option value='" . $row['division_id'] . "'>" . $row['name_thai'] . "</option>";
-                                                                    }
-                                                                    // Echo only the department options
-                                                                    echo $optionsDivision;
-                                                                }
-                                                            }
-                                                            if (isset($_POST['employee'])) {
-                                                                // Receive the selected division from the AJAX request
-                                                                $selectedEmployee = $_POST['employee'];
-                                                                // Query to retrieve departments based on the selected division
-
-                                                                $sqlDropdown_type = "SELECT division.* FROM division
-                                                            INNER JOIN department ON department.division_id = division.division_id
-                                                            INNER JOIN section ON section.department_id = department.department_id
-                                                            INNER JOIN cost_center ON cost_center.section_id = section.section_id
-                                                            INNER JOIN employee ON employee.cost_center_organization_id = cost_center.cost_center_id 
-                                                            WHERE employee.card_id =  ?";
-                                                                $params = array($selectedEmployee);
+                                                                $params = array($selectedCompany);
                                                                 $resultDropdown_type = sqlsrv_query($conn, $sqlDropdown_type, $params);
                                                                 $optionsDivision = '';
-
                                                                 if ($resultDropdown_type === false) {
                                                                     // Handle query errors
                                                                     die(print_r(sqlsrv_errors(), true));
                                                                 }
                                                                 // Generate the options for the department dropdown
+                                                                $optionsDivision = "<option value=''>All</option>";
                                                                 while ($row = sqlsrv_fetch_array($resultDropdown_type, SQLSRV_FETCH_ASSOC)) {
                                                                     $optionsDivision .= "<option value='" . $row['division_id'] . "'>" . $row['name_thai'] . "</option>";
                                                                 }
                                                                 // Echo only the department options
                                                                 echo $optionsDivision;
                                                             }
-                                                            if (empty($_POST['employee'])) {
-                                                                echo '<option value="" hidden>All</option>';
-                                                            }
-                                                            ?>
-                                                        </select>
+                                                        }
+                                                        if (isset($_POST['employee'])) {
+                                                            // Receive the selected division from the AJAX request
+                                                            $selectedEmployee = $_POST['employee'];
+                                                            // Query to retrieve departments based on the selected division
 
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="mt-2 ml-5">
-                                                    Department&nbsp;&nbsp;
-                                                </div>
-                                                <div class="col-md-7 col-sm-12">
-                                                    <div class="form-group">
-                                                        <select id="department" name="department_id" class="custom-select" autocomplete="off">
-                                                            <?php
-                                                            session_start();
-                                                            if (isset($_POST['company'])) {
-                                                                $selectedCompany = $_POST['company'];
-                                                                echo '<option value="" hidden>All</option>';
-                                                            }
-                                                            if (isset($_POST['division'])) {
-                                                                // Receive the selected division from the AJAX request
-
-                                                                $selectedDivision = $_POST['division'];
-                                                                $_SESSION['sessiondivision'] = $selectedDivision;
-
-                                                                if ($selectedDivision != "") {
-                                                                    // Query to retrieve departments based on the selected division
-                                                                    $sqlDropdown_type = "SELECT department.* FROM department 
-                                                        INNER JOIN division ON division.division_id = department.division_id
-                                                        INNER JOIN location ON location.location_id = division.location_id
-                                                        INNER JOIN company ON company.company_id = location.company_id
-                                                        WHERE division.division_id = ? ";
-                                                                    $params = array($selectedDivision);
-                                                                    $resultDropdown_type = sqlsrv_query($conn, $sqlDropdown_type, $params);
-                                                                    $optionsDepartment = '';
-                                                                    if ($resultDropdown_type === false) {
-                                                                        // Handle query errors
-                                                                        die(print_r(sqlsrv_errors(), true));
-                                                                    }
-                                                                    // Generate the options for the department dropdown
-                                                                    $optionsDepartment = "<option value=''>All</option>";
-                                                                    while ($row = sqlsrv_fetch_array($resultDropdown_type, SQLSRV_FETCH_ASSOC)) {
-                                                                        $optionsDepartment .= "<option value='" . $row['department_id'] . "'>" . $row['name_thai'] . "</option>";
-                                                                    }
-                                                                    // Echo only the department options
-                                                                    echo $optionsDepartment;
-                                                                }
-                                                            }
-                                                            if (isset($_POST['employee'])) {
-                                                                // Receive the selected division from the AJAX request
-                                                                $selectedEmployee = $_POST['employee'];
-                                                                // Query to retrieve departments based on the selected division
-                                                                $sqlDropdown_type = "SELECT department.* FROM department
+                                                            $sqlDropdown_type = "SELECT division.* FROM division
+                                                            INNER JOIN department ON department.division_id = division.division_id
                                                             INNER JOIN section ON section.department_id = department.department_id
                                                             INNER JOIN cost_center ON cost_center.section_id = section.section_id
                                                             INNER JOIN employee ON employee.cost_center_organization_id = cost_center.cost_center_id 
                                                             WHERE employee.card_id =  ?";
-                                                                $params = array($selectedEmployee);
+                                                            $params = array($selectedEmployee);
+                                                            $resultDropdown_type = sqlsrv_query($conn, $sqlDropdown_type, $params);
+                                                            $optionsDivision = '';
+
+                                                            if ($resultDropdown_type === false) {
+                                                                // Handle query errors
+                                                                die(print_r(sqlsrv_errors(), true));
+                                                            }
+                                                            // Generate the options for the department dropdown
+                                                            while ($row = sqlsrv_fetch_array($resultDropdown_type, SQLSRV_FETCH_ASSOC)) {
+                                                                $optionsDivision .= "<option value='" . $row['division_id'] . "'>" . $row['name_thai'] . "</option>";
+                                                            }
+                                                            // Echo only the department options
+                                                            echo $optionsDivision;
+                                                        }
+                                                        if (empty($_POST['employee'])) {
+                                                            echo '<option value="" hidden>All</option>';
+                                                        }
+                                                        ?>
+                                                    </select>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="mt-2 ml-5">
+                                                Department&nbsp;&nbsp;
+                                            </div>
+                                            <div class="col-md-7 col-sm-12">
+                                                <div class="form-group">
+                                                    <select id="department" name="department_id" class="custom-select" autocomplete="off">
+                                                        <?php
+                                                        session_start();
+                                                        if (isset($_POST['company'])) {
+                                                            $selectedCompany = $_POST['company'];
+                                                            echo '<option value="" hidden>All</option>';
+                                                        }
+                                                        if (isset($_POST['division'])) {
+                                                            // Receive the selected division from the AJAX request
+
+                                                            $selectedDivision = $_POST['division'];
+                                                            $_SESSION['sessiondivision'] = $selectedDivision;
+
+                                                            if ($selectedDivision != "") {
+                                                                // Query to retrieve departments based on the selected division
+                                                                $sqlDropdown_type = "SELECT department.* FROM department 
+                                                        INNER JOIN division ON division.division_id = department.division_id
+                                                        INNER JOIN location ON location.location_id = division.location_id
+                                                        INNER JOIN company ON company.company_id = location.company_id
+                                                        WHERE division.division_id = ? ";
+                                                                $params = array($selectedDivision);
                                                                 $resultDropdown_type = sqlsrv_query($conn, $sqlDropdown_type, $params);
                                                                 $optionsDepartment = '';
-
                                                                 if ($resultDropdown_type === false) {
                                                                     // Handle query errors
                                                                     die(print_r(sqlsrv_errors(), true));
                                                                 }
                                                                 // Generate the options for the department dropdown
+                                                                $optionsDepartment = "<option value=''>All</option>";
                                                                 while ($row = sqlsrv_fetch_array($resultDropdown_type, SQLSRV_FETCH_ASSOC)) {
                                                                     $optionsDepartment .= "<option value='" . $row['department_id'] . "'>" . $row['name_thai'] . "</option>";
                                                                 }
                                                                 // Echo only the department options
                                                                 echo $optionsDepartment;
                                                             }
-                                                            if (empty($_POST['employee'])) {
-                                                                echo '<option value="" hidden>All</option>';
-                                                            }
-                                                            ?>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="mt-2 ml-5">
-                                                    Section&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                </div>
-                                                <div class="ml-2 col-md-7 col-sm-12">
-                                                    <div class="form-group">
-                                                        <select id="section" name="section_id" class="custom-select" autocomplete="off">
-                                                            <?php
-                                                            session_start();
-                                                            if (isset($_POST['company'])) {
-                                                                $selectedCompany = $_POST['company'];
-                                                                echo '<option value="" hidden>All</option>';
-                                                            }
-                                                            if (isset($_POST['division'])) {
-                                                                $selectedDivision = $_POST['division'];
-                                                                echo '<option value="" hidden>All</option>';
-                                                            }
-                                                            if (isset($_POST['department'])) {
-
-                                                                // Receive the selected division from the AJAX request
-                                                                $selectedDepartment = $_POST['department'];
-                                                                $_SESSION['sessiondepartment'] = $selectedDepartment;
-
-                                                                if ($selectedDepartment != "") {
-                                                                    // Query to retrieve departments based on the selected division
-                                                                    $sqlDropdown_type = "SELECT * FROM section WHERE department_id = ?";
-                                                                    $params = array($selectedDepartment);
-                                                                    $resultDropdown_type = sqlsrv_query($conn, $sqlDropdown_type, $params);
-
-                                                                    if ($resultDropdown_type === false) {
-                                                                        // Handle query errors
-                                                                        die(print_r(sqlsrv_errors(), true));
-                                                                    }
-
-                                                                    // Generate the options for the department dropdown
-                                                                    $options = "<option value=''>All</option>";
-                                                                    while ($row = sqlsrv_fetch_array($resultDropdown_type, SQLSRV_FETCH_ASSOC)) {
-                                                                        $options .= "<option value='" . $row['section_id'] . "'>" . $row['name_thai'] . "</option>";
-                                                                    }
-
-                                                                    // Echo only the department options
-                                                                    echo $options;
-                                                                }
-                                                            }
-                                                            if (isset($_POST['employee'])) {
-                                                                // Receive the selected division from the AJAX request
-                                                                $selectedEmployee = $_POST['employee'];
-                                                                // Query to retrieve departments based on the selected division
-                                                                $sqlDropdown_type = "SELECT section.* FROM section
+                                                        }
+                                                        if (isset($_POST['employee'])) {
+                                                            // Receive the selected division from the AJAX request
+                                                            $selectedEmployee = $_POST['employee'];
+                                                            // Query to retrieve departments based on the selected division
+                                                            $sqlDropdown_type = "SELECT department.* FROM department
+                                                            INNER JOIN section ON section.department_id = department.department_id
                                                             INNER JOIN cost_center ON cost_center.section_id = section.section_id
                                                             INNER JOIN employee ON employee.cost_center_organization_id = cost_center.cost_center_id 
                                                             WHERE employee.card_id =  ?";
-                                                                $params = array($selectedEmployee);
+                                                            $params = array($selectedEmployee);
+                                                            $resultDropdown_type = sqlsrv_query($conn, $sqlDropdown_type, $params);
+                                                            $optionsDepartment = '';
+
+                                                            if ($resultDropdown_type === false) {
+                                                                // Handle query errors
+                                                                die(print_r(sqlsrv_errors(), true));
+                                                            }
+                                                            // Generate the options for the department dropdown
+                                                            while ($row = sqlsrv_fetch_array($resultDropdown_type, SQLSRV_FETCH_ASSOC)) {
+                                                                $optionsDepartment .= "<option value='" . $row['department_id'] . "'>" . $row['name_thai'] . "</option>";
+                                                            }
+                                                            // Echo only the department options
+                                                            echo $optionsDepartment;
+                                                        }
+                                                        if (empty($_POST['employee'])) {
+                                                            echo '<option value="" hidden>All</option>';
+                                                        }
+                                                        ?>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="mt-2 ml-5">
+                                                Section&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            </div>
+                                            <div class="ml-2 col-md-7 col-sm-12">
+                                                <div class="form-group">
+                                                    <select id="section" name="section_id" class="custom-select" autocomplete="off">
+                                                        <?php
+                                                        session_start();
+                                                        if (isset($_POST['company'])) {
+                                                            $selectedCompany = $_POST['company'];
+                                                            echo '<option value="" hidden>All</option>';
+                                                        }
+                                                        if (isset($_POST['division'])) {
+                                                            $selectedDivision = $_POST['division'];
+                                                            echo '<option value="" hidden>All</option>';
+                                                        }
+                                                        if (isset($_POST['department'])) {
+
+                                                            // Receive the selected division from the AJAX request
+                                                            $selectedDepartment = $_POST['department'];
+                                                            $_SESSION['sessiondepartment'] = $selectedDepartment;
+
+                                                            if ($selectedDepartment != "") {
+                                                                // Query to retrieve departments based on the selected division
+                                                                $sqlDropdown_type = "SELECT * FROM section WHERE department_id = ?";
+                                                                $params = array($selectedDepartment);
                                                                 $resultDropdown_type = sqlsrv_query($conn, $sqlDropdown_type, $params);
-                                                                $optionsSection = '';
 
                                                                 if ($resultDropdown_type === false) {
                                                                     // Handle query errors
                                                                     die(print_r(sqlsrv_errors(), true));
                                                                 }
+
                                                                 // Generate the options for the department dropdown
-                                                                // $options = "<option value=''>All</option>";
+                                                                $options = "<option value=''>All</option>";
                                                                 while ($row = sqlsrv_fetch_array($resultDropdown_type, SQLSRV_FETCH_ASSOC)) {
-                                                                    $optionsSection .= "<option value='" . $row['section_id'] . "'>" . $row['name_thai'] . "</option>";
+                                                                    $options .= "<option value='" . $row['section_id'] . "'>" . $row['name_thai'] . "</option>";
                                                                 }
+
                                                                 // Echo only the department options
-                                                                echo $optionsSection;
+                                                                echo $options;
                                                             }
-                                                            if (empty($_POST['employee'])) {
-                                                                echo '<option value="" hidden>All</option>';
-                                                            }
-                                                            ?>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="mt-2 ml-5">
-                                                    Cost Center&nbsp;
-                                                </div>
-                                                <div class="ml-2 col-md-7 col-sm-12">
-                                                    <div class="form-group">
-                                                        <select id="cost_center" name="cost_center_id" class="custom-select" autocomplete="off">
-                                                            <?php
-                                                            session_start();
-                                                            if (isset($_POST['company'])) {
-                                                                $selectedCompany = $_POST['company'];
-                                                                echo '<option value="" hidden>All</option>';
-                                                            }
-                                                            if (isset($_POST['division'])) {
-                                                                $selectedDivision = $_POST['division'];
-                                                                echo '<option value="" hidden>All</option>';
-                                                            }
-                                                            if (isset($_POST['department'])) {
-                                                                $selectedDepartment = $_POST['department'];
-                                                                echo '<option value="" hidden>All</option>';
-                                                            }
-                                                            if (isset($_POST['section'])) {
-
-                                                                // Receive the selected division from the AJAX request
-                                                                $selectedSection = $_POST['section'];
-                                                                $_SESSION['sessionsection'] = $selectedSection;
-
-                                                                if ($selectedSection != "") {
-                                                                    // Query to retrieve departments based on the selected division
-                                                                    $sqlDropdown_type = "SELECT * FROM cost_center
-                                                        WHERE section_id = ?";
-                                                                    $params = array($selectedSection);
-                                                                    $resultDropdown_type = sqlsrv_query($conn, $sqlDropdown_type, $params);
-
-                                                                    if ($resultDropdown_type === false) {
-                                                                        // Handle query errors
-                                                                        die(print_r(sqlsrv_errors(), true));
-                                                                    }
-
-                                                                    // Generate the options for the department dropdown
-                                                                    $options = "<option value=''>All</option>";
-                                                                    while ($row = sqlsrv_fetch_array($resultDropdown_type, SQLSRV_FETCH_ASSOC)) {
-                                                                        $options .= "<option value='" . $row['cost_center_id'] . "'>" . $row['cost_center_code'] . "</option>";
-                                                                    }
-
-                                                                    // Echo only the department options
-                                                                    echo $options;
-                                                                }
-                                                            }
-                                                            if (isset($_POST['employee'])) {
-                                                                // Receive the selected division from the AJAX request
-                                                                $selectedEmployee = $_POST['employee'];
-                                                                // Query to retrieve departments based on the selected division
-                                                                $sqlDropdown_type = "SELECT cost_center.* FROM cost_center
+                                                        }
+                                                        if (isset($_POST['employee'])) {
+                                                            // Receive the selected division from the AJAX request
+                                                            $selectedEmployee = $_POST['employee'];
+                                                            // Query to retrieve departments based on the selected division
+                                                            $sqlDropdown_type = "SELECT section.* FROM section
+                                                            INNER JOIN cost_center ON cost_center.section_id = section.section_id
                                                             INNER JOIN employee ON employee.cost_center_organization_id = cost_center.cost_center_id 
                                                             WHERE employee.card_id =  ?";
-                                                                $params = array($selectedEmployee);
+                                                            $params = array($selectedEmployee);
+                                                            $resultDropdown_type = sqlsrv_query($conn, $sqlDropdown_type, $params);
+                                                            $optionsSection = '';
+
+                                                            if ($resultDropdown_type === false) {
+                                                                // Handle query errors
+                                                                die(print_r(sqlsrv_errors(), true));
+                                                            }
+                                                            // Generate the options for the department dropdown
+                                                            // $options = "<option value=''>All</option>";
+                                                            while ($row = sqlsrv_fetch_array($resultDropdown_type, SQLSRV_FETCH_ASSOC)) {
+                                                                $optionsSection .= "<option value='" . $row['section_id'] . "'>" . $row['name_thai'] . "</option>";
+                                                            }
+                                                            // Echo only the department options
+                                                            echo $optionsSection;
+                                                        }
+                                                        if (empty($_POST['employee'])) {
+                                                            echo '<option value="" hidden>All</option>';
+                                                        }
+                                                        ?>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="mt-2 ml-5">
+                                                Cost Center&nbsp;
+                                            </div>
+                                            <div class="ml-2 col-md-7 col-sm-12">
+                                                <div class="form-group">
+                                                    <select id="cost_center" name="cost_center_id" class="custom-select" autocomplete="off">
+                                                        <?php
+                                                        session_start();
+                                                        if (isset($_POST['company'])) {
+                                                            $selectedCompany = $_POST['company'];
+                                                            echo '<option value="" hidden>All</option>';
+                                                        }
+                                                        if (isset($_POST['division'])) {
+                                                            $selectedDivision = $_POST['division'];
+                                                            echo '<option value="" hidden>All</option>';
+                                                        }
+                                                        if (isset($_POST['department'])) {
+                                                            $selectedDepartment = $_POST['department'];
+                                                            echo '<option value="" hidden>All</option>';
+                                                        }
+                                                        if (isset($_POST['section'])) {
+
+                                                            // Receive the selected division from the AJAX request
+                                                            $selectedSection = $_POST['section'];
+                                                            $_SESSION['sessionsection'] = $selectedSection;
+
+                                                            if ($selectedSection != "") {
+                                                                // Query to retrieve departments based on the selected division
+                                                                $sqlDropdown_type = "SELECT * FROM cost_center
+                                                        WHERE section_id = ?";
+                                                                $params = array($selectedSection);
                                                                 $resultDropdown_type = sqlsrv_query($conn, $sqlDropdown_type, $params);
-                                                                $optionsCost_center = '';
 
                                                                 if ($resultDropdown_type === false) {
                                                                     // Handle query errors
                                                                     die(print_r(sqlsrv_errors(), true));
                                                                 }
+
                                                                 // Generate the options for the department dropdown
-                                                                // $options = "<option value=''>All</option>";
+                                                                $options = "<option value=''>All</option>";
                                                                 while ($row = sqlsrv_fetch_array($resultDropdown_type, SQLSRV_FETCH_ASSOC)) {
-                                                                    $optionsCost_center .= "<option value='" . $row['cost_center_id'] . "'>" . $row['cost_center_code'] . "</option>";
+                                                                    $options .= "<option value='" . $row['cost_center_id'] . "'>" . $row['cost_center_code'] . "</option>";
                                                                 }
+
                                                                 // Echo only the department options
-                                                                echo $optionsCost_center;
+                                                                echo $options;
                                                             }
-                                                            if (empty($_POST['employee'])) {
-                                                                echo '<option value="" hidden>All</option>';
+                                                        }
+                                                        if (isset($_POST['employee'])) {
+                                                            // Receive the selected division from the AJAX request
+                                                            $selectedEmployee = $_POST['employee'];
+                                                            // Query to retrieve departments based on the selected division
+                                                            $sqlDropdown_type = "SELECT cost_center.* FROM cost_center
+                                                            INNER JOIN employee ON employee.cost_center_organization_id = cost_center.cost_center_id 
+                                                            WHERE employee.card_id =  ?";
+                                                            $params = array($selectedEmployee);
+                                                            $resultDropdown_type = sqlsrv_query($conn, $sqlDropdown_type, $params);
+                                                            $optionsCost_center = '';
+
+                                                            if ($resultDropdown_type === false) {
+                                                                // Handle query errors
+                                                                die(print_r(sqlsrv_errors(), true));
                                                             }
-                                                            ?>
-                                                        </select>
-                                                    </div>
+                                                            // Generate the options for the department dropdown
+                                                            // $options = "<option value=''>All</option>";
+                                                            while ($row = sqlsrv_fetch_array($resultDropdown_type, SQLSRV_FETCH_ASSOC)) {
+                                                                $optionsCost_center .= "<option value='" . $row['cost_center_id'] . "'>" . $row['cost_center_code'] . "</option>";
+                                                            }
+                                                            // Echo only the department options
+                                                            echo $optionsCost_center;
+                                                        }
+                                                        if (empty($_POST['employee'])) {
+                                                            echo '<option value="" hidden>All</option>';
+                                                        }
+                                                        ?>
+                                                    </select>
                                                 </div>
                                             </div>
+                                        </div>
 
-                                            <div class="row">
-                                                <div class="mt-2 ml-4">
-                                                    <h6>ประเภทพนักงาน :&nbsp;&nbsp;</h6>
-                                                </div>
-                                                <div class="ml-1 col-md-7 col-sm-12">
-                                                    <div class="form-group">
-                                                        <select id="contract_type" name="contract_type_id" class="custom-select" autocomplete="off">
-                                                            <?php
-                                                            session_start();
-                                                            if (isset($_POST['employee'])) {
-                                                                // Receive the selected division from the AJAX request
-                                                                $selectedEmployee = $_POST['employee'];
-                                                                // Query to retrieve departments based on the selected division
-                                                                $sqlDropdown_type = "SELECT contract_type.* FROM contract_type
+                                        <div class="row">
+                                            <div class="mt-2 ml-4">
+                                                <h6>ประเภทพนักงาน :&nbsp;&nbsp;</h6>
+                                            </div>
+                                            <div class="ml-1 col-md-7 col-sm-12">
+                                                <div class="form-group">
+                                                    <select id="contract_type" name="contract_type_id" class="custom-select" autocomplete="off">
+                                                        <?php
+                                                        session_start();
+                                                        if (isset($_POST['employee'])) {
+                                                            // Receive the selected division from the AJAX request
+                                                            $selectedEmployee = $_POST['employee'];
+                                                            // Query to retrieve departments based on the selected division
+                                                            $sqlDropdown_type = "SELECT contract_type.* FROM contract_type
                                                         INNER JOIN employee ON employee.contract_type_id  = contract_type.contract_type_id
                                                         WHERE employee.card_id = ?";
-                                                                $params = array($selectedEmployee);
-                                                                $resultDropdown_type = sqlsrv_query($conn, $sqlDropdown_type, $params);
-                                                                $optionsContract_type = '';
-                                                                if ($resultDropdown_type === false) {
-                                                                    // Handle query errors
-                                                                    die(print_r(sqlsrv_errors(), true));
-                                                                }
+                                                            $params = array($selectedEmployee);
+                                                            $resultDropdown_type = sqlsrv_query($conn, $sqlDropdown_type, $params);
+                                                            $optionsContract_type = '';
+                                                            if ($resultDropdown_type === false) {
+                                                                // Handle query errors
+                                                                die(print_r(sqlsrv_errors(), true));
+                                                            }
 
-                                                                // Generate the options for the department dropdown
+                                                            // Generate the options for the department dropdown
+                                                            while ($row = sqlsrv_fetch_array($resultDropdown_type, SQLSRV_FETCH_ASSOC)) {
+                                                                $optionsContract_type .= "<option value='" . $row['contract_type_id'] . "'>" . $row['name_thai'] . "</option>";
+                                                            }
+
+                                                            // Echo only the department options
+                                                            echo $optionsContract_type;
+                                                        }
+                                                        if (empty($_POST['employee'])) {
+                                                            $sqlDropdown_type = "SELECT * FROM contract_type";
+                                                            $resultDropdown_type = sqlsrv_query($conn, $sqlDropdown_type);
+                                                            echo "<option value='' >All</option>";
+                                                            if ($resultDropdown_type === false) {
+                                                                die(print_r(sqlsrv_errors(), true));
+                                                            }
+                                                            if ($resultDropdown_type) {
                                                                 while ($row = sqlsrv_fetch_array($resultDropdown_type, SQLSRV_FETCH_ASSOC)) {
-                                                                    $optionsContract_type .= "<option value='" . $row['contract_type_id'] . "'>" . $row['name_thai'] . "</option>";
-                                                                }
-
-                                                                // Echo only the department options
-                                                                echo $optionsContract_type;
-                                                            }
-                                                            if (empty($_POST['employee'])) {
-                                                                $sqlDropdown_type = "SELECT * FROM contract_type";
-                                                                $resultDropdown_type = sqlsrv_query($conn, $sqlDropdown_type);
-                                                                echo "<option value='' >All</option>";
-                                                                if ($resultDropdown_type === false) {
-                                                                    die(print_r(sqlsrv_errors(), true));
-                                                                }
-                                                                if ($resultDropdown_type) {
-                                                                    while ($row = sqlsrv_fetch_array($resultDropdown_type, SQLSRV_FETCH_ASSOC)) {
-                                                                        echo "<option value='" . $row['contract_type_id'] . "'>" . $row['name_thai'] . "</option>";
-                                                                    }
+                                                                    echo "<option value='" . $row['contract_type_id'] . "'>" . $row['name_thai'] . "</option>";
                                                                 }
                                                             }
+                                                        }
 
-                                                            ?>
-                                                        </select>
-                                                    </div>
+                                                        ?>
+                                                    </select>
                                                 </div>
                                             </div>
-                                            <div class="row">
-                                                <div class="mt-2 ml-4">
-                                                    <h6>ระดับการทำงาน :</h6>
-                                                </div>
-                                                <div class="ml-3 col-md-7 col-sm-12">
-                                                    <div class="form-group">
-                                                        <select id="pl" name="pl_id" class="custom-select" autocomplete="off">
-                                                            <!-- <option value="" hidden>All</option> -->
-                                                            <?php
-                                                            if (isset($_POST['employee'])) {
-                                                                // Receive the selected division from the AJAX request
-                                                                $selectedEmployee = $_POST['employee'];
-                                                                // Query to retrieve departments based on the selected division
-                                                                $sqlDropdown_type = "SELECT * FROM pl
+                                        </div>
+                                        <div class="row">
+                                            <div class="mt-2 ml-4">
+                                                <h6>ระดับการทำงาน :</h6>
+                                            </div>
+                                            <div class="ml-3 col-md-7 col-sm-12">
+                                                <div class="form-group">
+                                                    <select id="pl" name="pl_id" class="custom-select" autocomplete="off">
+                                                        <!-- <option value="" hidden>All</option> -->
+                                                        <?php
+                                                        if (isset($_POST['employee'])) {
+                                                            // Receive the selected division from the AJAX request
+                                                            $selectedEmployee = $_POST['employee'];
+                                                            // Query to retrieve departments based on the selected division
+                                                            $sqlDropdown_type = "SELECT * FROM pl
                                                         INNER JOIN pl_info ON pl_info.pl_id = pl.pl_id 
                                                         INNER JOIN employee ON employee.card_id = pl_info.card_id
                                                         WHERE employee.card_id = ?";
-                                                                $params = array($selectedEmployee);
-                                                                $resultDropdown_type = sqlsrv_query($conn, $sqlDropdown_type, $params);
-                                                                $optionsPl = '';
-                                                                if ($resultDropdown_type === false) {
-                                                                    // Handle query errors
-                                                                    die(print_r(sqlsrv_errors(), true));
-                                                                }
+                                                            $params = array($selectedEmployee);
+                                                            $resultDropdown_type = sqlsrv_query($conn, $sqlDropdown_type, $params);
+                                                            $optionsPl = '';
+                                                            if ($resultDropdown_type === false) {
+                                                                // Handle query errors
+                                                                die(print_r(sqlsrv_errors(), true));
+                                                            }
 
-                                                                // Generate the options for the department dropdown
-                                                                // $options = "<option value=''>All</option>";
+                                                            // Generate the options for the department dropdown
+                                                            // $options = "<option value=''>All</option>";
+                                                            while ($row = sqlsrv_fetch_array($resultDropdown_type, SQLSRV_FETCH_ASSOC)) {
+                                                                $optionsPl .= "<option value='" . $row['pl_id'] . "'>" . $row['pl_name_thai'] . "</option>";
+                                                            }
+
+                                                            // Echo only the department options
+                                                            echo $optionsPl;
+                                                        }
+                                                        if (empty($_POST['employee'])) {
+                                                            $sqlDropdown_type = "SELECT * FROM pl";
+                                                            $resultDropdown_type = sqlsrv_query($conn, $sqlDropdown_type);
+                                                            echo "<option value=''>All</option>";
+                                                            if ($resultDropdown_type === false) {
+                                                                die(print_r(sqlsrv_errors(), true));
+                                                            }
+                                                            if ($resultDropdown_type) {
                                                                 while ($row = sqlsrv_fetch_array($resultDropdown_type, SQLSRV_FETCH_ASSOC)) {
-                                                                    $optionsPl .= "<option value='" . $row['pl_id'] . "'>" . $row['pl_name_thai'] . "</option>";
-                                                                }
-
-                                                                // Echo only the department options
-                                                                echo $optionsPl;
-                                                            }
-                                                            if (empty($_POST['employee'])) {
-                                                                $sqlDropdown_type = "SELECT * FROM pl";
-                                                                $resultDropdown_type = sqlsrv_query($conn, $sqlDropdown_type);
-                                                                echo "<option value=''>All</option>";
-                                                                if ($resultDropdown_type === false) {
-                                                                    die(print_r(sqlsrv_errors(), true));
-                                                                }
-                                                                if ($resultDropdown_type) {
-                                                                    while ($row = sqlsrv_fetch_array($resultDropdown_type, SQLSRV_FETCH_ASSOC)) {
-                                                                        echo "<option value='" . $row['pl_id'] . "'>" . $row['pl_name_thai'] . "</option>";
-                                                                    }
+                                                                    echo "<option value='" . $row['pl_id'] . "'>" . $row['pl_name_thai'] . "</option>";
                                                                 }
                                                             }
+                                                        }
 
-                                                            ?>
-                                                        </select>
-                                                    </div>
+                                                        ?>
+                                                    </select>
                                                 </div>
                                             </div>
-                                            <div class="row">
-                                                <div class="mt-2 ml-4">
-                                                    <h6>ตำแหน่ง :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h6>
-                                                </div>
-                                                <div class="ml-3 col-md-7 col-sm-12">
-                                                    <div class="form-group">
-                                                        <select id="position" name="position_id" class="custom-select" autocomplete="off">
-                                                            <!-- <option value="" hidden>All</option> -->
-                                                            <?php
-                                                            if (isset($_POST['employee'])) {
-                                                                // Receive the selected division from the AJAX request
-                                                                $selectedEmployee = $_POST['employee'];
+                                        </div>
+                                        <div class="row">
+                                            <div class="mt-2 ml-4">
+                                                <h6>ตำแหน่ง :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h6>
+                                            </div>
+                                            <div class="ml-3 col-md-7 col-sm-12">
+                                                <div class="form-group">
+                                                    <select id="position" name="position_id" class="custom-select" autocomplete="off">
+                                                        <!-- <option value="" hidden>All</option> -->
+                                                        <?php
+                                                        if (isset($_POST['employee'])) {
+                                                            // Receive the selected division from the AJAX request
+                                                            $selectedEmployee = $_POST['employee'];
 
-                                                                // Query to retrieve departments based on the selected division
-                                                                $sqlDropdown_type = "SELECT DISTINCT position.* FROM position
+                                                            // Query to retrieve departments based on the selected division
+                                                            $sqlDropdown_type = "SELECT DISTINCT position.* FROM position
                                                             INNER JOIN position_info ON position_info.position_id = position.position_id 
                                                             INNER JOIN employee ON employee.card_id = position_info.card_id 
                                                             WHERE employee.card_id = ?";
-                                                                $params = array($selectedEmployee);
+                                                            $params = array($selectedEmployee);
+                                                            $resultDropdown_type = sqlsrv_query($conn, $sqlDropdown_type, $params);
+                                                            $optionsPosition = '';
+                                                            if ($resultDropdown_type === false) {
+                                                                // Handle query errors
+                                                                die(print_r(sqlsrv_errors(), true));
+                                                            }
+                                                            // Generate the options for the department dropdown
+                                                            // $options = "<option value=''>All</option>";
+                                                            while ($row = sqlsrv_fetch_array($resultDropdown_type, SQLSRV_FETCH_ASSOC)) {
+                                                                $optionsPosition .= "<option value='" . $row['position_id'] . "'>" . $row['name_thai'] . "</option>";
+                                                            }
+                                                            // Echo only the department options
+                                                            echo $optionsPosition;
+                                                        }
+                                                        if (empty($_POST['employee'])) {
+                                                            $sqlDropdown_type = "SELECT * FROM position";
+                                                            $resultDropdown_type = sqlsrv_query($conn, $sqlDropdown_type);
+                                                            echo "<option value=''>All</option>";
+                                                            if ($resultDropdown_type === false) {
+                                                                die(print_r(sqlsrv_errors(), true));
+                                                            }
+                                                            if ($resultDropdown_type) {
+                                                                while ($row = sqlsrv_fetch_array($resultDropdown_type, SQLSRV_FETCH_ASSOC)) {
+                                                                    echo "<option value='" . $row['position_id'] . "'>" . $row['name_thai'] . "</option>";
+                                                                }
+                                                            }
+                                                        }
+                                                        ?>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="mt-2 ml-4">
+                                                <h6>รายชื่อพนักงาน :</h6>
+                                            </div>
+                                            <div class="ml-3 col-md-7 col-sm-12">
+                                                <div class="form-group">
+                                                    <select id="employee" name="card_id" class="custom-select form-control " data-live-search="true" autocomplete="off">
+                                                        <!-- selectpicker -->
+                                                        <option value="" hidden>All</option>
+                                                        <?php
+                                                        session_start();
+                                                        if (isset($_POST['company'])) {
+                                                            // Receive the selected division from the AJAX request
+                                                            $selectedCompany = $_POST['company'];
+                                                            $_SESSION['previousselectedCompany'] = $selectedCompany;
+
+                                                            if ($selectedCompany != "") {
+                                                                // Query to retrieve departments based on the selected division
+                                                                $sqlDropdown_type = "SELECT * FROM employee
+                                                            INNER JOIN cost_center ON cost_center.cost_center_id = employee.cost_center_organization_id 
+                                                            INNER JOIN section ON section.section_id = cost_center.section_id 
+                                                            INNER JOIN department ON department.department_id = section.department_id 
+                                                            INNER JOIN division ON division.division_id = department.division_id 
+                                                            INNER JOIN location ON location.location_id = division.location_id 
+                                                            INNER JOIN company ON company.company_id = location.company_id 
+                                                            WHERE company.company_id = ?";
+                                                                $params = array($selectedCompany);
                                                                 $resultDropdown_type = sqlsrv_query($conn, $sqlDropdown_type, $params);
-                                                                $optionsPosition = '';
                                                                 if ($resultDropdown_type === false) {
                                                                     // Handle query errors
                                                                     die(print_r(sqlsrv_errors(), true));
                                                                 }
                                                                 // Generate the options for the department dropdown
-                                                                // $options = "<option value=''>All</option>";
+                                                                $options = "<option value=''>All</option>";
                                                                 while ($row = sqlsrv_fetch_array($resultDropdown_type, SQLSRV_FETCH_ASSOC)) {
-                                                                    $optionsPosition .= "<option value='" . $row['position_id'] . "'>" . $row['name_thai'] . "</option>";
+                                                                    $options .= "<option value='" . $row['card_id'] . "'>" . $row['prefix_thai'] . $row['firstname_thai'] . '   ' . $row['lastname_thai'] . "</option>";
                                                                 }
                                                                 // Echo only the department options
-                                                                echo $optionsPosition;
-                                                            }
-                                                            if (empty($_POST['employee'])) {
-                                                                $sqlDropdown_type = "SELECT * FROM position";
-                                                                $resultDropdown_type = sqlsrv_query($conn, $sqlDropdown_type);
-                                                                echo "<option value=''>All</option>";
-                                                                if ($resultDropdown_type === false) {
-                                                                    die(print_r(sqlsrv_errors(), true));
-                                                                }
-                                                                if ($resultDropdown_type) {
-                                                                    while ($row = sqlsrv_fetch_array($resultDropdown_type, SQLSRV_FETCH_ASSOC)) {
-                                                                        echo "<option value='" . $row['position_id'] . "'>" . $row['name_thai'] . "</option>";
-                                                                    }
-                                                                }
-                                                            }
-                                                            ?>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="mt-2 ml-4">
-                                                    <h6>รายชื่อพนักงาน :</h6>
-                                                </div>
-                                                <div class="ml-3 col-md-7 col-sm-12">
-                                                    <div class="form-group">
-                                                        <select id="employee" name="card_id" class="custom-select form-control " data-live-search="true" autocomplete="off">
-                                                            <!-- selectpicker -->
-                                                            <option value="" hidden>All</option>
-                                                            <?php
-                                                            session_start();
-                                                            if (isset($_POST['company'])) {
-                                                                // Receive the selected division from the AJAX request
-                                                                $selectedCompany = $_POST['company'];
-                                                                $_SESSION['previousselectedCompany'] = $selectedCompany;
-
-                                                                if ($selectedCompany != "") {
-                                                                    // Query to retrieve departments based on the selected division
-                                                                    $sqlDropdown_type = "SELECT * FROM employee
-                                                            INNER JOIN cost_center ON cost_center.cost_center_id = employee.cost_center_organization_id 
-                                                            INNER JOIN section ON section.section_id = cost_center.section_id 
-                                                            INNER JOIN department ON department.department_id = section.department_id 
-                                                            INNER JOIN division ON division.division_id = department.division_id 
-                                                            INNER JOIN location ON location.location_id = division.location_id 
-                                                            INNER JOIN company ON company.company_id = location.company_id 
-                                                            WHERE company.company_id = ?";
-                                                                    $params = array($selectedCompany);
-                                                                    $resultDropdown_type = sqlsrv_query($conn, $sqlDropdown_type, $params);
-                                                                    if ($resultDropdown_type === false) {
-                                                                        // Handle query errors
-                                                                        die(print_r(sqlsrv_errors(), true));
-                                                                    }
-                                                                    // Generate the options for the department dropdown
-                                                                    $options = "<option value=''>All</option>";
-                                                                    while ($row = sqlsrv_fetch_array($resultDropdown_type, SQLSRV_FETCH_ASSOC)) {
-                                                                        $options .= "<option value='" . $row['card_id'] . "'>" . $row['prefix_thai'] . $row['firstname_thai'] . '   ' . $row['lastname_thai'] . "</option>";
-                                                                    }
-                                                                    // Echo only the department options
-                                                                    echo $options;
-                                                                } else {
-                                                                    $sqlDropdown_type = "SELECT * FROM employee";
-                                                                    $params = array($selectedCompany);
-                                                                    $resultDropdown_type = sqlsrv_query($conn, $sqlDropdown_type, $params);
-                                                                    if ($resultDropdown_type === false) {
-                                                                        // Handle query errors
-                                                                        die(print_r(sqlsrv_errors(), true));
-                                                                    }
-                                                                    // Generate the options for the department dropdown
-                                                                    $options = "<option value=''>All</option>";
-                                                                    while ($row = sqlsrv_fetch_array($resultDropdown_type, SQLSRV_FETCH_ASSOC)) {
-                                                                        $options .= "<option value='" . $row['card_id'] . "'>" . $row['prefix_thai'] . $row['firstname_thai'] . '   ' . $row['lastname_thai'] . "</option>";
-                                                                    }
-                                                                    // Echo only the department options
-                                                                    echo $options;
-                                                                }
-                                                            } elseif (isset($_POST['division'])) {
-                                                                // Receive the selected division from the AJAX request
-                                                                $selectedDivision = $_POST['division'];
-                                                                $_SESSION['previousselectedDivision'] = $selectedDivision;
-                                                                $previousselectedCompany = isset($_SESSION['previousselectedCompany']) ? $_SESSION['previousselectedCompany'] : null;
-                                                                if ($selectedDivision != "") {
-                                                                    // Query to retrieve departments based on the selected division
-                                                                    $sqlDropdown_type = "SELECT * FROM employee
-                                                            INNER JOIN cost_center ON cost_center.cost_center_id = employee.cost_center_organization_id 
-                                                            INNER JOIN section ON section.section_id = cost_center.section_id 
-                                                            INNER JOIN department ON department.department_id = section.department_id 
-                                                            INNER JOIN division ON division.division_id = department.division_id 
-                                                            WHERE division.division_id = ?";
-                                                                    $params = array($selectedDivision);
-                                                                    $resultDropdown_type = sqlsrv_query($conn, $sqlDropdown_type, $params);
-
-                                                                    if ($resultDropdown_type === false) {
-                                                                        // Handle query errors
-                                                                        die(print_r(sqlsrv_errors(), true));
-                                                                    }
-
-                                                                    // Generate the options for the department dropdown
-                                                                    $options = "<option value=''>All</option>";
-                                                                    while ($row = sqlsrv_fetch_array($resultDropdown_type, SQLSRV_FETCH_ASSOC)) {
-                                                                        $options .= "<option value='" . $row['card_id'] . "'>" . $row['prefix_thai'] . $row['firstname_thai'] . '   ' . $row['lastname_thai'] . "</option>";
-                                                                    }
-                                                                    // Echo only the department options
-                                                                    echo $options;
-                                                                } else {
-                                                                    $sqlDropdown_type = "SELECT * FROM employee
-                                                            INNER JOIN cost_center ON cost_center.cost_center_id = employee.cost_center_organization_id 
-                                                            INNER JOIN section ON section.section_id = cost_center.section_id 
-                                                            INNER JOIN department ON department.department_id = section.department_id 
-                                                            INNER JOIN division ON division.division_id = department.division_id 
-                                                            INNER JOIN location ON location.location_id = division.location_id 
-                                                            INNER JOIN company ON company.company_id = location.company_id 
-                                                            WHERE company.company_id = ?";
-                                                                    $params = array($previousselectedCompany);
-                                                                    $resultDropdown_type = sqlsrv_query($conn, $sqlDropdown_type, $params);
-
-                                                                    if ($resultDropdown_type === false) {
-                                                                        // Handle query errors
-                                                                        die(print_r(sqlsrv_errors(), true));
-                                                                    }
-
-                                                                    // Generate the options for the department dropdown
-                                                                    $options = "<option value=''>All</option>";
-                                                                    while ($row = sqlsrv_fetch_array($resultDropdown_type, SQLSRV_FETCH_ASSOC)) {
-                                                                        $options .= "<option value='" . $row['card_id'] . "'>" . $row['prefix_thai'] . $row['firstname_thai'] . '   ' . $row['lastname_thai'] . "</option>";
-                                                                    }
-                                                                    // Echo only the department options
-                                                                    echo $options;
-                                                                }
-                                                            } elseif (isset($_POST['department'])) {
-                                                                // Receive the selected division from the AJAX request
-                                                                $selectedDepartment = $_POST['department'];
-                                                                $_SESSION['previousselectedDepartment'] = $selectedDepartment;
-                                                                $previousselectedDivision = isset($_SESSION['previousselectedDivision']) ? $_SESSION['previousselectedDivision'] : null;
-
-                                                                if ($selectedDepartment != "") {
-                                                                    // Query to retrieve departments based on the selected division
-                                                                    $sqlDropdown_type = "SELECT * FROM employee
-                                                            INNER JOIN cost_center ON cost_center.cost_center_id = employee.cost_center_organization_id 
-                                                            INNER JOIN section ON section.section_id = cost_center.section_id 
-                                                            INNER JOIN department ON department.department_id = section.department_id 
-                                                            INNER JOIN division ON division.division_id = department.division_id 
-                                                            WHERE department.department_id = ?";
-                                                                    $params = array($selectedDepartment);
-                                                                    $resultDropdown_type = sqlsrv_query($conn, $sqlDropdown_type, $params);
-
-                                                                    if ($resultDropdown_type === false) {
-                                                                        // Handle query errors
-                                                                        die(print_r(sqlsrv_errors(), true));
-                                                                    }
-
-                                                                    // Generate the options for the department dropdown
-                                                                    $options = "<option value=''>All</option>";
-                                                                    while ($row = sqlsrv_fetch_array($resultDropdown_type, SQLSRV_FETCH_ASSOC)) {
-                                                                        $options .= "<option value='" . $row['card_id'] . "'>" . $row['prefix_thai'] . $row['firstname_thai'] . '   ' . $row['lastname_thai'] . "</option>";
-                                                                    }
-
-                                                                    // Echo only the department options
-                                                                    echo $options;
-                                                                } else { // Query to retrieve departments based on the selected division
-                                                                    $sqlDropdown_type = "SELECT * FROM employee
-                                                            INNER JOIN cost_center ON cost_center.cost_center_id = employee.cost_center_organization_id 
-                                                            INNER JOIN section ON section.section_id = cost_center.section_id 
-                                                            INNER JOIN department ON department.department_id = section.department_id 
-                                                            INNER JOIN division ON division.division_id = department.division_id 
-                                                            WHERE division.division_id = ?";
-                                                                    $params = array($previousselectedDivision);
-                                                                    $resultDropdown_type = sqlsrv_query($conn, $sqlDropdown_type, $params);
-
-                                                                    if ($resultDropdown_type === false) {
-                                                                        // Handle query errors
-                                                                        die(print_r(sqlsrv_errors(), true));
-                                                                    }
-
-                                                                    // Generate the options for the department dropdown
-                                                                    $options = "<option value=''>All</option>";
-                                                                    while ($row = sqlsrv_fetch_array($resultDropdown_type, SQLSRV_FETCH_ASSOC)) {
-                                                                        $options .= "<option value='" . $row['card_id'] . "'>" . $row['prefix_thai'] . $row['firstname_thai'] . '   ' . $row['lastname_thai'] . "</option>";
-                                                                    }
-
-                                                                    // Echo only the department options
-                                                                    echo $options;
-                                                                }
-                                                            } elseif (isset($_POST['section'])) {
-                                                                // Receive the selected division from the AJAX request
-                                                                $selectedSection = $_POST['section'];
-                                                                $_SESSION['previousselectedSection'] = $selectedSection;
-                                                                $previousselectedDepartment = isset($_SESSION['previousselectedDepartment']) ? $_SESSION['previousselectedDepartment'] : null;
-
-                                                                if ($selectedSection != "") {
-                                                                    // Query to retrieve departments based on the selected division
-                                                                    $sqlDropdown_type = "SELECT * FROM employee
-                                                            INNER JOIN cost_center ON cost_center.cost_center_id = employee.cost_center_organization_id 
-                                                            INNER JOIN section ON section.section_id = cost_center.section_id 
-                                                            INNER JOIN department ON department.department_id = section.department_id 
-                                                            INNER JOIN division ON division.division_id = department.division_id 
-                                                            WHERE section.section_id = ?";
-                                                                    $params = array($selectedSection);
-                                                                    $resultDropdown_type = sqlsrv_query($conn, $sqlDropdown_type, $params);
-
-                                                                    if ($resultDropdown_type === false) {
-                                                                        // Handle query errors
-                                                                        die(print_r(sqlsrv_errors(), true));
-                                                                    }
-
-                                                                    // Generate the options for the department dropdown
-                                                                    $options = "<option value=''>All</option>";
-                                                                    while ($row = sqlsrv_fetch_array($resultDropdown_type, SQLSRV_FETCH_ASSOC)) {
-                                                                        $options .= "<option value='" . $row['card_id'] . "'>" . $row['prefix_thai'] . $row['firstname_thai'] . '   ' . $row['lastname_thai'] . "</option>";
-                                                                    }
-
-                                                                    // Echo only the department options
-                                                                    echo $options;
-                                                                } else {
-                                                                    $sqlDropdown_type = "SELECT * FROM employee
-                                                            INNER JOIN cost_center ON cost_center.cost_center_id = employee.cost_center_organization_id 
-                                                            INNER JOIN section ON section.section_id = cost_center.section_id 
-                                                            INNER JOIN department ON department.department_id = section.department_id 
-                                                            INNER JOIN division ON division.division_id = department.division_id 
-                                                            WHERE department.department_id = ?";
-                                                                    $params = array($previousselectedDepartment);
-                                                                    $resultDropdown_type = sqlsrv_query($conn, $sqlDropdown_type, $params);
-
-                                                                    if ($resultDropdown_type === false) {
-                                                                        // Handle query errors
-                                                                        die(print_r(sqlsrv_errors(), true));
-                                                                    }
-
-                                                                    // Generate the options for the department dropdown
-                                                                    $options = "<option value=''>All</option>";
-                                                                    while ($row = sqlsrv_fetch_array($resultDropdown_type, SQLSRV_FETCH_ASSOC)) {
-                                                                        $options .= "<option value='" . $row['card_id'] . "'>" . $row['prefix_thai'] . $row['firstname_thai'] . '   ' . $row['lastname_thai'] . "</option>";
-                                                                    }
-
-                                                                    // Echo only the department options
-                                                                    echo $options;
-                                                                }
-                                                            } elseif (isset($_POST['cost_center'])) {
-                                                                // Receive the selected division from the AJAX request
-                                                                $selectedCost_center = $_POST['cost_center'];
-                                                                $_SESSION['previousselectedCost_center'] = $selectedCost_center;
-                                                                $previousselectedSection = isset($_SESSION['previousselectedSection']) ? $_SESSION['previousselectedSection'] : null;
-                                                                if ($selectedCost_center != "") {
-                                                                    $sqlDropdown_type = "SELECT * FROM employee
-                                                            INNER JOIN cost_center ON cost_center.cost_center_id = employee.cost_center_organization_id 
-                                                            INNER JOIN section ON section.section_id = cost_center.section_id 
-                                                            INNER JOIN department ON department.department_id = section.department_id 
-                                                            INNER JOIN division ON division.division_id = department.division_id 
-                                                            WHERE cost_center.cost_center_id = ?";
-                                                                    $params = array($selectedCost_center);
-                                                                    $resultDropdown_type = sqlsrv_query($conn, $sqlDropdown_type, $params);
-
-                                                                    if ($resultDropdown_type === false) {
-                                                                        // Handle query errors
-                                                                        die(print_r(sqlsrv_errors(), true));
-                                                                    }
-
-                                                                    // Generate the options for the department dropdown
-                                                                    $options = "<option value=''>All</option>";
-                                                                    while ($row = sqlsrv_fetch_array($resultDropdown_type, SQLSRV_FETCH_ASSOC)) {
-                                                                        $options .= "<option value='" . $row['card_id'] . "'>" . $row['prefix_thai'] . $row['firstname_thai'] . '   ' . $row['lastname_thai'] . "</option>";
-                                                                    }
-
-                                                                    // Echo only the department options
-                                                                    echo $options;
-                                                                } else {
-                                                                    $sqlDropdown_type = "SELECT * FROM employee
-                                                            INNER JOIN cost_center ON cost_center.cost_center_id = employee.cost_center_organization_id 
-                                                            INNER JOIN section ON section.section_id = cost_center.section_id 
-                                                            INNER JOIN department ON department.department_id = section.department_id 
-                                                            INNER JOIN division ON division.division_id = department.division_id 
-                                                            WHERE section.section_id = ?";
-                                                                    $params = array($previousselectedSection);
-                                                                    $resultDropdown_type = sqlsrv_query($conn, $sqlDropdown_type, $params);
-                                                                    if ($resultDropdown_type === false) {
-                                                                        // Handle query errors
-                                                                        die(print_r(sqlsrv_errors(), true));
-                                                                    }
-                                                                    // Generate the options for the department dropdown
-                                                                    $options = "<option value=''>All</option>";
-                                                                    while ($row = sqlsrv_fetch_array($resultDropdown_type, SQLSRV_FETCH_ASSOC)) {
-                                                                        $options .= "<option value='" . $row['card_id'] . "'>" . $row['prefix_thai'] . $row['firstname_thai'] . '   ' . $row['lastname_thai'] . "</option>";
-                                                                    }
-                                                                    // Echo only the department options
-                                                                    echo $options;
-                                                                }
+                                                                echo $options;
                                                             } else {
                                                                 $sqlDropdown_type = "SELECT * FROM employee";
+                                                                $params = array($selectedCompany);
                                                                 $resultDropdown_type = sqlsrv_query($conn, $sqlDropdown_type, $params);
                                                                 if ($resultDropdown_type === false) {
                                                                     // Handle query errors
@@ -963,47 +743,272 @@
                                                                 // Echo only the department options
                                                                 echo $options;
                                                             }
-                                                            ?>
+                                                        } elseif (isset($_POST['division'])) {
+                                                            // Receive the selected division from the AJAX request
+                                                            $selectedDivision = $_POST['division'];
+                                                            $_SESSION['previousselectedDivision'] = $selectedDivision;
+                                                            $previousselectedCompany = isset($_SESSION['previousselectedCompany']) ? $_SESSION['previousselectedCompany'] : null;
+                                                            if ($selectedDivision != "") {
+                                                                // Query to retrieve departments based on the selected division
+                                                                $sqlDropdown_type = "SELECT * FROM employee
+                                                            INNER JOIN cost_center ON cost_center.cost_center_id = employee.cost_center_organization_id 
+                                                            INNER JOIN section ON section.section_id = cost_center.section_id 
+                                                            INNER JOIN department ON department.department_id = section.department_id 
+                                                            INNER JOIN division ON division.division_id = department.division_id 
+                                                            WHERE division.division_id = ?";
+                                                                $params = array($selectedDivision);
+                                                                $resultDropdown_type = sqlsrv_query($conn, $sqlDropdown_type, $params);
 
-                                                        </select>
+                                                                if ($resultDropdown_type === false) {
+                                                                    // Handle query errors
+                                                                    die(print_r(sqlsrv_errors(), true));
+                                                                }
 
-                                                    </div>
+                                                                // Generate the options for the department dropdown
+                                                                $options = "<option value=''>All</option>";
+                                                                while ($row = sqlsrv_fetch_array($resultDropdown_type, SQLSRV_FETCH_ASSOC)) {
+                                                                    $options .= "<option value='" . $row['card_id'] . "'>" . $row['prefix_thai'] . $row['firstname_thai'] . '   ' . $row['lastname_thai'] . "</option>";
+                                                                }
+                                                                // Echo only the department options
+                                                                echo $options;
+                                                            } else {
+                                                                $sqlDropdown_type = "SELECT * FROM employee
+                                                            INNER JOIN cost_center ON cost_center.cost_center_id = employee.cost_center_organization_id 
+                                                            INNER JOIN section ON section.section_id = cost_center.section_id 
+                                                            INNER JOIN department ON department.department_id = section.department_id 
+                                                            INNER JOIN division ON division.division_id = department.division_id 
+                                                            INNER JOIN location ON location.location_id = division.location_id 
+                                                            INNER JOIN company ON company.company_id = location.company_id 
+                                                            WHERE company.company_id = ?";
+                                                                $params = array($previousselectedCompany);
+                                                                $resultDropdown_type = sqlsrv_query($conn, $sqlDropdown_type, $params);
+
+                                                                if ($resultDropdown_type === false) {
+                                                                    // Handle query errors
+                                                                    die(print_r(sqlsrv_errors(), true));
+                                                                }
+
+                                                                // Generate the options for the department dropdown
+                                                                $options = "<option value=''>All</option>";
+                                                                while ($row = sqlsrv_fetch_array($resultDropdown_type, SQLSRV_FETCH_ASSOC)) {
+                                                                    $options .= "<option value='" . $row['card_id'] . "'>" . $row['prefix_thai'] . $row['firstname_thai'] . '   ' . $row['lastname_thai'] . "</option>";
+                                                                }
+                                                                // Echo only the department options
+                                                                echo $options;
+                                                            }
+                                                        } elseif (isset($_POST['department'])) {
+                                                            // Receive the selected division from the AJAX request
+                                                            $selectedDepartment = $_POST['department'];
+                                                            $_SESSION['previousselectedDepartment'] = $selectedDepartment;
+                                                            $previousselectedDivision = isset($_SESSION['previousselectedDivision']) ? $_SESSION['previousselectedDivision'] : null;
+
+                                                            if ($selectedDepartment != "") {
+                                                                // Query to retrieve departments based on the selected division
+                                                                $sqlDropdown_type = "SELECT * FROM employee
+                                                            INNER JOIN cost_center ON cost_center.cost_center_id = employee.cost_center_organization_id 
+                                                            INNER JOIN section ON section.section_id = cost_center.section_id 
+                                                            INNER JOIN department ON department.department_id = section.department_id 
+                                                            INNER JOIN division ON division.division_id = department.division_id 
+                                                            WHERE department.department_id = ?";
+                                                                $params = array($selectedDepartment);
+                                                                $resultDropdown_type = sqlsrv_query($conn, $sqlDropdown_type, $params);
+
+                                                                if ($resultDropdown_type === false) {
+                                                                    // Handle query errors
+                                                                    die(print_r(sqlsrv_errors(), true));
+                                                                }
+
+                                                                // Generate the options for the department dropdown
+                                                                $options = "<option value=''>All</option>";
+                                                                while ($row = sqlsrv_fetch_array($resultDropdown_type, SQLSRV_FETCH_ASSOC)) {
+                                                                    $options .= "<option value='" . $row['card_id'] . "'>" . $row['prefix_thai'] . $row['firstname_thai'] . '   ' . $row['lastname_thai'] . "</option>";
+                                                                }
+
+                                                                // Echo only the department options
+                                                                echo $options;
+                                                            } else { // Query to retrieve departments based on the selected division
+                                                                $sqlDropdown_type = "SELECT * FROM employee
+                                                            INNER JOIN cost_center ON cost_center.cost_center_id = employee.cost_center_organization_id 
+                                                            INNER JOIN section ON section.section_id = cost_center.section_id 
+                                                            INNER JOIN department ON department.department_id = section.department_id 
+                                                            INNER JOIN division ON division.division_id = department.division_id 
+                                                            WHERE division.division_id = ?";
+                                                                $params = array($previousselectedDivision);
+                                                                $resultDropdown_type = sqlsrv_query($conn, $sqlDropdown_type, $params);
+
+                                                                if ($resultDropdown_type === false) {
+                                                                    // Handle query errors
+                                                                    die(print_r(sqlsrv_errors(), true));
+                                                                }
+
+                                                                // Generate the options for the department dropdown
+                                                                $options = "<option value=''>All</option>";
+                                                                while ($row = sqlsrv_fetch_array($resultDropdown_type, SQLSRV_FETCH_ASSOC)) {
+                                                                    $options .= "<option value='" . $row['card_id'] . "'>" . $row['prefix_thai'] . $row['firstname_thai'] . '   ' . $row['lastname_thai'] . "</option>";
+                                                                }
+
+                                                                // Echo only the department options
+                                                                echo $options;
+                                                            }
+                                                        } elseif (isset($_POST['section'])) {
+                                                            // Receive the selected division from the AJAX request
+                                                            $selectedSection = $_POST['section'];
+                                                            $_SESSION['previousselectedSection'] = $selectedSection;
+                                                            $previousselectedDepartment = isset($_SESSION['previousselectedDepartment']) ? $_SESSION['previousselectedDepartment'] : null;
+
+                                                            if ($selectedSection != "") {
+                                                                // Query to retrieve departments based on the selected division
+                                                                $sqlDropdown_type = "SELECT * FROM employee
+                                                            INNER JOIN cost_center ON cost_center.cost_center_id = employee.cost_center_organization_id 
+                                                            INNER JOIN section ON section.section_id = cost_center.section_id 
+                                                            INNER JOIN department ON department.department_id = section.department_id 
+                                                            INNER JOIN division ON division.division_id = department.division_id 
+                                                            WHERE section.section_id = ?";
+                                                                $params = array($selectedSection);
+                                                                $resultDropdown_type = sqlsrv_query($conn, $sqlDropdown_type, $params);
+
+                                                                if ($resultDropdown_type === false) {
+                                                                    // Handle query errors
+                                                                    die(print_r(sqlsrv_errors(), true));
+                                                                }
+
+                                                                // Generate the options for the department dropdown
+                                                                $options = "<option value=''>All</option>";
+                                                                while ($row = sqlsrv_fetch_array($resultDropdown_type, SQLSRV_FETCH_ASSOC)) {
+                                                                    $options .= "<option value='" . $row['card_id'] . "'>" . $row['prefix_thai'] . $row['firstname_thai'] . '   ' . $row['lastname_thai'] . "</option>";
+                                                                }
+
+                                                                // Echo only the department options
+                                                                echo $options;
+                                                            } else {
+                                                                $sqlDropdown_type = "SELECT * FROM employee
+                                                            INNER JOIN cost_center ON cost_center.cost_center_id = employee.cost_center_organization_id 
+                                                            INNER JOIN section ON section.section_id = cost_center.section_id 
+                                                            INNER JOIN department ON department.department_id = section.department_id 
+                                                            INNER JOIN division ON division.division_id = department.division_id 
+                                                            WHERE department.department_id = ?";
+                                                                $params = array($previousselectedDepartment);
+                                                                $resultDropdown_type = sqlsrv_query($conn, $sqlDropdown_type, $params);
+
+                                                                if ($resultDropdown_type === false) {
+                                                                    // Handle query errors
+                                                                    die(print_r(sqlsrv_errors(), true));
+                                                                }
+
+                                                                // Generate the options for the department dropdown
+                                                                $options = "<option value=''>All</option>";
+                                                                while ($row = sqlsrv_fetch_array($resultDropdown_type, SQLSRV_FETCH_ASSOC)) {
+                                                                    $options .= "<option value='" . $row['card_id'] . "'>" . $row['prefix_thai'] . $row['firstname_thai'] . '   ' . $row['lastname_thai'] . "</option>";
+                                                                }
+
+                                                                // Echo only the department options
+                                                                echo $options;
+                                                            }
+                                                        } elseif (isset($_POST['cost_center'])) {
+                                                            // Receive the selected division from the AJAX request
+                                                            $selectedCost_center = $_POST['cost_center'];
+                                                            $_SESSION['previousselectedCost_center'] = $selectedCost_center;
+                                                            $previousselectedSection = isset($_SESSION['previousselectedSection']) ? $_SESSION['previousselectedSection'] : null;
+                                                            if ($selectedCost_center != "") {
+                                                                $sqlDropdown_type = "SELECT * FROM employee
+                                                            INNER JOIN cost_center ON cost_center.cost_center_id = employee.cost_center_organization_id 
+                                                            INNER JOIN section ON section.section_id = cost_center.section_id 
+                                                            INNER JOIN department ON department.department_id = section.department_id 
+                                                            INNER JOIN division ON division.division_id = department.division_id 
+                                                            WHERE cost_center.cost_center_id = ?";
+                                                                $params = array($selectedCost_center);
+                                                                $resultDropdown_type = sqlsrv_query($conn, $sqlDropdown_type, $params);
+
+                                                                if ($resultDropdown_type === false) {
+                                                                    // Handle query errors
+                                                                    die(print_r(sqlsrv_errors(), true));
+                                                                }
+
+                                                                // Generate the options for the department dropdown
+                                                                $options = "<option value=''>All</option>";
+                                                                while ($row = sqlsrv_fetch_array($resultDropdown_type, SQLSRV_FETCH_ASSOC)) {
+                                                                    $options .= "<option value='" . $row['card_id'] . "'>" . $row['prefix_thai'] . $row['firstname_thai'] . '   ' . $row['lastname_thai'] . "</option>";
+                                                                }
+
+                                                                // Echo only the department options
+                                                                echo $options;
+                                                            } else {
+                                                                $sqlDropdown_type = "SELECT * FROM employee
+                                                            INNER JOIN cost_center ON cost_center.cost_center_id = employee.cost_center_organization_id 
+                                                            INNER JOIN section ON section.section_id = cost_center.section_id 
+                                                            INNER JOIN department ON department.department_id = section.department_id 
+                                                            INNER JOIN division ON division.division_id = department.division_id 
+                                                            WHERE section.section_id = ?";
+                                                                $params = array($previousselectedSection);
+                                                                $resultDropdown_type = sqlsrv_query($conn, $sqlDropdown_type, $params);
+                                                                if ($resultDropdown_type === false) {
+                                                                    // Handle query errors
+                                                                    die(print_r(sqlsrv_errors(), true));
+                                                                }
+                                                                // Generate the options for the department dropdown
+                                                                $options = "<option value=''>All</option>";
+                                                                while ($row = sqlsrv_fetch_array($resultDropdown_type, SQLSRV_FETCH_ASSOC)) {
+                                                                    $options .= "<option value='" . $row['card_id'] . "'>" . $row['prefix_thai'] . $row['firstname_thai'] . '   ' . $row['lastname_thai'] . "</option>";
+                                                                }
+                                                                // Echo only the department options
+                                                                echo $options;
+                                                            }
+                                                        } else {
+                                                            $sqlDropdown_type = "SELECT * FROM employee";
+                                                            $resultDropdown_type = sqlsrv_query($conn, $sqlDropdown_type, $params);
+                                                            if ($resultDropdown_type === false) {
+                                                                // Handle query errors
+                                                                die(print_r(sqlsrv_errors(), true));
+                                                            }
+                                                            // Generate the options for the department dropdown
+                                                            $options = "<option value=''>All</option>";
+                                                            while ($row = sqlsrv_fetch_array($resultDropdown_type, SQLSRV_FETCH_ASSOC)) {
+                                                                $options .= "<option value='" . $row['card_id'] . "'>" . $row['prefix_thai'] . $row['firstname_thai'] . '   ' . $row['lastname_thai'] . "</option>";
+                                                            }
+                                                            // Echo only the department options
+                                                            echo $options;
+                                                        }
+                                                        ?>
+
+                                                    </select>
+
                                                 </div>
                                             </div>
-                                            <div class="mt-2 text-right">
-                                                <div class="dropdown">
-                                                    <input class="btn btn-primary" name="submit" id="submit" type="submit" value="บันทึกรายการ" name="submit">
-                                                </div>
+                                        </div>
+                                        <div class="mt-2 text-right">
+                                            <div class="dropdown">
+                                                <input class="btn btn-primary" name="submit" id="submit" type="submit" value="บันทึกรายการ" name="submit">
                                             </div>
-                                        </section>
-                                    </form>
-                                    <?php
+                                        </div>
+                                    </section>
+                                </form>
+                                <?php
 
-                                    // -------- INSERT ค่า Employee ตาม card_id PK-->
+                                // -------- INSERT ค่า Employee ตาม card_id PK-->
 
-                                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                                        if (isset($_POST['submit'])) {
-                                            $form_set_id = $_POST['form_set_id'];
-                                            $card_id = isset($_POST['card_id']) ? $_POST['card_id'] : null; // ตรวจสอบว่ามีค่า card_id หรือไม่
-                                            $company_id = isset($_POST['company_id']) ? $_POST['company_id'] : null; // ตรวจสอบว่ามีค่า company_id หรือไม่
-                                            $division_id = isset($_POST['division_id']) ? $_POST['division_id'] : null; // ตรวจสอบว่ามีค่า division_id หรือไม่
-                                            $department_id = isset($_POST['department_id']) ? $_POST['department_id'] : null; // ตรวจสอบว่ามีค่า department_id หรือไม่
-                                            $section_id = isset($_POST['section_id']) ? $_POST['section_id'] : null; // ตรวจสอบว่ามีค่า section_id หรือไม่
-                                            $cost_center_id = isset($_POST['cost_center_id']) ? $_POST['cost_center_id'] : null; // ตรวจสอบว่ามีค่า cost_center_id หรือไม่
+                                if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                                    if (isset($_POST['submit'])) {
+                                        $form_set_id = $_POST['form_set_id'];
+                                        $card_id = isset($_POST['card_id']) ? $_POST['card_id'] : null; // ตรวจสอบว่ามีค่า card_id หรือไม่
+                                        $company_id = isset($_POST['company_id']) ? $_POST['company_id'] : null; // ตรวจสอบว่ามีค่า company_id หรือไม่
+                                        $division_id = isset($_POST['division_id']) ? $_POST['division_id'] : null; // ตรวจสอบว่ามีค่า division_id หรือไม่
+                                        $department_id = isset($_POST['department_id']) ? $_POST['department_id'] : null; // ตรวจสอบว่ามีค่า department_id หรือไม่
+                                        $section_id = isset($_POST['section_id']) ? $_POST['section_id'] : null; // ตรวจสอบว่ามีค่า section_id หรือไม่
+                                        $cost_center_id = isset($_POST['cost_center_id']) ? $_POST['cost_center_id'] : null; // ตรวจสอบว่ามีค่า cost_center_id หรือไม่
 
-                                            $sessioncompany = isset($_SESSION['sessioncompany']) ? $_SESSION['sessioncompany'] : null;
-                                            $sessiondivision = isset($_SESSION['sessiondivision']) ? $_SESSION['sessiondivision'] : null;
-                                            $sessiondepartment = isset($_SESSION['sessiondepartment']) ? $_SESSION['sessiondepartment'] : null;
-                                            $sessionsection = isset($_SESSION['sessionsection']) ? $_SESSION['sessionsection'] : null;
-                                            $contract_type_id = $_POST['contract_type_id'] ? $_POST['contract_type_id'] : null;
-                                            $pl_id = $_POST['pl_id'] ? $_POST['pl_id'] : null;
-                                            $position_id = $_POST['position_id'] ? $_POST['position_id'] : null;
+                                        $sessioncompany = isset($_SESSION['sessioncompany']) ? $_SESSION['sessioncompany'] : null;
+                                        $sessiondivision = isset($_SESSION['sessiondivision']) ? $_SESSION['sessiondivision'] : null;
+                                        $sessiondepartment = isset($_SESSION['sessiondepartment']) ? $_SESSION['sessiondepartment'] : null;
+                                        $sessionsection = isset($_SESSION['sessionsection']) ? $_SESSION['sessionsection'] : null;
+                                        $contract_type_id = $_POST['contract_type_id'] ? $_POST['contract_type_id'] : null;
+                                        $pl_id = $_POST['pl_id'] ? $_POST['pl_id'] : null;
+                                        $position_id = $_POST['position_id'] ? $_POST['position_id'] : null;
 
-                                            // ตรวจสอบค่าที่รับมา
-                                            if ((empty($card_id)) && (isset($contract_type_id))  && (empty($pl_id))  && (empty($position_id))) {
-                                                if ((empty($company_id)) && (empty($division_id)) && (empty($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
-                                                    // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
-                                                    $sqlMerge = "MERGE INTO form AS target
+                                        // ตรวจสอบค่าที่รับมา
+                                        if ((empty($card_id)) && (isset($contract_type_id))  && (empty($pl_id))  && (empty($position_id))) {
+                                            if ((empty($company_id)) && (empty($division_id)) && (empty($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
+                                                // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
+                                                $sqlMerge = "MERGE INTO form AS target
                                             USING (
                                                 SELECT ?, employee.card_id
                                                 FROM employee 
@@ -1016,18 +1021,18 @@
                                             WHEN NOT MATCHED THEN
                                                 INSERT (form_set_id, card_id) VALUES (source.form_set_id, source.card_id);";
 
-                                                    // กำหนดค่าพารามิเตอร์
-                                                    $params = array($form_set_id, $contract_type_id);
+                                                // กำหนดค่าพารามิเตอร์
+                                                $params = array($form_set_id, $contract_type_id);
 
-                                                    // ทำการ Merge ข้อมูล
-                                                    $stmt = sqlsrv_query($conn, $sqlMerge, $params);
+                                                // ทำการ Merge ข้อมูล
+                                                $stmt = sqlsrv_query($conn, $sqlMerge, $params);
 
-                                                    if ($stmt === false) {
-                                                        die(print_r(sqlsrv_errors(), true));
-                                                    }
-                                                } else if ((isset($company_id)) && (empty($division_id)) && (empty($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
-                                                    // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
-                                                    $sqlMerge = "MERGE INTO form AS target
+                                                if ($stmt === false) {
+                                                    die(print_r(sqlsrv_errors(), true));
+                                                }
+                                            } else if ((isset($company_id)) && (empty($division_id)) && (empty($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
+                                                // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
+                                                $sqlMerge = "MERGE INTO form AS target
                                             USING (
                                                 SELECT ?, employee.card_id
                                                 FROM employee
@@ -1046,18 +1051,18 @@
                                             WHEN NOT MATCHED THEN
                                                 INSERT (form_set_id, card_id) VALUES (source.form_set_id, source.card_id);";
 
-                                                    // กำหนดค่าพารามิเตอร์
-                                                    $params = array($form_set_id, $sessioncompany, $contract_type_id);
+                                                // กำหนดค่าพารามิเตอร์
+                                                $params = array($form_set_id, $sessioncompany, $contract_type_id);
 
-                                                    // ทำการ Merge ข้อมูล
-                                                    $stmt = sqlsrv_query($conn, $sqlMerge, $params);
+                                                // ทำการ Merge ข้อมูล
+                                                $stmt = sqlsrv_query($conn, $sqlMerge, $params);
 
-                                                    if ($stmt === false) {
-                                                        die(print_r(sqlsrv_errors(), true));
-                                                    }
-                                                } else if ((isset($division_id)) && (empty($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
-                                                    // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
-                                                    $sqlMerge = "MERGE INTO form AS target
+                                                if ($stmt === false) {
+                                                    die(print_r(sqlsrv_errors(), true));
+                                                }
+                                            } else if ((isset($division_id)) && (empty($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
+                                                // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
+                                                $sqlMerge = "MERGE INTO form AS target
                                             USING (
                                                 SELECT ?, employee.card_id
                                                 FROM employee
@@ -1074,18 +1079,18 @@
                                             WHEN NOT MATCHED THEN
                                                 INSERT (form_set_id, card_id) VALUES (source.form_set_id, source.card_id);";
 
-                                                    // กำหนดค่าพารามิเตอร์
-                                                    $params = array($form_set_id, $sessiondivision, $contract_type_id);
+                                                // กำหนดค่าพารามิเตอร์
+                                                $params = array($form_set_id, $sessiondivision, $contract_type_id);
 
-                                                    // ทำการ Merge ข้อมูล
-                                                    $stmt = sqlsrv_query($conn, $sqlMerge, $params);
+                                                // ทำการ Merge ข้อมูล
+                                                $stmt = sqlsrv_query($conn, $sqlMerge, $params);
 
-                                                    if ($stmt === false) {
-                                                        die(print_r(sqlsrv_errors(), true));
-                                                    }
-                                                } else if ((isset($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
-                                                    // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
-                                                    $sqlMerge = "MERGE INTO form AS target
+                                                if ($stmt === false) {
+                                                    die(print_r(sqlsrv_errors(), true));
+                                                }
+                                            } else if ((isset($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
+                                                // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
+                                                $sqlMerge = "MERGE INTO form AS target
                                             USING (
                                                 SELECT ?, employee.card_id
                                                 FROM employee
@@ -1101,18 +1106,18 @@
                                             WHEN NOT MATCHED THEN
                                                 INSERT (form_set_id, card_id) VALUES (source.form_set_id, source.card_id);";
 
-                                                    // กำหนดค่าพารามิเตอร์
-                                                    $params = array($form_set_id, $sessiondepartment, $contract_type_id);
+                                                // กำหนดค่าพารามิเตอร์
+                                                $params = array($form_set_id, $sessiondepartment, $contract_type_id);
 
-                                                    // ทำการ Merge ข้อมูล
-                                                    $stmt = sqlsrv_query($conn, $sqlMerge, $params);
+                                                // ทำการ Merge ข้อมูล
+                                                $stmt = sqlsrv_query($conn, $sqlMerge, $params);
 
-                                                    if ($stmt === false) {
-                                                        die(print_r(sqlsrv_errors(), true));
-                                                    }
-                                                } else if ((isset($section_id)) && (empty($cost_center_id))) {
-                                                    // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
-                                                    $sqlMerge = "MERGE INTO form AS target
+                                                if ($stmt === false) {
+                                                    die(print_r(sqlsrv_errors(), true));
+                                                }
+                                            } else if ((isset($section_id)) && (empty($cost_center_id))) {
+                                                // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
+                                                $sqlMerge = "MERGE INTO form AS target
                                             USING (
                                                 SELECT ?, employee.card_id
                                                 FROM employee
@@ -1127,18 +1132,18 @@
                                             WHEN NOT MATCHED THEN
                                                 INSERT (form_set_id, card_id) VALUES (source.form_set_id, source.card_id);";
 
-                                                    // กำหนดค่าพารามิเตอร์
-                                                    $params = array($form_set_id, $sessionsection, $contract_type_id);
+                                                // กำหนดค่าพารามิเตอร์
+                                                $params = array($form_set_id, $sessionsection, $contract_type_id);
 
-                                                    // ทำการ Merge ข้อมูล
-                                                    $stmt = sqlsrv_query($conn, $sqlMerge, $params);
+                                                // ทำการ Merge ข้อมูล
+                                                $stmt = sqlsrv_query($conn, $sqlMerge, $params);
 
-                                                    if ($stmt === false) {
-                                                        die(print_r(sqlsrv_errors(), true));
-                                                    }
-                                                } else if ((isset($cost_center_id))) {
-                                                    // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
-                                                    $sqlMerge = "MERGE INTO form AS target
+                                                if ($stmt === false) {
+                                                    die(print_r(sqlsrv_errors(), true));
+                                                }
+                                            } else if ((isset($cost_center_id))) {
+                                                // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
+                                                $sqlMerge = "MERGE INTO form AS target
                                             USING (
                                                 SELECT ?, employee.card_id
                                                 FROM employee
@@ -1152,20 +1157,20 @@
                                             WHEN NOT MATCHED THEN
                                                 INSERT (form_set_id, card_id) VALUES (source.form_set_id, source.card_id);";
 
-                                                    // กำหนดค่าพารามิเตอร์
-                                                    $params = array($form_set_id, $cost_center_id, $contract_type_id);
+                                                // กำหนดค่าพารามิเตอร์
+                                                $params = array($form_set_id, $cost_center_id, $contract_type_id);
 
-                                                    // ทำการ Merge ข้อมูล
-                                                    $stmt = sqlsrv_query($conn, $sqlMerge, $params);
+                                                // ทำการ Merge ข้อมูล
+                                                $stmt = sqlsrv_query($conn, $sqlMerge, $params);
 
-                                                    if ($stmt === false) {
-                                                        die(print_r(sqlsrv_errors(), true));
-                                                    }
+                                                if ($stmt === false) {
+                                                    die(print_r(sqlsrv_errors(), true));
                                                 }
-                                            } else if ((empty($card_id)) && (empty($contract_type_id))  && (isset($pl_id))  && (empty($position_id))) {
-                                                if ((empty($company_id)) && (empty($division_id)) && (empty($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
-                                                    // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
-                                                    $sqlMerge = "MERGE INTO form AS target
+                                            }
+                                        } else if ((empty($card_id)) && (empty($contract_type_id))  && (isset($pl_id))  && (empty($position_id))) {
+                                            if ((empty($company_id)) && (empty($division_id)) && (empty($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
+                                                // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
+                                                $sqlMerge = "MERGE INTO form AS target
                                             USING (
                                                 SELECT ?, employee.card_id
                                                 FROM employee 
@@ -1179,18 +1184,18 @@
                                             WHEN NOT MATCHED THEN
                                                 INSERT (form_set_id, card_id) VALUES (source.form_set_id, source.card_id);";
 
-                                                    // กำหนดค่าพารามิเตอร์
-                                                    $params = array($form_set_id, $pl_id);
+                                                // กำหนดค่าพารามิเตอร์
+                                                $params = array($form_set_id, $pl_id);
 
-                                                    // ทำการ Merge ข้อมูล
-                                                    $stmt = sqlsrv_query($conn, $sqlMerge, $params);
+                                                // ทำการ Merge ข้อมูล
+                                                $stmt = sqlsrv_query($conn, $sqlMerge, $params);
 
-                                                    if ($stmt === false) {
-                                                        die(print_r(sqlsrv_errors(), true));
-                                                    }
-                                                } else if ((isset($company_id)) && (empty($division_id)) && (empty($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
-                                                    // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
-                                                    $sqlMerge = "MERGE INTO form AS target
+                                                if ($stmt === false) {
+                                                    die(print_r(sqlsrv_errors(), true));
+                                                }
+                                            } else if ((isset($company_id)) && (empty($division_id)) && (empty($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
+                                                // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
+                                                $sqlMerge = "MERGE INTO form AS target
                                             USING (
                                                 SELECT ?, employee.card_id
                                                 FROM employee
@@ -1210,18 +1215,18 @@
                                             WHEN NOT MATCHED THEN
                                                 INSERT (form_set_id, card_id) VALUES (source.form_set_id, source.card_id);";
 
-                                                    // กำหนดค่าพารามิเตอร์
-                                                    $params = array($form_set_id, $sessioncompany, $pl_id);
+                                                // กำหนดค่าพารามิเตอร์
+                                                $params = array($form_set_id, $sessioncompany, $pl_id);
 
-                                                    // ทำการ Merge ข้อมูล
-                                                    $stmt = sqlsrv_query($conn, $sqlMerge, $params);
+                                                // ทำการ Merge ข้อมูล
+                                                $stmt = sqlsrv_query($conn, $sqlMerge, $params);
 
-                                                    if ($stmt === false) {
-                                                        die(print_r(sqlsrv_errors(), true));
-                                                    }
-                                                } else if ((isset($division_id)) && (empty($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
-                                                    // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
-                                                    $sqlMerge = "MERGE INTO form AS target
+                                                if ($stmt === false) {
+                                                    die(print_r(sqlsrv_errors(), true));
+                                                }
+                                            } else if ((isset($division_id)) && (empty($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
+                                                // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
+                                                $sqlMerge = "MERGE INTO form AS target
                                             USING (
                                                 SELECT ?, employee.card_id
                                                 FROM employee
@@ -1239,18 +1244,18 @@
                                             WHEN NOT MATCHED THEN
                                                 INSERT (form_set_id, card_id) VALUES (source.form_set_id, source.card_id);";
 
-                                                    // กำหนดค่าพารามิเตอร์
-                                                    $params = array($form_set_id, $sessiondivision,  $pl_id);
+                                                // กำหนดค่าพารามิเตอร์
+                                                $params = array($form_set_id, $sessiondivision,  $pl_id);
 
-                                                    // ทำการ Merge ข้อมูล
-                                                    $stmt = sqlsrv_query($conn, $sqlMerge, $params);
+                                                // ทำการ Merge ข้อมูล
+                                                $stmt = sqlsrv_query($conn, $sqlMerge, $params);
 
-                                                    if ($stmt === false) {
-                                                        die(print_r(sqlsrv_errors(), true));
-                                                    }
-                                                } else if ((isset($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
-                                                    // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
-                                                    $sqlMerge = "MERGE INTO form AS target
+                                                if ($stmt === false) {
+                                                    die(print_r(sqlsrv_errors(), true));
+                                                }
+                                            } else if ((isset($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
+                                                // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
+                                                $sqlMerge = "MERGE INTO form AS target
                                             USING (
                                                 SELECT ?, employee.card_id
                                                 FROM employee
@@ -1267,18 +1272,18 @@
                                             WHEN NOT MATCHED THEN
                                                 INSERT (form_set_id, card_id) VALUES (source.form_set_id, source.card_id);";
 
-                                                    // กำหนดค่าพารามิเตอร์
-                                                    $params = array($form_set_id, $sessiondepartment,  $pl_id);
+                                                // กำหนดค่าพารามิเตอร์
+                                                $params = array($form_set_id, $sessiondepartment,  $pl_id);
 
-                                                    // ทำการ Merge ข้อมูล
-                                                    $stmt = sqlsrv_query($conn, $sqlMerge, $params);
+                                                // ทำการ Merge ข้อมูล
+                                                $stmt = sqlsrv_query($conn, $sqlMerge, $params);
 
-                                                    if ($stmt === false) {
-                                                        die(print_r(sqlsrv_errors(), true));
-                                                    }
-                                                } else if ((isset($section_id)) && (empty($cost_center_id))) {
-                                                    // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
-                                                    $sqlMerge = "MERGE INTO form AS target
+                                                if ($stmt === false) {
+                                                    die(print_r(sqlsrv_errors(), true));
+                                                }
+                                            } else if ((isset($section_id)) && (empty($cost_center_id))) {
+                                                // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
+                                                $sqlMerge = "MERGE INTO form AS target
                                             USING (
                                                 SELECT ?, employee.card_id
                                                 FROM employee
@@ -1294,18 +1299,18 @@
                                             WHEN NOT MATCHED THEN
                                                 INSERT (form_set_id, card_id) VALUES (source.form_set_id, source.card_id);";
 
-                                                    // กำหนดค่าพารามิเตอร์
-                                                    $params = array($form_set_id, $sessionsection, $pl_id);
+                                                // กำหนดค่าพารามิเตอร์
+                                                $params = array($form_set_id, $sessionsection, $pl_id);
 
-                                                    // ทำการ Merge ข้อมูล
-                                                    $stmt = sqlsrv_query($conn, $sqlMerge, $params);
+                                                // ทำการ Merge ข้อมูล
+                                                $stmt = sqlsrv_query($conn, $sqlMerge, $params);
 
-                                                    if ($stmt === false) {
-                                                        die(print_r(sqlsrv_errors(), true));
-                                                    }
-                                                } else if ((isset($cost_center_id))) {
-                                                    // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
-                                                    $sqlMerge = "MERGE INTO form AS target
+                                                if ($stmt === false) {
+                                                    die(print_r(sqlsrv_errors(), true));
+                                                }
+                                            } else if ((isset($cost_center_id))) {
+                                                // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
+                                                $sqlMerge = "MERGE INTO form AS target
                                             USING (
                                                 SELECT ?, employee.card_id
                                                 FROM employee
@@ -1320,20 +1325,20 @@
                                             WHEN NOT MATCHED THEN
                                                 INSERT (form_set_id, card_id) VALUES (source.form_set_id, source.card_id);";
 
-                                                    // กำหนดค่าพารามิเตอร์
-                                                    $params = array($form_set_id, $cost_center_id, $pl_id);
+                                                // กำหนดค่าพารามิเตอร์
+                                                $params = array($form_set_id, $cost_center_id, $pl_id);
 
-                                                    // ทำการ Merge ข้อมูล
-                                                    $stmt = sqlsrv_query($conn, $sqlMerge, $params);
+                                                // ทำการ Merge ข้อมูล
+                                                $stmt = sqlsrv_query($conn, $sqlMerge, $params);
 
-                                                    if ($stmt === false) {
-                                                        die(print_r(sqlsrv_errors(), true));
-                                                    }
+                                                if ($stmt === false) {
+                                                    die(print_r(sqlsrv_errors(), true));
                                                 }
-                                            } else if ((empty($card_id)) && (empty($contract_type_id))  && (empty($pl_id))  && (isset($position_id))) {
-                                                if ((empty($company_id)) && (empty($division_id)) && (empty($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
-                                                    // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
-                                                    $sqlMerge = "MERGE INTO form AS target
+                                            }
+                                        } else if ((empty($card_id)) && (empty($contract_type_id))  && (empty($pl_id))  && (isset($position_id))) {
+                                            if ((empty($company_id)) && (empty($division_id)) && (empty($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
+                                                // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
+                                                $sqlMerge = "MERGE INTO form AS target
                                             USING (
                                                 SELECT ?, employee.card_id
                                                 FROM employee 
@@ -1347,18 +1352,18 @@
                                             WHEN NOT MATCHED THEN
                                                 INSERT (form_set_id, card_id) VALUES (source.form_set_id, source.card_id);";
 
-                                                    // กำหนดค่าพารามิเตอร์
-                                                    $params = array($form_set_id, $position_id);
+                                                // กำหนดค่าพารามิเตอร์
+                                                $params = array($form_set_id, $position_id);
 
-                                                    // ทำการ Merge ข้อมูล
-                                                    $stmt = sqlsrv_query($conn, $sqlMerge, $params);
+                                                // ทำการ Merge ข้อมูล
+                                                $stmt = sqlsrv_query($conn, $sqlMerge, $params);
 
-                                                    if ($stmt === false) {
-                                                        die(print_r(sqlsrv_errors(), true));
-                                                    }
-                                                } else if ((isset($company_id)) && (empty($division_id)) && (empty($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
-                                                    // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
-                                                    $sqlMerge = "MERGE INTO form AS target
+                                                if ($stmt === false) {
+                                                    die(print_r(sqlsrv_errors(), true));
+                                                }
+                                            } else if ((isset($company_id)) && (empty($division_id)) && (empty($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
+                                                // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
+                                                $sqlMerge = "MERGE INTO form AS target
                                             USING (
                                                 SELECT ?, employee.card_id
                                                 FROM employee
@@ -1378,18 +1383,18 @@
                                             WHEN NOT MATCHED THEN
                                                 INSERT (form_set_id, card_id) VALUES (source.form_set_id, source.card_id);";
 
-                                                    // กำหนดค่าพารามิเตอร์
-                                                    $params = array($form_set_id, $sessioncompany, $position_id);
+                                                // กำหนดค่าพารามิเตอร์
+                                                $params = array($form_set_id, $sessioncompany, $position_id);
 
-                                                    // ทำการ Merge ข้อมูล
-                                                    $stmt = sqlsrv_query($conn, $sqlMerge, $params);
+                                                // ทำการ Merge ข้อมูล
+                                                $stmt = sqlsrv_query($conn, $sqlMerge, $params);
 
-                                                    if ($stmt === false) {
-                                                        die(print_r(sqlsrv_errors(), true));
-                                                    }
-                                                } else if ((isset($division_id)) && (empty($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
-                                                    // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
-                                                    $sqlMerge = "MERGE INTO form AS target
+                                                if ($stmt === false) {
+                                                    die(print_r(sqlsrv_errors(), true));
+                                                }
+                                            } else if ((isset($division_id)) && (empty($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
+                                                // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
+                                                $sqlMerge = "MERGE INTO form AS target
                                             USING (
                                                 SELECT ?, employee.card_id
                                                 FROM employee
@@ -1407,18 +1412,18 @@
                                             WHEN NOT MATCHED THEN
                                                 INSERT (form_set_id, card_id) VALUES (source.form_set_id, source.card_id);";
 
-                                                    // กำหนดค่าพารามิเตอร์
-                                                    $params = array($form_set_id, $sessiondivision,  $position_id);
+                                                // กำหนดค่าพารามิเตอร์
+                                                $params = array($form_set_id, $sessiondivision,  $position_id);
 
-                                                    // ทำการ Merge ข้อมูล
-                                                    $stmt = sqlsrv_query($conn, $sqlMerge, $params);
+                                                // ทำการ Merge ข้อมูล
+                                                $stmt = sqlsrv_query($conn, $sqlMerge, $params);
 
-                                                    if ($stmt === false) {
-                                                        die(print_r(sqlsrv_errors(), true));
-                                                    }
-                                                } else if ((isset($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
-                                                    // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
-                                                    $sqlMerge = "MERGE INTO form AS target
+                                                if ($stmt === false) {
+                                                    die(print_r(sqlsrv_errors(), true));
+                                                }
+                                            } else if ((isset($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
+                                                // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
+                                                $sqlMerge = "MERGE INTO form AS target
                                             USING (
                                                 SELECT ?, employee.card_id
                                                 FROM employee
@@ -1435,18 +1440,18 @@
                                             WHEN NOT MATCHED THEN
                                                 INSERT (form_set_id, card_id) VALUES (source.form_set_id, source.card_id);";
 
-                                                    // กำหนดค่าพารามิเตอร์
-                                                    $params = array($form_set_id, $sessiondepartment,  $position_id);
+                                                // กำหนดค่าพารามิเตอร์
+                                                $params = array($form_set_id, $sessiondepartment,  $position_id);
 
-                                                    // ทำการ Merge ข้อมูล
-                                                    $stmt = sqlsrv_query($conn, $sqlMerge, $params);
+                                                // ทำการ Merge ข้อมูล
+                                                $stmt = sqlsrv_query($conn, $sqlMerge, $params);
 
-                                                    if ($stmt === false) {
-                                                        die(print_r(sqlsrv_errors(), true));
-                                                    }
-                                                } else if ((isset($section_id)) && (empty($cost_center_id))) {
-                                                    // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
-                                                    $sqlMerge = "MERGE INTO form AS target
+                                                if ($stmt === false) {
+                                                    die(print_r(sqlsrv_errors(), true));
+                                                }
+                                            } else if ((isset($section_id)) && (empty($cost_center_id))) {
+                                                // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
+                                                $sqlMerge = "MERGE INTO form AS target
                                             USING (
                                                 SELECT ?, employee.card_id
                                                 FROM employee
@@ -1462,18 +1467,18 @@
                                             WHEN NOT MATCHED THEN
                                                 INSERT (form_set_id, card_id) VALUES (source.form_set_id, source.card_id);";
 
-                                                    // กำหนดค่าพารามิเตอร์
-                                                    $params = array($form_set_id, $sessionsection, $position_id);
+                                                // กำหนดค่าพารามิเตอร์
+                                                $params = array($form_set_id, $sessionsection, $position_id);
 
-                                                    // ทำการ Merge ข้อมูล
-                                                    $stmt = sqlsrv_query($conn, $sqlMerge, $params);
+                                                // ทำการ Merge ข้อมูล
+                                                $stmt = sqlsrv_query($conn, $sqlMerge, $params);
 
-                                                    if ($stmt === false) {
-                                                        die(print_r(sqlsrv_errors(), true));
-                                                    }
-                                                } else if ((isset($cost_center_id))) {
-                                                    // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
-                                                    $sqlMerge = "MERGE INTO form AS target
+                                                if ($stmt === false) {
+                                                    die(print_r(sqlsrv_errors(), true));
+                                                }
+                                            } else if ((isset($cost_center_id))) {
+                                                // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
+                                                $sqlMerge = "MERGE INTO form AS target
                                             USING (
                                                 SELECT ?, employee.card_id
                                                 FROM employee
@@ -1488,20 +1493,20 @@
                                             WHEN NOT MATCHED THEN
                                                 INSERT (form_set_id, card_id) VALUES (source.form_set_id, source.card_id);";
 
-                                                    // กำหนดค่าพารามิเตอร์
-                                                    $params = array($form_set_id, $cost_center_id, $position_id);
+                                                // กำหนดค่าพารามิเตอร์
+                                                $params = array($form_set_id, $cost_center_id, $position_id);
 
-                                                    // ทำการ Merge ข้อมูล
-                                                    $stmt = sqlsrv_query($conn, $sqlMerge, $params);
+                                                // ทำการ Merge ข้อมูล
+                                                $stmt = sqlsrv_query($conn, $sqlMerge, $params);
 
-                                                    if ($stmt === false) {
-                                                        die(print_r(sqlsrv_errors(), true));
-                                                    }
+                                                if ($stmt === false) {
+                                                    die(print_r(sqlsrv_errors(), true));
                                                 }
-                                            } else if ((empty($card_id)) && (isset($contract_type_id))  && (isset($pl_id))  && (empty($position_id))) {
-                                                if ((empty($company_id)) && (empty($division_id)) && (empty($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
-                                                    // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
-                                                    $sqlMerge = "MERGE INTO form AS target
+                                            }
+                                        } else if ((empty($card_id)) && (isset($contract_type_id))  && (isset($pl_id))  && (empty($position_id))) {
+                                            if ((empty($company_id)) && (empty($division_id)) && (empty($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
+                                                // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
+                                                $sqlMerge = "MERGE INTO form AS target
                                             USING (
                                                 SELECT ?, employee.card_id
                                                 FROM employee 
@@ -1516,18 +1521,18 @@
                                             WHEN NOT MATCHED THEN
                                                 INSERT (form_set_id, card_id) VALUES (source.form_set_id, source.card_id);";
 
-                                                    // กำหนดค่าพารามิเตอร์
-                                                    $params = array($form_set_id, $contract_type_id, $pl_id);
+                                                // กำหนดค่าพารามิเตอร์
+                                                $params = array($form_set_id, $contract_type_id, $pl_id);
 
-                                                    // ทำการ Merge ข้อมูล
-                                                    $stmt = sqlsrv_query($conn, $sqlMerge, $params);
+                                                // ทำการ Merge ข้อมูล
+                                                $stmt = sqlsrv_query($conn, $sqlMerge, $params);
 
-                                                    if ($stmt === false) {
-                                                        die(print_r(sqlsrv_errors(), true));
-                                                    }
-                                                } else if ((isset($company_id)) && (empty($division_id)) && (empty($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
-                                                    // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
-                                                    $sqlMerge = "MERGE INTO form AS target
+                                                if ($stmt === false) {
+                                                    die(print_r(sqlsrv_errors(), true));
+                                                }
+                                            } else if ((isset($company_id)) && (empty($division_id)) && (empty($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
+                                                // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
+                                                $sqlMerge = "MERGE INTO form AS target
                                             USING (
                                                 SELECT ?, employee.card_id
                                                 FROM employee
@@ -1548,18 +1553,18 @@
                                             WHEN NOT MATCHED THEN
                                                 INSERT (form_set_id, card_id) VALUES (source.form_set_id, source.card_id);";
 
-                                                    // กำหนดค่าพารามิเตอร์
-                                                    $params = array($form_set_id, $sessioncompany, $contract_type_id, $pl_id);
+                                                // กำหนดค่าพารามิเตอร์
+                                                $params = array($form_set_id, $sessioncompany, $contract_type_id, $pl_id);
 
-                                                    // ทำการ Merge ข้อมูล
-                                                    $stmt = sqlsrv_query($conn, $sqlMerge, $params);
+                                                // ทำการ Merge ข้อมูล
+                                                $stmt = sqlsrv_query($conn, $sqlMerge, $params);
 
-                                                    if ($stmt === false) {
-                                                        die(print_r(sqlsrv_errors(), true));
-                                                    }
-                                                } else if ((isset($division_id)) && (empty($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
-                                                    // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
-                                                    $sqlMerge = "MERGE INTO form AS target
+                                                if ($stmt === false) {
+                                                    die(print_r(sqlsrv_errors(), true));
+                                                }
+                                            } else if ((isset($division_id)) && (empty($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
+                                                // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
+                                                $sqlMerge = "MERGE INTO form AS target
                                             USING (
                                                 SELECT ?, employee.card_id
                                                 FROM employee
@@ -1578,18 +1583,18 @@
                                             WHEN NOT MATCHED THEN
                                                 INSERT (form_set_id, card_id) VALUES (source.form_set_id, source.card_id);";
 
-                                                    // กำหนดค่าพารามิเตอร์
-                                                    $params = array($form_set_id, $sessiondivision, $contract_type_id, $pl_id);
+                                                // กำหนดค่าพารามิเตอร์
+                                                $params = array($form_set_id, $sessiondivision, $contract_type_id, $pl_id);
 
-                                                    // ทำการ Merge ข้อมูล
-                                                    $stmt = sqlsrv_query($conn, $sqlMerge, $params);
+                                                // ทำการ Merge ข้อมูล
+                                                $stmt = sqlsrv_query($conn, $sqlMerge, $params);
 
-                                                    if ($stmt === false) {
-                                                        die(print_r(sqlsrv_errors(), true));
-                                                    }
-                                                } else if ((isset($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
-                                                    // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
-                                                    $sqlMerge = "MERGE INTO form AS target
+                                                if ($stmt === false) {
+                                                    die(print_r(sqlsrv_errors(), true));
+                                                }
+                                            } else if ((isset($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
+                                                // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
+                                                $sqlMerge = "MERGE INTO form AS target
                                             USING (
                                                 SELECT ?, employee.card_id
                                                 FROM employee
@@ -1607,18 +1612,18 @@
                                             WHEN NOT MATCHED THEN
                                                 INSERT (form_set_id, card_id) VALUES (source.form_set_id, source.card_id);";
 
-                                                    // กำหนดค่าพารามิเตอร์
-                                                    $params = array($form_set_id, $sessiondepartment, $contract_type_id, $pl_id);
+                                                // กำหนดค่าพารามิเตอร์
+                                                $params = array($form_set_id, $sessiondepartment, $contract_type_id, $pl_id);
 
-                                                    // ทำการ Merge ข้อมูล
-                                                    $stmt = sqlsrv_query($conn, $sqlMerge, $params);
+                                                // ทำการ Merge ข้อมูล
+                                                $stmt = sqlsrv_query($conn, $sqlMerge, $params);
 
-                                                    if ($stmt === false) {
-                                                        die(print_r(sqlsrv_errors(), true));
-                                                    }
-                                                } else if ((isset($section_id)) && (empty($cost_center_id))) {
-                                                    // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
-                                                    $sqlMerge = "MERGE INTO form AS target
+                                                if ($stmt === false) {
+                                                    die(print_r(sqlsrv_errors(), true));
+                                                }
+                                            } else if ((isset($section_id)) && (empty($cost_center_id))) {
+                                                // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
+                                                $sqlMerge = "MERGE INTO form AS target
                                             USING (
                                                 SELECT ?, employee.card_id
                                                 FROM employee
@@ -1635,18 +1640,18 @@
                                             WHEN NOT MATCHED THEN
                                                 INSERT (form_set_id, card_id) VALUES (source.form_set_id, source.card_id);";
 
-                                                    // กำหนดค่าพารามิเตอร์
-                                                    $params = array($form_set_id, $sessionsection, $contract_type_id, $pl_id);
+                                                // กำหนดค่าพารามิเตอร์
+                                                $params = array($form_set_id, $sessionsection, $contract_type_id, $pl_id);
 
-                                                    // ทำการ Merge ข้อมูล
-                                                    $stmt = sqlsrv_query($conn, $sqlMerge, $params);
+                                                // ทำการ Merge ข้อมูล
+                                                $stmt = sqlsrv_query($conn, $sqlMerge, $params);
 
-                                                    if ($stmt === false) {
-                                                        die(print_r(sqlsrv_errors(), true));
-                                                    }
-                                                } else if ((isset($cost_center_id))) {
-                                                    // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
-                                                    $sqlMerge = "MERGE INTO form AS target
+                                                if ($stmt === false) {
+                                                    die(print_r(sqlsrv_errors(), true));
+                                                }
+                                            } else if ((isset($cost_center_id))) {
+                                                // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
+                                                $sqlMerge = "MERGE INTO form AS target
                                             USING (
                                                 SELECT ?, employee.card_id
                                                 FROM employee
@@ -1662,20 +1667,20 @@
                                             WHEN NOT MATCHED THEN
                                                 INSERT (form_set_id, card_id) VALUES (source.form_set_id, source.card_id);";
 
-                                                    // กำหนดค่าพารามิเตอร์
-                                                    $params = array($form_set_id, $cost_center_id, $contract_type_id, $pl_id);
+                                                // กำหนดค่าพารามิเตอร์
+                                                $params = array($form_set_id, $cost_center_id, $contract_type_id, $pl_id);
 
-                                                    // ทำการ Merge ข้อมูล
-                                                    $stmt = sqlsrv_query($conn, $sqlMerge, $params);
+                                                // ทำการ Merge ข้อมูล
+                                                $stmt = sqlsrv_query($conn, $sqlMerge, $params);
 
-                                                    if ($stmt === false) {
-                                                        die(print_r(sqlsrv_errors(), true));
-                                                    }
+                                                if ($stmt === false) {
+                                                    die(print_r(sqlsrv_errors(), true));
                                                 }
-                                            } else if ((empty($card_id)) && (isset($contract_type_id))  && (empty($pl_id))  && (isset($position_id))) {
-                                                if ((empty($company_id)) && (empty($division_id)) && (empty($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
-                                                    // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
-                                                    $sqlMerge = "MERGE INTO form AS target
+                                            }
+                                        } else if ((empty($card_id)) && (isset($contract_type_id))  && (empty($pl_id))  && (isset($position_id))) {
+                                            if ((empty($company_id)) && (empty($division_id)) && (empty($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
+                                                // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
+                                                $sqlMerge = "MERGE INTO form AS target
                                             USING (
                                                 SELECT ?, employee.card_id
                                                 FROM employee 
@@ -1691,18 +1696,18 @@
                                             WHEN NOT MATCHED THEN
                                                 INSERT (form_set_id, card_id) VALUES (source.form_set_id, source.card_id);";
 
-                                                    // กำหนดค่าพารามิเตอร์
-                                                    $params = array($form_set_id, $contract_type_id, $position_id);
+                                                // กำหนดค่าพารามิเตอร์
+                                                $params = array($form_set_id, $contract_type_id, $position_id);
 
-                                                    // ทำการ Merge ข้อมูล
-                                                    $stmt = sqlsrv_query($conn, $sqlMerge, $params);
+                                                // ทำการ Merge ข้อมูล
+                                                $stmt = sqlsrv_query($conn, $sqlMerge, $params);
 
-                                                    if ($stmt === false) {
-                                                        die(print_r(sqlsrv_errors(), true));
-                                                    }
-                                                } else if ((isset($company_id)) && (empty($division_id)) && (empty($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
-                                                    // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
-                                                    $sqlMerge = "MERGE INTO form AS target
+                                                if ($stmt === false) {
+                                                    die(print_r(sqlsrv_errors(), true));
+                                                }
+                                            } else if ((isset($company_id)) && (empty($division_id)) && (empty($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
+                                                // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
+                                                $sqlMerge = "MERGE INTO form AS target
                                             USING (
                                                 SELECT ?, employee.card_id
                                                 FROM employee
@@ -1723,18 +1728,18 @@
                                             WHEN NOT MATCHED THEN
                                                 INSERT (form_set_id, card_id) VALUES (source.form_set_id, source.card_id);";
 
-                                                    // กำหนดค่าพารามิเตอร์
-                                                    $params = array($form_set_id, $sessioncompany, $contract_type_id, $position_id);
+                                                // กำหนดค่าพารามิเตอร์
+                                                $params = array($form_set_id, $sessioncompany, $contract_type_id, $position_id);
 
-                                                    // ทำการ Merge ข้อมูล
-                                                    $stmt = sqlsrv_query($conn, $sqlMerge, $params);
+                                                // ทำการ Merge ข้อมูล
+                                                $stmt = sqlsrv_query($conn, $sqlMerge, $params);
 
-                                                    if ($stmt === false) {
-                                                        die(print_r(sqlsrv_errors(), true));
-                                                    }
-                                                } else if ((isset($division_id)) && (empty($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
-                                                    // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
-                                                    $sqlMerge = "MERGE INTO form AS target
+                                                if ($stmt === false) {
+                                                    die(print_r(sqlsrv_errors(), true));
+                                                }
+                                            } else if ((isset($division_id)) && (empty($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
+                                                // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
+                                                $sqlMerge = "MERGE INTO form AS target
                                             USING (
                                                 SELECT ?, employee.card_id
                                                 FROM employee
@@ -1753,18 +1758,18 @@
                                             WHEN NOT MATCHED THEN
                                                 INSERT (form_set_id, card_id) VALUES (source.form_set_id, source.card_id);";
 
-                                                    // กำหนดค่าพารามิเตอร์
-                                                    $params = array($form_set_id, $sessiondivision, $contract_type_id, $position_id);
+                                                // กำหนดค่าพารามิเตอร์
+                                                $params = array($form_set_id, $sessiondivision, $contract_type_id, $position_id);
 
-                                                    // ทำการ Merge ข้อมูล
-                                                    $stmt = sqlsrv_query($conn, $sqlMerge, $params);
+                                                // ทำการ Merge ข้อมูล
+                                                $stmt = sqlsrv_query($conn, $sqlMerge, $params);
 
-                                                    if ($stmt === false) {
-                                                        die(print_r(sqlsrv_errors(), true));
-                                                    }
-                                                } else if ((isset($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
-                                                    // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
-                                                    $sqlMerge = "MERGE INTO form AS target
+                                                if ($stmt === false) {
+                                                    die(print_r(sqlsrv_errors(), true));
+                                                }
+                                            } else if ((isset($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
+                                                // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
+                                                $sqlMerge = "MERGE INTO form AS target
                                             USING (
                                                 SELECT ?, employee.card_id
                                                 FROM employee
@@ -1782,18 +1787,18 @@
                                             WHEN NOT MATCHED THEN
                                                 INSERT (form_set_id, card_id) VALUES (source.form_set_id, source.card_id);";
 
-                                                    // กำหนดค่าพารามิเตอร์
-                                                    $params = array($form_set_id, $sessiondepartment, $contract_type_id, $position_id);
+                                                // กำหนดค่าพารามิเตอร์
+                                                $params = array($form_set_id, $sessiondepartment, $contract_type_id, $position_id);
 
-                                                    // ทำการ Merge ข้อมูล
-                                                    $stmt = sqlsrv_query($conn, $sqlMerge, $params);
+                                                // ทำการ Merge ข้อมูล
+                                                $stmt = sqlsrv_query($conn, $sqlMerge, $params);
 
-                                                    if ($stmt === false) {
-                                                        die(print_r(sqlsrv_errors(), true));
-                                                    }
-                                                } else if ((isset($section_id)) && (empty($cost_center_id))) {
-                                                    // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
-                                                    $sqlMerge = "MERGE INTO form AS target
+                                                if ($stmt === false) {
+                                                    die(print_r(sqlsrv_errors(), true));
+                                                }
+                                            } else if ((isset($section_id)) && (empty($cost_center_id))) {
+                                                // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
+                                                $sqlMerge = "MERGE INTO form AS target
                                             USING (
                                                 SELECT ?, employee.card_id
                                                 FROM employee
@@ -1810,18 +1815,18 @@
                                             WHEN NOT MATCHED THEN
                                                 INSERT (form_set_id, card_id) VALUES (source.form_set_id, source.card_id);";
 
-                                                    // กำหนดค่าพารามิเตอร์
-                                                    $params = array($form_set_id, $sessionsection, $contract_type_id, $position_id);
+                                                // กำหนดค่าพารามิเตอร์
+                                                $params = array($form_set_id, $sessionsection, $contract_type_id, $position_id);
 
-                                                    // ทำการ Merge ข้อมูล
-                                                    $stmt = sqlsrv_query($conn, $sqlMerge, $params);
+                                                // ทำการ Merge ข้อมูล
+                                                $stmt = sqlsrv_query($conn, $sqlMerge, $params);
 
-                                                    if ($stmt === false) {
-                                                        die(print_r(sqlsrv_errors(), true));
-                                                    }
-                                                } else if ((isset($cost_center_id))) {
-                                                    // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
-                                                    $sqlMerge = "MERGE INTO form AS target
+                                                if ($stmt === false) {
+                                                    die(print_r(sqlsrv_errors(), true));
+                                                }
+                                            } else if ((isset($cost_center_id))) {
+                                                // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
+                                                $sqlMerge = "MERGE INTO form AS target
                                             USING (
                                                 SELECT ?, employee.card_id
                                                 FROM employee
@@ -1837,20 +1842,20 @@
                                             WHEN NOT MATCHED THEN
                                                 INSERT (form_set_id, card_id) VALUES (source.form_set_id, source.card_id);";
 
-                                                    // กำหนดค่าพารามิเตอร์
-                                                    $params = array($form_set_id, $cost_center_id, $contract_type_id, $position_id);
+                                                // กำหนดค่าพารามิเตอร์
+                                                $params = array($form_set_id, $cost_center_id, $contract_type_id, $position_id);
 
-                                                    // ทำการ Merge ข้อมูล
-                                                    $stmt = sqlsrv_query($conn, $sqlMerge, $params);
+                                                // ทำการ Merge ข้อมูล
+                                                $stmt = sqlsrv_query($conn, $sqlMerge, $params);
 
-                                                    if ($stmt === false) {
-                                                        die(print_r(sqlsrv_errors(), true));
-                                                    }
+                                                if ($stmt === false) {
+                                                    die(print_r(sqlsrv_errors(), true));
                                                 }
-                                            } else if ((empty($card_id)) && (empty($contract_type_id))  && (isset($pl_id))  && (isset($position_id))) {
-                                                if ((empty($company_id)) && (empty($division_id)) && (empty($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
-                                                    // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
-                                                    $sqlMerge = "MERGE INTO form AS target
+                                            }
+                                        } else if ((empty($card_id)) && (empty($contract_type_id))  && (isset($pl_id))  && (isset($position_id))) {
+                                            if ((empty($company_id)) && (empty($division_id)) && (empty($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
+                                                // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
+                                                $sqlMerge = "MERGE INTO form AS target
                                             USING (
                                                 SELECT ?, employee.card_id
                                                 FROM employee 
@@ -1866,18 +1871,18 @@
                                             WHEN NOT MATCHED THEN
                                                 INSERT (form_set_id, card_id) VALUES (source.form_set_id, source.card_id);";
 
-                                                    // กำหนดค่าพารามิเตอร์
-                                                    $params = array($form_set_id, $pl_id, $position_id);
+                                                // กำหนดค่าพารามิเตอร์
+                                                $params = array($form_set_id, $pl_id, $position_id);
 
-                                                    // ทำการ Merge ข้อมูล
-                                                    $stmt = sqlsrv_query($conn, $sqlMerge, $params);
+                                                // ทำการ Merge ข้อมูล
+                                                $stmt = sqlsrv_query($conn, $sqlMerge, $params);
 
-                                                    if ($stmt === false) {
-                                                        die(print_r(sqlsrv_errors(), true));
-                                                    }
-                                                } else if ((isset($company_id)) && (empty($division_id)) && (empty($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
-                                                    // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
-                                                    $sqlMerge = "MERGE INTO form AS target
+                                                if ($stmt === false) {
+                                                    die(print_r(sqlsrv_errors(), true));
+                                                }
+                                            } else if ((isset($company_id)) && (empty($division_id)) && (empty($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
+                                                // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
+                                                $sqlMerge = "MERGE INTO form AS target
                                             USING (
                                                 SELECT ?, employee.card_id
                                                 FROM employee
@@ -1899,18 +1904,18 @@
                                             WHEN NOT MATCHED THEN
                                                 INSERT (form_set_id, card_id) VALUES (source.form_set_id, source.card_id);";
 
-                                                    // กำหนดค่าพารามิเตอร์
-                                                    $params = array($form_set_id, $sessioncompany, $pl_id, $position_id);
+                                                // กำหนดค่าพารามิเตอร์
+                                                $params = array($form_set_id, $sessioncompany, $pl_id, $position_id);
 
-                                                    // ทำการ Merge ข้อมูล
-                                                    $stmt = sqlsrv_query($conn, $sqlMerge, $params);
+                                                // ทำการ Merge ข้อมูล
+                                                $stmt = sqlsrv_query($conn, $sqlMerge, $params);
 
-                                                    if ($stmt === false) {
-                                                        die(print_r(sqlsrv_errors(), true));
-                                                    }
-                                                } else if ((isset($division_id)) && (empty($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
-                                                    // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
-                                                    $sqlMerge = "MERGE INTO form AS target
+                                                if ($stmt === false) {
+                                                    die(print_r(sqlsrv_errors(), true));
+                                                }
+                                            } else if ((isset($division_id)) && (empty($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
+                                                // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
+                                                $sqlMerge = "MERGE INTO form AS target
                                             USING (
                                                 SELECT ?, employee.card_id
                                                 FROM employee
@@ -1930,18 +1935,18 @@
                                             WHEN NOT MATCHED THEN
                                                 INSERT (form_set_id, card_id) VALUES (source.form_set_id, source.card_id);";
 
-                                                    // กำหนดค่าพารามิเตอร์
-                                                    $params = array($form_set_id, $sessiondivision, $pl_id, $position_id);
+                                                // กำหนดค่าพารามิเตอร์
+                                                $params = array($form_set_id, $sessiondivision, $pl_id, $position_id);
 
-                                                    // ทำการ Merge ข้อมูล
-                                                    $stmt = sqlsrv_query($conn, $sqlMerge, $params);
+                                                // ทำการ Merge ข้อมูล
+                                                $stmt = sqlsrv_query($conn, $sqlMerge, $params);
 
-                                                    if ($stmt === false) {
-                                                        die(print_r(sqlsrv_errors(), true));
-                                                    }
-                                                } else if ((isset($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
-                                                    // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
-                                                    $sqlMerge = "MERGE INTO form AS target
+                                                if ($stmt === false) {
+                                                    die(print_r(sqlsrv_errors(), true));
+                                                }
+                                            } else if ((isset($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
+                                                // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
+                                                $sqlMerge = "MERGE INTO form AS target
                                             USING (
                                                 SELECT ?, employee.card_id
                                                 FROM employee
@@ -1960,18 +1965,18 @@
                                             WHEN NOT MATCHED THEN
                                                 INSERT (form_set_id, card_id) VALUES (source.form_set_id, source.card_id);";
 
-                                                    // กำหนดค่าพารามิเตอร์
-                                                    $params = array($form_set_id, $sessiondepartment, $pl_id, $position_id);
+                                                // กำหนดค่าพารามิเตอร์
+                                                $params = array($form_set_id, $sessiondepartment, $pl_id, $position_id);
 
-                                                    // ทำการ Merge ข้อมูล
-                                                    $stmt = sqlsrv_query($conn, $sqlMerge, $params);
+                                                // ทำการ Merge ข้อมูล
+                                                $stmt = sqlsrv_query($conn, $sqlMerge, $params);
 
-                                                    if ($stmt === false) {
-                                                        die(print_r(sqlsrv_errors(), true));
-                                                    }
-                                                } else if ((isset($section_id)) && (empty($cost_center_id))) {
-                                                    // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
-                                                    $sqlMerge = "MERGE INTO form AS target
+                                                if ($stmt === false) {
+                                                    die(print_r(sqlsrv_errors(), true));
+                                                }
+                                            } else if ((isset($section_id)) && (empty($cost_center_id))) {
+                                                // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
+                                                $sqlMerge = "MERGE INTO form AS target
                                             USING (
                                                 SELECT ?, employee.card_id
                                                 FROM employee
@@ -1989,18 +1994,18 @@
                                             WHEN NOT MATCHED THEN
                                                 INSERT (form_set_id, card_id) VALUES (source.form_set_id, source.card_id);";
 
-                                                    // กำหนดค่าพารามิเตอร์
-                                                    $params = array($form_set_id, $sessionsection, $pl_id, $position_id);
+                                                // กำหนดค่าพารามิเตอร์
+                                                $params = array($form_set_id, $sessionsection, $pl_id, $position_id);
 
-                                                    // ทำการ Merge ข้อมูล
-                                                    $stmt = sqlsrv_query($conn, $sqlMerge, $params);
+                                                // ทำการ Merge ข้อมูล
+                                                $stmt = sqlsrv_query($conn, $sqlMerge, $params);
 
-                                                    if ($stmt === false) {
-                                                        die(print_r(sqlsrv_errors(), true));
-                                                    }
-                                                } else if ((isset($cost_center_id))) {
-                                                    // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
-                                                    $sqlMerge = "MERGE INTO form AS target
+                                                if ($stmt === false) {
+                                                    die(print_r(sqlsrv_errors(), true));
+                                                }
+                                            } else if ((isset($cost_center_id))) {
+                                                // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
+                                                $sqlMerge = "MERGE INTO form AS target
                                             USING (
                                                 SELECT ?, employee.card_id
                                                 FROM employee
@@ -2017,20 +2022,20 @@
                                             WHEN NOT MATCHED THEN
                                                 INSERT (form_set_id, card_id) VALUES (source.form_set_id, source.card_id);";
 
-                                                    // กำหนดค่าพารามิเตอร์
-                                                    $params = array($form_set_id, $cost_center_id, $pl_id, $position_id);
+                                                // กำหนดค่าพารามิเตอร์
+                                                $params = array($form_set_id, $cost_center_id, $pl_id, $position_id);
 
-                                                    // ทำการ Merge ข้อมูล
-                                                    $stmt = sqlsrv_query($conn, $sqlMerge, $params);
+                                                // ทำการ Merge ข้อมูล
+                                                $stmt = sqlsrv_query($conn, $sqlMerge, $params);
 
-                                                    if ($stmt === false) {
-                                                        die(print_r(sqlsrv_errors(), true));
-                                                    }
+                                                if ($stmt === false) {
+                                                    die(print_r(sqlsrv_errors(), true));
                                                 }
-                                            } else if ((empty($card_id)) && (isset($contract_type_id))  && (isset($pl_id))  && (isset($position_id))) {
-                                                if ((empty($company_id)) && (empty($division_id)) && (empty($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
-                                                    // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
-                                                    $sqlMerge = "MERGE INTO form AS target
+                                            }
+                                        } else if ((empty($card_id)) && (isset($contract_type_id))  && (isset($pl_id))  && (isset($position_id))) {
+                                            if ((empty($company_id)) && (empty($division_id)) && (empty($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
+                                                // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
+                                                $sqlMerge = "MERGE INTO form AS target
                                             USING (
                                                 SELECT ?, employee.card_id
                                                 FROM employee 
@@ -2047,18 +2052,18 @@
                                             WHEN NOT MATCHED THEN
                                                 INSERT (form_set_id, card_id) VALUES (source.form_set_id, source.card_id);";
 
-                                                    // กำหนดค่าพารามิเตอร์
-                                                    $params = array($form_set_id, $contract_type_id, $pl_id, $position_id);
+                                                // กำหนดค่าพารามิเตอร์
+                                                $params = array($form_set_id, $contract_type_id, $pl_id, $position_id);
 
-                                                    // ทำการ Merge ข้อมูล
-                                                    $stmt = sqlsrv_query($conn, $sqlMerge, $params);
+                                                // ทำการ Merge ข้อมูล
+                                                $stmt = sqlsrv_query($conn, $sqlMerge, $params);
 
-                                                    if ($stmt === false) {
-                                                        die(print_r(sqlsrv_errors(), true));
-                                                    }
-                                                } else if ((isset($company_id)) && (empty($division_id)) && (empty($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
-                                                    // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
-                                                    $sqlMerge = "MERGE INTO form AS target
+                                                if ($stmt === false) {
+                                                    die(print_r(sqlsrv_errors(), true));
+                                                }
+                                            } else if ((isset($company_id)) && (empty($division_id)) && (empty($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
+                                                // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
+                                                $sqlMerge = "MERGE INTO form AS target
                                             USING (
                                                 SELECT ?, employee.card_id
                                                 FROM employee
@@ -2081,18 +2086,18 @@
                                             WHEN NOT MATCHED THEN
                                                 INSERT (form_set_id, card_id) VALUES (source.form_set_id, source.card_id);";
 
-                                                    // กำหนดค่าพารามิเตอร์
-                                                    $params = array($form_set_id, $sessioncompany, $contract_type_id, $pl_id, $position_id);
+                                                // กำหนดค่าพารามิเตอร์
+                                                $params = array($form_set_id, $sessioncompany, $contract_type_id, $pl_id, $position_id);
 
-                                                    // ทำการ Merge ข้อมูล
-                                                    $stmt = sqlsrv_query($conn, $sqlMerge, $params);
+                                                // ทำการ Merge ข้อมูล
+                                                $stmt = sqlsrv_query($conn, $sqlMerge, $params);
 
-                                                    if ($stmt === false) {
-                                                        die(print_r(sqlsrv_errors(), true));
-                                                    }
-                                                } else if ((isset($division_id)) && (empty($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
-                                                    // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
-                                                    $sqlMerge = "MERGE INTO form AS target
+                                                if ($stmt === false) {
+                                                    die(print_r(sqlsrv_errors(), true));
+                                                }
+                                            } else if ((isset($division_id)) && (empty($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
+                                                // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
+                                                $sqlMerge = "MERGE INTO form AS target
                                             USING (
                                                 SELECT ?, employee.card_id
                                                 FROM employee
@@ -2113,18 +2118,18 @@
                                             WHEN NOT MATCHED THEN
                                                 INSERT (form_set_id, card_id) VALUES (source.form_set_id, source.card_id);";
 
-                                                    // กำหนดค่าพารามิเตอร์
-                                                    $params = array($form_set_id, $sessiondivision, $contract_type_id, $pl_id, $position_id);
+                                                // กำหนดค่าพารามิเตอร์
+                                                $params = array($form_set_id, $sessiondivision, $contract_type_id, $pl_id, $position_id);
 
-                                                    // ทำการ Merge ข้อมูล
-                                                    $stmt = sqlsrv_query($conn, $sqlMerge, $params);
+                                                // ทำการ Merge ข้อมูล
+                                                $stmt = sqlsrv_query($conn, $sqlMerge, $params);
 
-                                                    if ($stmt === false) {
-                                                        die(print_r(sqlsrv_errors(), true));
-                                                    }
-                                                } else if ((isset($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
-                                                    // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
-                                                    $sqlMerge = "MERGE INTO form AS target
+                                                if ($stmt === false) {
+                                                    die(print_r(sqlsrv_errors(), true));
+                                                }
+                                            } else if ((isset($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
+                                                // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
+                                                $sqlMerge = "MERGE INTO form AS target
                                             USING (
                                                 SELECT ?, employee.card_id
                                                 FROM employee
@@ -2144,18 +2149,18 @@
                                             WHEN NOT MATCHED THEN
                                                 INSERT (form_set_id, card_id) VALUES (source.form_set_id, source.card_id);";
 
-                                                    // กำหนดค่าพารามิเตอร์
-                                                    $params = array($form_set_id, $sessiondepartment, $contract_type_id, $pl_id, $position_id);
+                                                // กำหนดค่าพารามิเตอร์
+                                                $params = array($form_set_id, $sessiondepartment, $contract_type_id, $pl_id, $position_id);
 
-                                                    // ทำการ Merge ข้อมูล
-                                                    $stmt = sqlsrv_query($conn, $sqlMerge, $params);
+                                                // ทำการ Merge ข้อมูล
+                                                $stmt = sqlsrv_query($conn, $sqlMerge, $params);
 
-                                                    if ($stmt === false) {
-                                                        die(print_r(sqlsrv_errors(), true));
-                                                    }
-                                                } else if ((isset($section_id)) && (empty($cost_center_id))) {
-                                                    // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
-                                                    $sqlMerge = "MERGE INTO form AS target
+                                                if ($stmt === false) {
+                                                    die(print_r(sqlsrv_errors(), true));
+                                                }
+                                            } else if ((isset($section_id)) && (empty($cost_center_id))) {
+                                                // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
+                                                $sqlMerge = "MERGE INTO form AS target
                                             USING (
                                                 SELECT ?, employee.card_id
                                                 FROM employee
@@ -2174,18 +2179,18 @@
                                             WHEN NOT MATCHED THEN
                                                 INSERT (form_set_id, card_id) VALUES (source.form_set_id, source.card_id);";
 
-                                                    // กำหนดค่าพารามิเตอร์
-                                                    $params = array($form_set_id, $sessionsection, $contract_type_id, $pl_id, $position_id);
+                                                // กำหนดค่าพารามิเตอร์
+                                                $params = array($form_set_id, $sessionsection, $contract_type_id, $pl_id, $position_id);
 
-                                                    // ทำการ Merge ข้อมูล
-                                                    $stmt = sqlsrv_query($conn, $sqlMerge, $params);
+                                                // ทำการ Merge ข้อมูล
+                                                $stmt = sqlsrv_query($conn, $sqlMerge, $params);
 
-                                                    if ($stmt === false) {
-                                                        die(print_r(sqlsrv_errors(), true));
-                                                    }
-                                                } else if ((isset($cost_center_id))) {
-                                                    // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
-                                                    $sqlMerge = "MERGE INTO form AS target
+                                                if ($stmt === false) {
+                                                    die(print_r(sqlsrv_errors(), true));
+                                                }
+                                            } else if ((isset($cost_center_id))) {
+                                                // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
+                                                $sqlMerge = "MERGE INTO form AS target
                                             USING (
                                                 SELECT ?, employee.card_id
                                                 FROM employee
@@ -2203,19 +2208,19 @@
                                             WHEN NOT MATCHED THEN
                                                 INSERT (form_set_id, card_id) VALUES (source.form_set_id, source.card_id);";
 
-                                                    // กำหนดค่าพารามิเตอร์
-                                                    $params = array($form_set_id, $cost_center_id, $contract_type_id, $pl_id, $position_id);
+                                                // กำหนดค่าพารามิเตอร์
+                                                $params = array($form_set_id, $cost_center_id, $contract_type_id, $pl_id, $position_id);
 
-                                                    // ทำการ Merge ข้อมูล
-                                                    $stmt = sqlsrv_query($conn, $sqlMerge, $params);
+                                                // ทำการ Merge ข้อมูล
+                                                $stmt = sqlsrv_query($conn, $sqlMerge, $params);
 
-                                                    if ($stmt === false) {
-                                                        die(print_r(sqlsrv_errors(), true));
-                                                    }
+                                                if ($stmt === false) {
+                                                    die(print_r(sqlsrv_errors(), true));
                                                 }
-                                            } else if ((empty($card_id)) && (empty($company_id)) && (empty($division_id)) && (empty($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
-                                                // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
-                                                $sqlMerge = "MERGE INTO form AS target
+                                            }
+                                        } else if ((empty($card_id)) && (empty($company_id)) && (empty($division_id)) && (empty($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
+                                            // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
+                                            $sqlMerge = "MERGE INTO form AS target
                                         USING (
                                             SELECT ?, employee.card_id
                                             FROM employee
@@ -2226,18 +2231,18 @@
                                         WHEN NOT MATCHED THEN
                                             INSERT (form_set_id, card_id) VALUES (source.form_set_id, source.card_id);";
 
-                                                // กำหนดค่าพารามิเตอร์
-                                                $params = array($form_set_id);
+                                            // กำหนดค่าพารามิเตอร์
+                                            $params = array($form_set_id);
 
-                                                // ทำการ Merge ข้อมูล
-                                                $stmt = sqlsrv_query($conn, $sqlMerge, $params);
+                                            // ทำการ Merge ข้อมูล
+                                            $stmt = sqlsrv_query($conn, $sqlMerge, $params);
 
-                                                if ($stmt === false) {
-                                                    die(print_r(sqlsrv_errors(), true));
-                                                }
-                                            } else if ((empty($card_id)) && (isset($company_id)) && (empty($division_id)) && (empty($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
-                                                // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
-                                                $sqlMerge = "MERGE INTO form AS target
+                                            if ($stmt === false) {
+                                                die(print_r(sqlsrv_errors(), true));
+                                            }
+                                        } else if ((empty($card_id)) && (isset($company_id)) && (empty($division_id)) && (empty($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
+                                            // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
+                                            $sqlMerge = "MERGE INTO form AS target
                                         USING (
                                             SELECT ?, employee.card_id
                                             FROM employee
@@ -2255,18 +2260,18 @@
                                         WHEN NOT MATCHED THEN
                                             INSERT (form_set_id, card_id) VALUES (source.form_set_id, source.card_id);";
 
-                                                // กำหนดค่าพารามิเตอร์
-                                                $params = array($form_set_id, $sessioncompany);
+                                            // กำหนดค่าพารามิเตอร์
+                                            $params = array($form_set_id, $sessioncompany);
 
-                                                // ทำการ Merge ข้อมูล
-                                                $stmt = sqlsrv_query($conn, $sqlMerge, $params);
+                                            // ทำการ Merge ข้อมูล
+                                            $stmt = sqlsrv_query($conn, $sqlMerge, $params);
 
-                                                if ($stmt === false) {
-                                                    die(print_r(sqlsrv_errors(), true));
-                                                }
-                                            } else if ((empty($card_id)) && (isset($division_id)) && (empty($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
-                                                // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
-                                                $sqlMerge = "MERGE INTO form AS target
+                                            if ($stmt === false) {
+                                                die(print_r(sqlsrv_errors(), true));
+                                            }
+                                        } else if ((empty($card_id)) && (isset($division_id)) && (empty($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
+                                            // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
+                                            $sqlMerge = "MERGE INTO form AS target
                                         USING (
                                             SELECT ?, employee.card_id
                                             FROM employee
@@ -2282,18 +2287,18 @@
                                         WHEN NOT MATCHED THEN
                                             INSERT (form_set_id, card_id) VALUES (source.form_set_id, source.card_id);";
 
-                                                // กำหนดค่าพารามิเตอร์
-                                                $params = array($form_set_id, $sessiondivision);
+                                            // กำหนดค่าพารามิเตอร์
+                                            $params = array($form_set_id, $sessiondivision);
 
-                                                // ทำการ Merge ข้อมูล
-                                                $stmt = sqlsrv_query($conn, $sqlMerge, $params);
+                                            // ทำการ Merge ข้อมูล
+                                            $stmt = sqlsrv_query($conn, $sqlMerge, $params);
 
-                                                if ($stmt === false) {
-                                                    die(print_r(sqlsrv_errors(), true));
-                                                }
-                                            } else if ((empty($card_id)) && (isset($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
-                                                // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
-                                                $sqlMerge = "MERGE INTO form AS target
+                                            if ($stmt === false) {
+                                                die(print_r(sqlsrv_errors(), true));
+                                            }
+                                        } else if ((empty($card_id)) && (isset($department_id)) && (empty($section_id)) && (empty($cost_center_id))) {
+                                            // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
+                                            $sqlMerge = "MERGE INTO form AS target
                                          USING (
                                              SELECT ?, employee.card_id
                                              FROM employee
@@ -2308,18 +2313,18 @@
                                          WHEN NOT MATCHED THEN
                                              INSERT (form_set_id, card_id) VALUES (source.form_set_id, source.card_id);";
 
-                                                // กำหนดค่าพารามิเตอร์
-                                                $params = array($form_set_id, $sessiondepartment);
+                                            // กำหนดค่าพารามิเตอร์
+                                            $params = array($form_set_id, $sessiondepartment);
 
-                                                // ทำการ Merge ข้อมูล
-                                                $stmt = sqlsrv_query($conn, $sqlMerge, $params);
+                                            // ทำการ Merge ข้อมูล
+                                            $stmt = sqlsrv_query($conn, $sqlMerge, $params);
 
-                                                if ($stmt === false) {
-                                                    die(print_r(sqlsrv_errors(), true));
-                                                }
-                                            } else if ((empty($card_id)) && (isset($section_id)) && (empty($cost_center_id))) {
-                                                // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
-                                                $sqlMerge = "MERGE INTO form AS target
+                                            if ($stmt === false) {
+                                                die(print_r(sqlsrv_errors(), true));
+                                            }
+                                        } else if ((empty($card_id)) && (isset($section_id)) && (empty($cost_center_id))) {
+                                            // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
+                                            $sqlMerge = "MERGE INTO form AS target
                                         USING (
                                             SELECT ?, employee.card_id
                                             FROM employee
@@ -2333,18 +2338,18 @@
                                         WHEN NOT MATCHED THEN
                                             INSERT (form_set_id, card_id) VALUES (source.form_set_id, source.card_id);";
 
-                                                // กำหนดค่าพารามิเตอร์
-                                                $params = array($form_set_id, $sessionsection);
+                                            // กำหนดค่าพารามิเตอร์
+                                            $params = array($form_set_id, $sessionsection);
 
-                                                // ทำการ Merge ข้อมูล
-                                                $stmt = sqlsrv_query($conn, $sqlMerge, $params);
+                                            // ทำการ Merge ข้อมูล
+                                            $stmt = sqlsrv_query($conn, $sqlMerge, $params);
 
-                                                if ($stmt === false) {
-                                                    die(print_r(sqlsrv_errors(), true));
-                                                }
-                                            } else if ((empty($card_id)) && (isset($cost_center_id))) {
-                                                // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
-                                                $sqlMerge = "MERGE INTO form AS target
+                                            if ($stmt === false) {
+                                                die(print_r(sqlsrv_errors(), true));
+                                            }
+                                        } else if ((empty($card_id)) && (isset($cost_center_id))) {
+                                            // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
+                                            $sqlMerge = "MERGE INTO form AS target
                                         USING (
                                             SELECT ?, employee.card_id
                                             FROM employee
@@ -2357,18 +2362,18 @@
                                         WHEN NOT MATCHED THEN
                                             INSERT (form_set_id, card_id) VALUES (source.form_set_id, source.card_id);";
 
-                                                // กำหนดค่าพารามิเตอร์
-                                                $params = array($form_set_id, $cost_center_id);
+                                            // กำหนดค่าพารามิเตอร์
+                                            $params = array($form_set_id, $cost_center_id);
 
-                                                // ทำการ Merge ข้อมูล
-                                                $stmt = sqlsrv_query($conn, $sqlMerge, $params);
+                                            // ทำการ Merge ข้อมูล
+                                            $stmt = sqlsrv_query($conn, $sqlMerge, $params);
 
-                                                if ($stmt === false) {
-                                                    die(print_r(sqlsrv_errors(), true));
-                                                }
-                                            } else {
-                                                // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
-                                                $sqlMerge = "MERGE INTO form AS target
+                                            if ($stmt === false) {
+                                                die(print_r(sqlsrv_errors(), true));
+                                            }
+                                        } else {
+                                            // คำสั่ง SQL สำหรับ Insert ข้อมูลเมื่อ card_id และ ทั้งหมด ว่าง
+                                            $sqlMerge = "MERGE INTO form AS target
                                          USING (
                                             VALUES (?, ?)
                                          ) AS source (form_set_id, card_id)
@@ -2378,27 +2383,27 @@
                                          WHEN NOT MATCHED THEN
                                              INSERT (form_set_id, card_id) VALUES (source.form_set_id, source.card_id);";
 
-                                                // กำหนดค่าพารามิเตอร์
-                                                $params = array($form_set_id, $card_id);
+                                            // กำหนดค่าพารามิเตอร์
+                                            $params = array($form_set_id, $card_id);
 
-                                                // ทำการ Merge ข้อมูล
-                                                $stmt = sqlsrv_query($conn, $sqlMerge, $params);
+                                            // ทำการ Merge ข้อมูล
+                                            $stmt = sqlsrv_query($conn, $sqlMerge, $params);
 
-                                                if ($stmt === false) {
-                                                    die(print_r(sqlsrv_errors(), true));
-                                                }
-                                            }
-
-                                            // ส่งคำสั่ง SQL ไปที่ฐานข้อมูล
-                                            $resultInsert = sqlsrv_query($conn, $sqlMerge, $params);
-
-                                            // ตรวจสอบการดำเนินการและแสดงผล
-                                            if ($resultInsert === false) {
-                                                // การจัดการข้อผิดพลาดในการ Insert
+                                            if ($stmt === false) {
                                                 die(print_r(sqlsrv_errors(), true));
-                                            } else {
-                                                // การแจ้งเตือนผลลัพธ์สำเร็จ
-                                                echo '<script type="text/javascript">
+                                            }
+                                        }
+
+                                        // ส่งคำสั่ง SQL ไปที่ฐานข้อมูล
+                                        $resultInsert = sqlsrv_query($conn, $sqlMerge, $params);
+
+                                        // ตรวจสอบการดำเนินการและแสดงผล
+                                        if ($resultInsert === false) {
+                                            // การจัดการข้อผิดพลาดในการ Insert
+                                            die(print_r(sqlsrv_errors(), true));
+                                        } else {
+                                            // การแจ้งเตือนผลลัพธ์สำเร็จ
+                                            echo '<script type="text/javascript">
                                             const Toast = Swal.mixin({
                                                 toast: true,
                                                 position: "top-end",
@@ -2416,142 +2421,142 @@
                                             });            
                                             </script>';
 
-                                                echo "<meta http-equiv='refresh' content='2'>";
+                                            echo "<meta http-equiv='refresh' content='2'>";
 
-                                                exit; // จบการทำงานของสคริปต์ทันทีหลังจาก redirect
-                                            }
+                                            exit; // จบการทำงานของสคริปต์ทันทีหลังจาก redirect
                                         }
                                     }
+                                }
 
-                                    ?>
-                                </div>
+                                ?>
                             </div>
                         </div>
                     </div>
-                    <!-- Modal Start -->
-                    <div class="modal fade" id="editformModal" tabindex="-1" role="dialog" aria-labelledby="editformModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="editModalLabel">แก้ไขแบบฟอร์ม</h5>
-                                </div>
-                                <div class="modal-body">
-                                    <!-- Form for editing data -->
-                                    <form id="editForm" method="post" action="setting_payment_form.php">
-                                        <input type="hidden" id="form_id" name="form_id">
-                                        <input type="hidden" id="card_id" name="card_id">
-                                        <div class="form-group d-flex justify-content-center">
-                                            <input type="text" class="col-12" id="name" name="first_name_thai" autocomplete="off" disabled style="border: none; background-color: transparent; font-size: 25px; font-weight: bold; text-align: center;">
-                                        </div>
-                                        <h6><label for="form_set_id">หัวสลีป</label></h6>
-                                        <select id="form_set_id" name="form_set_id" class="custom-select" required="true" autocomplete="off">
-                                        <option value="" selected disabled>เลือกหัวสลีป</option>
-                                            <?php
-                                            $sqlDropdown_type = "SELECT * FROM form_set";
-                                            echo $sqlDropdown_type; // แสดงคำสั่ง SQL เพื่อตรวจสอบ
+                </div>
+                <!-- Modal Start -->
+                <div class="modal fade" id="editformModal" tabindex="-1" role="dialog" aria-labelledby="editformModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="editModalLabel">แก้ไขแบบฟอร์ม</h5>
+                            </div>
+                            <div class="modal-body">
+                                <!-- Form for editing data -->
+                                <form id="editForm" method="post" action="setting_payment_form.php">
+                                    <input type="hidden" id="form_id" name="form_id">
+                                    <input type="hidden" id="card_id" name="card_id">
+                                    <div class="form-group d-flex justify-content-center">
+                                        <input type="text" class="col-12" id="name" name="first_name_thai" autocomplete="off" disabled style="border: none; background-color: transparent; font-size: 25px; font-weight: bold; text-align: center;">
+                                    </div>
+                                    <h6><label for="form_set_id">หัวสลีป</label></h6>
+                                    <select id="form_set_id" name="form_set_id" class="custom-select" required="true" autocomplete="off">
+                                    <option value="" selected disabled>เลือกหัวสลีป</option>
+                                        <?php
+                                        $sqlDropdown_type = "SELECT * FROM form_set";
+                                        echo $sqlDropdown_type; // แสดงคำสั่ง SQL เพื่อตรวจสอบ
 
-                                            $resultDropdown_type = sqlsrv_query($conn, $sqlDropdown_type);
+                                        $resultDropdown_type = sqlsrv_query($conn, $sqlDropdown_type);
 
-                                            if ($resultDropdown_type === false) {
-                                                die(print_r(sqlsrv_errors(), true));
-                                            }
-                                            if ($resultDropdown_type) {
-                                                while ($row = sqlsrv_fetch_array($resultDropdown_type, SQLSRV_FETCH_ASSOC)) {
-                                                    $form_setValue = ($row['form'] == 0) ? 'บริษัท' : 'สำนักงานสาขา';
-                                                    echo "<option value='" . $row['form_set_id'] . "'>" . $form_setValue . "</option>";
-                                                }
-                                            }
-                                            ?>
-
-                                        </select>
-                                        <div class="mt-3">
-                                            <h6><label>Organization :</label></h6>
-                                        </div>
-                                        <div class="row">
-                                            <div class="form-group d-flex">
-                                                <div class="ml-3 mt-2 col-5">
-                                                    <label for="editcompany">Company :</label>
-                                                </div>&nbsp;
-                                                <input type="text" class="col-10 mt-1" id="editcompany" name="company" autocomplete="off" disabled style="border: none; background-color: transparent;">
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="form-group d-flex">
-                                                <div class="ml-3 mt-2 col-5">
-                                                    <label for="editdivision">Division :</label>
-                                                </div>&nbsp;&nbsp;
-                                                <input type="text" class="col-10 mt-1" id="editdivision" name="division" autocomplete="off" disabled style="border: none; background-color: transparent;">
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="form-group d-flex">
-                                                <div class="ml-3 mt-2 col-5">
-                                                    <label for="editdepartment">Department :</label>
-                                                </div>
-                                                <input type="text" class="col-10 mt-1" id="editdepartment" name="department" autocomplete="off" disabled style="border: none; background-color: transparent;">
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="form-group d-flex">
-                                                <div class="ml-3 mt-2 col-5">
-                                                    <label for="editsection">Section :</label>
-                                                </div>&nbsp;&nbsp;&nbsp;
-                                                <input type="text" class="col-10 mt-1" id="editsection" name="section" autocomplete="off" disabled style="border: none; background-color: transparent;">
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="form-group d-flex">
-                                                <div class="ml-3 mt-2 col-5">
-                                                    <label for="editcost_center">Cost Center :</label>
-                                                </div>&nbsp;
-                                                <input type="text" class="col-10 mt-1 " id="editcost_center" name="cost_center" autocomplete="off" disabled style="border: none; background-color: transparent;">
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="form-group d-flex">
-                                                <div class="mt-2 col-5">
-                                                    <h6><label for="editcontract_type">ประเภทพนักงาน :</label></h6>
-                                                </div>
-                                                <input type="text" class="col-10 mt-1 ml-3" id="editcontract_type" name="contract_type" autocomplete="off" disabled style="border: none; background-color: transparent;">
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="form-group d-flex">
-                                                <div class="mt-2 col-5">
-                                                    <h6><label for="editpl">ระดับการทำงาน :</label></h6>
-                                                </div>
-                                                <input type="text" class="col-10 mt-1 ml-3" id="editpl" name="pl" autocomplete="off" disabled style="border: none; background-color: transparent;">
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="form-group d-flex">
-                                                <div class="mt-2 col-5">
-                                                    <h6><label for="editposition">ตำแหน่ง :</label></h6>
-                                                </div>&nbsp;&nbsp;&nbsp;
-                                                <input type="text" class="col-10 mt-1 ml-3" id="editposition" name="position" autocomplete="off" disabled style="border: none; background-color: transparent;">
-                                            </div>
-                                        </div>
-                                        <div class="text-right">
-                                            <button type="submit" class="btn btn-primary" name="update_form">บันทึกการแก้ไข</button>
-                                        </div>
-                                    </form>
-
-                                    <?php
-                                    // -- UPDATE employee_payment based on employee_payment_id -->
-
-                                    // -- UPDATE Income Type on income_id -->
-                                    if (isset($_POST['update_form'])) {
-                                        $form_id  = $_POST['form_id'];
-                                        $form_set_id = $_POST['form_set_id'];
-
-                                        // อัปเดตค่าของฟิลด์ income_type
-                                        $sqlUpdate = "UPDATE form SET form_set_id = '$form_set_id' WHERE form_id = '$form_id'";
-                                        $stmt = sqlsrv_query($conn, $sqlUpdate);
-
-                                        if ($stmt === false) {
+                                        if ($resultDropdown_type === false) {
                                             die(print_r(sqlsrv_errors(), true));
-                                        } else {
-                                            echo '<script type="text/javascript">
+                                        }
+                                        if ($resultDropdown_type) {
+                                            while ($row = sqlsrv_fetch_array($resultDropdown_type, SQLSRV_FETCH_ASSOC)) {
+                                                $form_setValue = ($row['form'] == 0) ? 'บริษัท' : 'สำนักงานสาขา';
+                                                echo "<option value='" . $row['form_set_id'] . "'>" . $form_setValue . "</option>";
+                                            }
+                                        }
+                                        ?>
+
+                                    </select>
+                                    <div class="mt-3">
+                                        <h6><label>Organization :</label></h6>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group d-flex">
+                                            <div class="ml-3 mt-2 col-5">
+                                                <label for="editcompany">Company :</label>
+                                            </div>&nbsp;
+                                            <input type="text" class="col-10 mt-1" id="editcompany" name="company" autocomplete="off" disabled style="border: none; background-color: transparent;">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group d-flex">
+                                            <div class="ml-3 mt-2 col-5">
+                                                <label for="editdivision">Division :</label>
+                                            </div>&nbsp;&nbsp;
+                                            <input type="text" class="col-10 mt-1" id="editdivision" name="division" autocomplete="off" disabled style="border: none; background-color: transparent;">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group d-flex">
+                                            <div class="ml-3 mt-2 col-5">
+                                                <label for="editdepartment">Department :</label>
+                                            </div>
+                                            <input type="text" class="col-10 mt-1" id="editdepartment" name="department" autocomplete="off" disabled style="border: none; background-color: transparent;">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group d-flex">
+                                            <div class="ml-3 mt-2 col-5">
+                                                <label for="editsection">Section :</label>
+                                            </div>&nbsp;&nbsp;&nbsp;
+                                            <input type="text" class="col-10 mt-1" id="editsection" name="section" autocomplete="off" disabled style="border: none; background-color: transparent;">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group d-flex">
+                                            <div class="ml-3 mt-2 col-5">
+                                                <label for="editcost_center">Cost Center :</label>
+                                            </div>&nbsp;
+                                            <input type="text" class="col-10 mt-1 " id="editcost_center" name="cost_center" autocomplete="off" disabled style="border: none; background-color: transparent;">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group d-flex">
+                                            <div class="mt-2 col-5">
+                                                <h6><label for="editcontract_type">ประเภทพนักงาน :</label></h6>
+                                            </div>
+                                            <input type="text" class="col-10 mt-1 ml-3" id="editcontract_type" name="contract_type" autocomplete="off" disabled style="border: none; background-color: transparent;">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group d-flex">
+                                            <div class="mt-2 col-5">
+                                                <h6><label for="editpl">ระดับการทำงาน :</label></h6>
+                                            </div>
+                                            <input type="text" class="col-10 mt-1 ml-3" id="editpl" name="pl" autocomplete="off" disabled style="border: none; background-color: transparent;">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group d-flex">
+                                            <div class="mt-2 col-5">
+                                                <h6><label for="editposition">ตำแหน่ง :</label></h6>
+                                            </div>&nbsp;&nbsp;&nbsp;
+                                            <input type="text" class="col-10 mt-1 ml-3" id="editposition" name="position" autocomplete="off" disabled style="border: none; background-color: transparent;">
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <button type="submit" class="btn btn-primary" name="update_form">บันทึกการแก้ไข</button>
+                                    </div>
+                                </form>
+
+                                <?php
+                                // -- UPDATE employee_payment based on employee_payment_id -->
+
+                                // -- UPDATE Income Type on income_id -->
+                                if (isset($_POST['update_form'])) {
+                                    $form_id  = $_POST['form_id'];
+                                    $form_set_id = $_POST['form_set_id'];
+
+                                    // อัปเดตค่าของฟิลด์ income_type
+                                    $sqlUpdate = "UPDATE form SET form_set_id = '$form_set_id' WHERE form_id = '$form_id'";
+                                    $stmt = sqlsrv_query($conn, $sqlUpdate);
+
+                                    if ($stmt === false) {
+                                        die(print_r(sqlsrv_errors(), true));
+                                    } else {
+                                        echo '<script type="text/javascript">
                                             const Toast = Swal.mixin({
                                                 toast: true,
                                                 position: "top-end",
@@ -2569,21 +2574,21 @@
                                             });
                                             </script>';
 
-                                            echo "<meta http-equiv='refresh' content='1'>";
+                                        echo "<meta http-equiv='refresh' content='1'>";
 
-                                            exit; // จบการทำงานของสคริปต์ทันทีหลังจาก redirect
-                                        }
+                                        exit; // จบการทำงานของสคริปต์ทันทีหลังจาก redirect
                                     }
-                                    ?>
-                                </div>
+                                }
+                                ?>
                             </div>
                         </div>
                     </div>
-                    <!-- Modal End -->
                 </div>
+                <!-- Modal End -->
             </div>
-            <?php include('../admin/include/footer.php'); ?>
         </div>
+        <?php include('../admin/include/footer.php'); ?>
+    </div>
     </div>
 </body>
 

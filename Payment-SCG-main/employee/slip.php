@@ -27,16 +27,16 @@
                             <div class="title">
                                 <h3>สลิปเงินเดือน : Pay Slip</h3>
                             </div>
-                            <a href="slip.pdf" class="btn btn-outline-info" style="float: right;">ดาวน์โหลดเอกสาร <i class="fa-solid fa-file-pdf"></i></a>
+                            <a href="slips.pdf" class="btn btn-outline-info" style="float: right;">ดาวน์โหลดเอกสาร <i class="fa-solid fa-file-pdf"></i></a>
                             <nav aria-label="breadcrumb" role="navigation">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item active" aria-current="page">สลิปเงินเดือน</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page"><a href="salary_summary.php">ประวัติเงินเดือน</li></a>
+                                    <li class="breadcrumb-item active" aria-current="page"><a href="select_month.php">ประวัติเงินเดือน</li></a>
                                 </ol>
                             </nav>
                         </div>
                     </div>
-                </div>
+                </div> 
                 <?php
 
                 require_once __DIR__ . '/vendor/autoload.php';
@@ -223,7 +223,7 @@
                     <?php
                     $html = ob_get_contents();
                     $mpdf->WriteHTML($html);
-                    $mpdf->Output("slip.pdf");
+                    $mpdf->Output("slips.pdf");
                     ob_end_flush();
                     ?>
                 </div>

@@ -1,6 +1,6 @@
 <?php
 session_start(); // เรียกใช้ session_start() ก่อนที่จะใช้ session
-require_once('..\config\connection.php');
+require_once('..\..\config\connection.php');
 // ตรวจสอบว่ามี Session 'line_id' หรือไม่ และค่าของ 'line_id' ไม่เป็นค่าว่าง
 
 if (
@@ -15,8 +15,14 @@ if (
 	$lname = $_SESSION['lastname_thai'];
 	$emp_split = $_SESSION['split_set_id'];
 
-	// $tax_id = $_SESSION['tax_id'];
-
+	$scg_employee_id = $_SESSION['scg_employee_id'];
+	$scg_hiring_date = $_SESSION['scg_hiring_date'];
+	$costcenter = $_SESSION['costcenter'];
+	$costcenter = $_SESSION['costcenter'];
+	$section = $_SESSION['section'];
+	$division = $_SESSION['division'];
+	$department = $_SESSION['department'];
+	$position = $_SESSION['position'];
 
 	// ส่วนคำสั่ง SQL ควรตรงกับโครงสร้างของตารางในฐานข้อมูล
 	$sql = "SELECT *,
@@ -91,6 +97,13 @@ if (
 		button {
 			font-family: 'Chakra Petch', sans-serif;
 		}
+
+		.border-radius-100 {
+            border: 3px solid #ffffff !important;
+            box-shadow: 0px 0px 5px rgba(48, 50, 51, 0.382) !important;
+            border-radius: 100%;
+			
+        }
 	</style>
 
 	<!-- เด้งไปหน้าก่อนหน้า -->

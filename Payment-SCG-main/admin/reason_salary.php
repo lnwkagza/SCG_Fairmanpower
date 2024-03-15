@@ -1,5 +1,5 @@
 <?php
-require_once('..\config\connection.php');
+require_once('..\..\config\connection.php');
 
 session_start(); // เริ่ม session
 
@@ -104,7 +104,7 @@ if (isset($_SESSION['splitId'])) {
 <body>
     <div class="container d-flex justify-content-center align-items-center main">
         <div class="signup-box">
-            <label>เหตุผลการเข้าดู</label>
+            <label>เหตุผลการคำนวณ</label>
             <form action="insert_reason_salary.php" method="POST">
                 <input type="text" placeholder="กรุณากรอกเหตุผล" name="reason_salary" autocomplete="off" required>
                 <button class="button-37" type="submit">บันทึก</button>

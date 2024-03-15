@@ -30,7 +30,7 @@
                     <div class="col-md-10 col-sm-12">
                         <div class="form-group">
                             <div class="text-left">
-                                <button class="btn setting-btn-pay" onclick="location.href='setting_payment_circle.php'">ตั้งค่ารอบเดือน <i class="fa-solid fa-arrows-spin"></i></a></button>
+                                <button class="btn setting-btn-pay" onclick="location.href='setting_payment_circle.php'">ตั้งค่างวดเดือน <i class="fa-solid fa-arrows-spin"></i></a></button>
                             </div>
                         </div>
                     </div>

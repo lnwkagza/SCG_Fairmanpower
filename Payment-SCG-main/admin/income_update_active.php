@@ -1,6 +1,6 @@
 <?php
 
-require_once('..\config\connection.php');
+require_once('..\..\config\connection.php');
 
 
 // ตรวจสอบว่ามีข้อมูลถูกส่งมาจาก AJAX request หรือไม่

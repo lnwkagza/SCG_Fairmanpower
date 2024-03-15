@@ -221,7 +221,7 @@
         async function main() {
             // Initialize LIFF app)
             await liff.init({
-                liffId: '2002434201-QE0o2R3X'
+                liffId: '2003264529-qGOw3XL9'
             });
 
             getUserProfile();

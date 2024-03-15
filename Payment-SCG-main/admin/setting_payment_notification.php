@@ -49,23 +49,25 @@
                                 </div>
                             </div>
                             <div class="pb-10">
-                                <table class="data-table2 table stripe hover nowrap">
-                                    <thead>
-                                        <tr>
-                                            <th class="datatable-nosort " style="text-align: center;">หนังสือรับรองเงินเดือน <i class="fa-solid fa-sort"></i></th>
-                                            <th class="datatable-nosort " style="text-align: center;">ค่ารักษาพยาบาล <i class="fa-solid fa-sort"></i></th>
-                                            <th class="datatable-nosort col-7">
-                                                Company / Division / Department / Section / Cost Center / ประเภทพนักงาน / ระดับการทำงาน / ตำแหน่ง
-                                                <i class="fa-solid fa-sort"></i>
-                                            </th>
-                                            <th class="datatable-nosort " style='text-align: right; padding-right: 40px;'>การจัดการ</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <!-- SELECT ค่า cicle -->
-                                        <?php
-                                        // เตรียมคำสั่ง SQL
-                                        $sql = "SELECT notification_id,notification_certificate.notification_certificate as notification_certificate,notification_medical.notification_medical as notification_medical, employee.card_id as card_id, company.name_thai as company,division.name_thai as division,department.name_thai as department,section.name_thai as section,cost_center.cost_center_code as cost_center,contract_type.name_thai as contract_type,pl.pl_name_thai as pl,position.name_thai as position , prefix_thai, firstname_thai, lastname_thai FROM notification  
+                                <div class="table-responsive mt-2">
+                                    <table class="data-table2 table stripe hover nowrap">
+                                        <thead>
+                                            <tr>
+                                                <th style="text-align: center;">หนังสือรับรองเงินเดือน</th>
+                                                <th style="text-align: center;">ค่ารักษาพยาบาล</th>
+                                                <th style="text-align: center;">รหัสพนักงาน </th>
+                                                <th style="text-align: center;">ชื่อ-สกุล </th>
+                                                <th style="text-align: cemter;">การจัดการ</th>
+                                                <th>
+                                                    Company / Division / Department / Section / Cost Center / ประเภทพนักงาน / ระดับการทำงาน / ตำแหน่ง
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- SELECT ค่า cicle -->
+                                            <?php
+                                            // เตรียมคำสั่ง SQL
+                                            $sql = "SELECT notification_id,notification_certificate.notification_certificate as notification_certificate,notification_medical.notification_medical as notification_medical,scg_employee_id, employee.card_id as card_id, company.name_thai as company,division.name_thai as division,department.name_thai as department,section.name_thai as section,cost_center.cost_center_code as cost_center,contract_type.name_thai as contract_type,pl.pl_name_thai as pl,position.name_thai as position , prefix_thai, firstname_thai, lastname_thai FROM notification  
                                         INNER JOIN notification_certificate ON notification_certificate.notification_certificate_id  = notification.notification_certificate_id 
                                         INNER JOIN notification_medical ON notification_medical.notification_medical_id  = notification.notification_medical_id 
                                         INNER JOIN employee ON employee.card_id = notification.card_id  
@@ -80,24 +82,25 @@
                                         LEFT JOIN pl ON pl.pl_id = pl_info.pl_id 
                                         LEFT JOIN position_info ON position_info.card_id  = notification.card_id
                                         LEFT JOIN position ON position.position_id  = position_info.position_id";
-                                        $params = array();
-                                        // ดึงข้อมูลจากฐานข้อมูล
-                                        $stmt = sqlsrv_query($conn, $sql, $params);
-                                        // ตรวจสอบการทำงานของคำสั่ง SQL
-                                        if ($stmt === false) {
-                                            die(print_r(sqlsrv_errors(), true));
-                                        }
+                                            $params = array();
+                                            // ดึงข้อมูลจากฐานข้อมูล
+                                            $stmt = sqlsrv_query($conn, $sql, $params);
+                                            // ตรวจสอบการทำงานของคำสั่ง SQL
+                                            if ($stmt === false) {
+                                                die(print_r(sqlsrv_errors(), true));
+                                            }
 
-                                        while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
-                                            echo "<tr>";
-                                            $displayCertificate = ($row["notification_certificate"] === 0) ? "เปิดการแจ้งเตือน" : (($row["notification_certificate"] === 1) ? "ปิดการแจ้งเตือน" : $row["notification_certificate"]);
-                                            echo "<td  style='text-align: center;''>" . $displayCertificate . "</td>";
-                                            $displayMedical = ($row["notification_medical"] === 0) ? "เปิดการแจ้งเตือน" : (($row["notification_medical"] === 1) ? "ปิดการแจ้งเตือน" : $row["notification_medical"]);
-                                            echo "<td  style='text-align: center;''>" . $displayMedical . "</td>";
-                                            echo "<td>" . $row["company"] . ' / ' . $row["division"] . ' / ' . $row["department"] . ' / ' . $row["section"] . ' / ' . $row["cost_center"] . '<br>' . $row["contract_type"] . ' / ' . $row["pl"] . ' / ' . $row["position"] . ' / ' . $row["prefix_thai"] . $row["firstname_thai"] . '  ' . $row["lastname_thai"] . "</td>";
-                                            echo "<td><div class='flex'  style='justify-content: right; padding-right: 27px;'>",
-                                            '<button type="button" name="delete_notification" class="delete-btn-pay" onclick="confirmDeleteNotification(\'' . $row['notification_id'] . '\');"><i class="fa-solid fa-trash-can"></i></button> &nbsp;';
-                                            echo "<button type='button' class='edit-btn-pay' onclick='openEdit_Notification_Setting_Modal
+                                            while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
+                                                echo "<tr>";
+                                                $displayCertificate = ($row["notification_certificate"] === 0) ? "เปิดการแจ้งเตือน" : (($row["notification_certificate"] === 1) ? "ปิดการแจ้งเตือน" : $row["notification_certificate"]);
+                                                echo "<td  style='text-align: center;''>" . $displayCertificate . "</td>";
+                                                $displayMedical = ($row["notification_medical"] === 0) ? "เปิดการแจ้งเตือน" : (($row["notification_medical"] === 1) ? "ปิดการแจ้งเตือน" : $row["notification_medical"]);
+                                                echo "<td  style='text-align: center;''>" . $displayMedical . "</td>";
+                                                echo "<td >" . $row["scg_employee_id"] . "</td>";
+                                                echo "<td>" . $row["prefix_thai"] . $row["firstname_thai"] . '  ' . $row["lastname_thai"] . "</td>";
+                                                echo "<td><div class='flex'  style='justify-content: right; padding-right: 27px;'>",
+                                                '<button type="button" name="delete_notification" class="delete-btn-pay" onclick="confirmDeleteNotification(\'' . $row['notification_id'] . '\');"><i class="fa-solid fa-trash-can"></i></button> &nbsp;';
+                                                echo "<button type='button' class='edit-btn-pay' onclick='openEdit_Notification_Setting_Modal
                                             (
                                             \"" . $row['notification_id'] . "\",
                                             \"" . $row['card_id'] . "\",
@@ -116,13 +119,16 @@
                                             \"" . $row['position'] . "\"
                                             
                                             );'>";
-                                            echo "<div ><i class='fa-solid fa-pencil'></i>";
-                                            echo "</button>";
-                                        }
-                                        // ปิดการเชื่อมต่อ
-                                        ?>
-                                    </tbody>
-                                </table>
+                                                echo "<div ><i class='fa-solid fa-pencil'></i>";
+                                                echo "</button>";
+                                                echo "<td>" . $row["company"] . ' / ' . $row["division"] . ' / ' . $row["department"] . ' / ' . $row["section"] . ' / ' . $row["cost_center"] . ' / ' . $row["contract_type"] . ' / ' . $row["pl"] . ' / ' . $row["position"] . "</td>";
+                                                echo "</tr>";
+                                            }
+                                            // ปิดการเชื่อมต่อ
+                                            ?>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-5 col-sm-5">

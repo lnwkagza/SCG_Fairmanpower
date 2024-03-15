@@ -1,8 +1,6 @@
 <!-- สลิปเงินเดือน -->
 <?php include('../user/include/header.php') ?>
 
-
-
 <link rel="stylesheet" href="styles/salary-slip.css">
 
 <body>
@@ -66,12 +64,12 @@
                             <?php
                             // เตรียมคำสั่ง SQL
                             $sql = "SELECT * FROM log_salary
-                                    WHERE card_id = '1234'
+                                    WHERE card_id = ?
                                     AND MONTH(datetime) = MONTH(GETDATE())
                                     AND YEAR(datetime) = YEAR(GETDATE());
                             ";
                             // เพิ่มเงื่อนไขค้นหา
-                            $params = array();
+                            $params = array($card_id);
 
                             // ดึงข้อมูลจากฐานข้อมูล
                             $stmt = sqlsrv_query($conn, $sql, $params);
@@ -92,12 +90,12 @@
                             <?php
                             // เตรียมคำสั่ง SQL
                             $sql = "SELECT * FROM log_salary
-                                    WHERE card_id = '1234'
+                                    WHERE card_id = ?
                                     AND MONTH(datetime) = MONTH(GETDATE())
                                     AND YEAR(datetime) = YEAR(GETDATE());
                             ";
                             // เพิ่มเงื่อนไขค้นหา
-                            $params = array();
+                            $params = array($card_id);
 
                             // ดึงข้อมูลจากฐานข้อมูล
                             $stmt = sqlsrv_query($conn, $sql, $params);
@@ -127,12 +125,12 @@
                             <?php
                             // เตรียมคำสั่ง SQL
                             $sql = "SELECT * FROM log_sum_salary
-                                    WHERE log_sum_salary.card_id = '1234'
+                                    WHERE log_sum_salary.card_id = ?
                                     AND MONTH(date) = MONTH(GETDATE())
                                     AND YEAR(date) = YEAR(GETDATE());
                             ";
                             // เพิ่มเงื่อนไขค้นหา
-                            $params = array();
+                            $params = array($card_id);
 
                             // ดึงข้อมูลจากฐานข้อมูล
                             $stmt = sqlsrv_query($conn, $sql, $params);
@@ -153,12 +151,12 @@
                             <?php
                             // เตรียมคำสั่ง SQL
                             $sql = "SELECT * FROM log_sum_salary
-                                    WHERE log_sum_salary.card_id = '1234'
+                                    WHERE log_sum_salary.card_id = ?
                                     AND MONTH(date) = MONTH(GETDATE())
                                     AND YEAR(date) = YEAR(GETDATE());
                             ";
                             // เพิ่มเงื่อนไขค้นหา
-                            $params = array();
+                            $params = array($card_id);
 
                             // ดึงข้อมูลจากฐานข้อมูล
                             $stmt = sqlsrv_query($conn, $sql, $params);

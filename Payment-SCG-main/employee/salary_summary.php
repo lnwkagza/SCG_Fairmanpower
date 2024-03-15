@@ -74,7 +74,7 @@
                                                             WHERE card_id = ?
                                                             AND MONTH(datetime) = $month
                                                             AND YEAR(datetime) = $year
-                                                            ;";
+                                                            ";
                                                     // เพิ่มเงื่อนไขค้นหา
                                                     $params = array($card_id);
 
@@ -144,10 +144,10 @@
                                                     <?php
                                                     // เตรียมคำสั่ง SQL
                                                     $sql = "SELECT * FROM log_sum_salary
-                                                            WHERE log_sum_salary.card_id = ?
+                                                            WHERE card_id = ?
                                                             AND MONTH(date) = $month
                                                             AND YEAR(date) = $year
-                                                            ;";
+                                                            ";
                                                     // เพิ่มเงื่อนไขค้นหา
                                                     $params = array($card_id);
 
@@ -163,11 +163,10 @@
                                                         $formattedDate = $time->format('d-m-Y');
 
                                                         // เงินได้ที่เดือนนี้
+                                                        $totalsalary_income = $row["salary_per_month"] + $row["total_income"];
                                                         $total_salary = ($row["salary_per_month"] + $row["total_income"]) - $row["total_deduct"];
-
-
                                                         echo "<tr>";
-                                                        echo "<td class='text-center' style='text-align: center;'>" . $row["total_income"] . "</td>";
+                                                        echo "<td class='text-center' style='text-align: center;'>" . $totalsalary_income . "</td>";
                                                         echo "<td class='text-center' style='text-align: center;'>" . $row["total_deduct"] . "</td>";
                                                         echo "<td class='text-center' style='text-align: center;'>" . $total_salary . "</td>";
                                                         echo "<td class='text-center' style='text-align: center;'>" . $formattedDate  . "</td>";
