@@ -37,9 +37,9 @@
                         <div class="card-box pd-30 pt-10 height-100-p">
                             <div class="bar">
                                 <a style="color:#338ac6 ;">คำนวณเงินเดือนพนักงาน <i class="fa-regular fa-user"></i></a>
-                                <a href="doc-waitingApprov.php">เอกสารรอการอนุมัติ <i class="fa-solid fa-file"></i>
-                                    <div class="bug">1</div> <!-- วงกลมแสดงจำนวนรายการค้างอนุมัติ -->
-                                </a>
+                                <!-- <a href="doc-waitingApprov.php">เอกสารรอการอนุมัติ <i class="fa-solid fa-file"></i>
+                                    <div class="bug">1</div> 
+                                </a> -->
                             </div>
 
                             <div class="row1">

@@ -1,10 +1,16 @@
+<style>
+	@media (min-width: 1300px) {
+		.burger {
+			display: none;
+		}
+	}
+</style>
+
 <div class="header">
 	<div class="header-left">
-		<div class="menu-icon">
-			<i class="fa-solid fa-bars"></i>
+		<div class="menu-icon hideInMobile" style="font-size: 2vmax; justify-content: left; display: flex; width: 60px;">
+			<img class="burger" src="include/menu.png" style="width:80% ; height:auto; padding-left: 10px;">
 		</div>
-		<div class="search-toggle-icon" data-toggle="header_search"></div>
-
 	</div>
 	<div class="header-right">
 		<div class="dashboard-setting user-notification">
@@ -29,7 +35,7 @@
 					</span>
 					<span class="user-name">
 						<label>
-							<?php echo  $prefix.  '' .$fname. ' ' .$lname ?><br />
+							<?php echo  $prefix .  '' . $fname . ' ' . $lname ?><br />
 							บทบาท : <?php echo $row['permission'] ?>
 						</label>
 

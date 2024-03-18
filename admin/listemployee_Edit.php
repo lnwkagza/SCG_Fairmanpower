@@ -647,7 +647,7 @@ if (isset($_GET['card_id'])) {
                                                 if ($resultpl) {
                                                     while ($pl = sqlsrv_fetch_array($resultpl, SQLSRV_FETCH_ASSOC)) {
                                                         $selected = ($pl['pl_id'] == $pl_info["pl_id"]) ? 'selected' : '';
-                                                        echo "<option value='"  . $pl["pl_id"] . "' $selected>" . $pl["pl_id"] . ' | ' . $pl["pl_name_eng"] .  "</option>";
+                                                        echo "<option value='"  . $pl["pl_id"] . "' $selected>" .  $pl["pl_name_eng"] .  "</option>";
                                                     }
                                                 }
                                                 ?>

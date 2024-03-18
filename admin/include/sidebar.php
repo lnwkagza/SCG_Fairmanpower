@@ -29,8 +29,6 @@
                         <li><a href="listemployee_Manager.php" class="dropdown-toggle no-arrow"><i class="fa-solid fa-user-tie"></i> ผู้จัดการ | report-to</a></li>
                     </ul>
                 </li>
-
-
                 <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle">
                         <i class="fa-solid fa-circle-dollar-to-slot fa-lg"></i><span class="mtext">&nbsp;&nbsp;เงินเดือน</span>
@@ -39,6 +37,16 @@
                         <li>
                             <a href="../Payment-SCG-main/admin/employee_payment.php" class="dropdown-toggle no-arrow">
                                 <span class="mtext"><i class="fa-solid fa-users"></i>&nbsp;&nbsp;คำนวณเงินเดือน</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../Payment-SCG-main/admin/check_split.php"  class="dropdown-toggle no-arrow">
+                                <span class="mtext"><i class="fa-solid fa-download"></i></i>&nbsp;&nbsp;สลิปเงินเดือน</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../Payment-SCG-main/admin/select_month.php" class="dropdown-toggle no-arrow">
+                                <span class="mtext"><i class="fa-solid fa-clock-rotate-left"></i>&nbsp;&nbsp;ประวัติเงินเดือน</span>
                             </a>
                         </li>
                         <li>
