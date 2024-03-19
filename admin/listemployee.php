@@ -1,5 +1,27 @@
 <?php include('../admin/include/header.php') ?>
 
+<script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+
+
+    <?php
+    $currentDateTime = date('Y-m-d'); // วันที่และเวลาปัจจุบันในรูปแบบ Y-m-d H:i:s
+    echo $currentDateTime;
+
+    ?>
+
+    <script>
+        function exportToExcel() {
+            // รับตารางทั้งหมด
+            var table = document.getElementById("myTable");
+
+            // สร้าง Workbook และ Worksheet ในไฟล์ Excel
+            var wb = XLSX.utils.table_to_book(table);
+            var ws = wb.Sheets["Sheet1"];
+
+            // บันทึกไฟล์ Excel
+            XLSX.writeFile(wb, "ข้อมูลพนักงานรอบวันที่ <?php echo $currentDateTime; ?>.xlsx");
+        }
+    </script>
 <body>
 	<!-- <div class="pre-loader">
 		<div class="pre-loader-box">
@@ -15,6 +37,8 @@
 	</div> -->
 	<?php include('../admin/include/navbar.php') ?>
 	<?php include('../admin/include/sidebar.php') ?>
+
+	
 
 	<div class="mobile-menu-overlay"></div>
 	<div class="main-container">
@@ -222,6 +246,7 @@
 							<div class="widget-data">
 								<div class="weight-700 font-24 text-right"></div>
 								<button class="createdemp-btn" onclick="location.href='listemployee_Create.php'"> + เพิ่มพนักงานใหม่ </button>
+								<button class="downloadexcel-btn" onclick="exportToExcel()"><i class="fa-regular fa-circle-down"></i> ดาวน์โหลดข้อมูลพนักงาน</button>
 							</div>
 						</div>
 					</div>
@@ -232,7 +257,7 @@
 		<div class="pl-20 mb-30">
 			<div class="pd-20 card-box">
 				<div class="pb-20">
-					<table class="data-table table stripe hover nowrap">
+					<table class="data-table table stripe hover nowrap" id="myTable">
 						<thead>
 							<tr>
 								<th class="col-sm-2">รหัสพนักงาน SCG</th>
