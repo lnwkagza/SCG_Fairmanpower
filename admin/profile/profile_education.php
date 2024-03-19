@@ -25,6 +25,9 @@
                                                                                 <option value="ปริญญาตรี" <?php echo (isset($e_edu["education_level_degree"]) && $e_edu["education_level_degree"] == 'ปริญญาตรี') ? 'selected' : ''; ?>>ปริญญาตรี</option>
                                                                                 <option value="ปริญญาโท" <?php echo (isset($e_edu["education_level_degree"]) && $e_edu["education_level_degree"] == 'ปริญญาโท') ? 'selected' : ''; ?>>ปริญญาโท</option>
                                                                                 <option value="ปวช." <?php echo (isset($e_edu["education_level_degree"]) && $e_edu["education_level_degree"] == 'ปวช.') ? 'selected' : ''; ?>>ปวช.</option>
+                                                                                <option value="ปวส." <?php echo (isset($e_edu["education_level_degree"]) && $e_edu["education_level_degree"] == 'ปวส.') ? 'selected' : ''; ?>>ปวส.</option>
+                                                                                <option value="มัธยมต้น" <?php echo (isset($e_edu["education_level_degree"]) && $e_edu["education_level_degree"] == 'มัธยมต้น') ? 'selected' : ''; ?>>มัธยมต้น</option>
+                                                                                <option value="มัธยมปลาย" <?php echo (isset($e_edu["education_level_degree"]) && $e_edu["education_level_degree"] == 'มัธยมปลาย') ? 'selected' : ''; ?>>มัธยมปลาย</option>
                                                                             </select>
                                                                         </div>
                                                                     </div>
@@ -54,7 +57,7 @@
                                                                             <input name="country_degree" type="text" class="form-control" value="<?php echo isset($e_edu["country_degree"]) ? $e_edu["country_degree"] : ''; ?>" autocomplete="on" />
                                                                         </div>
                                                                     </div>
-                                                                    <div class="col-md-2 col-sm-12">
+                                                                    <div class="col-md-3 col-sm-12">
                                                                         <div class="form-group">
                                                                             <label>เกรดเฉลี่ย</label>
                                                                             <input name="grade_degree" type="text" class="form-control" value="<?php echo isset($e_edu["grade_degree"]) ? $e_edu["grade_degree"] : ''; ?>" oninput="formatDecimal(this)" autocomplete="off" pattern="\d+(\.\d{1,2})?" title="กรุณากรอกเป็นตัวเลขที่มีทศนิยมไม่เกิน 2 ตำแหน่ง">
@@ -82,17 +85,10 @@
                                                                 </div>
 
                                                                 <div class="row pb-5">
-                                                                    <div class="col-md-6 col-sm-12">
+                                                                    <div class="col-md-3 col-sm-12">
                                                                         <div class="form-group">
                                                                             <label>ใบรับรองการศึกษา</label>
-                                                                            <input name="certificate_degree" type="file" id="certificate_degree" class="form-control" accept="application/pdf" disabled />
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-md-6">
-                                                                        <div class="form-group">
-                                                                            <div class="justify-content-center pt-20">
-                                                                                <button class="btn btn-primary" onclick="update_education(event);">บันทึก แก้ไขข้อมูล</button>
-                                                                            </div>
+                                                                            <input name="certificate_degree" type="file" id="certificate_degree" class="form-control" accept="application/pdf" />
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -108,6 +104,9 @@
                                                                                 <option value="ปริญญาตรี" <?php echo (isset($e_edu["education_level_scholarship"]) && $e_edu["education_level_scholarship"] == 'ปริญญาตรี') ? 'selected' : ''; ?>>ปริญญาตรี</option>
                                                                                 <option value="ปริญญาโท" <?php echo (isset($e_edu["education_level_scholarship"]) && $e_edu["education_level_scholarship"] == 'ปริญญาโท') ? 'selected' : ''; ?>>ปริญญาโท</option>
                                                                                 <option value="ปวช." <?php echo (isset($e_edu["education_level_scholarship"]) && $e_edu["education_level_scholarship"] == 'ปวช.') ? 'selected' : ''; ?>>ปวช.</option>
+                                                                                <option value="ปวส." <?php echo (isset($e_edu["education_level_degree"]) && $e_edu["education_level_degree"] == 'ปวส.') ? 'selected' : ''; ?>>ปวส.</option>
+                                                                                <option value="มัธยมต้น" <?php echo (isset($e_edu["education_level_degree"]) && $e_edu["education_level_degree"] == 'มัธยมต้น') ? 'selected' : ''; ?>>มัธยมต้น</option>
+                                                                                <option value="มัธยมปลาย" <?php echo (isset($e_edu["education_level_degree"]) && $e_edu["education_level_degree"] == 'มัธยมปลาย') ? 'selected' : ''; ?>>มัธยมปลาย</option>
                                                                             </select>
                                                                         </div>
                                                                     </div>
@@ -136,7 +135,7 @@
                                                                             <input name="country_scholarship" type="text" class="form-control" value="<?php echo isset($e_edu["country_scholarship"]) ? $e_edu["country_scholarship"] : ''; ?>" autocomplete="on" />
                                                                         </div>
                                                                     </div>
-                                                                    <div class="col-md-2 col-sm-12">
+                                                                    <div class="col-md-3 col-sm-12">
                                                                         <div class="form-group">
                                                                             <label>เกรดเฉลี่ย</label>
                                                                             <input name="grade_scholarship" type="text" class="form-control" value="<?php echo isset($e_edu["grade_scholarship"]) ? $e_edu["grade_scholarship"] : ''; ?>" oninput="formatDecimal(this)" autocomplete="off" pattern="\d+(\.\d{1,2})?" title="กรุณากรอกเป็นตัวเลขที่มีทศนิยมไม่เกิน 2 ตำแหน่ง">
@@ -148,7 +147,14 @@
                                                                             <input name="year_acquired_scholarship" type="date" class="form-control" value="<?php echo isset($e_edu['year_acquired_scholarship']) ? $e_edu['year_acquired_scholarship']->format('Y-m-d') : ''; ?>" autocomplete="off">
                                                                         </div>
                                                                     </div>
+                                                                    <div class="col-md-3 col-sm-12">
+                                                                        <div class="form-group">
+                                                                            <label>ใบรับรองการศึกษา</label>
+                                                                            <input name="certificate_degree" type="file" id="certificate_degree" class="form-control" accept="application/pdf" />
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
+                                                                <hr>
                                                                 <div class="row">
                                                                     <div class="col-md-3 col-sm-12">
                                                                         <div class="form-group">
@@ -187,7 +193,7 @@
                                                                             <input name="country_other1" type="text" class="form-control" value="<?php echo isset($e_edu["country_other1"]) ? $e_edu["country_other1"] : ''; ?>" autocomplete="on" />
                                                                         </div>
                                                                     </div>
-                                                                    <div class="col-md-2 col-sm-12">
+                                                                    <div class="col-md-3 col-sm-12">
                                                                         <div class="form-group">
                                                                             <label>เกรดเฉลี่ย</label>
                                                                             <input name="grade_other1" type="text" class="form-control" value="<?php echo isset($e_edu["grade_other1"]) ? $e_edu["grade_other1"] : ''; ?>" oninput="formatDecimal(this)" autocomplete="off" pattern="\d+(\.\d{1,2})?" title="กรุณากรอกเป็นตัวเลขที่มีทศนิยมไม่เกิน 2 ตำแหน่ง">
@@ -199,7 +205,14 @@
                                                                             <input name="year_acquired_other1" type="date" class="form-control" value="<?php echo isset($e_edu['year_acquired_other1']) ? $e_edu['year_acquired_other1']->format('Y-m-d') : ''; ?>" autocomplete="off">
                                                                         </div>
                                                                     </div>
+                                                                    <div class="col-md-3 col-sm-12">
+                                                                        <div class="form-group">
+                                                                            <label>ใบรับรองการศึกษา</label>
+                                                                            <input name="certificate_degree" type="file" id="certificate_degree" class="form-control" accept="application/pdf" />
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
+                                                                <hr>
                                                                 <div class="row">
                                                                     <div class="col-md-3 col-sm-12">
                                                                         <div class="form-group">
@@ -209,6 +222,9 @@
                                                                                 <option value="ปริญญาตรี" <?php echo (isset($e_edu["education_level_other2"]) && $e_edu["education_level_other2"] == 'ปริญญาตรี') ? 'selected' : ''; ?>>ปริญญาตรี</option>
                                                                                 <option value="ปริญญาโท" <?php echo (isset($e_edu["education_level_other2"]) && $e_edu["education_level_other2"] == 'ปริญญาโท') ? 'selected' : ''; ?>>ปริญญาโท</option>
                                                                                 <option value="ปวช." <?php echo (isset($e_edu["education_level_other2"]) && $e_edu["education_level_other2"] == 'ปวช.') ? 'selected' : ''; ?>>ปวช.</option>
+                                                                                <option value="ปวส." <?php echo (isset($e_edu["education_level_degree"]) && $e_edu["education_level_degree"] == 'ปวส.') ? 'selected' : ''; ?>>ปวส.</option>
+                                                                                <option value="มัธยมต้น" <?php echo (isset($e_edu["education_level_degree"]) && $e_edu["education_level_degree"] == 'มัธยมต้น') ? 'selected' : ''; ?>>มัธยมต้น</option>
+                                                                                <option value="มัธยมปลาย" <?php echo (isset($e_edu["education_level_degree"]) && $e_edu["education_level_degree"] == 'มัธยมปลาย') ? 'selected' : ''; ?>>มัธยมปลาย</option>
                                                                             </select>
                                                                         </div>
                                                                     </div>
@@ -238,7 +254,7 @@
                                                                             <input name="country_other2" type="text" class="form-control" value="<?php echo isset($e_edu["country_other2"]) ? $e_edu["country_other2"] : ''; ?>" autocomplete="on" />
                                                                         </div>
                                                                     </div>
-                                                                    <div class="col-md-2 col-sm-12">
+                                                                    <div class="col-md-3 col-sm-12">
                                                                         <div class="form-group">
                                                                             <label>เกรดเฉลี่ย</label>
                                                                             <input name="grade_other2" type="text" class="form-control" value="<?php echo isset($e_edu["grade_other2"]) ? $e_edu["grade_other2"] : ''; ?>" oninput="formatDecimal(this)" autocomplete="off" pattern="\d+(\.\d{1,2})?" title="กรุณากรอกเป็นตัวเลขที่มีทศนิยมไม่เกิน 2 ตำแหน่ง">
@@ -248,6 +264,19 @@
                                                                         <div class="form-group">
                                                                             <label>ปีที่สำเร็จการศึกษา</label>
                                                                             <input name="year_acquired_other2" type="date" class="form-control" value="<?php echo isset($e_edu['year_acquired_other2']) ? $e_edu['year_acquired_other2']->format('Y-m-d') : ''; ?>" autocomplete="off">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-3 col-sm-12">
+                                                                        <div class="form-group">
+                                                                            <label>ใบรับรองการศึกษา</label>
+                                                                            <input name="certificate_degree" type="file" id="certificate_degree" class="form-control" accept="application/pdf" />
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group">
+                                                                            <div class="justify-content-center pt-20">
+                                                                                <button class="btn btn-primary" onclick="update_education(event);">บันทึก แก้ไขข้อมูล</button>
+                                                                            </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
