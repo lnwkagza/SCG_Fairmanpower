@@ -1,4 +1,4 @@
-<div class="left-side-bar">
+<div class="left-side-bar overflow-y-auto" >
     <div class="brand-logo">
         <a href="dashboard.php">
         <img src="../asset/img/SCGlogo.png">
