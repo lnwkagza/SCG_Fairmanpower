@@ -17,7 +17,7 @@
                     SCG : Fair Manpower ยินดีให้บริการ <h4 class="weight-600 font-15 text-primary"></h4>
                 </h4>
                 <p class="font-18 max-width-1000">* หมายเหตุ ทางผู้พัฒนาได้ปรับปรุงส่วน <a href="listemployee_Manager.php"> ข้อมูลผู้จัดการ / report-to </a>ณ วันที่ <?php echo $date2->format("D, d M Y") ?>
-                <p class="font-18 max-width-800 text-danger"> จึง สุขสันปีใหม่ 2567 มา ณ ที่นี้</p>
+                <p class="font-18 max-width-800 text-danger">พรใดๆ ที่ว่าดีในโลกนี้ ขอมาอวยชัยให้คนดี จงมีแต่ความสุขตลอดกาล</p>
                 </p>
                 <button class="font-20 weight-500 mb-10 text-capitalize btn btn-secondary" onclick="location.href='analytics/dashboard.php'">
                     <i class="fa-solid fa-chart-line fa-lg"></i> Demo Analytics <h4 class="weight-600 font-15 text-primary"></h4>
