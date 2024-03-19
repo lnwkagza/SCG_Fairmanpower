@@ -18,7 +18,7 @@ if (
 	$permission_id = $_SESSION['permission_id'];
 
 
-	if ($permission_id == 4) {
+	if ($permission_id == 4 || $permission_id == 2) {
 
 	}
 	else {
