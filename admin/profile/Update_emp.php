@@ -1,5 +1,5 @@
 <?php
-require_once('C:\xampp\htdocs\SCG_Fairmanpower\config\connection.php');
+require_once('..\..\config\connection.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -27,6 +27,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $tax_id = isset($_POST['tax_id']) ? $_POST['tax_id'] : null;
     $outside_equivalent_year = isset($_POST['outside_equivalent_year']) ? $_POST['outside_equivalent_year'] : null;
     $outside_equivalent_month = isset($_POST['outside_equivalent_month']) ? $_POST['outside_equivalent_month'] : null;
+    $position_id = ($_POST['position']);
+    $pl_id = ($_POST['pl']);
+    $currentDateTime = date("Y-m-d");
 
     // คำสั่ง SQL ในรูปแบบของ prepared statement
     $sqlUpdate = "UPDATE employee SET 
@@ -83,13 +86,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         &$card_id
     ));
 
+
     // ทำการ execute prepared statement
     $result = sqlsrv_execute($stmt);
 
+    $sql1 = "UPDATE position_info SET position_id = ? WHERE card_id = ?";
+    $stmt1 = sqlsrv_prepare($conn, $sql1, array(
+        &$position_id,
+        &$card_id
+        ));
+    $result1 = sqlsrv_execute($stmt1);
+
+    $sql2 = "UPDATE pl_info SET pl_id = ?,start_date = ? WHERE card_id = ?";
+    $stmt2 = sqlsrv_prepare($conn, $sql2, array(
+        &$pl_id,
+        &$currentDateTime,
+        &$card_id
+    ));
+    $result2 = sqlsrv_execute($stmt2);
+
     // ตรวจสอบสถานะการ execute
-    if ($result === false) {
+    if ($result === false & $result1 === false & $result2 === false) {
         $errors = sqlsrv_errors();
-        echo json_encode(array('status' => 'error'));
+        echo json_encode(array('status' => 'error', 'message' => 'Database error: ' . $errors[0]['message']));
         exit();
     } else {
         echo json_encode(array('status' => 'success'));

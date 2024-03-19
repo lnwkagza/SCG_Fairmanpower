@@ -456,6 +456,7 @@
                                                                             <label>ประสบการณ์ทำงานภายนอก (จำนวนเดือน)</label>
                                                                             <input name="outside_equivalent_month" placeholder="ระบุจำนวนเดือนการทำงาน" value="<?php echo $row["outside_equivalent_month"]; ?>" type="number" class="form-control" autocomplete="off" min="0" max="12" oninput="validateInput_m(this)">
                                                                         </div>
+                                                                        
                                                                         <script>
                                                                             function validateInput_m(input) {
                                                                                 // ดึงค่าที่ป้อนเข้ามา
@@ -472,6 +473,48 @@
                                                                             }
                                                                         </script>
                                                                     </div>
+                                                                    <div class="col-md-2 col-sm-12">
+                                                                    <div class="form-group">
+                                                                        <label>ตำเเหน่ง</label>
+                                                                        <select name="position" class="form-control selectpicker" data-live-search="true" required="true" autocomplete="off" id="exampleSelect1">
+                                                                            <?php
+                                                                            $position = "SELECT * FROM position";
+                                                                            $resultposition = sqlsrv_query($conn, $position);
+                                                                            if ($resultposition === false) {
+                                                                                die(print_r(sqlsrv_errors(), true));
+                                                                            }
+
+                                                                            if ($resultposition) {
+                                                                                while ($position = sqlsrv_fetch_array($resultposition, SQLSRV_FETCH_ASSOC)) {
+                                                                                    $selected = ($position['position_id'] == $position_info["position_id"]) ? 'selected' : '';
+                                                                                    echo "<option value='"  . $position["position_id"] . "' $selected>" . $position["position_id"] . ' | ' . $position["name_thai"] .  "</option>";
+                                                                                }
+                                                                            }
+                                                                            ?>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-2 col-sm-12">
+                                                                    <div class="form-group">
+                                                                        <label>ระดับการทำงาน</label>
+                                                                        <select name="pl" class="form-control selectpicker" data-live-search="true" required="true" autocomplete="off" id="exampleSelect1">
+                                                                            <?php
+                                                                            $pl = "SELECT * FROM pl";
+                                                                            $resultpl = sqlsrv_query($conn, $pl);
+                                                                            if ($resultpl === false) {
+                                                                                die(print_r(sqlsrv_errors(), true));
+                                                                            }
+
+                                                                            if ($resultpl) {
+                                                                                while ($pl = sqlsrv_fetch_array($resultpl, SQLSRV_FETCH_ASSOC)) {
+                                                                                    $selected = ($pl['pl_id'] == $pl_info["pl_id"]) ? 'selected' : '';
+                                                                                    echo "<option value='"  . $pl["pl_id"] . "' $selected>" .  $pl["pl_name_eng"] .  "</option>";
+                                                                                }
+                                                                            }
+                                                                            ?>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <div class="form-group">

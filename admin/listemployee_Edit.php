@@ -613,6 +613,7 @@ if (isset($_GET['card_id'])) {
                                         </div>
 
                                     </div>
+                                    
                                     <div class="col-md-2 col-sm-12">
                                         <div class="form-group">
                                             <label>ตำเเหน่ง</label>
@@ -636,7 +637,7 @@ if (isset($_GET['card_id'])) {
 
                                     <div class="col-md-2 col-sm-12">
                                         <div class="form-group">
-                                            <label>ตำเเหน่ง</label>
+                                            <label>ระดับการทำงาน</label>
                                             <select name="pl" class="form-control selectpicker" data-live-search="true" required="true" autocomplete="off" id="exampleSelect1">
                                                 <?php
                                                 $pl = "SELECT * FROM pl";
