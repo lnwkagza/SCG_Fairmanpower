@@ -99,7 +99,7 @@ if (
                 <table class="data-table table stripe hover nowrap">
                     <thead>
                         <tr>
-                            <th>ชื่อ</th>
+                            <th>ชื่อแบบประเมิน</th>
                             <th>ประเภทพนักงาน</th>
                             <th>วันที่เริ่มประเมิน</th>
                             <th>วันที่จบประเมิน</th>
@@ -132,7 +132,7 @@ if (
                             echo "<td>" . $row["name_thai"] . "</td>";
                             echo "<td>" . $formattedDateStart . "</td>";
                             echo "<td>"  . $formattedDateEnd .  "</td>";
-                            echo "<td><button class='edit-btn_Org' onclick='editAssessment( " . $row['assessment_id'] . ")'><span class='checkmark'>✎</span></button>                    
+                            echo "<td ><button class='edit-btn_Org' onclick='editAssessment( " . $row['assessment_id'] . ")'><span class='checkmark'>✎</span></button>                    
                         <button id='deletebtn' style='display :none;' onclick='deleteRecord( " . $row['assessment_id'] . ")'>
                              </button> 
                         <button class='delete-btn_Org' onclick='showSweetAlert()'>

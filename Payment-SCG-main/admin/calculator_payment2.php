@@ -23,11 +23,12 @@
                             </div>
                             <nav aria-label="breadcrumb" role="navigation">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="employee_payment.php">เงินเดือนพนักงาน</a></li>
+                                    <li class="breadcrumb-item"><a href="employee_payment.php">จัดการเงินเดือนพนักงาน</a></li>
                                     <li class="breadcrumb-item"><a href="income.php">รายรับ/รายจ่าย</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">คำนวณเงินเดือน</li>
                                     <li class="breadcrumb-item"><a href="history_payment.php">ประวัติการคำนวณ</a></li>
-                                    <li class="breadcrumb-item"><a href="setting_payment.php">ตั้งค่า</a></li>
+                                    <li class="breadcrumb-item"><a href="setting_payment_income_deduct.php">ตั้งค่ารายรับรายจ่าย</a></li>
+                                    <li class="breadcrumb-item"><a href="setting_payment_general.php">ตั้งค่าทั่วไป</a></li>
                                 </ol>
                             </nav>
                         </div>

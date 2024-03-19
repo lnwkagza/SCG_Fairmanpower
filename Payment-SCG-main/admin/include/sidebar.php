@@ -43,17 +43,12 @@
                         </li>
                         <li>
                             <a href="check_split.php"  class="dropdown-toggle no-arrow">
-                                <span class="mtext"><i class="fa-solid fa-download"></i></i>&nbsp;&nbsp;สลิปเงินเดือน</span>
+                                <span class="mtext"><i class="fa-solid fa-download"></i></i>&nbsp;&nbsp;สลิปเงินเดือนของฉัน</span>
                             </a>
                         </li>
                         <li>
                             <a href="select_month.php" class="dropdown-toggle no-arrow">
-                                <span class="mtext"><i class="fa-solid fa-clock-rotate-left"></i>&nbsp;&nbsp;ประวัติเงินเดือน</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="setting_payment_general.php" class="dropdown-toggle no-arrow">
-                                <span class="mtext"><i class="fa-solid fa-gear fa-xl"></i> ตั้งค่า</span>
+                                <span class="mtext"><i class="fa-solid fa-clock-rotate-left"></i>&nbsp;&nbsp;ประวัติเงินเดือนของฉัน</span>
                             </a>
                         </li>
                     </ul>

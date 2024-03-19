@@ -83,7 +83,7 @@ if (
 
                             <div class="form-group">
                                 <span class="option o04"> ชื่อแบบประเมิน </span>
-                                <input type="text" id="assessment" name="assessment" class="form-control" placeholder="ระบุชื่อแบบประเมิน">
+                                <input type="text" id="assessment" name="assessment" class="form-control" placeholder="ระบุชื่อแบบประเมิน" autocomplete="off">
                             </div>
                             <div class="form-group">
                                 <span class="option o04"> เลือกประเภทพนักงาน </span>
