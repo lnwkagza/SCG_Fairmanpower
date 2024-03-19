@@ -75,7 +75,7 @@ if (isset($_SESSION['line_id']) && !empty($_SESSION['line_id'])) {
             $_SESSION['admin_login'] = $user_id; 
 
         } else if ($permission == 2) {
-            header('Location: head/listemployee.php');
+            header('Location: employee/home.php');
             $_SESSION['user_login'] = $user_id; 
 
         } else if ($permission == 3) {
