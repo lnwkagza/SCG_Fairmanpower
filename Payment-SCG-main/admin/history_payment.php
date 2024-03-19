@@ -76,7 +76,6 @@
                                         <h3>รายละเอียดรายรับ / รายจ่ายทั้งหมด</h3>
                                     </div>
                                     <div>
-                                        <button id="pdf">PDF <i class="fa-solid fa-file-pdf"></i></button>
                                         <button id="excel" onclick="exportToExcel()">EXCEL <i class="fa-solid fa-file-excel"></i></button>
                                     </div>
                                 </div>
@@ -177,7 +176,6 @@
                                                 <h3>สรุปผลการคำนวณทั้งหมด</h3>
                                             </div>
                                             <div>
-                                                <button id="pdf">PDF <i class="fa-solid fa-file-pdf"></i></button>
                                                 <button id="excel" onclick="exportToExcel2()">EXCEL <i class="fa-solid fa-file-excel"></i></button>
                                             </div>
                                         </div>
@@ -190,6 +188,7 @@
                                             <table class="data-table2 table stripe hover nowrap" id="myTable2">
                                                 <thead>
                                                     <tr>
+                                                        <th>ดูสลิป</th>
                                                         <th>รหัส</th>
                                                         <th>ชื่อ-สกุล</th>
                                                         <th>บริษัท</th>
@@ -246,6 +245,8 @@
                                                         $time_start  = $row["date"]; // สร้างวัตถุ DateTime
                                                         $formattedDateStart = $time_start->format('d-m-Y');
                                                         echo "<tr>";
+                                                        echo "<td><a href='check_split.php?scg_employee_id=" . $row['scg_employee_id'] . "&formattedDateStart=" . $formattedDateStart . "&split=" . $row["split"] ."'>สลิป</a></td>";
+
                                                         echo "<td>" . $row["scg_employee_id"] . "</td>";
                                                         echo "<td>" . $row["prefix_thai"] . '' . $row["firstname_thai"] . ' ' . $row["lastname_thai"] . "</td>";
                                                         echo "<td>" . $row["company"] . "</td>";

@@ -98,7 +98,7 @@ require_once('..\..\config\connection.php');
                                         <h3>รายละเอียดรายรับ / รายจ่ายทั้งหมด</h3>
                                     </div>
                                     <div>
-                                        <button id="pdf">PDF <i class="fa-solid fa-file-pdf"></i></button>
+
                                         <button id="excel" onclick="exportToExcel()">EXCEL <i class="fa-solid fa-file-excel"></i></button>
                                     </div>
                                 </div>

@@ -42,21 +42,6 @@
             XLSX.writeFile(wb, "Payment <?php echo $currentDateTime; ?>.xlsx");
         }
 
-        function exportToPdf() {
-            var doc = new jsPDF();
-            doc.autoTable({
-                html: '#myTable'
-            });
-            doc.save("Payment_<?php echo $currentDateTime; ?>.pdf");
-        }
-
-        function exportToPdf2() {
-            var doc = new jsPDF();
-            doc.autoTable({
-                html: '#myTable2'
-            });
-            doc.save("Payment_<?php echo $currentDateTime; ?>.pdf");
-        }
     </script>
 
     <div class="mobile-menu-overlay"></div>
@@ -99,7 +84,6 @@
                                                 <h3>รายละเอียดรายรับ / รายจ่าย</h3>
                                             </div>
                                             <div>
-                                                <button id="pdf" onclick="exportToPdf()">PDF <i class="fa-solid fa-file-pdf"></i></button>
                                                 <button id="excel" onclick="exportToExcel()">EXCEL <i class="fa-solid fa-file-excel"></i></button>
                                             </div>
                                         </div>
@@ -229,7 +213,7 @@
                                                 <h3>สรุปผลการคำนวน</h3>
                                             </div>
                                             <div>
-                                                <button id="pdf" onclick="exportToPdf()">PDF <i class="fa-solid fa-file-pdf"></i></button>
+
                                                 <button id="excel" onclick="exportToExcel2()">EXCEL <i class="fa-solid fa-file-excel"></i></button>
                                             </div>
                                         </div>

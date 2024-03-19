@@ -93,7 +93,49 @@
                                         <span style="font-size: 14px;"><?php echo $row['scg_employee_id'] ?></span>
                                         <span style="font-size: 14px;"><?php echo $row['section'] ?></span>
                                         <span style="font-size: 14px;"><?php echo $row['permission'] ?></span>
-                                        <span style="font-size: 14px;"><?php echo $row['scg_hiring_date']->format('D, d M Y') ?></span>
+                                        <?php
+                                        $date = $row1['scg_hiring_date'];
+
+                                        $thai_days = array(
+                                            'Monday' => 'จันทร์',
+                                            'Tuesday' => 'อังคาร',
+                                            'Wednesday' => 'พุธ',
+                                            'Thursday' => 'พฤหัสบดี',
+                                            'Friday' => 'ศุกร์',
+                                            'Saturday' => 'เสาร์',
+                                            'Sunday' => 'อาทิตย์'
+                                        );
+
+                                        $thai_months = array(
+                                            'January' => 'มกราคม',
+                                            'February' => 'กุมภาพันธ์',
+                                            'March' => 'มีนาคม',
+                                            'April' => 'เมษายน',
+                                            'May' => 'พฤษภาคม',
+                                            'June' => 'มิถุนายน',
+                                            'July' => 'กรกฎาคม',
+                                            'August' => 'สิงหาคม',
+                                            'September' => 'กันยายน',
+                                            'October' => 'ตุลาคม',
+                                            'November' => 'พฤศจิกายน',
+                                            'December' => 'ธันวาคม'
+                                        );
+
+                                        // แปลงชื่อวันและเดือนในรูปแบบภาษาไทย
+                                        $thai_day = $thai_days[$date->format('l')];
+                                        $thai_month = $thai_months[$date->format('F')];
+                                        
+                                        $thai_year = (int)$date->format('Y') + 543;
+
+
+                                        // สร้างรูปแบบข้อความใหม่
+                                        $formatted_date = str_replace($date->format('l'), $thai_day, $date->format('l, d F Y'));
+                                        $formatted_date = str_replace($date->format('F'), $thai_month, $formatted_date);
+                                        $formatted_date = str_replace($date->format('Y'), $thai_year, $formatted_date);
+
+                                        ?>
+
+                                        <span style="font-size: 14px;">วันที่เริ่มงาน : <?php echo $formatted_date?></span>
                                     </div>
                                 </div>
                             </div>
@@ -104,8 +146,8 @@
                                 <div class="card-box pd-30 pt-20" style="box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.2);">
                                     <div class="row1 pb-3">
                                         <ol>
-                                            <button type="button" class="move-split">2 งวด</button>
-                                            <button type="button" class="split" onclick="window.location.href='slip1.php'">1 งวด</button>
+                                            <button type="button" class="btn income-deduct-btn-pay">งวด 2 (1-15)</button>
+                                            <button type="button" class="btn income-deduct-btn-pay-split" onclick="window.location.href='slip1.php'">งวด 1 (16-30)</button>
                                         </ol>
                                     </div>
                                     <div class="text-left">
