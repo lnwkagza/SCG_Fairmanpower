@@ -16,7 +16,7 @@
                     <div class="row">
                         <div class="col-md-12 col-sm-12">
                             <div class="title">
-                                <h3>เงินเดือนพนักงาน : Employee Payment</h3>
+                                <h3>จัดการเงินเดือนพนักงาน : Employee Payment</h3>
                             </div>
                             <nav aria-label="breadcrumb" role="navigation">
                                 <ol class="breadcrumb">
@@ -35,7 +35,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12">
                     <div class="card-box pd-30 pt-10 height-100-p">
                         <div class="title">
-                            <h2 class="h3 mb-0 text-blue mt-2">เงินเดือนพนักงานทั้งหมด</h2>
+                            <h2 class="h3 mb-0 text-blue mt-2">จัดการเงินเดือนพนักงานทั้งหมด</h2>
                             <div class="pb-20 mt-2 ">
                                 <div class="table-responsive mt-2">
                                     <table class="data-table2 table stripe hover nowrap">

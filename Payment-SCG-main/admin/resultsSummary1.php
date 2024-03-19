@@ -182,16 +182,10 @@
                                                         echo "<td>" . "จำนวนกี่วัน" . "</td>";
                                                         echo "<td>" . "จำนวนกี่วัน"  . "</td>";
                                                         echo "<td class='text-center'>" . number_format($row["salary_amount"],2) . "</td>";
-                                                        if ($row["itamount"] !== NULL) {
                                                             echo "<td class='text-center'>" . $row["income_type"] . "</td>";
-                                                        } else {
-                                                            echo "<td class='text-center'>" . "ไม่มีรายการ" . "</td>";
-                                                        }
-                                                        if ($row["itamount"] !== NULL) {
-                                                            echo "<td class='text-center'>" .number_format($row["itamount"],2) . "</td>";
-                                                        } else {
-                                                            echo "<td class='text-center'>" . "0" . "</td>";
-                                                        }
+                                                
+                                                            echo "<td class='text-center'>" .number_format($row["itamount"]) . "</td>";
+
                                                         if ($row["dtamount"] !== NULL) {
                                                             echo "<td class='text-center'>" . $row["deduct_type"] . "</td>";
                                                         } else {
@@ -292,9 +286,9 @@
                                                         echo "<td>" . $row["company"] . "</td>";
                                                         echo "<td>" . $row["department"] . "</td>";
                                                         echo "<td>" . $row["position"] . "</td>";
-                                                        echo "<td class='text-center'>" . $row["salary_per_month"] . "</td>";
+                                                        echo "<td class='text-center'>" . number_format($row["salary_per_month"]) . "</td>";
                                                         if ($row["total_income"] !== NULL) {
-                                                            echo "<td class='text-center'>" . $row["total_income"] . "</td>";
+                                                            echo "<td class='text-center'>" .number_format($row["total_income"]) . "</td>";
                                                         } else {
                                                             echo "<td class='text-center'>" . 0 . "</td>";
                                                         }
