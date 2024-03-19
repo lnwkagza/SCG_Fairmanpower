@@ -47,14 +47,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="mt-5 col-md-3 col-sm-1">
-                            <div class="form-group">
-                                <label style="font-size:24px;"><b></b></label>
-                               
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <?php include('../admin/include/footer.php'); ?>
 

@@ -18,14 +18,14 @@
                                 <h3>ตั้งค่าทั่วไป</h3>
                             </div>
                             <nav aria-label="breadcrumb" role="navigation">
-                            <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="employee_payment.php">จัดการเงินเดือนพนักงาน</a></li>
-                                        <li class="breadcrumb-item"><a href="income.php">รายรับ/รายจ่าย</a></li>
-                                        <li class="breadcrumb-item"><a href="calculator_payment2.php">คำนวณเงินเดือน</a></li>
-                                        <li class="breadcrumb-item"><a href="history_payment.php">ประวัติการคำนวณ</a></li>
-                                        <li class="breadcrumb-item"><a href="setting_payment_income_deduct.php">ตั้งค่ารายรับรายจ่าย</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">ตั้งค่าทั่วไป</li>
-                                    </ol>
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="employee_payment.php">จัดการเงินเดือนพนักงาน</a></li>
+                                    <li class="breadcrumb-item"><a href="income.php">รายรับ/รายจ่าย</a></li>
+                                    <li class="breadcrumb-item"><a href="calculator_payment2.php">คำนวณเงินเดือน</a></li>
+                                    <li class="breadcrumb-item"><a href="history_payment.php">ประวัติการคำนวณ</a></li>
+                                    <li class="breadcrumb-item"><a href="setting_payment_income_deduct.php">ตั้งค่ารายรับรายจ่าย</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">ตั้งค่าทั่วไป</li>
+                                </ol>
                             </nav>
                         </div>
                     </div>
@@ -38,6 +38,9 @@
                             </div>
                         </div>
                     </div>
+
+
+                    <!-- ยังไม่เปิดใช้งาน -->
                     <div class="col-md-10 col-sm-12">
                         <div class="form-group">
                             <div class="text-left">
@@ -77,14 +80,6 @@
                         <div class="form-group">
                             <div class="text-left">
                                 <button disabled class="btn setting-btn-pay" onclick="location.href='setting_payment_notification.php'"><i class="fa-solid fa-bell"></i> ตั้งค่าการแจ้งเตือน </a></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="mt-5 col-md-3 col-sm-1">
-                            <div class="form-group">
-                                <label style="font-size:24px;"><b></b></label>
-                                
                             </div>
                         </div>
                     </div>

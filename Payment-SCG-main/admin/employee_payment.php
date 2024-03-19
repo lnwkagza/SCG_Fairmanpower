@@ -1,6 +1,5 @@
 <?php include('../admin/include/header.php') ?>
 
-
 <body>
 
     <?php include('../admin/include/navbar.php') ?>
