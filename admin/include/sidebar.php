@@ -88,15 +88,6 @@
                 </li>
                 <li>
                     <a class="dropdown-toggle no-arrow">
-                        <span class="mtext"><i class="fa-solid fa-gear fa-lg"></i> ตั้งค่า</span>
-                    </a>
-                    <ul class="submenu">
-                        <li><a href="../Payment-SCG-main/admin/setting_payment_general.php" class="dropdown-toggle no-arrow">ตั้งค่าทั่วไป</a></li>
-                        <li><a href="../Payment-SCG-main/admin/setting_payment_income_deduct.php" class="dropdown-toggle no-arrow">ตั้งค่ารายรับ/รายจ่ายอื่นๆ</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a class="dropdown-toggle no-arrow">
                         <span class="mtext"><i class="fa-solid fa-phone-volume fa-lg"></i> ติดต่อสอบถาม</span>
                     </a>
                 </li>

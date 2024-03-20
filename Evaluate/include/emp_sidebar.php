@@ -121,12 +121,6 @@
                     <div class="sidebar-small-cap">เครื่องมือ</div>
                 </li>
                 <li>
-
-                    <a class="dropdown-toggle no-arrow">
-                        <span class="mtext">การตั้งค่า</span>
-                    </a>
-                </li>
-                <li>
                     <a class="dropdown-toggle no-arrow">
                         <span class="mtext">ติดต่อสอบถาม</span>
                     </a>
