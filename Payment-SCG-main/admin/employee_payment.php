@@ -43,9 +43,7 @@
                                             <tr>
                                                 <th>เลขที่</th>
                                                 <th>ชื่อ-สกุล</th>
-                                                <th>
-                                                    Company / Division / Department / Section / Cost Center / ประเภทพนักงาน / ระดับการทำงาน / ตำแหน่ง
-                                                </th>
+                                                <th>Company / Division / Department / Section / Cost Center / ประเภทพนักงาน / ระดับการทำงาน / ตำแหน่ง</th>
                                                 <th style="text-align: center;">จัดการเงินเดือน </th>
                                             </tr>
                                         </thead>

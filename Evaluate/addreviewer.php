@@ -140,7 +140,7 @@ if (
                                 echo '<select id="dropdown2" name="dropdown2" data-live-search="true" class="form-control selectpicker">';
                                 echo '<option value="" disabled selected>เลือกผู้ใต้บังคับบัญชา</option>';
                                 while ($row = sqlsrv_fetch_array($resultDropdown2, SQLSRV_FETCH_ASSOC)) {
-                                    $under = 'Peer';
+                                    $under = 'Subordinate';
                                     $combinedValue = $row['card_id'] . '|' . $under;
                                     echo "<option value='"  . htmlspecialchars($combinedValue) .  "'>" . $row['firstname_thai'] . ' ' . $row['lastname_thai'] . "</option>";
                                 }
