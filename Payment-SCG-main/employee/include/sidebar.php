@@ -72,6 +72,17 @@
                 </li>
                 <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle">
+                        <i class="fa-solid fa-users-gear fa-lg"></i><span class="mtext"> ข้อมูลประวัติ</span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="../listemployee_Edit.php" class="dropdown-toggle no-arrow">ข้อมูลพนักงานเบื้องต้น</a></li>
+                        <li><a href="../listemployee_Info.php" class="dropdown-toggle no-arrow">ประวัติส่วนตัว</a></li>
+                        <li><a href="../listemployee_Education.php" class="dropdown-toggle no-arrow">ประวัติการศึกษา</a></li>
+                        <li><a href="../listemployee_Manager.php" class="dropdown-toggle no-arrow">ผู้จัดการและ report-to</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="javascript:;" class="dropdown-toggle">
                     <i class="fa-solid fa-circle-dollar-to-slot"></i><span class="mtext">&nbsp;&nbsp;เงินเดือน</span>
                     </a>
                     <ul class="submenu">

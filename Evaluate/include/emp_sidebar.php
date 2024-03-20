@@ -71,18 +71,23 @@
                         <span class="mtext"><i class="fa-solid fa-clipboard-check fa-xl"></i> OT</span>
                     </a>
                 </li>
+                <li>
+                    <a href="../employee/listemployee_Edit.php" class="dropdown-toggle no-arrow">
+                        <span class="mtext"><i class="fa-solid fa-users-gear fa-lg"></i> ข้อมูลประวัติ</span>
+                    </a>
+                </li>
                 <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle">
                         <i class="fa-solid fa-circle-dollar-to-slot"></i><span class="mtext">&nbsp;&nbsp;เงินเดือน</span>
                     </a>
                     <ul class="submenu">
                         <li>
-                            <a href="index.php" href="deduct.php" class="dropdown-toggle no-arrow">
+                            <a href="../Payment-SCG-main/employee/check_split.php" class="dropdown-toggle no-arrow">
                                 <span class="mtext"><i class="fa-solid fa-money-check-dollar"></i>&nbsp;&nbsp;สลิปเงินเดือน</span>
                             </a>
                         </li>
                         <li>
-                            <a href="select_month.php" class="dropdown-toggle no-arrow">
+                            <a href="../Payment-SCG-main/employee/select_month.php" class="dropdown-toggle no-arrow">
                                 <span class="mtext"><i class="fa-solid fa-file-invoice-dollar"></i></i>&nbsp;&nbsp;สรุปเงินเดือน</span>
                             </a>
                         </li>
