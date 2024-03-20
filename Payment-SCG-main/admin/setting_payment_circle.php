@@ -19,12 +19,13 @@
                             <nav aria-label="breadcrumb" role="navigation">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item active" aria-current="page">ตั้งค่ารอบวันที่</li>
-                                    <li class="breadcrumb-item"><a href="setting_payment_split.php">ตั้งค่างวดการจ่าย</a></li>
+                                    <!-- ยังไม่สามารถใช้งานได้ -->
+                                    <!-- <li class="breadcrumb-item"><a href="setting_payment_split.php">ตั้งค่างวดการจ่าย</a></li>
                                     <li class="breadcrumb-item"><a href="setting_payment_set_closing_date.php">ตั้งค่าวันปิดงวด</a></li>
                                     <li class="breadcrumb-item"><a href="setting_payment_holidays.php">ตั้งค่ารายได้พนักงานในวันหยุดนักขัตฤกษ์</a></li>
                                     <li class="breadcrumb-item"><a href="setting_payment_social_security.php">ตั้งค่าประกันสังคม</a></li>
                                     <li class="breadcrumb-item"><a href="setting_payment_form.php">ตั้งค่าแบบฟอร์ม</a></li>
-                                    <li class="breadcrumb-item"><a href="setting_payment_notification.php">ตั้งค่าการแจ้งเตือน</a></li>
+                                    <li class="breadcrumb-item"><a href="setting_payment_notification.php">ตั้งค่าการแจ้งเตือน</a></li> -->
                                 </ol>
                             </nav>
                         </div>

@@ -19,8 +19,12 @@
                             </div>
                             <nav aria-label="breadcrumb" role="navigation">
                                 <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="employee_payment.php">จัดการเงินเดือนพนักงาน</a></li>
+                                    <li class="breadcrumb-item"><a href="income.php">รายรับ/รายจ่าย</a></li>
+                                    <li class="breadcrumb-item"><a href="calculator_payment2.php">คำนวณเงินเดือน</a></li>
+                                    <li class="breadcrumb-item"><a href="history_payment.php">ประวัติการคำนวณ</a></li>
+                                    <li class="breadcrumb-item"><a href="setting_payment_income_deduct.php">ตั้งค่ารายรับรายจ่าย</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">ตั้งค่าทั่วไป</li>
-                                    <li class="breadcrumb-item"><a href="setting_payment_income_deduct.php">ตั้งค่ารายรับ/รายจ่ายอื่นๆ</a></li>
                                 </ol>
                             </nav>
                         </div>
@@ -30,60 +34,52 @@
                     <div class="col-md-10 col-sm-12">
                         <div class="form-group">
                             <div class="text-left">
-                                <button class="btn setting-btn-pay" onclick="location.href='setting_payment_circle.php'">ตั้งค่างวดเดือน <i class="fa-solid fa-arrows-spin"></i></a></button>
+                                <button class="btn setting-btn-pay" onclick="location.href='setting_payment_circle.php'"><i class="fa-solid fa-arrows-spin"></i> ตั้งค่างวดเดือน </a></button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- ยังไม่เปิดใช้งาน -->
+                    <div class="col-md-10 col-sm-12">
+                        <div class="form-group">
+                            <div class="text-left">
+                                <button disabled class="btn setting-btn-pay" onclick="location.href='setting_payment_split.php'"><i class="fa-solid fa-table-columns"></i> ตั้งค่าแบ่งงวดจ่าย </button>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-10 col-sm-12">
                         <div class="form-group">
                             <div class="text-left">
-                                <button class="btn setting-btn-pay" onclick="location.href='setting_payment_split.php'">ตั้งค่าแบ่งงวดจ่าย <i class="fa-solid fa-table-columns"></i></button>
+                                <button disabled class="btn setting-btn-pay" onclick="location.href='setting_payment_set_closing_date.php'"><i class="fa-solid fa-file-invoice-dollar"></i> ตั้งค่าวันปิดงวด </button>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-10 col-sm-12">
                         <div class="form-group">
                             <div class="text-left">
-                                <button class="btn setting-btn-pay" onclick="location.href='setting_payment_set_closing_date.php'">ตั้งค่าวันปิดงวด <i class="fa-solid fa-file-invoice-dollar"></i></button>
+                                <button disabled class="btn setting-btn-pay" onclick="location.href='setting_payment_holidays.php'"><i class="fa-solid fa-money-check-dollar"></i> ตั้งค่ารายได้พนักงานในวันหยุดนักขัตฤกษ์ </a></button>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-10 col-sm-12">
                         <div class="form-group">
                             <div class="text-left">
-                                <button class="btn setting-btn-pay" onclick="location.href='setting_payment_holidays.php'">ตั้งค่ารายได้พนักงานในวันหยุดนักขัตฤกษ์ <i class="fa-solid fa-money-check-dollar"></i></a></button>
+                                <button disabled class="btn setting-btn-pay" onclick="location.href='setting_payment_social_security.php'"><i class="fa-solid fa-people-arrows"></i> ตั้งค่าประกันสังคม </a></button>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-10 col-sm-12">
                         <div class="form-group">
                             <div class="text-left">
-                                <button class="btn setting-btn-pay" onclick="location.href='setting_payment_social_security.php'">ตั้งค่าประกันสังคม <i class="fa-solid fa-people-arrows"></i></a></button>
+                                <button disabled class="btn setting-btn-pay" onclick="location.href='setting_payment_form.php'"><i class="fa-solid fa-file-pen"></i> ตั้งค่าแบบฟอร์ม </a></button>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-10 col-sm-12">
                         <div class="form-group">
                             <div class="text-left">
-                                <button class="btn setting-btn-pay" onclick="location.href='setting_payment_form.php'">ตั้งค่าแบบฟอร์ม <i class="fa-solid fa-file-pen"></i></a></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-10 col-sm-12">
-                        <div class="form-group">
-                            <div class="text-left">
-                                <button class="btn setting-btn-pay" onclick="location.href='setting_payment_notification.php'">ตั้งค่าการแจ้งเตือน <i class="fa-solid fa-bell"></i></i></a></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="mt-5 col-md-3 col-sm-1">
-                            <div class="form-group">
-                                <label style="font-size:24px;"><b></b></label>
-                                <div class="justify-content-left">
-                                    <button style="font-size:20px;" onclick="location.href='setting_payment.php'" type="button" class="btn btn-default" data-dismiss="modal"><i class="fa-solid fa-circle-left"> </i> ย้อนกลับ</button>
-                                    <!-- color:#AAAAAA -->
-                                </div>
+                                <button disabled class="btn setting-btn-pay" onclick="location.href='setting_payment_notification.php'"><i class="fa-solid fa-bell"></i> ตั้งค่าการแจ้งเตือน </a></button>
                             </div>
                         </div>
                     </div>
