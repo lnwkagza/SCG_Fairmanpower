@@ -280,10 +280,7 @@ if (
                 </div>
             </div>
             <!-- main end -->
-            <div class="btn-permiss">
-                <button onclick="window.location.href = 'boss_main.php'" class='btn btn-secondary '>เปลี่ยนเป็นหัวหน้า</button>
-                <button onclick="window.location.href = 'addmin_main.php'" class='btn btn-secondary'>เปลี่ยนเป็นแอดมิน</button>
-            </div>
+            
             <?php
             // ตรวจสอบว่า $row ถูกกำหนดค่าและมี $row["detail"] หรือไม่
             if (isset($row) && isset($row["detail"])) {

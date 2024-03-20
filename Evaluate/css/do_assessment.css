@@ -17,6 +17,7 @@ form {
 .section {
   font-size: 20px;
   font-weight: bold;
+  margin: auto;
 }
 
 table {
@@ -42,12 +43,38 @@ td {
   font-size: 20px;
 }
 
+@media (max-width: 480px){
+  th,
+td {
+  text-align: center;
+  padding: 10px;
+  font-size: 10px;
+}
+}
+
 th.t-small,
 td.t-small {
-  text-align: left;
+  text-align: center;
   padding: 10px;
   font-size: 20px;
 }
+
+@media (max-width: 480px){
+  th.t-small,
+  td.t-small {
+    text-align: center;
+    padding: 10px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px){
+  .datatable{
+    width: 100%;
+    overflow-x: auto;
+  }
+}
+
 
 th {
   color: white;
@@ -64,13 +91,19 @@ tr:hover {
 }
 
 .radio {
-  height: 4vw;
-  width: 4vw;
+  height: 30px;
+  width: 30px;
+}
+
+@media (max-width: 480px){
+  .radio {
+    height: 4vw;
+    width: 4vw;
+  }
 }
 
 .btn-submit {
   margin-left: auto;
-  /* margin-left: 68vw; */
   margin-right: 5%;
   margin-top: 2vw;
   margin-bottom: 2vw;
