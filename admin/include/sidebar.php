@@ -40,7 +40,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="../Payment-SCG-main/admin/check_split.php"  class="dropdown-toggle no-arrow">
+                            <a href="../Payment-SCG-main/admin/check_admin_split.php"  class="dropdown-toggle no-arrow">
                                 <span class="mtext"><i class="fa-solid fa-download"></i></i>&nbsp;&nbsp;สลิปเงินเดือน</span>
                             </a>
                         </li>
