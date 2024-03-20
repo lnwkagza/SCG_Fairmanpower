@@ -1,0 +1,36 @@
+@media only screen and (min-width: 1025px) {
+    .card-box {
+        min-height: 700px;
+        padding: 30px 0;
+    }
+
+    .wizard-content {
+        padding: 5px;
+        border-radius: 5px;
+        width: 100%;
+    }
+
+    .row {
+        display: flex;
+        justify-content: center;
+    }
+
+    form label {
+        font-size: 18px !important;
+    }
+
+    .form-control {
+        font-weight: 600 !important;
+        box-shadow: 0px 4px 8px 0px rgba(136, 135, 135, 0.25);
+    }
+
+    .form-control:focus {
+        color: #6a6a6a;
+        font-weight: 600 !important;
+    }
+
+    .form-group > span {
+        display: flex;
+        align-items: center;
+    }
+}

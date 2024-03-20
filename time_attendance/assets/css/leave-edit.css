@@ -1,0 +1,534 @@
+/* desktop */
+@media only screen and (min-width: 1025px) {
+    .mobile,
+    footer {
+        display: none !important;
+    }
+
+    *:focus {
+        outline: none;
+    }
+
+    body {
+        margin-bottom: 10%;
+    }
+
+    .swal2-column {
+        width: 100%;
+        height: 10vh;
+        border-radius: 2vw;
+        padding: 0;
+        margin-left: 35px;
+        margin-top: -10px;
+        font-size: 22px;
+    }
+
+    .swal2-confirm,
+    .swal2-cancel {
+        font-family: "Chakra Petch", sans-serif;
+        border: 0;
+        font-size: 3.5vw;
+        font-weight: bold;
+        border-radius: 2vw;
+    }
+}
+
+/* tablet */
+@media only screen and (min-width: 481px) and (max-width: 1024px) {
+    .desktop {
+        display: none !important;
+    }
+
+    *:focus {
+        outline: none;
+    }
+
+    body {
+        margin-bottom: 10%;
+    }
+
+    input,
+    select,
+    option,
+    ::placeholder {
+        color: #b8b8b8;
+        font-size: 3vw;
+        font-weight: 700;
+        font-family: "Chakra Petch", sans-serif;
+        height: 6vw;
+    }
+
+    .imgTop {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2vw;
+    }
+
+    .imgTop img {
+        width: 15%;
+        height: 15%;
+    }
+
+    .detailTopic {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: 2vw 0 1vw 0;
+    }
+
+    .detailTopic span {
+        color: #0b6bc1;
+        font-weight: 700;
+        font-size: 3.5vw;
+    }
+
+    .boxKey {
+        margin: 3vw 5vw 3vw 5vw;
+        padding: 0vw 6vw 3vw 6vw;
+        border-radius: 2vw;
+        border: 1px solid #a3a3a3;
+        height: auto;
+    }
+
+    .boxKey .typeLeave span,
+    .boxKey .detail span,
+    .boxKey .edit-date span,
+    .boxKey .edit-time span {
+        color: #818181;
+        font-size: 3.5vw;
+        font-weight: bold;
+        margin-bottom: 1vw;
+    }
+
+    .typeLeave .display-type input {
+        font-weight: lighter !important;
+        border: 0;
+        border-bottom: 1px solid #c2c2c2 !important ;
+        width: 77vw;
+        color: #b8b8b8;
+        font-size: 3.8vw;
+    }
+
+    .boxKey .typeLeave,
+    .boxKey .detail {
+        display: flex;
+        flex-direction: column;
+        margin-top: 3vw;
+    }
+
+    .boxKey .typeLeave select {
+        width: auto;
+        border: 0px;
+        border-bottom: 1px solid #c2c2c2;
+        padding: 0;
+    }
+
+    .boxKey .detail input {
+        width: auto;
+        border: 0;
+        border-bottom: 1px solid #c2c2c2;
+        padding: 0;
+    }
+
+    .boxKey .edit-date,
+    .boxKey .edit-time,
+    .boxKey .time-cal {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 3vw;
+    }
+
+    .edit-date .date,
+    .edit-time .time {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .edit-date .date input,
+    .edit-time .time input {
+        width: 35vw;
+        border: 0;
+        border-bottom: 1px solid #c2c2c2;
+        padding: 0;
+    }
+
+    .boxKey .time-cal input {
+        width: 5vw;
+        border: 0px;
+        border-bottom: 1px solid #818181;
+        text-align: center;
+    }
+
+    .boxKey .time-cal span {
+        color: #818181;
+        font-size: 3vw;
+        font-weight: bold;
+        margin-bottom: 1vw;
+    }
+
+    .duration,
+    .balance {
+        width: 35vw;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .high-light {
+        display: flex;
+        justify-content: center;
+        background-color: #d0d0d0;
+        padding: 0.5vw;
+        width: 33vw;
+        border-radius: 3vw;
+        padding-left: 2vw;
+    }
+
+    .high-light span {
+        color: #f7f9fb !important;
+    }
+
+    .button-action {
+        display: flex;
+        justify-content: center;
+        gap: 2vw;
+    }
+
+    .btnConfirm {
+        color: #f7f9fb;
+        background: #29ab29;
+        font-size: 4vw;
+        font-weight: 700;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border: 4px solid #f7f9fb !important;
+        border-radius: 4vw;
+        outline: none;
+        cursor: pointer;
+        width: 25vw;
+        padding: 0.5vw;
+        height: 9vw;
+    }
+
+    .btnReject {
+        color: #f7f9fb;
+        background: #ff5643;
+        font-size: 4vw;
+        font-weight: 700;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border: 4px solid #f7f9fb !important;
+        border-radius: 4vw;
+        outline: none;
+        cursor: pointer;
+        width: 25vw;
+        padding: 0.5vw;
+        height: 9vw;
+    }
+
+    .swal2-column {
+        width: 100%;
+        height: 10vw;
+        border-radius: 4vw;
+        padding: 0;
+        margin-left: 35px;
+        margin-top: -10px;
+        font-size: 22px;
+    }
+
+    .swal2-confirm,
+    .swal2-cancel {
+        font-family: "Chakra Petch", sans-serif;
+        border: 0;
+        font-size: 3.5vw;
+        font-weight: bold;
+        border-radius: 4vw;
+    }
+
+    .img {
+        width: 15vw !important;
+        height: 15vw !important;
+        margin-top: 2vw;
+    }
+
+    /* --ปรับขนาดปุ่มยืนยันและยกเลิก-- */
+    .swal2-confirm.swal2-styled.swal2-default-outline,
+    .swal2-cancel.swal2-styled.swal2-default-outline {
+        width: 15vw !important;
+        padding: 2vw;
+        font-size: 3.5vw;
+        margin-top: 2vw !important;
+    }
+
+    /* --ปรับขนาดของกล่อง-- */
+    .swal2-popup.swal2-modal.swal2-show {
+        width: 70vw !important;
+        height: auto;
+        border-radius: 5vw !important;
+        padding: 0 !important;
+        padding-top: 2vw !important;
+        padding-bottom: 2vw !important;
+    }
+
+    .swal2-popup.swal2-modal.custom-popup-class.swal2-show {
+        width: 80vw !important;
+        height: auto;
+        border-radius: 5vw !important;
+        padding: 0 !important;
+        padding-bottom: 3vw !important;
+    }
+}
+
+/* mobile */
+@media only screen and (max-width: 480px) {
+    .desktop {
+        display: none !important;
+    }
+
+    *:focus {
+        outline: none;
+    }
+
+    body {
+        margin-bottom: 10%;
+    }
+
+    input,
+    select,
+    option,
+    ::placeholder {
+        color: #b8b8b8;
+        font-size: 3.8vw;
+        font-family: "Chakra Petch", sans-serif;
+        height: 6vw;
+    }
+
+    .imgTop {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2vw;
+    }
+
+    .imgTop img {
+        width: 25%;
+        height: 25%;
+    }
+
+    .detailTopic {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: 2vw 0 1vw 0;
+    }
+
+    .detailTopic span {
+        color: #0b6bc1;
+        font-weight: 700;
+        font-size: 5vw;
+    }
+
+    .boxKey {
+        margin: 3vw 5vw 3vw 5vw;
+        padding: 2vw 6vw 3vw 6vw;
+        border-radius: 2vw;
+        border: 1px solid #a3a3a3;
+    }
+
+    .boxKey .typeLeave span,
+    .boxKey .detail span,
+    .boxKey .edit-date span,
+    .boxKey .edit-time span {
+        color: #818181;
+        font-size: 4.5vw;
+        font-weight: bold;
+        margin-bottom: 1vw;
+    }
+
+    .typeLeave .display-type input {
+        font-weight: lighter !important;
+        border: 0;
+        border-bottom: 1px solid #c2c2c2 !important ;
+        width: 77vw;
+        color: #b8b8b8;
+        font-size: 4vw;
+    }
+
+    .boxKey .time-cal span {
+        color: #818181;
+        font-size: 3.8vw;
+        font-weight: bold;
+        margin-bottom: 1vw;
+    }
+
+    .boxKey .typeLeave {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .boxKey .detail {
+        display: flex;
+        flex-direction: column;
+        margin-top: 3vw;
+    }
+
+    .boxKey .typeLeave select {
+        width: auto;
+        border: 0px;
+        border-bottom: 1px solid #c2c2c2;
+        padding: 0;
+    }
+
+    .boxKey .detail input {
+        width: auto;
+        border: 0;
+        border-bottom: 1px solid #c2c2c2;
+        padding: 0;
+    }
+
+    .boxKey .edit-date,
+    .boxKey .edit-time,
+    .boxKey .time-cal {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 3vw;
+    }
+
+    .edit-date .date,
+    .edit-time .time {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .edit-date .date input,
+    .edit-time .time input {
+        width: 35vw;
+        border: 0;
+        border-bottom: 1px solid #c2c2c2;
+        padding: 0;
+    }
+
+    .boxKey .time-cal input {
+        width: 5vw;
+        border: 0px;
+        border-bottom: 1px solid #818181;
+        text-align: center;
+    }
+
+    .duration,
+    .balance {
+        width: 35vw;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .high-light {
+        display: flex;
+        justify-content: center;
+        background-color: #d0d0d0;
+        padding: 0.5vw;
+        width: 33vw;
+        border-radius: 3vw;
+        padding-left: 2vw;
+    }
+
+    .high-light span {
+        color: #f7f9fb !important;
+    }
+
+    .btnConfirm {
+        color: #f7f9fb;
+        background: #29ab29;
+        font-size: 5vw;
+        font-weight: 700;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border: 3px solid #f7f9fb !important;
+        border-radius: 4vw;
+        outline: none;
+        cursor: pointer;
+        width: 30vw;
+        padding: 1vw;
+        height: 10vw;
+    }
+
+    .btnReject {
+        color: #f7f9fb;
+        background: #ff5643;
+        font-size: 5vw;
+        font-weight: 700;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border: 3px solid #f7f9fb !important;
+        border-radius: 4vw;
+        outline: none;
+        cursor: pointer;
+        width: 30vw;
+        padding: 1vw;
+        height: 10vw;
+    }
+
+    .button-action {
+        display: flex;
+        justify-content: center;
+        gap: 2vw;
+    }
+
+    .swal2-column {
+        width: 100%;
+        height: 10vw;
+        border-radius: 4vw;
+        padding: 0;
+        margin-left: 35px;
+        margin-top: -10px;
+        font-size: 22px;
+    }
+
+    .swal2-confirm,
+    .swal2-cancel {
+        font-family: "Chakra Petch", sans-serif;
+        border: 0;
+        font-size: 3.5vw;
+        font-weight: bold;
+        border-radius: 4vw;
+    }
+
+    /* --ปรับขนาดปุ่มยืนยันและยกเลิก-- */
+    .swal2-confirm.swal2-styled.swal2-default-outline,
+    .swal2-cancel.swal2-styled.swal2-default-outline {
+        width: 15vw !important;
+        padding: 2vw;
+        font-size: 3.5vw;
+        margin-top: 2vw !important;
+    }
+
+    /* --ปรับขนาดของกล่อง-- */
+    .swal2-popup.swal2-modal.swal2-show {
+        width: 80vw !important;
+        height: auto;
+        border-radius: 5vw !important;
+        padding: 0 !important;
+        padding-top: 2vw !important;
+        padding-bottom: 2vw !important;
+    }
+
+    .swal2-popup.swal2-modal.custom-popup-class.swal2-show {
+        width: 80vw !important;
+        height: auto;
+        border-radius: 5vw !important;
+        padding: 0 !important;
+        padding-bottom: 3vw !important;
+    }
+
+    .img {
+        width: 15vw !important;
+        height: 15vw !important;
+        margin-top: -3vw;
+    }
+}

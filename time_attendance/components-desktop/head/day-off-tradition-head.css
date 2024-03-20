@@ -1,0 +1,50 @@
+@media only screen and (min-width: 1025px) {
+    .bar {
+        /*แถบเมนูสีขาว*/
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .desktop-data-table-container {
+        display: flex;
+    }
+
+    .desktop-data-table-container table {
+        width: 100% !important;
+        table-layout: fixed;
+        border: 0.95px solid #dddddd !important;
+    }
+
+    .desktop-data-table-container th {
+        color: #f9fafa !important;
+        font-size: 18px !important;
+        font-weight: bold;
+        text-align: center !important;
+        background-color: #1fbabf !important;
+        border: 0.95px solid #dddddd !important;
+    }
+
+    .desktop-data-table-container td {
+        color: #616061 !important;
+        font-size: 16px !important;
+        text-align: center !important;
+        border: 0.95px solid #dddddd !important;
+        white-space: wrap !important;
+        text-align: left !important;
+        padding: 0.75rem;
+    }
+
+    .desktop-data-table-container td:last-child {
+        text-align: left !important;
+    }
+
+    .desktop-data-table-container th:first-child,
+    .desktop-data-table-container td:first-child {
+        width: 15% !important;
+    }
+
+    .desktop-data-table-container th:nth-child(2),
+    .desktop-data-table-container td:nth-child(2) {
+        width: 10% !important;
+    }
+}

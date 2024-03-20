@@ -1,0 +1,266 @@
+/* desktop */
+@media only screen and (min-width: 1025px) {
+    .mobile,
+    footer {
+        display: none !important;
+    }
+
+    *:focus {
+        outline: none;
+    }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 1024px) {
+    .desktop {
+        display: none !important;
+    }
+
+    *:focus {
+        outline: none;
+    }
+
+    table {
+        border-radius: 10px;
+        overflow: hidden;
+        border: 1px solid #000000;
+        border-collapse: collapse;
+        box-shadow: 0 0 0 1px #b7b7b7, 0 0 0 1px #dfdede;
+        margin: auto;
+        margin-top: 3vh;
+        font-size: 3.5vw;
+    }
+
+    img {
+        width: 5vw;
+    }
+
+    th {
+        background-color: #ececec;
+        color: #616061;
+        border: 1px solid #c2c2c2;
+        text-align: center;
+        height: 5vw;
+        padding: 1vw;
+    }
+
+    .thName {
+        width: 40vw;
+    }
+
+    td {
+        border: 1px solid #c2c2c2;
+        text-align: center;
+        height: 4vh;
+        padding: 2vw;
+    }
+
+    .status-detail > div {
+        display: none;
+    }
+
+    .status-detail > div.display-total {
+        display: block; /* แสดงสถานะเริ่มต้น */
+    }
+
+    /* ส่วนของ detail */
+    .container {
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        text-align: center;
+        flex-direction: column;
+        margin-top: 5vw;
+    }
+
+    .box-detail {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        width: 80vw;
+        border: 1px solid #cfcfcf;
+        margin: auto;
+        border-radius: 2vw;
+        padding: 5vw;
+        color: #0b6bc1;
+        font-weight: bold;
+        margin-bottom: 10vw;
+    }
+
+    .display-name,
+    .display-date,
+    .display-type,
+    .display-detail-problem,
+    .display-file {
+        margin-bottom: 1.5vw;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        gap: 1vw;
+        font-size: 3vw;
+    }
+
+    .display-file img {
+        width: 20vw;
+    }
+
+    .display-topic {
+        background-color: #0b6bc1;
+        margin: auto;
+        border-radius: 2vw;
+        color: #fff;
+        font-weight: bold;
+        margin-bottom: 3vw;
+        font-size: 3vw;
+        padding: 1vw;
+    }
+
+    span.name,
+    span.date,
+    span.detail {
+        width: 69vw;
+        background-color: #c4e3ff;
+        padding: 2vw;
+        border-radius: 1vw;
+        font-size: 2.5vw;
+    }
+
+    .boximg {
+        background-color: #c4e3ff;
+        width: 69vw;
+        padding: 3vw;
+        border-radius: 1vw;
+        margin-top: -2vw;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .desktop {
+        display: none !important;
+    }
+
+    *:focus {
+        outline: none;
+    }
+
+    table {
+        border-radius: 10px;
+        overflow: hidden;
+        border: 1px solid #000000;
+        border-collapse: collapse;
+        box-shadow: 0 0 0 1px #b7b7b7, 0 0 0 1px #dfdede;
+        margin: auto;
+        margin-top: 3vh;
+    }
+
+    img {
+        width: 5vw;
+    }
+
+    th {
+        background-color: #ececec;
+        color: #616061;
+        border: 1px solid #c2c2c2;
+        text-align: center;
+        height: 5vw;
+        padding: 1vw;
+    }
+
+    .thName {
+        width: 40vw;
+    }
+
+    td {
+        border: 1px solid #c2c2c2;
+        text-align: center;
+        height: 4vh;
+        padding: 2vw;
+    }
+
+    .status-detail > div {
+        display: none;
+    }
+
+    .status-detail > div.display-total {
+        display: block; /* แสดงสถานะเริ่มต้น */
+    }
+
+    /* ส่วนของ detail */
+    .container {
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        text-align: center;
+        flex-direction: column;
+        margin-top: 5vw;
+        margin-bottom: 15vw;
+    }
+
+    .box-detail {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        width: 80vw;
+        border: 1px solid #cfcfcf;
+        margin: auto;
+        border-radius: 2vw;
+        padding: 5vw;
+        color: #0b6bc1;
+        font-weight: bold;
+        gap: 3vw;
+    }
+
+    .display-name,
+    .display-date,
+    .display-type,
+    .display-detail-problem,
+    .display-file {
+        margin-bottom: 1.5vw;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        gap: 1vw;
+    }
+
+    .display-file img {
+        width: 20vw;
+    }
+
+    .display-topic {
+        background-color: #0b6bc1;
+        width: 55vw;
+        margin: auto;
+        border-radius: 2vw;
+        color: #fff;
+        font-weight: bold;
+        margin-bottom: 3vw;
+    }
+
+    span.name {
+        width: 69vw;
+        background-color: #c4e3ff;
+        padding: 2vw;
+        border-radius: 1vw;
+    }
+
+    span.date {
+        width: 69vw;
+        background-color: #c4e3ff;
+        padding: 2vw;
+        border-radius: 1vw;
+    }
+
+    span.detail {
+        width: 69vw;
+        background-color: #c4e3ff;
+        padding: 2vw;
+        border-radius: 1vw;
+    }
+
+    .boximg {
+        background-color: #c4e3ff;
+        width: 69vw;
+        padding: 3vw;
+        border-radius: 1vw;
+        margin-top: -2vw;
+    }
+}

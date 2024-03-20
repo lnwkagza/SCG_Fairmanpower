@@ -1,0 +1,151 @@
+@media only screen and (min-width: 1025px) {
+    .table-bar-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .table-bar {
+        display: flex;
+        gap: 50px;
+    }
+
+    .table-bar > div > button {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        border-radius: 10px;
+        border: 3px solid #0097b2;
+        padding: 5px 20px;
+        font-weight: 600;
+        color: #0097b2;
+        box-shadow: 0px 0px 10px 0px rgba(143, 143, 143, 0.4);
+    }
+
+    .table-bar > div img {
+        width: 80px;
+    }
+
+    #box4 .button-bar {
+        /*แถบเมนูสีขาว*/
+        background-color: #ffff;
+        box-shadow: 10px 10px 10px #5350501a;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        align-items: center;
+        padding: 10px;
+        padding-left: 150px;
+        padding-right: 150px;
+        border-radius: 5px;
+        font-weight: bolder;
+        margin-top: 10px;
+        position: relative;
+        gap: 10px;
+    }
+
+    /* แต่งสไตล์ของปุ่มที่เปลี่ยน */
+    #box4 .button-bar button {
+        color: #fff;
+        font-size: 18px;
+        font-weight: 600;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px 5px;
+        width: 15%;
+        white-space: nowrap;
+    }
+
+    #box4 .button-bar button:not(.active) {
+        background-image: linear-gradient(#1fbabf, #60d3aa);
+        transition: 0.3s ease-in-out;
+        border: 3px solid #ffffff;
+        box-shadow: 0px 2px 15px -8px #000000;
+    }
+
+    #box4 .button-bar button:not(.active):hover {
+        background: -webkit-linear-gradient(#1fbabf, #60d3aa);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        border: 3px solid #60d3aa;
+        box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+    }
+
+    #box4 .button-bar button:focus {
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+    }
+
+    #box4 .button-bar button.active {
+        background: -webkit-linear-gradient(#1fbabf, #60d3aa);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        border: 3px solid #60d3aa;
+        box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+    }
+
+    #box4 .desktop-table-container th.status,
+    #box4 .desktop-table-container td.status {
+        width: 20%;
+        font-weight: 600;
+    }
+
+    #box4 .desktop-table-container th.name,
+    #box4 .desktop-table-container td.name {
+        width: 40%;
+    }
+
+    #box4 .desktop-table-container td.name {
+        text-align: left;
+        padding: 0 20px;
+    }
+
+    #box4 .desktop-table-container th.date,
+    #box4 .desktop-table-container td.date {
+        width: 20%;
+    }
+
+    #box4 .desktop-table-container th.action,
+    #box4 .desktop-table-container td.action {
+        width: 20%;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        overflow: hidden;
+        margin: auto;
+    }
+
+    th {
+        /* font-size: 20px !important; */
+        color: #f9fafa !important;
+        font-weight: bold;
+        text-align: center !important;
+        background-color: #1fbabf !important;
+        border: 0.95px solid #dddddd !important;
+    }
+
+    td {
+        /* font-size: 18px !important; */
+        text-align: center;
+        color: #616061 !important;
+    }
+
+    tr:nth-of-type(2n + 1) > * {
+        background-color: #fff;
+        box-shadow: none !important;
+    }
+
+    tr:nth-of-type(2n + 2) > * {
+        background-color: #ecf0f3;
+        box-shadow: none;
+    }
+}

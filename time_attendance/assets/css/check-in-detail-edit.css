@@ -1,0 +1,663 @@
+/* desktop */
+@media only screen and (min-width: 1025px) {
+    .mobile,
+    footer {
+        display: none !important;
+    }
+
+    *:focus {
+        outline: none;
+    }
+
+    .swal2-column {
+        width: 100%;
+        height: 10vh;
+        border-radius: 10px;
+        padding: 0;
+        margin-left: 35px;
+        margin-top: -10px;
+        font-size: 22px;
+    }
+
+    .swal2-confirm,
+    .swal2-cancel {
+        font-family: "Chakra Petch", sans-serif;
+        border: 0;
+        font-size: 3.5vw;
+        border-radius: 10px;
+    }
+}
+
+/* tablet */
+@media only screen and (min-width: 481px) and (max-width: 1024px) {
+    .desktop {
+        display: none !important;
+    }
+
+    *:focus {
+        outline: none;
+    }
+
+    body {
+        margin-bottom: 10%;
+    }
+
+    /* ตรงนี้คือส่วนของ detail+edit */
+    .topic-detail-status {
+        background-color: #0b6bc1;
+        width: 70vw;
+        border-radius: 3vw;
+        margin-top: 5vw;
+        margin-bottom: 5vw;
+        font-weight: bold;
+        color: #fff;
+        font-size: 3vw;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0px 4px 8px 0px rgba(3, 47, 105, 0.25);
+        padding: 1vw;
+    }
+
+    /* ตรงนี้คือส่วนของ detail+edit */
+    .today-status {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        font-size: 3vw;
+        font-weight: bold;
+        padding: 2vw;
+        border: 1px solid #bcbcbc;
+        width: 80vw;
+        margin: auto;
+        color: #818181;
+        margin-bottom: 2vw;
+        border-radius: 2vw;
+        gap: 3vw;
+        box-shadow: 0px 4px 8px 0px rgba(121, 120, 120, 0.25);
+    }
+
+    /* ตรงนี้คือส่วนของ detail */
+    .status-checkIn {
+        display: flex;
+        flex-direction: column;
+        border-radius: 3vw;
+        border: 1px solid #ddd;
+        width: 80vw;
+        margin: auto;
+        padding: 5vw;
+        color: #818181;
+        box-shadow: 0px 4px 8px 0px rgba(121, 120, 120, 0.25);
+        font-size: 3vw;
+    }
+
+    .display-status-date {
+        display: flex;
+        justify-content: center;
+    }
+
+    .timeOldNew {
+        display: flex;
+        justify-content: center;
+        gap: 6vw;
+        margin-left: 30%;
+        margin-bottom: 4vw;
+        margin-top: 2vw;
+        white-space: nowrap;
+        color: #818181;
+        font-weight: bold;
+    }
+
+    .old-time > label,
+    .new-time > label,
+    .reason-edit > label,
+    .inspector-edit > label,
+    .approver-edit > label,
+    .select-img-file > label {
+        width: 20vw;
+        white-space: nowrap;
+    }
+
+    .old-time,
+    .new-time,
+    .reason-edit,
+    .inspector-edit,
+    .approver-edit,
+    .select-img-file {
+        display: flex;
+        margin-bottom: 4vw;
+        color: #818181;
+        font-weight: bold;
+        gap: 3vw;
+    }
+
+    .Reason-edit-1 label {
+        font-weight: bold;
+        font-size: 3.5vw;
+    }
+
+    .time-inout {
+        display: flex;
+        gap: 13%;
+    }
+
+    .time-inout input[type="text"] {
+        width: 23vw;
+        text-align: center;
+        font-size: 3.8vw;
+        border: 0;
+        border-bottom: 1px solid #d9d9d9;
+        color: #818181;
+    }
+
+    .time-inout input[type="time"] {
+        width: 26vw;
+        text-align: center;
+        font-size: 3.8vw;
+        border: 0;
+        border-bottom: 1px solid #d9d9d9;
+        color: #818181;
+    }
+
+    .reason-edit input,
+    .inspector-edit input,
+    .approver-edit input {
+        width: 70%;
+        padding-left: 1vw;
+        font-size: 3.8vw;
+        border: 0;
+        border-bottom: 1px solid #d9d9d9;
+        color: #818181;
+    }
+
+    .reason-edit textarea {
+        font-size: 3.8vw;
+        width: 80vw;
+        height: 12vw;
+        resize: vertical;
+        font-weight: bold;
+        border: 0;
+        border: 1px solid #d9d9d9;
+        border-radius: 1vw;
+        margin-left: 7vw;
+    }
+
+    .inspector-edit input[type="radio"] {
+        width: 4vw;
+    }
+
+    .inspector-edit label[for="radio-y"],
+    .inspector-edit label[for="radio-n"] {
+        width: auto;
+    }
+
+    .inspector-edit label[for="radio-y"] {
+        margin-right: 2vw;
+    }
+
+    #inspectorshow {
+        margin: 3vw 0vw;
+    }
+
+    .display-report textarea {
+        width: 63vw;
+        margin-left: 1%;
+        border-radius: 2vw;
+        padding: 2vw;
+        font-size: 3.5vw;
+    }
+
+    /* ตรงนี้คือส่วนของ detail */
+    .display-file-img,
+    .display-file-img-total {
+        display: flex;
+        gap: 4vw;
+        white-space: nowrap;
+        font-weight: bold;
+    }
+
+    .display-img {
+        width: 100%;
+        height: auto !important;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .display-img input {
+        width: 100px;
+        height: 100px;
+        padding: 5%;
+        border: 0;
+        outline: none;
+    }
+
+    .display-img embed {
+        width: 100%;
+        height: auto;
+    }
+
+    .btn-edit {
+        display: flex;
+        justify-content: center;
+        margin-top: 5vw;
+    }
+
+    input[type="button"] {
+        background-color: #5baf33;
+        color: #f7f8f9;
+        padding: 1%;
+        font-size: 14px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-family: "Chakra Petch", sans-serif;
+        width: 70px;
+        height: 25px;
+        font-weight: bold;
+    }
+
+    /* ตรงนี้คือส่วนของ edit */
+    .select-img-file {
+        position: relative;
+        font-size: 3.5vw;
+        margin-top: 1vw;
+    }
+
+    .select-img-file label {
+        display: inline-block;
+        position: relative;
+    }
+
+    .select-img-file label img {
+        background-color: #2c6497;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 5px;
+        width: 9vw;
+    }
+
+    .select-img-file {
+        display: flex;
+    }
+
+    .file-label {
+        position: relative;
+        margin-bottom: 10px;
+    }
+
+    .file-label img {
+        width: 5vw;
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    #attachment {
+        display: none;
+    }
+
+    #file-info {
+        margin-top: 10px;
+        font-weight: bold;
+    }
+
+    .btn-submit-edit {
+        text-align: center;
+        margin-top: 3vw;
+    }
+
+    .btnConfirm {
+        background-color: #f1ba3d;
+        color: #0b6bc1;
+        cursor: pointer;
+        font-family: "Chakra Petch", sans-serif;
+        font-weight: bold;
+        border-radius: 10px;
+        padding: 2vw;
+        font-size: 3.5vw;
+        font-weight: bold;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border: 5px solid #f7f9fb !important;
+    }
+
+    .col-6 {
+        display: flex;
+        margin: auto;
+        padding: 2%;
+    }
+
+    .swal2-column {
+        width: 100%;
+        height: 10vh;
+        border-radius: 10px;
+        padding: 0;
+        margin-left: 35px;
+        margin-top: -10px;
+        font-size: 22px;
+    }
+
+    .swal2-confirm,
+    .swal2-cancel {
+        font-family: "Chakra Petch", sans-serif;
+        border: 0;
+        font-size: 3.5vw;
+        border-radius: 10px;
+    }
+}
+
+/* mobile */
+@media only screen and (max-width: 480px) {
+    .desktop {
+        display: none !important;
+    }
+
+    *:focus {
+        outline: none;
+    }
+
+    body {
+        margin-bottom: 10%;
+    }
+
+    /* ตรงนี้คือส่วนของ detail+edit */
+    .topic-detail-status {
+        background-color: #0b6bc1;
+        width: 70vw;
+        border-radius: 3vw;
+        margin-top: 5vw;
+        margin-bottom: 5vw;
+        font-weight: bold;
+        color: #fff;
+        font-size: 4.3vw;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0px 4px 8px 0px rgba(3, 47, 105, 0.25);
+        padding: 1vw;
+    }
+
+    /* ตรงนี้คือส่วนของ detail+edit */
+    .today-status {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        font-size: 4.3vw;
+        font-weight: bold;
+        padding: 2vw;
+        border: 1px solid #bcbcbc;
+        width: 90vw;
+        margin: auto;
+        color: #818181;
+        margin-bottom: 2vw;
+        border-radius: 2vw;
+        gap: 3vw;
+        box-shadow: 0px 4px 8px 0px rgba(121, 120, 120, 0.25);
+    }
+
+    /* ตรงนี้คือส่วนของ detail */
+    .status-checkIn {
+        display: flex;
+        flex-direction: column;
+        border-radius: 3vw;
+        border: 1px solid #ddd;
+        width: 90vw;
+        margin: auto;
+        padding: 5vw;
+        color: #818181;
+        box-shadow: 0px 4px 8px 0px rgba(121, 120, 120, 0.25);
+    }
+
+    .display-status-date {
+        display: flex;
+        justify-content: center;
+    }
+
+    .timeOldNew {
+        display: flex;
+        justify-content: center;
+        gap: 6vw;
+        margin-left: 30%;
+        margin-bottom: 4vw;
+        margin-top: 2vw;
+        white-space: nowrap;
+        color: #818181;
+        font-weight: bold;
+    }
+
+    .old-time > label,
+    .new-time > label,
+    .reason-edit > label,
+    .inspector-edit > label,
+    .approver-edit > label,
+    .select-img-file > label {
+        width: 20vw;
+        white-space: nowrap;
+    }
+
+    .old-time,
+    .new-time,
+    .reason-edit,
+    .inspector-edit,
+    .approver-edit,
+    .select-img-file {
+        display: flex;
+        margin-bottom: 4vw;
+        color: #818181;
+        font-weight: bold;
+        gap: 3vw;
+    }
+
+    .Reason-edit-1 label {
+        font-weight: bold;
+    }
+
+    .time-inout {
+        display: flex;
+        gap: 13%;
+    }
+
+    .time-inout input[type="text"] {
+        width: 23vw;
+        text-align: center;
+        font-size: 3.8vw;
+        border: 0;
+        border-bottom: 1px solid #d9d9d9;
+        color: #818181;
+    }
+
+    .time-inout input[type="time"] {
+        width: 26vw;
+        text-align: center;
+        font-size: 3.8vw;
+        border: 0;
+        border-bottom: 1px solid #d9d9d9;
+        color: #818181;
+    }
+
+    .reason-edit input,
+    .inspector-edit input,
+    .approver-edit input {
+        width: 70%;
+        padding-left: 1vw;
+        font-size: 3.8vw;
+        border: 0;
+        border-bottom: 1px solid #d9d9d9;
+        color: #818181;
+    }
+
+    .reason-edit textarea {
+        font-size: 3.8vw;
+        width: 80vw;
+        height: 12vw;
+        resize: vertical;
+        font-weight: bold;
+        border: 0;
+        border: 1px solid #d9d9d9;
+        border-radius: 1vw;
+        margin-left: 7vw;
+    }
+
+    .inspector-edit input[type="radio"] {
+        width: 4vw;
+    }
+
+    .inspector-edit label[for="radio-y"],
+    .inspector-edit label[for="radio-n"] {
+        width: auto;
+    }
+
+    .inspector-edit label[for="radio-y"] {
+        margin-right: 2vw;
+    }
+
+    #inspectorshow {
+        margin: 3vw 0vw;
+    }
+
+    .display-report textarea {
+        width: 63vw;
+        margin-left: 1%;
+        border-radius: 2vw;
+    }
+
+    /* ตรงนี้คือส่วนของ detail */
+    .display-file-img,
+    .display-file-img-total {
+        display: flex;
+        gap: 4vw;
+        white-space: nowrap;
+        font-weight: bold;
+    }
+
+    .display-img {
+        width: 100%;
+        height: auto !important;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .display-img input {
+        width: 100px;
+        height: 100px;
+        padding: 5%;
+        border: 0;
+        outline: none;
+    }
+
+    .display-img embed {
+        width: 100%;
+        height: auto;
+    }
+
+    .btn-edit {
+        display: flex;
+        justify-content: center;
+        margin-top: 5vw;
+    }
+
+    input[type="button"] {
+        background-color: #5baf33;
+        color: #f7f8f9;
+        padding: 1%;
+        font-size: 14px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-family: "Chakra Petch", sans-serif;
+        width: 70px;
+        height: 25px;
+        font-weight: bold;
+    }
+
+    /* ตรงนี้คือส่วนของ edit */
+    .select-img-file {
+        position: relative;
+    }
+
+    .select-img-file label {
+        display: inline-block;
+        position: relative;
+    }
+
+    .select-img-file label img {
+        background-color: #2c6497;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 5px;
+        width: 9vw;
+    }
+
+    .select-img-file {
+        display: flex;
+    }
+
+    .file-label {
+        position: relative;
+        margin-bottom: 10px;
+    }
+
+    .file-label img {
+        width: 5vw;
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    #attachment {
+        display: none;
+    }
+
+    #file-info {
+        margin-top: 10px;
+        font-weight: bold;
+    }
+
+    .btn-submit-edit {
+        text-align: center;
+        margin-top: 3vw;
+    }
+
+    .btnConfirm {
+        background-color: #f1ba3d;
+        color: #0b6bc1;
+        cursor: pointer;
+        font-family: "Chakra Petch", sans-serif;
+        font-weight: bold;
+        border-radius: 10px;
+        padding: 2vw;
+        font-size: 3.5vw;
+        font-weight: bold;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border: 3px solid #f7f9fb !important;
+    }
+
+    .col-6 {
+        display: flex;
+        margin: auto;
+        padding: 2%;
+    }
+
+    .swal2-column {
+        width: 100%;
+        height: 10vh;
+        border-radius: 10px;
+        padding: 0;
+        margin-left: 35px;
+        margin-top: -10px;
+        font-size: 22px;
+    }
+
+    .swal2-confirm,
+    .swal2-cancel {
+        font-family: "Chakra Petch", sans-serif;
+        border: 0;
+        font-size: 3.5vw;
+        border-radius: 10px;
+    }
+}

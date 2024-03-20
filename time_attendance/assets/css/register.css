@@ -1,0 +1,200 @@
+@media only screen and (min-width: 1025px) and (max-width: 1366px) {
+    body {
+        background-image: url("../../IMG/bg-15.png");
+        margin-top: -2%;
+        font-family: "Chakra Petch", sans-serif;
+        position: fixed;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        position: fixed;
+        border: 2px solid rgb(202, 202, 202);
+        width: 47vw;
+        padding: 1%;
+        top: 40vw;
+        left: 25vw;
+        border-radius: 2vw;
+        background-color: #fff;
+        box-shadow: 0px 20px 20px 0px rgba(69, 68, 68, 0.25);
+    }
+
+    .imgLogo {
+        display: flex;
+        justify-content: center;
+    }
+
+    .imgLogo img {
+        width: 30vw;
+    }
+
+    .box-confirm {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        font-weight: bold;
+        color: #6b6b6b;
+        font-size: 16px;
+        margin-top: 2%;
+    }
+
+    .box-confirm input {
+        border: 0;
+        border: 1px solid #bebebe;
+        border-radius: 10px;
+        font-size: 14px;
+        margin-top: 4%;
+        padding: 2% 0 2% 2%;
+        margin-left: -6%;
+        font-family: "Chakra Petch", sans-serif;
+    }
+
+    .box-confirm button {
+        border: 0;
+        border: 2px solid #fff;
+        border-radius: 10px;
+        font-size: 14px;
+        background-color: rgb(41, 171, 41);
+        padding: 2%;
+        font-family: "Chakra Petch", sans-serif;
+        font-weight: bold;
+        color: #fff;
+        box-shadow: 0px 0px 15px 0px rgba(55, 55, 55, 0.4);
+    }
+
+    /* callBack */
+
+    .box-submit form {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        font-weight: bold;
+        color: #6b6b6b;
+        font-size: 16px;
+        margin-top: 2%;
+    }
+
+    .box-submit input {
+        border: 0;
+        border: 1px solid #bebebe;
+        border-radius: 10px;
+        font-size: 14px;
+        margin-top: 4%;
+        /* margin-left: -6%; */
+        font-family: "Chakra Petch", sans-serif;
+    }
+
+    .box-submit button {
+        border: 0;
+        border: 2px solid #fff;
+        border-radius: 10px;
+        font-size: 14px;
+        background-color: rgb(41, 171, 41);
+        /* padding: 2%; */
+        font-family: "Chakra Petch", sans-serif;
+        font-weight: bold;
+        color: #fff;
+        box-shadow: 0px 0px 15px 0px rgba(55, 55, 55, 0.4);
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    body {
+        background-image: url("../../IMG/bg-15.png");
+        margin-top: -2%;
+        font-family: "Chakra Petch", sans-serif;
+        position: fixed;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        position: fixed;
+        border: 2px solid rgb(202, 202, 202);
+        width: 85vw;
+        padding: 1%;
+        top: 45vw;
+        left: 6vw;
+        border-radius: 5vw;
+        background-color: #fff;
+        box-shadow: 0px 20px 20px 0px rgba(69, 68, 68, 0.25);
+    }
+
+    .imgLogo {
+        display: flex;
+        justify-content: center;
+    }
+
+    .imgLogo img {
+        width: 50vw;
+        height: 50vw;
+    }
+
+    .box-confirm {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        font-weight: bold;
+        color: #6b6b6b;
+        font-size: 16px;
+        margin-top: 2%;
+    }
+
+    .register {
+        margin: 2vw 0 2vw 0;
+    }
+
+    .box-confirm input {
+        background-color: #efeeee;
+        padding: 2vw;
+        border-radius: 2vw;
+        border: 1px solid #858585;
+        text-align: center;
+    }
+
+    .box-confirm button {
+        padding: 1.5vw;
+        border-radius: 2vw;
+        cursor: pointer;
+        background-color: #29ab29;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border: 3px solid #f7f9fb !important;
+        color: #fff;
+    }
+
+    /* callBack */
+
+    .box-submit form {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        font-weight: bold;
+        color: #6b6b6b;
+        font-size: 16px;
+        margin-top: 2%;
+    }
+
+    .box-submit input {
+        width: auto;
+        border: 1px solid #bebebe;
+        border-radius: 10px;
+        font-size: 14px;
+        margin-top: 4%;
+        font-family: "Chakra Petch", sans-serif;
+    }
+
+    .box-submit button {
+        border: 2px solid #fff;
+        border-radius: 10px;
+        font-size: 14px;
+        background-color: rgb(41, 171, 41);
+        /* padding: 2%; */
+        font-family: "Chakra Petch", sans-serif;
+        font-weight: bold;
+        color: #fff;
+        box-shadow: 0px 0px 15px 0px rgba(55, 55, 55, 0.4);
+    }
+}

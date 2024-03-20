@@ -1,0 +1,316 @@
+@media only screen and (min-width: 1025px) {
+    .select-team {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .select-team label {
+        color: #616262;
+        font-weight: 600;
+        margin-bottom: 0;
+    }
+
+    .select-team select {
+        width: 200px;
+    }
+
+    .bar {
+        /*แถบเมนูสีขาว*/
+        position: relative;
+        background-color: #ffff;
+        box-shadow: 10px 10px 10px #5350501a;
+        font-size: 18px;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 50px;
+        border-radius: 5px;
+        margin-top: 10px;
+        gap: 10px;
+    }
+
+    .current {
+        color: #f8f9f9;
+        background-color: #0b6bc1;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 4px 0;
+        width: 200px;
+    }
+
+    .bar button {
+        padding: 7px 5px;
+        background-color: #0b6bc1;
+        border-radius: 5px;
+        border: 0;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .bar img {
+        width: 20px;
+    }
+
+    .bar-2 {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 15px;
+    }
+
+    .desktop-table-container {
+        display: -ms-flexbox;
+        display: -webkit-box;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        height: 570px;
+    }
+
+    .desktop-table {
+        display: flex;
+        height: 570px;
+        overflow: auto;
+    }
+
+    .desktop-table.left {
+        width: 50%;
+        scrollbar-width: none;
+    }
+
+    .desktop-table.right {
+        width: 50%;
+    }
+
+    .desktop-table.right::-webkit-scrollbar {
+        height: 10px;
+        width: 10px;
+    }
+
+    .desktop-table.left table {
+        width: 100%;
+    }
+
+    .desktop-table.right table {
+        width: 100%;
+        table-layout: fixed;
+        margin-bottom: 0.4rem;
+    }
+
+    .desktop-table.left thead > tr:first-child th:first-child {
+        width: 40%;
+    }
+
+    .desktop-table.left tbody > tr > td:nth-child(2) {
+        text-align: left !important;
+    }
+
+    .desktop-table.left tbody > tr > td > div {
+        display: flex;
+        flex-direction: row;
+        margin: 0 !important;
+        white-space: nowrap;
+    }
+
+    .desktop-table.left tbody > tr:first-child > td:first-child {
+        text-align: center;
+        width: 15%;
+    }
+
+    .desktop-table.left tbody > tr:nth-child(n + 2) > td:first-child {
+        width: 5%;
+    }
+
+    .desktop-table th {
+        color: #f9fafa !important;
+        font-weight: bold;
+        text-align: center !important;
+        background-color: #1fbabf !important;
+        border: 0.95px solid #dddddd !important;
+        white-space: nowrap;
+        vertical-align: middle !important;
+    }
+
+    .desktop-table td {
+        border: 0.95px solid #dddddd !important;
+        color: #616061 !important;
+        text-align: center !important;
+        height: 80px !important;
+    }
+
+    .desktop-table.right th {
+        width: 70px;
+    }
+
+    .desktop-table.right th,
+    .desktop-table.right td {
+        padding: 0.75rem 0 !important;
+    }
+
+    #box2,
+    #box3 {
+        height: 568px;
+    }
+
+    #box3 > div {
+        border-radius: 10px;
+        position: relative;
+    }
+
+    #box3 > div > button.btn {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        z-index: 1;
+    }
+
+    #box3 > div > button.btn:hover {
+        color: #c42d2d;
+        border: 3px solid #c42d2d !important;
+    }
+
+    #box3 input:read-only {
+        background-color: #fff !important;
+    }
+
+    .button-show-form {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        cursor: pointer;
+        color: #fff;
+        font-weight: 600;
+        background-image: linear-gradient(#1fbabf, #60d3aa);
+        transition: 0.3s ease-in-out;
+        box-shadow: 0px 2px 15px -8px #000000;
+        border-radius: 5px;
+        padding: 5px 5px;
+    }
+
+    .button-show-form label {
+        margin-bottom: 0;
+        cursor: pointer;
+    }
+
+    /*รายละเอียดสีต่าง  ๆ*/
+    .color-detail {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+        margin-left: 50%;
+    }
+
+    .color-detail > div {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+    }
+
+    .color-detail > div > div {
+        width: 20%;
+        white-space: nowrap;
+    }
+
+    #status1 button,
+    #status2 button,
+    #status3 button {
+        width: 20px;
+        height: 20px;
+        border: none;
+        border-radius: 2px;
+        margin-right: 10px;
+    }
+
+    #status1 span,
+    #status2 span,
+    #status3 span {
+        color: #555555;
+    }
+
+    /* แต่ง data table */
+    .dataTables_wrapper {
+        background-color: #ffffff;
+        border-radius: 5px;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .dataTables_wrapper > .row:first-child {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    div.dataTables_filter {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .dataTables_length {
+        font-weight: bold;
+        text-align: left !important;
+        padding: 0;
+    }
+
+    .dataTables_info,
+    .dataTables_paginate {
+        padding: 0 !important;
+        white-space: nowrap;
+    }
+
+    /* แต่งปุ่ม select กับ input บนตาราง */
+    div.dataTables_wrapper div.dataTables_length label,
+    div.dataTables_wrapper div.dataTables_filter label {
+        font-weight: bold !important;
+        text-align: left;
+        white-space: nowrap;
+        color: #616262;
+    }
+
+    .desktop-data-table-container table {
+        width: 100%;
+        border-collapse: collapse;
+        overflow: hidden;
+        margin: auto;
+    }
+
+    .desktop-data-table-container th {
+        /* font-size: 20px !important; */
+        color: #f9fafa !important;
+        font-weight: bold;
+        text-align: center !important;
+        background-color: #1fbabf !important;
+        border: 0.95px solid #dddddd !important;
+    }
+
+    .desktop-data-table-container td {
+        /* font-size: 18px !important; */
+        text-align: center;
+        color: #616061 !important;
+    }
+
+    table.dataTable thead > tr > th.sorting:after,
+    table.dataTable thead > tr > th.sorting:before {
+        opacity: 1 !important;
+    }
+
+    .desktop-data-table-container tr:nth-of-type(2n + 1) > * {
+        background-color: #fff;
+        box-shadow: none !important;
+    }
+
+    .desktop-data-table-container tr:nth-of-type(2n + 2) > * {
+        background-color: #ecf0f3;
+        box-shadow: none;
+    }
+
+    #desktop-employeeid1 {
+        background-color: #000000;
+    }
+}

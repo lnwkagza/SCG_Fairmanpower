@@ -1,0 +1,77 @@
+@media only screen and (min-width: 1025px) {
+    .bar {
+        /*แถบเมนูสีขาว*/
+        color: #0b6bc1;
+        background-color: #fff;
+        box-shadow: 10px 10px 10px #5350501a;
+        font-size: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        padding-left: 250px;
+        padding-right: 250px;
+        border-radius: 5px;
+        font-weight: bolder;
+        margin-top: 10px;
+        position: relative;
+        gap: 10px;
+    }
+
+    .bar label {
+        margin-bottom: 0;
+    }
+
+    .count input {
+        color: #0b6bc1;
+        font-size: 35px;
+        font-weight: bold;
+        border: 1px solid #0b6bc1;
+        border-radius: 10px;
+        text-align: center;
+        width: 60px;
+        height: 60px;
+        margin: 0 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .desktop-table {
+        height: 570px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        margin-top: 10px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+
+    .stripe tbody tr:nth-of-type(even) {
+        background-color: rgba(7, 34, 98, 0.08);
+    }
+
+    th {
+        font-size: 30px !important;
+        background-color: #1fbabf;
+        color: #ffffff;
+        text-align: center;
+        height: 40px;
+        position: sticky;
+        top: 0;
+    }
+
+    td {
+        font-size: 28px !important;
+        text-align: center;
+    }
+
+    th,
+    td {
+        width: 30%;
+    }
+
+    .data-table th,
+    .data-table td {
+        border: 1px solid #ffffff; /* เส้นกรอบ 1px สีเทาอ่อน */
+    }
+}

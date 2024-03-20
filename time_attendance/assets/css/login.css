@@ -1,0 +1,138 @@
+@media only screen and (min-width: 1025px) and (max-width: 1366px) {
+    body {
+        background-image: url("../../IMG/bg-15.png");
+        font-family: "Chakra Petch", sans-serif;
+    }
+    .container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        position: fixed;
+        border: 2px solid rgb(202, 202, 202);
+        width: 47vw;
+        padding: 1%;
+        top: 40vw;
+        left: 25vw;
+        border-radius: 2vw;
+        background-color: #fff;
+        box-shadow: 0px 20px 20px 0px rgba(69, 68, 68, 0.25);
+    }
+
+    .container hr {
+        border: 1px solid #b0b2b3;
+        width: 100%;
+    }
+
+    .imgLogo {
+        display: flex;
+        justify-content: center;
+    }
+
+    .imgLogo img {
+        width: 30vw;
+        /* height: 17vw; */
+    }
+
+    .container hr {
+        color: #b7b9ba;
+        border: 1px solid;
+    }
+
+    .text-detail {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        font-family: "Chakra Petch", sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .btn-login button {
+        background-color: rgb(41, 171, 41);
+        color: #fff;
+        font-family: "Chakra Petch", sans-serif;
+        border: 2px solid #fff;
+        font-size: 16px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 15px 0px rgba(55, 55, 55, 0.4);
+        font-weight: bold;
+        width: 22vw;
+        padding: 2vw;
+        margin-top: 2vw;
+        margin-bottom: 10px;
+    }
+
+    #btnLogIn:hover {
+        box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.4);
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    body {
+        background-image: url("../../IMG/bg-15.png");
+        font-family: "Chakra Petch", sans-serif;
+    }
+    .container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        position: fixed;
+        border: 2px solid rgb(202, 202, 202);
+        width: 75vw;
+        padding: 1%;
+        top: 45vw;
+        left: 11vw;
+        border-radius: 5vw;
+        background-color: #fff;
+        box-shadow: 0px 20px 20px 0px rgba(69, 68, 68, 0.25);
+    }
+
+    .container hr {
+        border: 1px solid #b0b2b3;
+        width: 100%;
+    }
+
+    .imgLogo {
+        display: flex;
+        justify-content: center;
+    }
+
+    .imgLogo img {
+        width: 50vw;
+        height: 50vw;
+    }
+
+    .container hr {
+        color: #b7b9ba;
+        border: 1px solid;
+    }
+
+    .text-detail {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        font-family: "Chakra Petch", sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .btn-login button {
+        background-color: rgb(41, 171, 41);
+        color: #fff;
+        font-family: "Chakra Petch", sans-serif;
+        border: 0;
+        border: 2px solid #fff;
+        font-size: 16px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 15px 0px rgba(55, 55, 55, 0.4);
+        font-weight: bold;
+        width: 50vw;
+        padding: 3%;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    #btnLogIn:hover {
+        box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.4);
+    }
+}

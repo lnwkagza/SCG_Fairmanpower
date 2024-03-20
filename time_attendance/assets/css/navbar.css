@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Chakra Petch", sans-serif;
+}
+/* tablet */
+@media only screen and (min-width: 481px) and (max-width: 1024px) {
+    body {
+        margin: auto;
+    }
+
+    .navbar,
+    .navbar-BS {
+        color: #ffffff;
+        background-image: url("../../IMG/bg-nav.png");
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 12vw;
+        position: sticky;
+        top: 0;
+        bottom: 0px;
+        left: 0px;
+        z-index: 99;
+    }
+
+    .navbar .div-span,
+    .navbar-BS .div-span,
+    .navbar-fix {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 3.5vw;
+        font-weight: bold;
+        margin: 0;
+        white-space: nowrap;
+    }
+
+    .navbar-fix {
+        color: #ffffff;
+        background-image: url("../../IMG/bg-nav.png");
+        background-size: cover;
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        height: 12vw;
+        position: sticky;
+        top: 0;
+        bottom: 0px;
+        left: 0px;
+        z-index: 99;
+        gap: 19vw;
+    }
+
+    .btn-fix button {
+        border-radius: 2vw;
+        background-color: transparent;
+        padding: 1vw;
+        border: 0;
+    }
+
+    .btn-fix img {
+        width: 9vw;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+
+    .btn-fix button:hover {
+        color: #fff;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .btn-fix button:active {
+        transform: scale(0.95);
+        transition: transform 0.1s ease;
+    }
+}
+
+/* mobile */
+@media only screen and (max-width: 480px) {
+    body {
+        margin: auto;
+    }
+
+    .navbar,
+    .navbar-BS {
+        color: #ffffff;
+        background-image: url("../../IMG/bg-nav.png");
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 12vw;
+        position: sticky;
+        top: 0;
+        bottom: 0px;
+        left: 0px;
+        z-index: 99;
+    }
+
+    .navbar-fix {
+        color: #ffffff;
+        background-image: url("../../IMG/bg-nav.png");
+        background-size: cover;
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        height: 12vw;
+        position: sticky;
+        top: 0;
+        bottom: 0px;
+        left: 0px;
+        z-index: 99;
+        gap: 19vw;
+    }
+
+    .navbar .div-span,
+    .navbar-BS .div-span,
+    .navbar-fix .div-span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 4.5vw;
+        font-weight: bold;
+        margin: 0;
+        white-space: nowrap;
+    }
+
+    .btn-fix button {
+        border-radius: 2vw;
+        background-color: transparent;
+        padding: 1vw;
+        border: 0;
+    }
+
+    .btn-fix img {
+        width: 9vw;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+
+    .btn-fix button:hover {
+        color: #fff;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .btn-fix button:active {
+        transform: scale(0.95);
+        transition: transform 0.1s ease;
+    }
+}

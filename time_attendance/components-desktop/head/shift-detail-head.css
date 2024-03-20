@@ -1,0 +1,76 @@
+@media only screen and (min-width: 1025px) {
+    form .row {
+        display: flex;
+        justify-content: center;
+    }
+
+    .employee-image {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 15px;
+    }
+
+    .employee-image img {
+        width: 50%;
+        border-radius: 50%;
+    }
+
+    .employee-info {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+        white-space: nowrap;
+    }
+
+    .employee-info label {
+        font-size: 18px;
+        font-weight: 600;
+        color: #00000095;
+    }
+
+    .wizard-content {
+        padding: 10px 0;
+        border-radius: 5px;
+        margin-top: 20px;
+        background-color: #fff;
+    }
+
+    .wizard-content label {
+        font-size: 18px;
+        font-weight: 600;
+        color: #00000095;
+        width: 100px;
+        white-space: nowrap;
+        margin-bottom: 0;
+        text-align: left;
+    }
+
+    .form-control {
+        width: 70%;
+    }
+
+    .form-group > div {
+        display: flex;
+        gap: 5%;
+    }
+
+    .shift-new {
+        display: flex;
+    }
+
+    .shift-new input,
+    .shift input {
+        width: 30%;
+    }
+
+    .shift-new input:first-child {
+        margin-right: 30px;
+    }
+
+    .shift-new label {
+        white-space: nowrap;
+        gap: 10%;
+    }
+}

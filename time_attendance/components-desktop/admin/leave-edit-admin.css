@@ -1,0 +1,33 @@
+@media only screen and (min-width: 1025px) {
+    .wizard-content {
+        padding: 5px;
+        border-radius: 5px;
+        width: 100%;
+    }
+
+    .row {
+        display: flex;
+        justify-content: center;
+    }
+
+    .form-group[name="duration"],
+    .form-group[name="balance"] {
+        background-color: #162ab9;
+        border-radius: 5px;
+        padding: 2px 10px;
+    }
+
+    .form-group[name="duration"] label,
+    .form-group[name="balance"] label {
+        font-size: 16px !important;
+        color: #fff;
+        margin-bottom: 0 !important;
+    }
+
+    .btn-primary,
+    .btn-danger {
+        text-align: center;
+        width: 150px;
+        padding: 3px;
+    }
+}

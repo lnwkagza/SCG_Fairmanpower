@@ -1,0 +1,717 @@
+/* desktop */
+@media only screen and (min-width: 1025px) {
+    .mobile,
+    footer {
+        display: none !important;
+    }
+
+    *:focus {
+        outline: none;
+    }
+}
+
+/* tablet */
+@media only screen and (min-width: 481px) and (max-width: 1024px) {
+    .desktop {
+        display: none !important;
+    }
+
+    *:focus {
+        outline: none;
+    }
+
+    body {
+        margin-bottom: 10%;
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2vw;
+        margin-top: 2vw;
+        margin-bottom: 5vw;
+    }
+
+    .form label {
+        color: #0b6bc1;
+        font-size: 3.5vw;
+        font-weight: bold;
+    }
+
+    .form-dep {
+        display: flex;
+        align-items: center;
+        margin-bottom: 2vw;
+    }
+
+    .form-dep select {
+        color: #ffff;
+        background-color: #0b6bc1;
+        border: 0;
+        border-radius: 5vw;
+        font-size: 3vw;
+        width: 30vw;
+        margin-left: 1vw;
+        text-align: center;
+        padding: 1vw;
+    }
+
+    .form-date {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1vw;
+        padding-left: 3vw;
+    }
+
+    .form-date input {
+        color: #ffff;
+        background-color: #0b6bc1;
+        border: 0;
+        border-radius: 5vw;
+        font-size: 3vw;
+        width: 25vw;
+        text-align: center;
+        padding: 1vw;
+    }
+
+    input[type="date"]::-webkit-calendar-picker-indicator {
+        filter: invert(100%); /* กลับสีของรูปปฏิทิน */
+    }
+
+    button.button-search {
+        background-color: #29ab29;
+        color: #fff;
+        border-radius: 100%;
+        width: 6vw;
+        height: 5.5vw;
+        font-weight: bold;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    button.button-search i {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 3.5vw;
+    }
+
+    .dateTeam {
+        display: flex;
+        justify-content: flex-start;
+        width: 90vw;
+        margin: auto;
+        margin-bottom: 10vw;
+        box-shadow: 0 0 0 1px #cacaca, 0 0 0 1px #dfdede;
+        border-radius: 2vw;
+    }
+
+    .dateTeam table {
+        border-collapse: collapse;
+        height: 5vw;
+    }
+
+    .dateTeam th {
+        background-color: #0b6bc1;
+        color: #fff;
+    }
+
+    .dateTeam td {
+        border: 1px solid #d3d1d1;
+        height: 10vw;
+    }
+
+    .tableName th,
+    .tableDetail th {
+        font-size: 3vw;
+        white-space: nowrap;
+        width: 5vw;
+        padding-top: 1vw;
+        padding-bottom: 1vw;
+        text-align: center;
+    }
+
+    .tableName th {
+        border-top-left-radius: 1vw;
+    }
+
+    .tableName td {
+        border: 0 !important;
+    }
+
+    .nameEm {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40vw;
+        gap: 2vw;
+        height: 13vw;
+    }
+
+    .nameEm img {
+        width: 8vw;
+    }
+
+    .dataEm {
+        display: flex;
+        flex-direction: column;
+        color: #0b6bc1;
+        font-size: 3vw;
+        font-weight: bold;
+        white-space: nowrap;
+    }
+
+    .tableDetail {
+        overflow-x: auto;
+        border-top-right-radius: 1vw;
+        border-bottom-right-radius: 1vw;
+        /* Firefox */
+        scrollbar-width: none;
+    }
+
+    .tableDetail th {
+        padding-left: 3vw;
+        padding-right: 3vw;
+    }
+
+    .tableDetail td {
+        color: #616061;
+        font-size: 3vw;
+        font-weight: bold;
+        text-align: center;
+        height: 13vw;
+    }
+
+    table,
+    td,
+    th {
+        box-sizing: content-box !important;
+    }
+
+    .topic-wait-approve {
+        display: flex;
+        justify-content: center;
+        margin-top: -5vw;
+    }
+
+    .topic-wait-approve span {
+        font-size: 3.5vw;
+        background-color: #0b6bc1;
+        padding: 1vw;
+        color: #fff;
+        border-radius: 2vw;
+
+    }
+
+    .table-container.table1 {
+        margin-bottom: 15vw;
+    }
+
+    /* แต่ง data table */
+    .table-container {
+        margin-top: 3vw;
+    }
+
+    .row {
+        display: flex !important;
+        align-items: center !important;
+        font-size: 3.5vw;
+    }
+
+    .dataTables_length {
+        width: 10vw;
+        font-weight: bold;
+        text-align: left !important;
+    }
+
+    .col-sm-12.col-md-6 input {
+        width: 25vw !important;
+        height: 2vw !important;
+        padding: 1vw !important;
+    }
+    .col-sm-12.col-md-6 {
+        width: 45vw;
+        margin-left: 3.5vw;
+    }
+
+    /* แต่งปุ่ม select กับ input บนตาราง */
+    div.dataTables_wrapper div.dataTables_length label,
+    div.dataTables_wrapper div.dataTables_filter label {
+        font-weight: bold !important;
+        text-align: left;
+        white-space: nowrap;
+        color: #616262;
+    }
+
+    div.dataTables_wrapper div.dataTables_filter input {
+        height: 2vw !important;
+    }
+
+    .table-container table {
+        width: 80vw;
+        border-collapse: collapse;
+        border-radius: 2vw;
+        overflow: hidden;
+        box-shadow: 0 0 1px 2px #0b6bc1, 0 0 0 0 #fbfafa;
+        margin: auto;
+        margin-top: 3vw;
+    }
+
+    .table-container th {
+        color: #f9fafa !important;
+        font-size: 3.5vw;
+        font-weight: bold;
+        padding: 1vw;
+        text-align: center !important;
+        background-color: #0b6bc1 !important;
+        border: 1px solid #427eb3;
+        width: 15vw;
+        white-space: nowrap !important;
+    }
+
+    .table-container th.status {
+        width: 5vw;
+    }
+
+    .table-container th.action {
+        width: 8vw;
+    }
+
+    button.detail {
+        font-size: 3vw;
+        padding: 0.7vw;
+        border: 1px solid #fff;
+        border-radius: 2vw;
+        background-color: #818080;
+        font-weight: bold;
+        color: #f8fafa;
+        box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+        cursor: pointer !important;
+        font-size: 2.3vw;
+    }
+
+    .table-container td {
+        font-size: 3vw;
+        font-weight: bold;
+        padding: 1vw;
+        text-align: center;
+        border: 1px solid #97abbc;
+        color: #616061 !important;
+        white-space: nowrap;
+    }
+
+    .table-container td.name {
+        text-align: left;
+    }
+
+    div.dt-length {
+        display: none !important;
+    }
+
+    div.dt-container .row {
+        --bs-gutter-y: 0 !important;
+    }
+
+    div.dt-container div.dt-paging ul.pagination {
+        flex-wrap: nowrap !important;
+        white-space: nowrap !important;
+        font-size: 3.5vw; /* กำหนดขนาด font เป็น 3.5vw */
+    }
+
+    .dt-search {
+        width: 100vw;
+        display: flex!important;
+        justify-content: center;
+        align-items: center!important;
+        margin: auto;
+        font-size: 3.5vw;
+    }
+
+    .dt-search input {
+        padding: 2vw;
+    }
+
+    .col-md-auto.me-auto,
+    .col-md-auto.ms-auto {
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        font-size: 3vw !important;
+    }
+
+    .pagination {
+        --bs-pagination-font-size: 3vw !important;
+    }
+}
+
+/* mobile */
+@media only screen and (max-width: 480px) {
+    .desktop {
+        display: none !important;
+    }
+
+    *:focus {
+        outline: none;
+    }
+
+    body {
+        margin-bottom: 10%;
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2vw;
+        margin-top: 2vw;
+        margin-bottom: 5vw;
+    }
+
+    .form label {
+        color: #0b6bc1;
+        font-size: 3.5vw;
+        font-weight: bold;
+    }
+
+    .form-dep {
+        display: flex;
+        align-items: center;
+        margin-bottom: 2vw;
+    }
+
+    .form-dep select {
+        color: #ffff;
+        background-color: #0b6bc1;
+        border: 0;
+        border-radius: 5vw;
+        font-size: 3vw;
+        width: auto;
+        margin-left: 1vw;
+        text-align: center;
+        padding: 1vw;
+    }
+
+    .form-date {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1vw;
+        padding-left: 3vw;
+    }
+
+    .form-date input {
+        color: #ffff;
+        background-color: #0b6bc1;
+        border: 0;
+        border-radius: 5vw;
+        font-size: 3vw;
+        width: 25vw;
+        text-align: center;
+        padding: 1vw;
+    }
+
+    input[type="date"]::-webkit-calendar-picker-indicator {
+        filter: invert(100%); /* กลับสีของรูปปฏิทิน */
+    }
+
+    button.button-search {
+        background-color: #29ab29;
+        color: #fff;
+        border-radius: 100%;
+        width: 6vw;
+        height: 5.5vw;
+        font-weight: bold;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    button.button-search i {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 3.5vw;
+    }
+
+    .dateTeam {
+        display: flex;
+        justify-content: flex-start;
+        width: 90vw;
+        margin: auto;
+        margin-bottom: 10vw;
+        box-shadow: 0 0 0 1px #cacaca, 0 0 0 1px #dfdede;
+        border-radius: 2vw;
+    }
+
+    .dateTeam table {
+        border-collapse: collapse;
+        height: 5vw;
+    }
+
+    .dateTeam th {
+        background-color: #0b6bc1;
+        color: #fff;
+    }
+
+    .dateTeam td {
+        border: 1px solid #d3d1d1;
+        height: 10vw;
+    }
+
+    .tableName th,
+    .tableDetail th {
+        font-size: 3vw;
+        white-space: nowrap;
+        width: 5vw;
+        padding-top: 1vw;
+        padding-bottom: 1vw;
+        text-align: center;
+    }
+
+    .tableName th {
+        border-top-left-radius: 1vw;
+    }
+
+    .nameEm {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40vw;
+        gap: 2vw;
+        height: 13vw;
+    }
+
+    .nameEm img {
+        width: 8vw;
+    }
+
+    .dataEm {
+        display: flex;
+        flex-direction: column;
+        color: #0b6bc1;
+        font-size: 3vw;
+        font-weight: bold;
+        white-space: nowrap;
+    }
+
+    .tableDetail {
+        overflow-x: auto;
+        border-top-right-radius: 1vw;
+        border-bottom-right-radius: 1vw;
+    }
+
+    .tableDetail th {
+        padding-left: 3vw;
+        padding-right: 3vw;
+    }
+
+    .tableDetail td {
+        color: #616061;
+        font-size: 3vw;
+        font-weight: bold;
+        text-align: center;
+        height: 13vw;
+    }
+
+    table,
+    td,
+    th {
+        box-sizing: content-box !important;
+    }
+
+    .topic-wait-approve {
+        display: flex;
+        justify-content: center;
+        margin-top: -5vw;
+    }
+
+    .topic-wait-approve span {
+        font-size: 3.5vw;
+        background-color: #0b6bc1;
+        padding: 1vw;
+        color: #fff;
+        border-radius: 2vw;
+
+    }
+
+    /* แต่ง data table */
+    .table-container {
+        margin-top: 3vw;
+    }
+
+    .row {
+        display: flex !important;
+        align-items: center !important;
+        font-size: 3.5vw;
+    }
+
+    .dataTables_length {
+        width: 10vw;
+        font-weight: bold;
+        text-align: left !important;
+    }
+
+    .col-sm-12.col-md-6 input {
+        width: 25vw !important;
+        height: 2vw !important;
+        padding: 1vw !important;
+    }
+    .col-sm-12.col-md-6 {
+        width: 45vw;
+        margin-left: 3.5vw;
+    }
+
+    /* แต่งปุ่ม select กับ input บนตาราง */
+    div.dataTables_wrapper div.dataTables_length label,
+    div.dataTables_wrapper div.dataTables_filter label {
+        font-weight: bold !important;
+        text-align: left;
+        white-space: nowrap;
+        color: #616262;
+    }
+
+    div.dataTables_wrapper div.dataTables_filter input {
+        height: 2vw !important;
+    }
+
+    .table-container table {
+        width: 80vw;
+        border-collapse: collapse;
+        border-radius: 2vw;
+        overflow: hidden;
+        box-shadow: 0 0 1px 2px #0b6bc1, 0 0 0 0 #fbfafa;
+        margin: auto;
+        margin-top: 3vw;
+    }
+
+    .table-container th {
+        color: #f9fafa !important;
+        font-size: 3.5vw;
+        font-weight: bold;
+        padding: 1vw;
+        text-align: center !important;
+        background-color: #0b6bc1 !important;
+        border: 1px solid #427eb3;
+        width: 15vw;
+        white-space: nowrap !important;
+    }
+
+    .table-container th.status {
+        width: 5vw;
+    }
+
+    .table-container th.action {
+        width: 8vw;
+    }
+
+    button.detail {
+        font-size: 3vw;
+        padding: 0.7vw;
+        border: 1px solid #fff;
+        border-radius: 2vw;
+        background-color: #818080;
+        font-weight: bold;
+        color: #f8fafa;
+        box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+        cursor: pointer !important;
+        font-size: 2.3vw;
+    }
+
+    .table-container td {
+        font-size: 3vw;
+        font-weight: bold;
+        padding: 1vw;
+        text-align: center;
+        border: 1px solid #97abbc;
+        color: #616061 !important;
+        white-space: nowrap;
+    }
+
+    .table-container td.name {
+        text-align: left;
+    }
+
+    div.dt-length {
+        display: none !important;
+    }
+
+    div.dt-container .row {
+        --bs-gutter-y: 0 !important;
+    }
+
+    div.dt-container div.dt-paging ul.pagination {
+        flex-wrap: nowrap !important;
+        white-space: nowrap !important;
+        font-size: 3.5vw; /* กำหนดขนาด font เป็น 3.5vw */
+    }
+
+    .pagination {
+        --bs-pagination-font-size: 3.5vw !important;
+    }
+
+    /* ---modal show day off--- */
+    /* Style the popup text */
+    .popup-text {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+        z-index: 1;
+    }
+
+    /* Style the modal */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 2;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    /* Style the modal content */
+    /* Style the modal content */
+    .modal-content {
+        background-color: #fefefe;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+    }
+
+    /* Style the close button */
+    .close {
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        position: absolute;
+        top: -5px;
+        right: 10px;
+        z-index: 1;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+}

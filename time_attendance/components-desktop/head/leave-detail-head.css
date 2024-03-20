@@ -1,0 +1,88 @@
+@media only screen and (min-width: 1025px) {
+    form .row {
+        display: flex;
+        justify-content: center;
+    }
+
+    .employee-image {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 15px;
+    }
+
+    .employee-image img {
+        width: 50%;
+        border-radius: 50%;
+    }
+
+    .employee-info {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+        white-space: nowrap;
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    .employee-info label {
+        font-size: 16px;
+        font-weight: 600;
+        color: #00000095;
+    }
+
+    .wizard-content {
+        padding: 10px 0;
+        border-radius: 5px;
+        margin-top: 20px;
+        background-color: #fff;
+    }
+
+    .wizard-content label {
+        font-size: 18px;
+        font-weight: 600;
+        color: #00000095;
+        white-space: nowrap;
+        margin-bottom: 0;
+    }
+
+    form input {
+        color: #0b6bc1 !important;
+        font-size: 16px !important;
+        font-weight: 600 !important;
+        text-align: center !important;
+        border: 0 !important;
+        border-bottom: 1px solid #c4e3ff !important;
+        background-color: transparent !important;
+        margin: 10px 0 20px !important;
+    }
+
+    form input:hover,
+    form input:focus {
+        color: #0b6bc1 !important;
+        font-weight: 600 !important;
+        background-color: transparent !important;
+    }
+
+    .form-group[name="duration"],
+    .form-group[name="balance"] {
+        background-color: #162ab9;
+        border-radius: 5px;
+        padding: 2px 10px;
+    }
+
+    .form-group[name="duration"] label,
+    .form-group[name="balance"] label {
+        font-size: 16px !important;
+        color: #fff;
+        margin-bottom: 0 !important;
+    }
+
+    .btn-primary,
+    .btn-danger {
+        text-align: center;
+        width: 150px;
+        padding: 3px;
+    }
+}

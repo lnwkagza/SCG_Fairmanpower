@@ -1,0 +1,132 @@
+@media only screen and (min-width: 1025px) {
+    #box2 .row {
+        display: flex;
+        justify-content: center;
+    }
+
+    form {
+        margin-top: 20px;
+    }
+
+    form .form-control[readonly] {
+        background-color: #fff !important;
+    }
+
+    form label {
+        font-weight: 600;
+        font-size: 15px;
+        color: #00000095;
+    }
+
+    form .row:last-child .form-group > div > div {
+        display: flex;
+        justify-content: center;
+    }
+
+    form .row:last-child .form-group > div > div > img {
+        width: 50%;
+    }
+
+    /* แต่ง data table */
+    .dataTables_wrapper {
+        background-color: #ffffff;
+        border-radius: 5px;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .dataTables_wrapper > .row:first-child {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    div.dataTables_filter {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .dataTables_length {
+        font-weight: bold;
+        text-align: left !important;
+        padding: 0;
+    }
+
+    .dataTables_info,
+    .dataTables_paginate {
+        padding: 0 !important;
+        white-space: nowrap;
+    }
+
+    /* แต่งปุ่ม select กับ input บนตาราง */
+    div.dataTables_wrapper div.dataTables_length label,
+    div.dataTables_wrapper div.dataTables_filter label {
+        font-weight: bold !important;
+        text-align: left;
+        white-space: nowrap;
+        color: #616262;
+    }
+
+    .desktop-table-container table {
+        width: 100%;
+        border-collapse: collapse;
+        overflow: hidden;
+        margin: auto;
+    }
+
+    .desktop-table-container th {
+        /* font-size: 20px !important; */
+        color: #f9fafa !important;
+        font-weight: bold;
+        text-align: center !important;
+        background-color: #1fbabf !important;
+        border: 0.95px solid #dddddd !important;
+    }
+
+    .desktop-table-container td {
+        /* font-size: 18px !important; */
+        text-align: center;
+        color: #616061 !important;
+    }
+
+    .desktop-table-container th.status,
+    .desktop-table-container td.status {
+        width: 20%;
+        font-weight: 600;
+    }
+
+    .desktop-table-container th.name,
+    .desktop-table-container td.name {
+        width: 40%;
+    }
+
+    .desktop-table-container td.name {
+        text-align: left;
+        padding: 0 20px;
+    }
+
+    .desktop-table-container th.date,
+    .desktop-table-container td.date {
+        width: 20%;
+    }
+
+    .desktop-table-container th.action,
+    .desktop-table-container td.action {
+        width: 20%;
+    }
+
+    table.dataTable thead > tr > th.sorting:after,
+    table.dataTable thead > tr > th.sorting:before {
+        opacity: 1 !important;
+    }
+
+    .desktop-table-container tr:nth-of-type(2n + 1) > * {
+        background-color: #fff;
+        box-shadow: none !important;
+    }
+
+    .desktop-table-container tr:nth-of-type(2n + 2) > * {
+        background-color: #ecf0f3;
+        box-shadow: none;
+    }
+}

@@ -1,0 +1,38 @@
+@media only screen and (min-width: 1025px) {
+    .wizard-content {
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    .row {
+        display: flex;
+        justify-content: center;
+    }
+
+    form .row:nth-child(3) .form-group {
+        display: flex;
+        gap: 20px;
+    }
+
+    form .row:nth-child(3) .form-group img {
+        background-color: #2c6497;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 2px 5px;
+        width: 50px;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    #display-file-name {
+        font-weight: 600;
+        font-size: 15px;
+        color: #00000095;
+    }
+
+    .btn-primary {
+        text-align: center;
+        width: 150px;
+        padding: 3px;
+    }
+}

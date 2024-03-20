@@ -1,0 +1,1211 @@
+@media only screen and (min-width: 1025px) {
+    .mobile,
+    footer {
+        display: none !important;
+    }
+
+    *:focus {
+        outline: none;
+    }
+}
+
+/* tablet */
+@media only screen and (min-width: 481px) and (max-width: 1024px) {
+    .desktop {
+        display: none !important;
+    }
+
+    *:focus {
+        outline: none;
+    }
+
+    /* --ส่วนของการเลือกทีม-- */
+
+    .box-select {
+        color: #616061;
+        font-weight: bold;
+        gap: 2vw;
+        font-size: 3vw;
+        margin-top: 2vw;
+    }
+
+    .box-select select {
+        width: 35vw;
+        padding: 0.5vw;
+        border-radius: 2vw;
+    }
+
+    /* ปุ่ม sreach ของแอดมิน */
+    .search-em {
+        display: flex;
+        gap: 2vw;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .search-em .search {
+        display: flex;
+        justify-content: center;
+        gap: 2vw;
+        margin: auto;
+    }
+
+    .search-em input {
+        padding: 1vw;
+        border-radius: 2vw;
+        width: 30vw;
+        text-align: center;
+        border: 1px solid #a2a1a2;
+        color: #616061;
+        font-size: 3vw;
+    }
+
+    .search-em img {
+        width: 6vw;
+        height: 6vw;
+    }
+
+    .display-cost-center {
+        font-weight: bold;
+        color: #616061;
+        font-size: 3vw;
+        margin-top: 2vw;
+    }
+
+    /* --ส่วนแสดงตารางกะของพนักงาน-- */
+    .btn-select-shift {
+        display: flex;
+        gap: 2vw;
+        margin-top: 2vw;
+        margin-bottom: 2vw;
+    }
+
+    .btn-select-shift button {
+        padding: 0.8vw;
+        border-radius: 1.5vw;
+        background-color: #c4e3ff;
+        color: #0b6bc1;
+        font-weight: bold;
+        font-size: 2.8vw;
+        border: 2px solid #0b6bc1;
+        box-shadow: 0px 4px 10px 0px rgba(83, 83, 83, 0.25);
+        cursor: pointer;
+    }
+
+    .btn-employee button:active,
+    .btn-admin button:active {
+        background-color: #0b6bc1; /* เปลี่ยนสีพื้นหลังเมื่อกด */
+        color: white; /* เปลี่ยนสีของตัวอักษรเมื่อกด */
+    }
+
+    /* --ส่วนของตารางกะ-- */
+
+    .display-monthNow {
+        display: flex;
+        justify-content: center;
+        margin-top: 1vw;
+        gap: 3vw;
+        font-size: 12px;
+        color: #fff;
+        font-weight: bold;
+    }
+
+    .current {
+        color: #f8f9f9;
+        background-color: #0b6bc1;
+        padding: 1vw;
+        border-radius: 2vw;
+        width: 30vw;
+        font-size: 3vw;
+    }
+
+    .display-monthNow button {
+        padding: 1vw;
+        background-color: #0b6bc1;
+        border-radius: 2vw;
+        border: 0;
+        cursor: pointer;
+        margin-top: 0.5vw;
+    }
+
+    .display-monthNow img {
+        width: 3vw;
+    }
+
+    .container-table-team {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .topic-table-now {
+        background-color: #0b6bc1;
+        padding: 1vw;
+        border-radius: 5vw;
+        color: #fff;
+        font-weight: bold;
+        font-size: 4vw;
+        width: 58vw;
+        font-size: 3.5vw;
+        margin-top: 2vw;
+    }
+
+    .table-shift {
+        border: 1px solid #0b6bc1;
+        padding: 2vw;
+        border-radius: 2vw;
+        width: 90vw;
+        margin-top: 2vw;
+    }
+
+    .topic-table {
+        background-color: #0b6bc1;
+        padding: 1vw;
+        border-radius: 5vw;
+        color: #fff;
+        font-weight: bold;
+        font-size: 4vw;
+        width: 45vw;
+        font-size: 3.5vw;
+        margin-top: 2vw;
+    }
+
+    .display-table {
+        /* overflow: auto; */
+        white-space: nowrap;
+        box-shadow: 0 0 0 1px #0b6bc1, 0 0 0 1px #dfdede;
+        border-radius: 2vw;
+        margin-top: 2vw;
+        display: flex;
+    }
+
+    .display-table-admin,
+    .display-table-employee {
+        /* overflow: auto; */
+        white-space: nowrap;
+        box-shadow: 0 0 0 1px #0b6bc1, 0 0 0 1px #dfdede;
+        border-radius: 2vw;
+        margin-top: 2vw;
+        display: flex;
+        font-weight: bold;
+    }
+
+    .display-table table,
+    .display-table-admin table,
+    .display-table-employee table {
+        border-collapse: collapse;
+        overflow: hidden;
+    }
+
+    .display-table .display-table-left table,
+    .display-table-admin .display-table-left table,
+    .display-table-employee .display-table-left table {
+        border-top-left-radius: 2vw;
+        border-bottom-left-radius: 2vw;
+    }
+
+    .display-table-admin .display-table-left th,
+    .display-table-admin .display-table-right th {
+        width: 5.5vw;
+        font-size: 3vw;
+        background-color: #0b6bc1;
+        color: #fff;
+        padding: 0.1vw;
+        height: 5vw;
+    }
+
+    .display-table-admin .display-table-left td,
+    .display-table-admin .display-table-right td,
+    .display-table-employee .display-table-left td,
+    .display-table-employee .display-table-right td {
+        color: #0b6bc1;
+        border: 1px solid #0b6bc1 !important    ;
+        font-size: 2.5vw;
+        font-weight: bold;
+        padding: 1vw;
+    }
+
+    .display-table-admin .display-table-right td,
+    .display-table-employee .display-table-right td {
+        color: #fff;
+    }
+
+    .display-table-admin .display-table-right td.date,
+    .display-table-employee .display-table-right td.date {
+        color: #0b6bc1;
+    }
+
+    .display-table-left table {
+        width: 40vw;
+    }
+
+    .display-table .display-table-right,
+    .display-table-admin .display-table-right,
+    .display-table-employee .display-table-right {
+        overflow: scroll;
+        border-top-right-radius: 2vw;
+        border-bottom-right-radius: 2vw;
+
+        /* Firefox */
+        scrollbar-width: none;
+
+        /* Webkit (Chrome, Safari) and Blink (Opera) */
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    th {
+        width: 5.5vw;
+        font-size: 3vw;
+        background-color: #0b6bc1;
+        color: #fff;
+        padding: 0.1vw;
+        height: 5vw;
+    }
+
+    .display-table td {
+        color: #0b6bc1;
+        border: 1px solid #0b6bc1;
+        font-size: 2.5vw;
+        font-weight: bold;
+        padding: 1vw;
+    }
+
+    .display-table td.date,
+    .display-table-admin td.date,
+    .display-table-employee td.date {
+        padding-left: 2.5vw !important;
+        padding-right: 2.5vw !important;
+    }
+
+    td.nameEm {
+        width: 15vw;
+    }
+
+    td.nameTeam {
+        width: 15vw;
+    }
+
+    td.nameTeam,
+    td.idEm,
+    td.nameEm,
+    td.date {
+        background-color: #c4e3ff;
+        color: #0b6bc1;
+    }
+
+    td.shiftMain {
+        background-color: #738dbe;
+        color: #fff !important;
+        padding: 0 !important;
+    }
+
+    .shiftMain span {
+        margin-left: 1.2vw;
+        color: #fff;
+    }
+
+    td.dayOff {
+        background-color: #d690a6;
+        color: #fff;
+    }
+
+    td.training {
+        background-color: #b39ddb;
+        color: #fff;
+    }
+
+    td.dayOff-compen {
+        background-color: #64a38f;
+        color: #fff;
+    }
+
+    td.leaveSick {
+        background-color: #a3a3a3;
+        color: #fff;
+    }
+
+    td.dayOff-public {
+        background-color: #6d6d6d;
+        color: #fff;
+    }
+
+    td.leave-annual {
+        background-color: #d0be83;
+        color: #fff;
+    }
+
+    td.lock {
+        background-color: #b38c6c;
+        color: #fff;
+    }
+
+    span.shiftAdd {
+        background-color: #4970cd;
+        padding: 1.38vw;
+        padding-right: 1vw;
+        text-align: right;
+    }
+
+    td.display-name {
+        text-align: left;
+    }
+
+    .detail-color {
+        display: flex;
+        justify-content: center;
+        margin-top: 3vw;
+        color: #0b6bc1;
+        font-weight: bold;
+        font-size: 2.3vw;
+        display: flex;
+        text-align: left;
+        gap: 10vw;
+    }
+
+    .detail-color img,
+    .day-off-compen img,
+    .leaveAnnule img,
+    .shift-Add img,
+    .dayoff-plublic img,
+    .leave-sick img,
+    .Training img,
+    .Lock img {
+        width: 2.5vw;
+    }
+
+    button.add-order {
+        display: flex;
+        width: 53vw;
+        margin: auto;
+        margin-top: 2vw;
+        border-radius: 5vw;
+        background-color: #e69232;
+        padding: 1vw;
+        gap: 2vw;
+        color: #fbfafa;
+        font-weight: bold;
+        font-size: 3vw;
+        text-align: center;
+        box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+        border: 0;
+    }
+
+    .add-change-shift img {
+        width: 4.5vw;
+        height: 4.5vw;
+        margin-left: 1vw;
+    }
+
+    /* แต่ง swal */
+    .custom-popup-class {
+        /* Add styles for the entire popup */
+        background-color: #fffdfd;
+        border-radius: 10px;
+        width: 75vw;
+    }
+
+    .custom-popup-class .topic {
+        font-size: 4vw;
+        font-weight: bold;
+    }
+
+    .custom-popup-class .content1,
+    .custom-popup-class .content2,
+    .custom-popup-class .content3,
+    .custom-popup-class .content4,
+    .custom-popup-class .content5,
+    .custom-popup-class .content6,
+    .custom-popup-class .content7 {
+        font-weight: bold;
+        text-align: left;
+        margin-bottom: 1vw;
+        font-size: 3vw;
+    }
+
+    .custom-popup-class select {
+        width: 45vw;
+        padding: 1.5vw;
+        margin-bottom: 2vw;
+        border-radius: 2vw;
+        border: 1px solid #a0a0a0;
+        font-size: 3vw;
+    }
+
+    .custom-popup-class input {
+        width: 45vw;
+        padding: 2vw;
+        margin-bottom: 2vw;
+        border-radius: 2vw;
+        border: 1px solid #a0a0a0;
+        font-size: 3vw;
+    }
+
+    .head {
+        width: 45vw;
+        padding: 2.5vw;
+        margin-bottom: 2vw;
+        border-radius: 2vw;
+        border: 1px solid #a0a0a0;
+        font-size: 3vw;
+        text-align: left;
+    }
+
+    .form-control-add {
+        width: 45vw;
+        padding: 4.5vw;
+        margin-bottom: 2vw;
+        border-radius: 2vw;
+        border: 1px solid #a0a0a0;
+        font-size: 3.5vw;
+    }
+
+    .swal2-actions {
+        margin-top: 1vw;
+        padding: -1vw;
+    }
+
+    /* --ปรับขนาดปุ่มยืนยันและยกเลิก-- */
+    .swal2-confirm.swal2-styled.swal2-default-outline,
+    .swal2-cancel.swal2-styled.swal2-default-outline {
+        width: 13vw !important;
+        padding: 2vw;
+        font-size: 3.5vw;
+    }
+
+    /* --ปรับขนาดของกล่อง-- */
+    .swal2-popup.swal2-modal.swal2-show {
+        width: 80vw !important;
+        height: 55vw;
+        border-radius: 5vw !important;
+    }
+
+    .swal2-popup.swal2-modal.custom-popup-class.swal2-show {
+        width: auto !important;
+        height: auto;
+        border-radius: 5vw !important;
+    }
+
+    .img {
+        width: 15vw !important;
+        height: 15vw !important;
+        margin-top: 1vw;
+    }
+
+    /* ส่วนของ transection table */
+
+    .topic-wait-approve {
+        margin-top: 2vw;
+        width: 90vw;
+    }
+
+    .topic-wait-approve span {
+        background-color: #0b6bc1;
+        border-radius: 2vw;
+        color: #fff;
+        padding: 1vw;
+        font-size: 3.5vw;
+        font-weight: bold;
+    }
+
+    .row {
+        display: flex !important;
+        /* margin-left: 5vw !important; */
+        align-items: center !important;
+        /* flex-direction: row !important; */
+        font-size: 3.5vw;
+    }
+    .row input {
+        width: 26vw !important;
+        padding: 2vw !important;
+    }
+
+    .dataTables_length {
+        display: none;
+    }
+
+    .col-sm-12 {
+        width: 90vw !important;
+        margin: auto;
+    }
+
+    ul.pagination {
+        width: 60vw !important;
+        margin: auto !important;
+        margin-top: 1vw !important;
+    }
+
+    .col-sm-12.col-md-6 {
+        width: 20vw;
+        font-size: 3vw !important;
+        margin-bottom: 1vw;
+    }
+
+    .display-transaction {
+        margin-top: -3vw !important;
+    }
+
+    .display-transaction table {
+        width: 90vw;
+        border-collapse: collapse;
+        border-radius: 2vw;
+        overflow: hidden;
+        box-shadow: 0 0 1px 2px #0b6bc1, 0 0 0 0 #fbfafa;
+        margin: auto;
+        margin-top: 3vw;
+    }
+
+    .display-transaction th {
+        color: #f9fafa !important;
+        font-size: 3.5vw;
+        font-weight: bold;
+        padding: 1vw;
+        text-align: center;
+        background-color: #0b6bc1 !important;
+        border: 1px solid #427eb3;
+        text-align: center !important;
+    }
+
+    .display-transaction td {
+        font-size: 3vw;
+        font-weight: bold;
+        padding: 1vw;
+        text-align: center;
+        border: 1px solid #97abbc;
+        color: #616061 !important;
+        white-space: nowrap !important;
+    }
+
+    .display-transaction th.sorting.sorting_asc {
+        text-align: center;
+    }
+
+    td.name.sorting_1 {
+        text-align: left;
+    }
+
+    th.sorting {
+        text-align: center !important;
+    }
+
+    .display-transaction td.name {
+        width: 30vw;
+        text-align: left;
+    }
+
+    .display-transaction td.shift-old.sorting,
+    .display-transaction td.shift-new.sorting {
+        width: 5vw;
+    }
+
+    .display-transaction th.detail-change {
+        width: 25vw;
+    }
+
+    #example_previous {
+        width: 15vw;
+    }
+
+    .page-link {
+        z-index: 0 !important;
+        font-size: 3vw !important;
+    }
+
+    .dt-length {
+        display: none !important;
+    }
+
+    .dt-search {
+        display: none !important;
+    }
+
+    .col-md-auto {
+        width: 90vw !important;
+    }
+}
+
+/* mobile */
+@media only screen and (max-width: 480px) {
+    .desktop {
+        display: none !important;
+    }
+
+    *:focus {
+        outline: none;
+    }
+
+    /* --ส่วนของการเลือกทีม-- */
+
+    .box-select {
+        color: #616061;
+        font-weight: bold;
+        gap: 2vw;
+        font-size: 14px;
+        margin-top: 2vw;
+    }
+
+    .box-select select {
+        width: 35vw;
+        padding: 0.5vw;
+        border-radius: 2vw;
+    }
+
+    /* ปุ่ม sreach ของแอดมิน */
+    .search-em {
+        display: flex;
+        gap: 2vw;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .search-em .search {
+        display: flex;
+        justify-content: center;
+        gap: 2vw;
+        margin: auto;
+    }
+
+    .search-em input {
+        padding: 1vw;
+        border-radius: 2vw;
+        width: 30vw;
+        text-align: center;
+        border: 1px solid #a2a1a2;
+        color: #616061;
+        font-size: 3vw;
+    }
+
+    .search-em img {
+        width: 6vw;
+        height: 6vw;
+    }
+
+    .display-cost-center {
+        font-weight: bold;
+        color: #616061;
+        font-size: 3vw;
+        margin-top: 2vw;
+    }
+
+    /* --ส่วนแสดงตารางกะของพนักงาน-- */
+    .btn-select-shift {
+        display: flex;
+        gap: 2vw;
+        margin-top: 2vw;
+        margin-bottom: 2vw;
+    }
+
+    .btn-select-shift button {
+        padding: 0.8vw;
+        border-radius: 1.5vw;
+        background-color: #c4e3ff;
+        color: #0b6bc1;
+        font-weight: bold;
+        font-size: 2.8vw;
+        border: 2px solid #0b6bc1;
+        box-shadow: 0px 4px 10px 0px rgba(83, 83, 83, 0.25);
+        cursor: pointer;
+    }
+
+    .btn-employee button:active,
+    .btn-admin button:active {
+        background-color: #0b6bc1; /* เปลี่ยนสีพื้นหลังเมื่อกด */
+        color: white; /* เปลี่ยนสีของตัวอักษรเมื่อกด */
+    }
+
+    /* --ส่วนของตารางกะ-- */
+
+    .display-monthNow {
+        display: flex;
+        justify-content: center;
+        margin-top: 1vw;
+        gap: 3vw;
+        font-size: 12px;
+        color: #fff;
+        font-weight: bold;
+    }
+
+    .current {
+        color: #f8f9f9;
+        background-color: #0b6bc1;
+        padding: 1vw;
+        border-radius: 2vw;
+        width: 30vw;
+    }
+
+    .display-monthNow button {
+        padding: 1vw;
+        background-color: #0b6bc1;
+        border-radius: 2vw;
+        border: 0;
+        cursor: pointer;
+        margin-top: 0.5vw;
+    }
+
+    .display-monthNow img {
+        width: 3vw;
+    }
+
+    .container-table-team {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .topic-table-now {
+        background-color: #0b6bc1;
+        padding: 1vw;
+        border-radius: 5vw;
+        color: #fff;
+        font-weight: bold;
+        font-size: 4vw;
+        width: 58vw;
+        font-size: 3.5vw;
+        margin-top: 2vw;
+    }
+
+    .table-shift {
+        border: 1px solid #0b6bc1;
+        padding: 2vw;
+        border-radius: 2vw;
+        width: 90vw;
+        margin-top: 2vw;
+    }
+
+    .topic-table {
+        background-color: #0b6bc1;
+        padding: 1vw;
+        border-radius: 5vw;
+        color: #fff;
+        font-weight: bold;
+        font-size: 4vw;
+        width: 45vw;
+        font-size: 3.5vw;
+        margin-top: 2vw;
+    }
+
+    .display-table {
+        /* overflow: auto; */
+        white-space: nowrap;
+        box-shadow: 0 0 0 1px #0b6bc1, 0 0 0 1px #dfdede;
+        border-radius: 2vw;
+        margin-top: 2vw;
+        display: flex;
+    }
+
+    .display-table-admin,
+    .display-table-employee {
+        /* overflow: auto; */
+        white-space: nowrap;
+        box-shadow: 0 0 0 1px #0b6bc1, 0 0 0 1px #dfdede;
+        border-radius: 2vw;
+        margin-top: 2vw;
+        display: flex;
+        font-weight: bold;
+    }
+
+    .display-table table,
+    .display-table-admin table,
+    .display-table-employee table {
+        border-collapse: collapse;
+        overflow: hidden;
+    }
+
+    .display-table .display-table-left table,
+    .display-table-admin .display-table-left table,
+    .display-table-employee .display-table-left table {
+        border-top-left-radius: 2vw;
+        border-bottom-left-radius: 2vw;
+    }
+
+    .display-table-admin .display-table-left th,
+    .display-table-admin .display-table-right th {
+        width: 5.5vw;
+        font-size: 3vw;
+        background-color: #0b6bc1;
+        color: #fff;
+        padding: 0.1vw;
+        height: 5vw;
+    }
+
+    .display-table-admin .display-table-left td,
+    .display-table-admin .display-table-right td,
+    .display-table-employee .display-table-left td,
+    .display-table-employee .display-table-right td {
+        color: #0b6bc1;
+        border: 1px solid #0b6bc1 !important    ;
+        font-size: 2.5vw;
+        font-weight: bold;
+        padding: 1vw;
+    }
+
+    .display-table-admin .display-table-right td,
+    .display-table-employee .display-table-right td {
+        color: #fff;
+    }
+
+    .display-table-admin .display-table-right td.date,
+    .display-table-employee .display-table-right td.date {
+        color: #0b6bc1;
+    }
+
+    .display-table-left table {
+        width: 40vw;
+    }
+
+    .display-table .display-table-right,
+    .display-table-admin .display-table-right,
+    .display-table-employee .display-table-right {
+        overflow: scroll;
+        border-top-right-radius: 2vw;
+        border-bottom-right-radius: 2vw;
+
+        /* Firefox */
+        scrollbar-width: none;
+
+        /* Webkit (Chrome, Safari) and Blink (Opera) */
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    th {
+        width: 5.5vw;
+        font-size: 3vw;
+        background-color: #0b6bc1;
+        color: #fff;
+        padding: 0.1vw;
+        height: 5vw;
+    }
+
+    .display-table td {
+        color: #0b6bc1;
+        border: 1px solid #0b6bc1;
+        font-size: 2.5vw;
+        font-weight: bold;
+        padding: 1vw;
+    }
+
+    .display-table td.date,
+    .display-table-admin td.date,
+    .display-table-employee td.date {
+        padding-left: 2.5vw !important;
+        padding-right: 2.5vw !important;
+    }
+
+    td.nameEm {
+        width: 15vw;
+    }
+
+    td.nameTeam {
+        width: 15vw;
+    }
+
+    td.nameTeam,
+    td.idEm,
+    td.nameEm,
+    td.date {
+        background-color: #c4e3ff;
+        color: #0b6bc1;
+    }
+
+    td.shiftMain {
+        background-color: #738dbe;
+        color: #fff !important;
+        padding: 0 !important;
+    }
+
+    .shiftMain span {
+        margin-left: 1.2vw;
+        color: #fff;
+    }
+
+    td.dayOff {
+        background-color: #d690a6;
+        color: #fff;
+    }
+
+    td.training {
+        background-color: #b39ddb;
+        color: #fff;
+    }
+
+    td.dayOff-compen {
+        background-color: #64a38f;
+        color: #fff;
+    }
+
+    td.leaveSick {
+        background-color: #a3a3a3;
+        color: #fff;
+    }
+
+    td.dayOff-public {
+        background-color: #6d6d6d;
+        color: #fff;
+    }
+
+    td.leave-annual {
+        background-color: #d0be83;
+        color: #fff;
+    }
+
+    td.lock {
+        background-color: #b38c6c;
+        color: #fff;
+    }
+
+    span.shiftAdd {
+        background-color: #4970cd;
+        padding: 1.38vw;
+        padding-right: 1vw;
+        text-align: right;
+    }
+
+    td.display-name {
+        text-align: left;
+    }
+
+    .detail-color {
+        display: flex;
+        justify-content: center;
+        margin-top: 3vw;
+        color: #0b6bc1;
+        font-weight: bold;
+        font-size: 2.3vw;
+        display: flex;
+        text-align: left;
+        gap: 10vw;
+    }
+
+    .detail-color img,
+    .day-off-compen img,
+    .leaveAnnule img,
+    .shift-Add img,
+    .dayoff-plublic img,
+    .leave-sick img,
+    .Training img,
+    .Lock img {
+        width: 2.5vw;
+    }
+
+    button.add-order {
+        display: flex;
+        /* width: 60vw; */
+        margin: auto;
+        margin-top: 2vw;
+        border-radius: 5vw;
+        background-color: #e69232;
+        padding: 1vw;
+        gap: 2vw;
+        color: #fbfafa;
+        font-weight: bold;
+        font-size: 3vw;
+        text-align: center;
+        box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+        border: 0;
+    }
+
+    .add-change-shift img {
+        width: 4.5vw;
+        height: 4.5vw;
+        margin-left: 1vw;
+    }
+
+    /* แต่ง swal */
+    .custom-popup-class {
+        /* Add styles for the entire popup */
+        background-color: #fffdfd;
+        border-radius: 10px;
+        width: 75vw;
+    }
+
+    .custom-popup-class .topic {
+        font-size: 4vw;
+        font-weight: bold;
+    }
+
+    .custom-popup-class .content1,
+    .custom-popup-class .content2,
+    .custom-popup-class .content3,
+    .custom-popup-class .content4,
+    .custom-popup-class .content5,
+    .custom-popup-class .content6,
+    .custom-popup-class .content7 {
+        font-weight: bold;
+        text-align: left;
+        margin-bottom: 1vw;
+        font-size: 3vw;
+    }
+
+    .custom-popup-class select {
+        width: 45vw;
+        padding: 2vw;
+        margin-bottom: 2vw;
+        border-radius: 2vw;
+        border: 1px solid #a0a0a0;
+        font-size: 3vw;
+        color: #a0a0a0;
+    }
+
+    .custom-popup-class input {
+        width: 45vw;
+        padding: 2vw;
+        margin-bottom: 2vw;
+        border-radius: 2vw;
+        border: 1px solid #a0a0a0;
+        font-size: 3vw;
+    }
+
+    .head {
+        width: 45vw;
+        padding: 2.5vw;
+        margin-bottom: 2vw;
+        border-radius: 2vw;
+        border: 1px solid #a0a0a0;
+        font-size: 3vw;
+        text-align: left;
+    }
+
+    .form-control-add {
+        width: 45vw;
+        padding: 4.5vw;
+        margin-bottom: 2vw;
+        border-radius: 2vw;
+        border: 1px solid #a0a0a0;
+        font-size: 3.5vw;
+    }
+
+    .img {
+        width: 15vw !important;
+        height: 15vw !important;
+        margin-top: -3vw;
+    }
+
+    .swal2-actions {
+        margin-top: 1vw;
+        padding: -1vw;
+    }
+
+    /* --ปรับขนาดปุ่มยืนยันและยกเลิก-- */
+    .swal2-confirm.swal2-styled.swal2-default-outline,
+    .swal2-cancel.swal2-styled.swal2-default-outline {
+        width: 15vw !important;
+        padding: 2vw;
+        font-size: 3.5vw;
+        margin-top: 2vw !important;
+    }
+
+    /* --ปรับขนาดของกล่อง-- */
+    .swal2-popup.swal2-modal.swal2-show {
+        width: auto !important;
+        height: auto;
+        border-radius: 5vw !important;
+    }
+
+    .swal2-popup.swal2-modal.custom-popup-class.swal2-show {
+        width: auto !important;
+        height: auto;
+        border-radius: 5vw !important;
+        padding: 0 !important;
+        padding-bottom: 3vw !important;
+    }
+
+    /* แต่ง data table */
+
+    .topic-wait-approve {
+        margin-top: 2vw;
+        width: 90vw;
+    }
+
+    .topic-wait-approve span {
+        background-color: #0b6bc1;
+        border-radius: 2vw;
+        color: #fff;
+        padding: 1vw;
+        font-size: 3.5vw;
+        font-weight: bold;
+    }
+
+    .dataTables_length {
+        display: none !important;
+    }
+
+    .display-transaction {
+        margin-top: -3vw;
+    }
+
+    .display-transaction table {
+        width: 90vw;
+        border-collapse: collapse;
+        border-radius: 2vw;
+        overflow: hidden;
+        box-shadow: 0 0 1px 2px #0b6bc1, 0 0 0 0 #fbfafa;
+        margin: auto;
+        margin-top: 3vw;
+    }
+
+    .display-transaction th {
+        color: #f9fafa !important;
+        font-size: 3.5vw;
+        font-weight: bold;
+        padding: 1vw;
+        text-align: center !important;
+        background-color: #0b6bc1 !important;
+        border: 1px solid #427eb3;
+        white-space: nowrap !important;
+    }
+
+    .display-transaction td {
+        font-size: 3vw;
+        font-weight: bold;
+        padding: 1vw;
+        text-align: center;
+        border: 1px solid #97abbc;
+        color: #616061 !important;
+        white-space: nowrap;
+    }
+
+    #example_previous {
+        width: 20vw;
+    }
+
+    .page-link {
+        z-index: 0 !important;
+        font-size: 3vw !important;
+    }
+
+    .page-link.first,
+    .page-link.previous,
+    .page-link.next,
+    .page-link.last {
+        color: #757575 !important;
+    }
+
+    .dt-length {
+        display: none !important;
+    }
+
+    .dt-search {
+        display: none !important;
+    }
+
+    table.dataTable td.dt-type-date {
+        text-align: center !important;
+    }
+
+    div.dt-container .row {
+        --bs-gutter-y: 0 !important;
+    }
+
+    div.dt-container div.dt-info {
+        font-size: 3.5vw !important;
+    }
+}

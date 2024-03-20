@@ -1,0 +1,105 @@
+@media only screen and (min-width: 1025px) {
+    form .row {
+        display: flex;
+        justify-content: center;
+    }
+
+    .employee-image {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 15px;
+    }
+
+    .employee-image img {
+        width: 50%;
+        border-radius: 50%;
+    }
+
+    .employee-info {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+        white-space: nowrap;
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    .employee-info label {
+        font-size: 16px;
+        font-weight: 600;
+        color: #00000095;
+    }
+
+    .wizard-content {
+        padding: 10px 0;
+        border-radius: 5px;
+        margin-top: 20px;
+        background-color: #fff;
+    }
+
+    .wizard-content label {
+        font-size: 18px;
+        font-weight: 600;
+        color: #00000095;
+        white-space: nowrap;
+        margin-bottom: 0;
+    }
+
+    .display-day-week {
+        display: flex;
+        justify-content: center;
+        background-color: #c4e3ff;
+        color: #0b6bc1;
+        font-weight: bold;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px 0px rgba(70, 69, 69, 0.25);
+        gap: 20px;
+        margin: 20px 0 30px;
+    }
+
+    .display-day-week label {
+        width: 30px;
+    }
+
+    .display-day-week label.dayoff {
+        color: #fff;
+        background-color: #0b6bc1;
+        border-radius: 5px;
+        width: 35px;
+    }
+
+    .date input,
+    .detail input,
+    .inspector input,
+    .head input {
+        color: #0b6bc1;
+        font-size: 16px;
+        font-weight: 600;
+        text-align: center;
+        border: 0;
+        border-bottom: 1px solid #c4e3ff;
+        background-color: transparent !important;
+        margin: 10px 0 20px;
+    }
+
+    .date input:hover,
+    .detail input:hover,
+    .inspector input:hover,
+    .head input:hover,
+    .date input:focus,
+    .detail input:focus,
+    .inspector input:focus,
+    .head input:focus {
+        color: #0b6bc1;
+        font-weight: 600;
+        background-color: transparent !important;
+    }
+
+    .status {
+        cursor: default;
+        width: 200px;
+    }
+}

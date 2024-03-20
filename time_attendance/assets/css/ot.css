@@ -1,0 +1,114 @@
+/* desktop */
+@media only screen and (min-width: 1025px) {
+    .mobile,
+    footer {
+        display: none !important;
+    }
+
+    *:focus {
+        outline: none;
+    }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 1024px) {
+    .desktop {
+        display: none !important;
+    }
+
+    .btn-top-head {
+        display: flex;
+        justify-content: center;
+        gap: 5vw;
+        margin-top: 5vw;
+    }
+
+    .display-icon button {
+        display: flex;
+    }
+
+    .display-icon button {
+        background-color: #d2eaff;
+        border-radius: 4vw;
+        align-items: center;
+        text-align: center;
+        border: 1vw solid #0b6bc1;
+        box-shadow: 0px 4px 15px 1px rgba(83, 83, 83, 0.25);
+        cursor: pointer;
+        padding: 0.6vw;
+    }
+
+    .btn-1 .display-icon img,
+    .btn-4 .display-icon img {
+        width: 15vw;
+        padding: 3vw;
+    }
+
+    .btn-1,
+    .btn-4 {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        margin-top: 1vw;
+        font-weight: bold;
+        color: #0b6bc1;
+    }
+
+    .btn-1 span,
+    .btn-4 span {
+        margin-top: 1vw;
+        font-size: 3.5vw;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .desktop {
+        display: none !important;
+    }
+
+    .btn-top-head {
+        display: flex;
+        justify-content: center;
+        /* flex-direction: column; */
+        gap: 5vw;
+        margin-top: 5vw;
+    }
+
+    .display-icon button {
+        display: flex;
+    }
+
+    .display-icon button {
+        background-color: #d2eaff;
+        border-radius: 4vw;
+        align-items: center;
+        text-align: center;
+        border: 1vw solid #0b6bc1;
+        box-shadow: 0px 4px 15px 1px rgba(83, 83, 83, 0.25);
+        cursor: pointer;
+        padding: 0.6vw;
+    }
+
+    .btn-1 .display-icon img,
+    .btn-4 .display-icon img {
+        width: 19vw;
+        padding: 3vw;
+    }
+
+    .btn-1,
+    .btn-4 {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        margin-top: 1vw;
+        font-weight: bold;
+        color: #0b6bc1;
+    }
+
+    .btn-1 span,
+    .btn-4 span {
+        margin-top: 2vw;
+        font-size: 12px;
+    }
+}

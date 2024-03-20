@@ -1,0 +1,391 @@
+/* desktop */
+@media only screen and (min-width: 1025px) {
+    .mobile,
+    footer {
+        display: none !important;
+    }
+
+    *:focus {
+        outline: none;
+    }
+}
+
+/* tablet */
+@media only screen and (min-width: 481px) and (max-width: 1024px) {
+    .desktop {
+        display: none !important;
+    }
+
+    *:focus {
+        outline: none;
+    }
+
+    body {
+        margin-bottom: 10%;
+    }
+
+    .boxFirst {
+        display: flex;
+        margin-top: 6vw;
+        margin-bottom: 5vw;
+        justify-content: center;
+        font-size: 3vw;
+        align-items: center;
+        gap: 3vw;
+    }
+
+    .text-left,
+    .text-right {
+        background-color: #a9a9a9;
+        border-radius: 2vw;
+        color: #fff;
+        width: 25vw;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1vw;
+    }
+
+    .buttonStatus {
+        display: flex;
+        margin: 6vw 2vw 5vw 2vw;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        gap: 3vw;
+    }
+
+    .buttonl.active {
+        background-color: #ffda19;
+        border-radius: 5vw;
+        color: #0b6bc1;
+        width: 22vw; /* ปรับตามความต้องการ */
+        height: auto; /* ปรับตามความต้องการ */
+        font-size: 3vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 700;
+        border: 0;
+        padding: 1vw;
+    }
+
+    .buttonl:not(.active) {
+        background-color: #0b6bc1;
+        border-radius: 5vw;
+        color: #fff;
+        width: 22vw; /* ปรับตามความต้องการ */
+        height: auto; /* ปรับตามความต้องการ */
+        font-size: 3vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 700;
+        border: 0;
+        padding: 1vw;
+    }
+
+    .table-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        width: 90vw !important;
+    }
+
+    table {
+        border-collapse: collapse;
+        border-radius: 2vw;
+        overflow: hidden;
+    }
+
+    th {
+        background-color: #0b6bc1 !important; /* Green background color for headers */
+        color: white !important;
+        font-size: 3vw !important;
+        border: 1px solid #c2c2c2 !important;
+        text-align: center !important;
+        width: 18vw !important;
+        white-space: nowrap !important;
+        padding: 0.5vw !important;
+    }
+
+    td {
+        border: 1px solid #c2c2c2;
+        text-align: center;
+        width: 15vw;
+        height: 8vw;
+        font-size: 3vw;
+        white-space: nowrap;
+    }
+
+    td input {
+        color: #616061;
+        border: none;
+        text-align: center;
+        font-weight: 700;
+        font-size: 2.5vw;
+        width: 15vw;
+    }
+
+    td .approve-yes input {
+        color: #95e302;
+        font-weight: 600;
+    }
+
+    td .approve-yes input::placeholder {
+        color: #95e302;
+        font-weight: 600;
+    }
+
+    td .nameEm input {
+        text-decoration: underline; /* เพิ่มเส้นใต้ */
+        color: #0cbdc8; /* สีข้อความ */
+        border: none; /* ลบเส้นขอบ */
+        outline: none; /* ลบเส้นกรอบในกรณีที่มี */
+        background-color: transparent; /* ลบพื้นหลัง */
+    }
+
+    td .nameEm input::placeholder {
+        text-decoration: underline; /* เพิ่มเส้นใต้ */
+        color: #0cbdc8; /* สีข้อความ */
+        border: none; /* ลบเส้นขอบ */
+        outline: none; /* ลบเส้นกรอบในกรณีที่มี */
+        background-color: transparent; /* ลบพื้นหลัง */
+    }
+
+    .action button {
+        font-size: 3vw !important;
+        padding: 1vw !important;
+        background-color: #0b6bc1 !important;
+        color: #fff
+    }
+
+    /* --data table-- */
+
+    div.dt-container .row {
+        --bs-gutter-y: 0rem !important;
+    }
+
+    .dt-length,
+    .dt-search {
+        display: none;
+    }
+
+    .sorting::before,
+    .sorting::after {
+        display: none !important  ;
+    }
+
+    #example_previous {
+        width: 20vw;
+    }
+
+    .page-link {
+        z-index: 0 !important;
+        font-size: 3vw !important;
+        margin-top: 2vw !important;
+    }
+
+    .row.mt-2.justify-content-between {
+        display: flex;
+        align-items: center;
+    }
+
+    .col-md-auto.me-auto,
+    .col-md-auto.ms-auto {
+        display: flex;
+        width: 95vw;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .dt-info {
+        font-size: 3vw;
+    }
+}
+
+/* mobile */
+@media only screen and (max-width: 480px) {
+    .desktop {
+        display: none !important;
+    }
+
+    *:focus {
+        outline: none;
+    }
+
+    body {
+        margin-bottom: 10%;
+    }
+
+    .boxFirst {
+        display: flex;
+        margin-top: 4vw;
+        margin-bottom: 3vw;
+        justify-content: center;
+        font-size: 3.5vw;
+        align-items: center;
+        gap: 3vw;
+    }
+
+    .text-left,
+    .text-right {
+        background-color: #a9a9a9;
+        border-radius: 3vw;
+        color: #fff;
+        width: 30vw;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1vw;
+        font-weight: bold;
+    }
+
+    .buttonStatus {
+        display: flex;
+        margin: 6vw 2vw 5vw 2vw;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        gap: 3vw;
+    }
+
+    .buttonl.active {
+        background-color: #ffda19;
+        border-radius: 5vw;
+        color: #0b6bc1;
+        width: 25vw; /* ปรับตามความต้องการ */
+        height: auto; /* ปรับตามความต้องการ */
+        font-size: 3.5vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 700;
+        border: 0;
+        padding: 1.5vw;
+    }
+
+    .buttonl:not(.active) {
+        background-color: #0b6bc1;
+        border-radius: 5vw;
+        color: #fff;
+        width: 25vw; /* ปรับตามความต้องการ */
+        height: auto; /* ปรับตามความต้องการ */
+        font-size: 3.5vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 700;
+        border: 0;
+        padding: 1.5vw;
+    }
+
+    .table-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        width: 95vw !important;
+    }
+
+    table {
+        border-collapse: collapse;
+        border-radius: 2vw;
+        overflow: hidden;
+    }
+
+    th {
+        background-color: #0b6bc1 !important; /* Green background color for headers */
+        color: white !important;
+        font-size: 3vw !important;
+        border: 1px solid #c2c2c2 !important;
+        text-align: center !important;
+        width: 18vw !important;
+        white-space: nowrap !important;
+        padding: 0.5vw !important;
+    }
+
+    td {
+        border: 1px solid #c2c2c2;
+        text-align: center;
+        width: 15vw;
+        height: 8vw;
+        font-size: 3vw;
+        white-space: nowrap;
+    }
+
+    td input {
+        color: #616061;
+        border: none;
+        text-align: center;
+        font-weight: 700;
+        font-size: 2.5vw;
+        width: 15vw;
+    }
+
+    td .approve-yes input {
+        color: #95e302;
+        font-weight: 600;
+    }
+
+    td .approve-yes input::placeholder {
+        color: #95e302;
+        font-weight: 600;
+    }
+
+    td .nameEm input {
+        text-decoration: underline; /* เพิ่มเส้นใต้ */
+        color: #0cbdc8; /* สีข้อความ */
+        border: none; /* ลบเส้นขอบ */
+        outline: none; /* ลบเส้นกรอบในกรณีที่มี */
+        background-color: transparent; /* ลบพื้นหลัง */
+    }
+
+    td .nameEm input::placeholder {
+        text-decoration: underline; /* เพิ่มเส้นใต้ */
+        color: #0cbdc8; /* สีข้อความ */
+        border: none; /* ลบเส้นขอบ */
+        outline: none; /* ลบเส้นกรอบในกรณีที่มี */
+        background-color: transparent; /* ลบพื้นหลัง */
+    }
+
+    .action button {
+        font-size: 3vw !important;
+        padding: 1vw !important;
+        background-color: #0b6bc1 !important;
+        color: #fff
+    }
+
+    /* --data-table-- */
+
+    div.dt-container .row {
+        --bs-gutter-y: 0rem !important;
+    }
+
+    .dt-length,
+    .dt-search {
+        display: none;
+    }
+
+    .sorting::before,
+    .sorting::after {
+        display: none !important  ;
+    }
+
+    #example_previous {
+        width: 20vw;
+    }
+
+    .page-link {
+        z-index: 0 !important;
+        font-size: 3vw !important;
+        margin-top: 2vw !important;
+    }
+
+    span.dt-column-order {
+        display: none !important;
+    }
+}

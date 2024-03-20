@@ -1,0 +1,834 @@
+/* desktop */
+@media only screen and (min-width: 1025px) {
+    .mobile,
+    footer {
+        display: none !important;
+    }
+
+    *:focus {
+        outline: none;
+    }
+}
+
+/* tablet */
+@media only screen and (min-width: 481px) and (max-width: 1024px) {
+    .desktop {
+        display: none !important;
+    }
+
+    body {
+        margin-bottom: 10%;
+    }
+
+    *:focus {
+        outline: none;
+    }
+
+    .add-day-tradition {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        width: 40vw;
+        padding: 1vw 1vw;
+        gap: 2vw;
+        color: #0b6bc1;
+        background-color: #c4e3ff;
+        font-weight: bold;
+        border-radius: 10vw;
+        margin-top: 3vw;
+        font-size: 2.5vw;
+    }
+
+    .add-day-tradition img {
+        width: 5vw;
+        height: 5vw;
+    }
+    .display-topic {
+        text-align: center;
+        background-color: #0b6bc1;
+        width: 60vw;
+        border-radius: 10vw;
+        margin: auto;
+        margin-top: 5vw;
+        font-weight: bold;
+        color: #fff;
+        padding: 1vw;
+        font-size: 3vw;
+    }
+
+    .container-display-day {
+        display: flex;
+        width: 90vw;
+        margin-top: 2vw;
+        margin-bottom: 15vw;
+        flex-direction: column;
+    }
+
+    .display-day-off-thisYear {
+        width: 90vw;
+    }
+
+    .show-month {
+        background-color: #c4e3ff;
+        width: 16vw;
+        padding: 1vw;
+        border-radius: 2vw;
+        font-weight: bold;
+        color: #0b6bc1;
+        text-align: center;
+        margin-bottom: 2vw;
+        margin-top: 2vw;
+        text-align: left;
+        font-size: 3.5vw;
+    }
+
+    .show-detail-day {
+        border: 2px solid #0b6bc1;
+        border-radius: 2vw;
+        box-shadow: 0px 4px 10px 0px rgba(83, 83, 83, 0.25);
+        margin-bottom: 1vw;
+        height: auto;
+    }
+
+    .container-detail {
+        display: flex;
+        text-align: left;
+        width: 90vw;
+        height: 11vw;
+        gap: 6vw;
+        color: #0b6bc1;
+        font-weight: bold;
+        padding: 1.5vw;
+    }
+
+    span.number {
+        background-color: #f6cb3d;
+        width: 9vw;
+        text-align: center;
+        font-size: 3vw;
+        font-weight: bold;
+        color: #fff;
+        border-radius: 2vw;
+        border: 2px solid #f0a40b;
+        text-shadow: 2px 2px rgba(83, 83, 83, 0.25);
+        box-shadow: 0px 4px 10px 0px rgba(83, 83, 83, 0.25);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    span.detail {
+        width: 49vw;
+        font-size: 3.5vw;
+        display: flex;
+        align-items: center;
+    }
+
+    span.day {
+        width: 15vw;
+        font-size: 3.5vw;
+        display: flex;
+        align-items: center;
+    }
+
+    /* ส่วนของการ fix วันหยุดของแอดมิน */
+
+    .display-calender {
+        background-color: #c4e3ff;
+        width: 90vw;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        border-radius: 3vw;
+        background: linear-gradient(to bottom right, #0b6bc1, #00b0db);
+        margin-top: 3vw;
+    }
+    .color-meanDay {
+        display: flex;
+        justify-content: center;
+        gap: 10vw;
+        margin-top: 3vw;
+        font-size: 3.5vw;
+    }
+    .color-meanDay img {
+        width: 4vw;
+    }
+
+    .display-monthNow {
+        display: flex;
+        justify-content: center;
+        margin-top: 3vw;
+        gap: 3vw;
+        font-size: 20px;
+        color: #fff;
+        font-weight: bold;
+        margin-bottom: 2vw;
+    }
+
+    .display-monthNow button {
+        padding: 1vw;
+        background-color: #fcfcfb;
+        border-radius: 2vw;
+        border: 0;
+    }
+
+    .display-monthNow img {
+        width: 5vw;
+    }
+
+    .display-monthNow span {
+        background-color: #fff;
+        padding: 1.3vw;
+        border-radius: 2vw;
+        color: #818181;
+        font-size: 3.5vw;
+    }
+
+    .display-day-of-month {
+        display: flex;
+        justify-content: center;
+        margin-top: -2vw;
+    }
+    table {
+        margin: 20px auto;
+        width: 85vw;
+        background-color: #fdfdfd;
+        border-radius: 3vw;
+    }
+
+    td {
+        padding: 30px;
+        border-radius: 2vw;
+        border: 1px solid #fdfdfd;
+        text-align: center;
+        background-color: #fdfdfd;
+        font-size: 3vw;
+        font-weight: bold;
+        color: #fff;
+        box-shadow: 0px 4px 10px 0px rgba(83, 83, 83, 0.25);
+        cursor: pointer;
+    }
+
+    td.tradition {
+        background-color: #bebdbd;
+        /* box-shadow: 0px 4px 15px 0px rgba(83, 83, 83, 0.25); */
+        cursor: pointer;
+    }
+
+    td.traditiondayoff {
+        background-color: #44709b;
+        /* box-shadow: 0px 4px 15px 0px rgba(83, 83, 83, 0.25); */
+        cursor: pointer;
+    }
+
+    th {
+        color: #818181;
+        text-align: center;
+        font-size: 3vw;
+    }
+
+    .custom-swal-container .topic {
+        font-size: 4vw;
+        font-weight: bold;
+    }
+
+    .custom-swal-container .content1 {
+        font-size: 3.5vw;
+        font-weight: bold;
+        margin-top: -2vw;
+    }
+
+    .custom-swal-container .content2 {
+        font-size: 16px;
+        font-weight: bold;
+        margin-top: 2vw;
+    }
+
+    .custom-swal-container .dateFix {
+        display: flex;
+        justify-content: center;
+        margin-top: 2vw;
+        gap: 2vw;
+    }
+
+    .custom-swal-container input {
+        border: 1px solid #a09fa0;
+        border-radius: 2vw;
+        height: 8vw;
+        text-align: center;
+        width: 60vw;
+    }
+
+    .custom-swal-container img {
+        height: 8vw;
+        width: 8vw;
+    }
+
+    .swal2-actions button {
+        border-radius: 3vw;
+    }
+
+    /* --ปรับขนาดปุ่มยืนยันและยกเลิก-- */
+    .swal2-confirm.swal2-styled.swal2-default-outline,
+    .swal2-cancel.swal2-styled.swal2-default-outline {
+        width: 15vw !important;
+        padding: 2vw;
+        font-size: 3.5vw;
+        margin-top: 2vw !important;
+    }
+
+    /* --ปรับขนาดของกล่อง-- */
+    .swal2-popup.swal2-modal.swal2-show {
+        width: 80vw !important;
+        height: auto;
+        border-radius: 5vw !important;
+        padding-left: 2vw !important;
+        padding-right: 2vw !important;
+    }
+
+    .swal2-popup.swal2-modal.custom-popup-class.swal2-show {
+        width: 80vw !important;
+        height: auto;
+        border-radius: 5vw !important;
+        padding: 0 !important;
+        padding-bottom: 3vw !important;
+    }
+
+    .img {
+        width: 15vw !important;
+        height: 15vw !important;
+        margin-top: 2vw;
+    }
+
+    .show-detail-day-fix {
+        border: 1px solid #0b6bc1;
+        border-radius: 2vw;
+        box-shadow: 0px 4px 10px 0px rgba(83, 83, 83, 0.25);
+        width: 90vw;
+        margin: auto;
+        margin-bottom: 2vw;
+    }
+
+    .detail-dayoff-month {
+        width: 90vw;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        margin: auto;
+        margin-top: 5vw;
+    }
+
+    .detail-dayoff-month span.topic {
+        background-color: #0b6bc1;
+        padding: 2vw;
+        color: #fdfdfd;
+        font-weight: bold;
+        border-radius: 3vw;
+        margin-bottom: 4vw;
+        font-size: 3.5vw;
+    }
+
+    .container-detail-fix {
+        display: flex;
+        text-align: left;
+        width: 90vw;
+        height: 11vw;
+        gap: 2vw;
+        color: #0b6bc1;
+        font-weight: bold;
+        padding: 1.5vw;
+    }
+
+    .dateFix {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container-detail-fix img {
+        width: 6vw;
+        height: 6vw;
+    }
+
+    /* ---modal show day off--- */
+    /* Style the popup text */
+    .popup-text {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+        z-index: 1;
+    }
+
+    /* Style the modal */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 2;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    /* Style the modal content */
+    /* Style the modal content */
+    .modal-content {
+        background-color: #fefefe;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        border: 1px solid #888;
+        width: 70%;
+        height: 23%;
+        font-size: 3.5vw;
+    }
+
+    #fullText {
+        width: 58vw;
+    }
+
+    /* Style the close button */
+
+    span.close {
+        font-size: 10vw;
+    }
+
+    .close {
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        position: absolute;
+        top: -36px;
+        right: 10px;
+        z-index: 1;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+}
+
+/* mobile */
+@media only screen and (max-width: 480px) {
+    .desktop {
+        display: none !important;
+    }
+
+    body {
+        margin-bottom: 10%;
+    }
+
+    *:focus {
+        outline: none;
+    }
+    .add-day-tradition {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        width: 50vw;
+        padding: 1vw;
+        gap: 2vw;
+        color: #0b6bc1;
+        background-color: #c4e3ff;
+        font-weight: bold;
+        border-radius: 10vw;
+        margin-top: 3vw;
+        font-size: 3.5vw;
+    }
+
+    .add-day-tradition img {
+        width: 5vw;
+        height: 5vw;
+    }
+
+    .display-topic {
+        text-align: center;
+        background-color: #0b6bc1;
+        width: 70vw;
+        border-radius: 10vw;
+        margin: auto;
+        margin-top: 5vw;
+        font-weight: bold;
+        color: #fff;
+        padding: 1vw;
+        font-size: 3.5vw;
+    }
+
+    .container-display-day {
+        display: flex;
+        margin: auto;
+        width: 90vw;
+        margin-top: 2vw;
+        margin-bottom: 15vw;
+        flex-direction: column;
+    }
+
+    .display-day-off-thisYear {
+        width: 90vw;
+    }
+
+    .show-month {
+        background-color: #c4e3ff;
+        width: 20vw;
+        padding: 0.5vw;
+        padding-left: 2vw;
+        border-radius: 2vw;
+        font-weight: bold;
+        color: #0b6bc1;
+        text-align: center;
+        margin-bottom: 2vw;
+        margin-top: 2vw;
+        text-align: left;
+        font-size: 3.5vw;
+    }
+
+    .show-detail-day {
+        border: 1px solid #0b6bc1;
+        border-radius: 2vw;
+        box-shadow: 0px 4px 10px 0px rgba(83, 83, 83, 0.25);
+        margin-bottom: 1vw;
+        padding: 1vw;
+        /* height: auto; */
+    }
+
+    .container-detail {
+        display: flex;
+        text-align: left;
+        width: 90vw;
+        height: 11vw;
+        gap: 6vw;
+        color: #0b6bc1;
+        font-weight: bold;
+        padding: 1.5vw;
+    }
+
+    .container-detail span.number,
+    .container-detail-fix span.number {
+        background-color: #f6cb3d;
+        width: 9vw;
+        text-align: center;
+        font-size: 3.5vw;
+        font-weight: bold;
+        color: #fff;
+        border-radius: 2vw;
+        border: 2px solid #f0a40b;
+        text-shadow: 2px 2px rgba(83, 83, 83, 0.25);
+        box-shadow: 0px 4px 10px 0px rgba(83, 83, 83, 0.25);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 4vw;
+        margin-top: -1vw;
+    }
+
+    .container-detail-fix span.number {
+        padding: 2vw !important;
+        margin-top: 0.5vw !important;
+    }
+
+    span.detail {
+        width: 49vw;
+        font-size: 3.5vw;
+        display: flex;
+        align-items: center;
+        /* overflow-y: auto; */
+    }
+
+    span.day {
+        width: 15vw;
+        font-size: 3.5vw;
+        display: flex;
+        align-items: center;
+    }
+
+    /* ส่วนของการ fix วันหยุดของแอดมิน */
+
+    .display-calender {
+        background-color: #c4e3ff;
+        width: 90vw;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        border-radius: 3vw;
+        background: linear-gradient(to bottom right, #0b6bc1, #00b0db);
+        margin-top: 3vw;
+    }
+
+    .color-meanDay {
+        display: flex;
+        justify-content: center;
+        gap: 10vw;
+        margin-top: 3vw;
+    }
+
+    .color-meanDay img {
+        width: 4vw;
+    }
+
+    .display-monthNow {
+        display: flex;
+        justify-content: center;
+        margin-top: 3vw;
+        gap: 3vw;
+        font-size: 20px;
+        color: #fff;
+        font-weight: bold;
+        align-items: center;
+    }
+
+    .display-monthNow button {
+        padding: 1vw;
+        background-color: #fcfcfb;
+        border-radius: 2vw;
+        border: 0;
+    }
+
+    .display-monthNow img {
+        width: 5vw;
+    }
+
+    .display-monthNow span {
+        background-color: #fff;
+        padding: 2.3vw;
+        border-radius: 2vw;
+        color: #818181;
+        font-size: 4vw;
+    }
+
+    .display-day-of-month {
+        display: flex;
+        justify-content: center;
+        margin-top: -2vw;
+    }
+    table {
+        margin: 20px auto;
+        width: 85vw;
+        background-color: #fdfdfd;
+        border-radius: 3vw;
+    }
+
+    td {
+        padding: 10px;
+        border-radius: 2vw;
+        border: 1px solid #fdfdfd;
+        text-align: center;
+        background-color: #fdfdfd;
+        font-size: 18px;
+        font-weight: bold;
+        color: #fff;
+        box-shadow: 0px 4px 10px 0px rgba(83, 83, 83, 0.25);
+        cursor: pointer;
+    }
+
+    td.tradition {
+        background-color: #bebdbd;
+        /* box-shadow: 0px 4px 15px 0px rgba(83, 83, 83, 0.25); */
+        cursor: pointer;
+    }
+
+    td.traditiondayoff {
+        background-color: #44709b;
+        /* box-shadow: 0px 4px 15px 0px rgba(83, 83, 83, 0.25); */
+        cursor: pointer;
+    }
+
+    th {
+        color: #818181;
+        text-align: center;
+    }
+
+    .custom-swal-container .topic {
+        font-size: 5vw;
+        font-weight: bold;
+    }
+
+    .custom-swal-container .content1 {
+        font-size: 16px;
+        font-weight: bold;
+        margin-top: -2vw;
+    }
+
+    .custom-swal-container .content2 {
+        font-size: 16px;
+        font-weight: bold;
+        margin-top: 2vw;
+    }
+
+    .custom-swal-container .dateFix {
+        display: flex;
+        justify-content: center;
+        gap: 2vw;
+        margin: auto;
+        padding-left: 3vw;
+        margin-top: 2vw;
+    }
+
+    .custom-swal-container input {
+        border: 1px solid #a09fa0;
+        border-radius: 2vw;
+        height: 8vw;
+        text-align: center;
+        width: 60vw;
+    }
+
+    .custom-swal-container img {
+        height: 8vw;
+        width: 8vw;
+    }
+
+    .swal2-actions button {
+        border-radius: 3vw;
+    }
+
+    /* --ปรับขนาดปุ่มยืนยันและยกเลิก-- */
+    .swal2-confirm.swal2-styled.swal2-default-outline,
+    .swal2-cancel.swal2-styled.swal2-default-outline {
+        width: 15vw !important;
+        padding: 2vw;
+        font-size: 3.5vw;
+        margin-top: 2vw !important;
+    }
+
+    /* --ปรับขนาดของกล่อง-- */
+    .swal2-popup.swal2-modal.swal2-show {
+        width: 80vw !important;
+        height: auto;
+        border-radius: 5vw !important;
+        padding-left: 2vw !important;
+        padding-right: 2vw !important;
+    }
+
+    .swal2-popup.swal2-modal.custom-popup-class.swal2-show {
+        width: 80vw !important;
+        height: auto;
+        border-radius: 5vw !important;
+        padding: 0 !important;
+        padding-bottom: 3vw !important;
+    }
+
+    .img {
+        width: 15vw !important;
+        height: 15vw !important;
+        margin-top: -3vw;
+    }
+
+    .show-detail-day-fix {
+        border: 1px solid #0b6bc1;
+        border-radius: 2vw;
+        box-shadow: 0px 4px 10px 0px rgba(83, 83, 83, 0.25);
+        width: 90vw;
+        margin: auto;
+        margin-bottom: 2vw;
+    }
+
+    .detail-dayoff-month {
+        width: 90vw;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        margin: auto;
+        margin-top: 5vw;
+    }
+
+    .detail-dayoff-month span.topic {
+        background-color: #0b6bc1;
+        padding: 2vw;
+        color: #fdfdfd;
+        font-weight: bold;
+        border-radius: 3vw;
+        margin-bottom: 4vw;
+        font-size: 3.5vw;
+    }
+
+    .container-detail-fix {
+        display: flex;
+        justify-content: center;
+        text-align: left;
+        width: 90vw;
+        gap: 2vw;
+        color: #0b6bc1;
+        font-weight: bold;
+        padding: 1.5vw;
+    }
+
+    .dateFix {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container-detail-fix img {
+        width: 6vw;
+        height: 6vw;
+    }
+
+    /* ---modal show day off--- */
+    /* Style the popup text */
+    .popup-text {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+        z-index: 1;
+    }
+
+    /* Style the modal */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 2;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    /* Style the modal content */
+    /* Style the modal content */
+    .modal-content {
+        background-color: #fefefe;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+    }
+
+    /* Style the close button */
+    .close {
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        position: absolute;
+        top: -5px;
+        right: 10px;
+        z-index: 1;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+}

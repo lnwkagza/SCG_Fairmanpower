@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <link rel="stylesheet" href="assets/css/login.css">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="../../images/favicon.png" />
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&family=IBM+Plex+Sans+Thai&family=Inter:wght@200&family=Itim&family=Noto+Sans+Thai&family=Prompt:wght@200;300;400&display=swap">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover"
+    />
+    <title>LIFF: LINE Front-end Framework</title>
+    <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+    <!-- <script src="line\sdk.js"></script> -->
+
+  </head>
+  <body id="body">
+
+    <div class="container">
+      <img src="IMG/scg.png" alt="" style="width: 25%; margin-left: -70%;">
+      <hr>
+      <div class="imgLogo">
+        <img src="IMG/logoFM.png" alt="">
+      </div>
+      <div class="text-detail">
+        <span style="font-size: 3vw; color: #6b6b6b;">ระบบจัดการเวลา</span>
+      </div>
+      <div class="btn-login">
+        <section id="button">
+          <button id="btnLogIn" class="col-md-12" >เข้าสู่ระบบด้วย LINE</button>
+        </section>
+      </div>
+      
+    </div>
+    
+    
+    <script>
+            // Body element
+        const body = document.getElementById('body');
+        
+        // Button elements
+        const btnLogIn = document.getElementById('btnLogIn');
+        const btnLogOut = document.getElementById('btnLogOut');
+        
+        async function main() {
+          // Initialize LIFF app)
+          await liff.init({ liffId: '2002088422-z2lnN0d5' });
+        
+          // Try a LIFF function
+          switch (liff.getOS()) {
+            case 'android':
+              body.style.backgroundColor = '#d1f5d3';
+              break;
+            case 'ios':
+              body.style.backgroundColor = '#eeeeee';
+              break;
+          }
+        
+          getUserProfile();
+          if (!liff.isInClient()) {
+            if (liff.isLoggedIn()) {
+              btnLogIn.style.display = 'none';
+              getUserProfile();
+            } else {
+              btnLogIn.style.display = 'block';
+            }
+          }
+        }
+        main();
+        
+        async function getUserProfile() {
+          const profile = await liff.getProfile();
+          window.location.href = "line-loading.php?w1=" + profile.userId + "&name=" + profile.displayName+ "&email="+liff.getDecodedIDToken().email
+
+
+        }
+        
+        btnLogIn.onclick = () => {
+          liff.login();
+        };
+        
+        btnLogOut.onclick = () => {
+          liff.logout();
+          window.location.reload();
+        };
+        
+
+    </script>
+  </body>
+</html>

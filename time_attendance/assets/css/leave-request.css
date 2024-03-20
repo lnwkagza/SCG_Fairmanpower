@@ -1,0 +1,473 @@
+/* desktop */
+@media only screen and (min-width: 1025px) {
+    footer,
+    .mobile {
+        display: none !important;
+    }
+
+    *:focus {
+        outline: none;
+    }
+}
+
+/* tablet */
+@media only screen and (min-width: 481px) and (max-width: 1024px) {
+    .desktop {
+        display: none !important;
+    }
+
+    *:focus {
+        outline: none;
+    }
+
+    body {
+        margin-bottom: 10%;
+    }
+
+    input,
+    select,
+    option,
+    ::placeholder {
+        color: #b8b8b8;
+        font-size: 3vw;
+        font-weight: 700;
+        font-family: "Chakra Petch", sans-serif;
+        height: 6vw;
+    }
+
+    .topic {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2vw;
+        color: hsl(208, 89%, 40%);
+        font-size: 4vw;
+        font-weight: bold;
+    }
+
+    .boxKey {
+        margin: 3vw 5vw 3vw 5vw;
+        padding: 0vw 6vw 3vw 6vw;
+        border-radius: 2vw;
+        border: 1px solid #a3a3a3;
+    }
+
+    .boxKey .member span,
+    .boxKey .typeLeave span,
+    .boxKey .detail span,
+    .boxKey .req-date span,
+    .boxKey .req-time span {
+        color: #818181;
+        font-size: 3vw;
+        font-weight: bold;
+        margin-bottom: 1vw;
+    }
+
+    .boxKey .time-cal span {
+        color: #818181;
+        font-size: 3vw;
+        font-weight: bold;
+        margin-bottom: 1vw;
+    }
+
+    .boxKey .member,
+    .boxKey .typeLeave,
+    .boxKey .detail {
+        display: flex;
+        flex-direction: column;
+        margin-top: 3vw;
+    }
+
+    .boxKey .member select {
+        width: auto;
+        border: 0px;
+        border-bottom: 1px solid #c2c2c2;
+        padding: 0;
+    }
+
+    .boxKey .typeLeave select {
+        width: auto;
+        border: 0px;
+        border-bottom: 1px solid #c2c2c2;
+        padding: 0;
+    }
+
+    .boxKey .detail input {
+        width: auto;
+        border: 0;
+        border-bottom: 1px solid #c2c2c2;
+        padding: 0;
+    }
+
+    .boxKey .req-date,
+    .boxKey .req-time,
+    .boxKey .time-cal {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 3vw;
+    }
+
+    .req-date .date,
+    .req-time .time {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .req-date .date input,
+    .req-time .time input {
+        width: 35vw;
+        border: 0;
+        border-bottom: 1px solid #c2c2c2;
+        padding: 0;
+    }
+
+    .boxKey .time-cal input {
+        width: 5vw;
+        border: 0px;
+        border-bottom: 1px solid #818181;
+        text-align: center;
+    }
+
+    .duration,
+    .balance {
+        width: 35vw;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .high-light {
+        background-color: #0879bf;
+        padding: 0.5vw;
+        width: 35vw;
+        border-radius: 1vw;
+        padding-left: 2vw;
+    }
+
+    .high-light span {
+        color: #f7f9fb !important;
+    }
+
+    .btnSubmit {
+        color: #f7f9fb;
+        background: #29ab29;
+        font-size: 3.5vw;
+        border-radius: 4vw;
+        outline: none;
+        cursor: pointer !important;
+        width: 18vw;
+        height: 8vw;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border: 5px solid #f7f9fb !important;
+    }
+
+    .swal2-column {
+        width: 100%;
+        height: 100px;
+        border-radius: 4vw;
+        padding: 0;
+        margin-left: 35px;
+        margin-top: -10px;
+        font-size: 22px;
+    }
+
+    .h3 {
+        text-align: center;
+    }
+
+    .swal2-popup .swal2-modal .swal2-show {
+        width: 300px;
+        height: 300px;
+        border-radius: 4vw;
+    }
+
+    .swal2-confirm,
+    .swal2-cancel {
+        font-family: "Chakra Petch", sans-serif;
+        border: 0;
+        font-size: 3.5vw;
+        font-weight: bold;
+        border-radius: 4vw;
+    }
+
+    /* --ปรับขนาดปุ่มยืนยันและยกเลิก-- */
+    .swal2-confirm.swal2-styled.swal2-default-outline,
+    .swal2-cancel.swal2-styled.swal2-default-outline {
+        width: 15vw !important;
+        padding: 2vw;
+        font-size: 3.5vw;
+    }
+
+    /* --ปรับขนาดของกล่อง-- */
+    .swal2-popup.swal2-modal.swal2-show {
+        width: 80vw !important;
+        height: 55vw;
+        border-radius: 5vw !important;
+    }
+
+    .swal2-popup.swal2-modal.custom-popup-class.swal2-show {
+        width: auto !important;
+        height: 110vw;
+        border-radius: 5vw !important;
+        margin-top: 3vw !important;
+    }
+
+    .swal2-popup.swal2-modal.custom-popup-class.swal2-show ::-webkit-scrollbar {
+        display: none;
+    }
+
+    .swal2-actions {
+        margin-top: 1vw;
+    }
+
+    .custom-popup-class input {
+        display: flex;
+        text-align: center;
+    }
+
+    .img {
+        width: 15vw !important;
+        height: 15vw !important;
+        margin-top: 1vw;
+    }
+
+    .approve {
+        display: flex;
+        justify-content: center;
+        margin: auto !important;
+        width: auto !important;
+    }
+}
+
+/* mobile */
+@media only screen and (max-width: 480px) {
+    .desktop {
+        display: none !important;
+    }
+
+    *:focus {
+        outline: none;
+    }
+
+    body {
+        margin-bottom: 10%;
+    }
+
+    input,
+    select,
+    option,
+    ::placeholder {
+        color: #b8b8b8;
+        font-size: 3.8vw;
+        font-weight: 700;
+        font-family: "Chakra Petch", sans-serif;
+        height: 6vw;
+    }
+
+    .topic {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5vw;
+        color: hsl(208, 89%, 40%);
+        font-size: 5vw;
+        font-weight: bold;
+    }
+
+    .boxKey {
+        margin: 3vw 5vw 3vw 5vw;
+        padding: 0vw 6vw 3vw 6vw;
+        border-radius: 2vw;
+        border: 1px solid #a3a3a3;
+    }
+
+    .boxKey .member span,
+    .boxKey .typeLeave span,
+    .boxKey .detail span,
+    .boxKey .req-date span,
+    .boxKey .req-time span {
+        color: #818181;
+        font-size: 3.5vw;
+        font-weight: bold;
+        margin-bottom: 1vw;
+    }
+
+    .boxKey .time-cal span {
+        color: #818181;
+        font-size: 3.5vw;
+        font-weight: bold;
+        margin-bottom: 1vw;
+    }
+
+    .boxKey .member,
+    .boxKey .typeLeave,
+    .boxKey .detail {
+        display: flex;
+        flex-direction: column;
+        margin-top: 3vw;
+    }
+
+    .boxKey .member select {
+        width: auto;
+        border: 0px;
+        border-bottom: 1px solid #c2c2c2;
+        padding: 0;
+    }
+
+    .boxKey .typeLeave select {
+        width: auto;
+        border: 0px;
+        border-bottom: 1px solid #c2c2c2;
+        padding: 0;
+    }
+
+    .boxKey .detail input {
+        width: auto;
+        border: 0;
+        border-bottom: 1px solid #c2c2c2;
+        padding: 0;
+    }
+
+    .boxKey .req-date,
+    .boxKey .req-time,
+    .boxKey .time-cal {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 3vw;
+    }
+
+    .req-date .date,
+    .req-time .time {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .req-date .date input,
+    .req-time .time input {
+        width: 35vw;
+        border: 0;
+        border-bottom: 1px solid #c2c2c2;
+        padding: 0;
+    }
+
+    .boxKey .time-cal input {
+        width: 5vw;
+        border: 0px;
+        border-bottom: 1px solid #818181;
+        text-align: center;
+    }
+
+    .duration,
+    .balance {
+        width: 35vw;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .high-light {
+        background-color: #0879bf;
+        padding: 0.5vw;
+        width: 35vw;
+        border-radius: 1vw;
+        padding-left: 2vw;
+    }
+
+    .high-light span {
+        color: #f7f9fb !important;
+    }
+
+    .btnSubmit {
+        color: #f7f9fb;
+        border: 3px solid #f7f9fb !important;
+        background: #29ab29;
+        font-size: 4.5vw;
+        border-radius: 4vw;
+        outline: none;
+        cursor: pointer !important;
+        width: 25vw;
+        height: 8vw;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+    .swal2-column {
+        width: 100%;
+        height: 100px;
+        border-radius: 4vw;
+        padding: 0;
+        margin-left: 35px;
+        margin-top: -10px;
+        font-size: 22px;
+    }
+
+    /* --ปรับขนาดปุ่มยืนยันและยกเลิก-- */
+    .swal2-confirm.swal2-styled.swal2-default-outline,
+    .swal2-cancel.swal2-styled.swal2-default-outline {
+        width: 15vw !important;
+        padding: 2vw;
+        font-size: 3.5vw;
+    }
+
+    /* --ปรับขนาดของกล่อง-- */
+    .swal2-popup.swal2-modal.swal2-show {
+        width: 80vw !important;
+        height: 70vw;
+        border-radius: 5vw !important;
+    }
+
+    .swal2-popup.swal2-modal.custom-popup-class.swal2-show {
+        width: auto !important;
+        height: 110vw;
+        border-radius: 5vw !important;
+        margin-top: 3vw !important;
+    }
+
+    .swal2-popup.swal2-modal.custom-popup-class.swal2-show ::-webkit-scrollbar {
+        display: none;
+    }
+
+    .swal2-actions {
+        margin-top: 1vw;
+    }
+
+    .custom-popup-class input {
+        display: flex;
+        text-align: center;
+    }
+
+    .img {
+        width: 15vw !important;
+        height: 15vw !important;
+        margin-top: 1vw;
+    }
+
+    .h3 {
+        text-align: center;
+    }
+
+    .swal2-popup .swal2-modal .swal2-show {
+        width: 300px;
+        height: 300px;
+        border-radius: 4vw;
+    }
+
+    .swal2-confirm,
+    .swal2-cancel {
+        font-family: "Chakra Petch", sans-serif;
+        border: 0;
+        font-size: 3.5vw;
+        font-weight: bold;
+        border-radius: 4vw;
+    }
+
+    .approve {
+        display: flex;
+        justify-content: center;
+        margin: auto !important;
+        width: auto !important;
+    }
+}

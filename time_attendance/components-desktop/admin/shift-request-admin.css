@@ -1,0 +1,126 @@
+@media only screen and (min-width: 1025px) {
+    .card-box {
+        min-height: 700px;
+    }
+
+    .button-bar {
+        /*แถบเมนูสีขาว*/
+        background-color: #ffff;
+        box-shadow: 10px 10px 10px #5350501a;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        align-items: center;
+        padding: 10px;
+        padding-left: 150px;
+        padding-right: 150px;
+        border-radius: 5px;
+        font-weight: bolder;
+        margin-top: 10px;
+        position: relative;
+        gap: 30px;
+    }
+
+    /* แต่งสไตล์ของปุ่มที่เปลี่ยน */
+    .button-bar button {
+        color: #fff;
+        font-size: 18px;
+        font-weight: 600;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 15%;
+        padding: 5px 5px;
+        white-space: nowrap;
+    }
+
+    .button-bar button:not(.active) {
+        background-image: linear-gradient(#1fbabf, #60d3aa);
+        transition: 0.3s ease-in-out;
+        border: 3px solid #ffffff;
+        box-shadow: 0px 2px 15px -8px #000000;
+    }
+
+    .button-bar button:not(.active):hover {
+        background: -webkit-linear-gradient(#1fbabf, #60d3aa);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        border: 3px solid #60d3aa;
+        box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+    }
+
+    .button-bar button:focus {
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+    }
+
+    .button-bar button.active {
+        background: -webkit-linear-gradient(#1fbabf, #60d3aa);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        border: 3px solid #60d3aa;
+        box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+    }
+
+    .desktop-table-container table {
+        width: 100%;
+        border-collapse: collapse;
+        overflow: hidden;
+        margin: auto;
+    }
+
+    .desktop-table-container th {
+        /* font-size: 20px !important; */
+        color: #f9fafa !important;
+        font-weight: bold;
+        text-align: center !important;
+        background-color: #1fbabf !important;
+        border: 0.95px solid #dddddd !important;
+    }
+
+    .desktop-table-container td {
+        /* font-size: 18px !important; */
+        text-align: center;
+        color: #616061 !important;
+    }
+
+    .desktop-table-container th.status,
+    .desktop-table-container td.status {
+        width: 20%;
+        font-weight: 600;
+    }
+
+    .desktop-table-container th.name,
+    .desktop-table-container td.name {
+        width: 40%;
+    }
+
+    .desktop-table-container td.name {
+        text-align: left;
+        padding: 0 20px;
+    }
+
+    .desktop-table-container th.date,
+    .desktop-table-container td.date {
+        width: 20%;
+    }
+
+    .desktop-table-container th.action,
+    .desktop-table-container td.action {
+        width: 20%;
+    }
+
+    .desktop-table-container tr:nth-of-type(2n + 1) > * {
+        background-color: #fff;
+        box-shadow: none !important;
+    }
+
+    .desktop-table-container tr:nth-of-type(2n + 2) > * {
+        background-color: #ecf0f3;
+        box-shadow: none;
+    }
+}

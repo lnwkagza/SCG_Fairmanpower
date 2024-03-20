@@ -1,0 +1,205 @@
+/* desktop  */
+@media only screen and (min-width: 1025px) {
+    .mobile,
+    footer {
+        display: none !important;
+    }
+
+    *:focus {
+        outline: none;
+    }
+}
+/* mobile  */
+@media only screen and (max-width: 480px) {
+    .desktop {
+        display: none !important;
+    }
+
+    *:focus {
+        outline: none;
+    }
+
+    .topic {
+        background-color: #0b6bc1;
+        display: flex;
+        justify-content: center;
+        width: 55vw;
+        margin: auto;
+        margin-top: 5vw;
+        color: #fff;
+        font-weight: bold;
+        border-radius: 5vw;
+        padding: 1vw;
+    }
+
+    .btn-list {
+        display: flex;
+        justify-content: center;
+        gap: 1vw;
+        margin-top: 3vw;
+        flex-direction: row;
+        font-size: 12px !important;
+    }
+
+    /* แต่งสไตล์ของปุ่มที่เปลี่ยน */
+    .btn-list button {
+        padding: 1vw;
+        border-radius: 2.5vw;
+        background-color: #0b6bc1;
+        color: #fff;
+        font-size: 12px;
+    }
+
+    .btn-list button {
+        background-color: #0b6bc1;
+        color: #ffffff;
+        height: 10vw;
+        flex: 10;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .btn-list button.active {
+        background-color: #c4e3ff;
+        color: #0b6bc1;
+        box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+        border: 2.5px solid;
+        height: 14vw;
+    }
+
+    .btn-list button.active img {
+        width: 8vw;
+    }
+
+    .btn-list img {
+        width: 0.1vw;
+    }
+
+    /* แต่ง data table */
+    .table-container {
+        margin-top: 3vw;
+    }
+
+    .row {
+        display: flex !important;
+        align-items: center !important;
+        font-size: 3.5vw;
+    }
+
+    .dataTables_length {
+        width: 10vw;
+        font-weight: bold;
+        text-align: left !important;
+    }
+
+    .col-sm-12.col-md-6 input {
+        width: 25vw !important;
+        height: 2vw !important;
+        padding: 1vw !important;
+    }
+    .col-sm-12.col-md-6 {
+        width: 45vw;
+        margin-left: 3.5vw;
+    }
+
+    /* แต่งปุ่ม select กับ input บนตาราง */
+    div.dataTables_wrapper div.dataTables_length label,
+    div.dataTables_wrapper div.dataTables_filter label {
+        font-weight: bold !important;
+        text-align: left;
+        white-space: nowrap;
+        color: #616262;
+    }
+
+    div.dataTables_wrapper div.dataTables_filter input {
+        height: 2vw !important;
+    }
+
+    .table-container table {
+        width: 80vw;
+        border-collapse: collapse;
+        border-radius: 2vw;
+        overflow: hidden;
+        box-shadow: 0 0 1px 2px #0b6bc1, 0 0 0 0 #fbfafa;
+        margin: auto;
+        margin-top: 3vw;
+    }
+
+    .table-container th {
+        color: #f9fafa !important;
+        font-size: 3.5vw;
+        font-weight: bold;
+        padding: 1vw;
+        text-align: center !important;
+        background-color: #0b6bc1 !important;
+        border: 1px solid #427eb3;
+        width: 15vw;
+    }
+
+    .table-container th.status {
+        width: 5vw;
+    }
+
+    .table-container th.action {
+        width: 8vw;
+    }
+
+    button.detail {
+        font-size: 3vw;
+        padding: 0.7vw;
+        border: 1px solid #fff;
+        border-radius: 2vw;
+        background-color: #818080;
+        font-weight: bold;
+        color: #f8fafa;
+        box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+        cursor: pointer !important;
+        font-size: 2.3vw;
+    }
+
+    .table-container td {
+        font-size: 3vw;
+        font-weight: bold;
+        padding: 1vw;
+        text-align: center;
+        border: 1px solid #97abbc;
+        color: #616061 !important;
+    }
+
+    .table-container td.name {
+        text-align: left;
+    }
+
+    /* .display-transaction th.sorting.sorting_asc {
+        text-align: center;
+    }
+
+    .display-transaction td.name {
+        width: 30vw;
+    }
+
+    .display-transaction td.shift-old.sorting,
+    .display-transaction td.shift-new.sorting {
+        width: 5vw;
+    }
+
+    .display-transaction td.date {
+        width: 10vw;
+    }
+
+    .display-transaction th.detail-change {
+        width: 25vw;
+    }
+
+    .display-transaction td.delete img {
+        width: 5vw;
+    }
+
+    #example_previous {
+        width: 25vw;
+    }  */
+}

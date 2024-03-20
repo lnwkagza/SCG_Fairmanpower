@@ -1,0 +1,119 @@
+@media only screen and (min-width: 1025px) {
+    .bar {
+        /*แถบเมนูสีขาว*/
+        background-color: #ffff;
+        box-shadow: 10px 10px 10px #5350501a;
+        color: #00000095;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 0;
+        padding-left: 250px;
+        padding-right: 250px;
+        border-radius: 5px;
+        font-weight: bolder;
+        margin-top: 10px;
+        position: relative;
+        white-space: nowrap;
+    }
+
+    .bar-title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px 30px;
+        gap: 50px;
+        color: #fff;
+        background-image: linear-gradient(#1fbabf, #60d3aa);
+        border-radius: 15px;
+        border: 3px solid #ffffff !important;
+        box-shadow: 0px 2px 15px -8px #000000;
+    }
+
+    .bar-title label {
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+    .bar-title input {
+        width: 70%;
+        box-sizing: border-box;
+        text-align: center;
+        font-weight: bold;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        font-family: "Chakra Petch", sans-serif;
+        color: #818181;
+    }
+
+    .wizard-content label {
+        font-size: 15px;
+        font-weight: 600;
+        color: #00000095;
+    }
+
+    .wizard-content {
+        padding: 5px;
+        border-radius: 5px;
+        margin-top: 20px;
+    }
+
+    .row {
+        display: flex;
+        justify-content: center;
+    }
+
+    .old-time > label,
+    .new-time > label,
+    .reason > label,
+    .inspector > label,
+    .head > label,
+    .attachment > label {
+        width: 100px;
+        white-space: nowrap;
+        margin-bottom: 0;
+    }
+
+    .old-time .form-control,
+    .new-time .form-control {
+        width: 50%;
+    }
+
+    .time-title {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding-left: 15%;
+    }
+
+    .old-time,
+    .new-time,
+    .reason,
+    .inspector,
+    .head,
+    .attachment {
+        display: flex;
+        gap: 5%;
+    }
+
+    .input-time {
+        display: flex;
+        gap: 5%;
+        width: 100%;
+    }
+
+    .display-attachment {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .btn-primary {
+        text-align: center;
+        width: 150px;
+        padding: 3px;
+        margin-top: 20px;
+    }
+}

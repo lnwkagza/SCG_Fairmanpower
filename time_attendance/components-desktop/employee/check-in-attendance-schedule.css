@@ -1,0 +1,305 @@
+@media only screen and (min-width: 1025px) {
+    .bar {
+        /*แถบเมนูสีขาว*/
+        background-color: #ffff;
+        box-shadow: 10px 10px 10px #5350501a;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px 100px;
+        border-radius: 5px;
+        font-weight: bolder;
+        margin-top: 10px;
+        gap: 10px;
+    }
+
+    .btn-bar {
+        text-align: center;
+        background-color: #fff;
+        box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+        padding: 5px;
+        cursor: pointer;
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    .btn-bar button {
+        border: 0;
+        background-color: transparent;
+        font-size: 18px;
+        font-weight: 600;
+        white-space: nowrap;
+    }
+
+    .absence {
+        border: 3px solid #ff5643;
+    }
+    .absence > button {
+        color: #ff5643;
+    }
+
+    .late {
+        border: 3px solid #f48604;
+    }
+    .late > button {
+        color: #f48604;
+    }
+
+    .leave {
+        border: 3px solid #6fd5dc;
+    }
+    .leave > button {
+        color: #6fd5dc;
+    }
+
+    .on-time {
+        border: 3px solid #09b42f;
+    }
+    .on-time > button {
+        color: #09b42f;
+    }
+
+    .back {
+        border: 3px solid #832df3;
+    }
+    .back > button {
+        color: #832df3;
+    }
+
+    .holiday {
+        border: 3px solid #183d5f;
+    }
+    .holiday > button {
+        color: #183d5f;
+    }
+
+    .calendar {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-top: 10px;
+        position: relative;
+    }
+
+    .calendar button {
+        border: 0;
+        border-radius: 10px;
+        background-image: linear-gradient(#1fbabf, #60d3aa);
+        transition: 0.3s ease-in-out;
+        box-shadow: 0px 2px 15px -8px #000000;
+        padding: 5px 2px;
+        width: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .calendar button img {
+        width: 80%;
+    }
+
+    .popup-container {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 60%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        z-index: 1000;
+        width: 40%;
+        border-radius: 10px;
+    }
+
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+
+    .zabuto-calendar {
+        width: 100%;
+        border: 0;
+        margin: auto;
+        font-size: 15px;
+        box-shadow: 0 0 0 4px #dfdede, 0 0 0 2px #dfdede;
+        border-radius: 10px;
+        border-collapse: separate;
+        padding: 5px;
+    }
+
+    .zabuto-calendar th {
+        border: 0;
+        padding: 5px 0;
+    }
+
+    .zabuto-calendar td {
+        border-radius: 10px;
+        border: 1px solid #ddd;
+        width: 50px;
+        height: 50px;
+        box-shadow: 0px 4px 3px 0px rgba(0, 0, 0, 0.25);
+        font-weight: bold;
+    }
+
+    .event-Punctual {
+        background-color: #5baf33 !important;
+    }
+
+    .event-leave {
+        background-color: #6fd5dc !important;
+    }
+
+    .desktop-table {
+        overflow-y: auto;
+        overflow-x: auto;
+        margin-top: 10px;
+        border-top-right-radius: 7px;
+        border-top-left-radius: 7px;
+        width: 100%;
+    }
+
+    .desktop-table table {
+        border-color: #a6a6a6;
+        background-color: #ffffff;
+        border-radius: 10px;
+        width: 100%;
+        table-layout: fixed;
+    }
+
+    .desktop-table th {
+        color: #f9fafa !important;
+        font-weight: bold;
+        text-align: center !important;
+        background-color: #1fbabf !important;
+        border: 0.95px solid #dddddd !important;
+    }
+
+    .desktop-table td {
+        padding: 1rem 0.5rem;
+    }
+
+    .stripe tbody tr:nth-of-type(even) {
+        background-color: rgba(7, 34, 98, 0.08);
+    }
+
+    .desktop-table table th:first-child,
+    .desktop-table table td:first-child {
+        width: 5%;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .desktop-table table th:nth-child(2),
+    .desktop-table table td:nth-child(2) {
+        width: 5%;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .desktop-table table td:nth-child(2) {
+        text-align: left;
+        padding: 0 1%;
+    }
+
+    .desktop-table table th:nth-child(5),
+    .desktop-table table td:nth-child(5) {
+        width: 10%;
+        font-weight: 600;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .desktop-table table td:nth-child(5) {
+        text-align: left;
+    }
+
+    .desktop-table table th:nth-child(3),
+    .desktop-table table td:nth-child(3),
+    .desktop-table table th:nth-child(4),
+    .desktop-table table td:nth-child(4) {
+        width: 3%;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .desktop-table table th:nth-child(6),
+    .desktop-table table td:nth-child(6) {
+        width: 5%;
+        text-align: center;
+        vertical-align: middle;
+        font-weight: 600;
+    }
+
+    .desktop-table table th:last-child,
+    .desktop-table table td:last-child {
+        width: 10%;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .desktop-table table td:last-child > div {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin: auto;
+    }
+
+    .desktop-table table td:last-child > div > div {
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    .desktop-table table td:last-child > div .shift {
+        color: #fff;
+        background-color: #a4a3a3;
+        font-weight: 600;
+        text-align: center;
+        border-radius: 5px;
+        padding: 3px 3px;
+        cursor: pointer;
+    }
+
+    .desktop-table table td:last-child > div .ot {
+        color: #fff;
+        background-color: #68c9dd;
+        font-weight: 600;
+        text-align: center;
+        border-radius: 5px;
+        padding: 3px 3px;
+        cursor: pointer;
+    }
+
+    .desktop-table table td:last-child > div .edit-time {
+        color: #fff;
+        background-color: #6895be;
+        font-weight: 600;
+        text-align: center;
+        border-radius: 5px;
+        padding: 3px 3px;
+        cursor: pointer;
+    }
+
+    .desktop-table table td:last-child > div .edit-info {
+        color: #fff;
+        background-color: #0b6bc1;
+        font-weight: 600;
+        text-align: center;
+        border-radius: 5px;
+        padding: 3px 3px;
+        cursor: pointer;
+    }
+
+    .data-table th,
+    .data-table td {
+        border: 1px solid #ffffff; /* เส้นกรอบ 1px สีเทาอ่อน */
+    }
+}

@@ -1,0 +1,198 @@
+/* desktop */
+@media only screen and (min-width: 1025px) {
+    .mobile,
+    footer {
+        display: none !important;
+    }
+
+    *:focus {
+        outline: none;
+    }
+}
+
+/* mobile */
+@media only screen and (max-width: 480px) {
+    .desktop {
+        display: none !important;
+    }
+
+    *:focus {
+        outline: none;
+    }
+
+    .display-topic {
+        display: flex;
+        margin: auto;
+        font-weight: bold;
+        color: #fff;
+        margin-top: 3vw;
+        background-color: #0b6bc1;
+        width: 65vw;
+        text-align: center;
+        border-radius: 2vw;
+        padding: 0.5vw;
+    }
+
+    .display-detail {
+        display: flex;
+        flex-direction: column;
+        width: 80vw;
+        margin: auto;
+        margin-top: 2vw;
+        padding: 3vw;
+        border-radius: 3vw;
+        border: 1px solid #d5d4d4;
+        gap: 3vw;
+    }
+
+    .display-date,
+    .display-name,
+    .display-team,
+    .name-team,
+    .display-workSet,
+    .member-team,
+    .display-shift,
+    .reason,
+    .shift-add,
+    .display-inspector,
+    .display-head {
+        font-weight: bold;
+        color: #0b6bc1;
+        display: flex;
+        gap: 2vw;
+        justify-content: right;
+    }
+
+    .display-date .date,
+    .display-name .name,
+    .name-team .team-name,
+    .member-all-team,
+    .display-workSet .set,
+    .old,
+    .new,
+    .reason-req,
+    .add,
+    .inspector,
+    .head {
+        background-color: #c4e3ff;
+        padding: 1vw;
+        border-radius: 2vw;
+        color: #787777;
+    }
+    .date,
+    .name,
+    .team-name,
+    .member-all-team,
+    .set,
+    .add,
+    .inspector,
+    .head {
+        width: 50vw;
+    }
+
+    .reason-req {
+        width: 50vw;
+        height: 10vw;
+    }
+
+    .old,
+    .new {
+        width: 16.2vw;
+    }
+
+    .display-team {
+        display: flex;
+        flex-direction: column;
+        gap: 2vw;
+    }
+
+    .member-team,
+    .shift-old,
+    .shift-new,
+    .reason {
+        display: flex;
+        gap: 2vw;
+    }
+
+    .member-all-team {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .display-status .approve {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        color: #5baf33;
+        font-weight: bold;
+        margin-top: 1vw;
+        font-size: 5vw;
+        border: 1px solid;
+        padding: 1vw;
+        border-radius: 2vw;
+        box-shadow: 0px 4px 8px 0px rgba(146, 146, 146, 0.25);
+    }
+
+    .display-status .wait {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        color: #efcf00;
+        font-weight: bold;
+        margin-top: 1vw;
+        font-size: 5vw;
+        border: 2px solid;
+        padding: 1vw;
+        border-radius: 2vw;
+        box-shadow: 0px 4px 10px 0px rgba(89, 89, 89, 0.25);
+    }
+
+    .display-status .reject {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        margin: auto;
+        color: #ff5643;
+        font-weight: bold;
+        margin-top: 1vw;
+        font-size: 5vw;
+        border: 1px solid;
+        padding: 0.5vw;
+        border-radius: 2vw;
+        width: 30vw;
+        box-shadow: 0px 4px 8px 0px rgba(89, 89, 89, 0.25);
+    }
+
+    /* ---การเปลี่ยนกะ--- */
+    .display-shift {
+        display: flex;
+    }
+
+    /* --ปุ่มอนุมัติของหัวหน้า-- */
+    .btn-approve {
+        display: flex;
+        margin: auto;
+        gap: 2vw;
+        margin-top: 2vw;
+    }
+
+    .approve button {
+        border: 0;
+        padding: 2vw;
+        background-color: #efcf00;
+        color: #0b6bc1;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 2vw;
+    }
+
+    .reject button {
+        border: 0;
+        padding: 2vw;
+        background-color: #f93e3e;
+        color: #f9fafb;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 2vw;
+    }
+}

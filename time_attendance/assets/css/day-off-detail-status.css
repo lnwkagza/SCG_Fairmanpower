@@ -1,0 +1,443 @@
+/* desktop */
+@media only screen and (min-width: 1025px) {
+    .mobile,
+    footer {
+        display: none !important;
+    }
+
+    *:focus {
+        outline: none !important;
+    }
+}
+
+/* tablet */
+@media only screen and (min-width: 481px) and (max-width: 1024px) {
+    .desktop {
+        display: none !important;
+    }
+
+    *:focus {
+        outline: none !important;
+    }
+
+    body {
+        margin-bottom: 10%;
+    }
+
+    .container-detail {
+        background-color: rgb(253, 252, 251);
+        width: 85vw;
+        margin: auto;
+        margin-top: 1vw;
+        text-align: center;
+        border: 1px solid #0b6bc1;
+        padding: 2vw;
+        border-radius: 5vw;
+    }
+
+    .container-detail-employee,
+    .container-detail-head {
+        background-color: rgb(253, 252, 251);
+        width: auto;
+        margin: auto;
+        margin-top: 1vw;
+        text-align: center;
+        border: 3px solid #0b6bc1;
+        padding: 2vw;
+        border-radius: 5vw;
+        width: 85vw;
+    }
+
+    .display-name-em {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        margin-top: 3vw;
+        color: #0b6bc1;
+        font-weight: bold;
+        font-size: 3.5vw;
+        margin-bottom: 1vw;
+    }
+
+    .display-name-em img {
+        width: 15vw;
+    }
+
+    .display-dayoff-old,
+    .display-dayoff-new {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        width: 50vw;
+        margin: auto;
+    }
+
+    .display-dayoff-new,
+    .reason-change,
+    .display-approve {
+        margin-top: 4vw;
+    }
+
+    span.dayTopic {
+        color: #0b6bc1;
+        font-weight: bold;
+        border-radius: 2vw;
+        font-size: 3vw;
+    }
+
+    .display-day-week {
+        display: flex;
+        justify-content: center;
+        gap: 5vw;
+        margin-top: 0.5vw;
+        background-color: #c4e3ff;
+        color: #0b6bc1;
+        font-weight: bold;
+        padding: 3vw;
+        border-radius: 2vw;
+        box-shadow: 0px 4px 10px 0px rgba(70, 69, 69, 0.25);
+        width: 75vw;
+        font-size: 3vw;
+    }
+
+    .display-day-week span {
+        width: 5vw;
+    }
+
+    .display-day-week span.dayoff {
+        color: #fff;
+        background-color: #0b6bc1;
+        border-radius: 1vw;
+        width: 8vw;
+    }
+
+    .reason-change {
+        display: flex;
+        flex-direction: column;
+        width: 75vw;
+        margin: auto;
+        margin-top: 2vw;
+    }
+
+    .reason-change span.reason {
+        font-size: 3vw;
+        color: #6895be;
+        font-weight: bold;
+        margin-top: 2vw;
+        border-bottom: 1px solid;
+        width: 75vw;
+    }
+
+    .display-approve {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        color: #0b6bc1;
+        font-weight: bold;
+        padding: 2vw;
+        background-color: #c4e3ff;
+        width: 75vw;
+        margin: auto;
+        border-radius: 3vw;
+        margin-top: 2vw;
+        font-size: 3vw !important;
+    }
+
+    .display-status {
+        font-size: 4vw;
+        font-weight: bold;
+        margin-top: 2vw;
+    }
+
+    .display-dayoff-new button {
+        color: #0b6bc1;
+        font-size: 3vw;
+        font-weight: bold;
+        border: 0;
+        width: 6vw;
+        background-color: transparent;
+        border-radius: 1vw;
+    }
+
+    .display-dayoff-new button:hover {
+        background-color: #0b6bc1; /* เปลี่ยนสีพื้นหลังเมื่อโฮเวอร์ */
+        color: #fff;
+    }
+
+    .button {
+        display: flex;
+        justify-content: center;
+        margin-top: 2vw;
+        gap: 2vw;
+    }
+
+    .button input {
+        width: 18vw;
+        border: 0;
+        font-size: 3vw;
+        border-radius: 2vw;
+        font-weight: bold;
+        padding: 1vw;
+        color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border: 5px solid #f7f9fb !important;
+    }
+
+    .button .submit input {
+        background-color: #f1ba3d;
+    }
+
+    .button .reject input {
+        background-color: #ff5643;
+    }
+
+    /* --ปรับขนาดปุ่มยืนยันและยกเลิก-- */
+    .swal2-confirm.swal2-styled.swal2-default-outline,
+    .swal2-cancel.swal2-styled.swal2-default-outline {
+        width: 15vw !important;
+        padding: 2vw;
+        font-size: 3.5vw;
+        margin-top: 2vw !important;
+    }
+
+    /* --ปรับขนาดของกล่อง-- */
+    .swal2-popup.swal2-modal.swal2-show {
+        width: 80vw !important;
+        height: auto;
+        border-radius: 5vw !important;
+        padding-left: 2vw !important;
+        padding-right: 2vw !important;
+    }
+
+    .swal2-popup.swal2-modal.custom-popup-class.swal2-show {
+        width: 80vw !important;
+        height: auto;
+        border-radius: 5vw !important;
+        padding: 0 !important;
+        padding-bottom: 3vw !important;
+    }
+
+    .img {
+        width: 15vw !important;
+        height: 15vw !important;
+        margin-top: 2vw;
+    }
+}
+
+/* mobile */
+@media only screen and (max-width: 480px) {
+    .desktop {
+        display: none !important;
+    }
+
+    *:focus {
+        outline: none !important;
+    }
+
+    body {
+        margin-bottom: 10%;
+    }
+
+    .container-detail {
+        background-color: rgb(253, 252, 251);
+        width: 85vw;
+        margin: auto;
+        margin-top: 5vw;
+        text-align: center;
+        border: 1px solid #0b6bc1;
+        padding: 5px;
+        border-radius: 5vw;
+    }
+
+    .container-detail-employee,
+    .container-detail-head {
+        background-color: rgb(253, 252, 251);
+        width: 85vw;
+        margin: auto;
+        margin-top: 1vw;
+        text-align: center;
+        border: 1px solid #0b6bc1;
+        padding: 10px;
+        border-radius: 5vw;
+    }
+
+    .display-name-em {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        margin-top: 3vw;
+        color: #0b6bc1;
+        font-weight: bold;
+    }
+
+    .display-name-em img {
+        width: 18vw;
+        height: 18vw;
+        margin-bottom: 2vw;
+    }
+
+    .display-dayoff-old,
+    .display-dayoff-new {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .display-dayoff-new,
+    .reason-change,
+    .display-approve,
+    .display-status {
+        margin-top: 4vw;
+    }
+
+    span.dayTopic {
+        color: #0b6bc1;
+        font-weight: bold;
+        border-radius: 2vw;
+        font-size: 3.5vw;
+    }
+
+    .display-day-week {
+        display: flex;
+        justify-content: center;
+        gap: 5vw;
+        margin-top: 3vw;
+        background-color: #c4e3ff;
+        color: #0b6bc1;
+        font-weight: bold;
+        padding: 3vw;
+        border-radius: 2vw;
+        box-shadow: 0px 4px 10px 0px rgba(70, 69, 69, 0.25);
+        width: 70vw;
+        font-size: 3.5vw;
+    }
+
+    .display-day-week span {
+        width: 5vw;
+    }
+
+    .display-day-week span.dayoff {
+        color: #fff;
+        background-color: #0b6bc1;
+        border-radius: 1vw;
+        width: 8vw;
+    }
+
+    .reason-change {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .reason-change span.reason {
+        font-size: 14px;
+        color: #6895be;
+        font-weight: bold;
+        margin-top: 2vw;
+        border-bottom: 1px solid;
+        width: 70vw;
+        margin: auto;
+    }
+
+    .display-approve {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        color: #0b6bc1;
+        font-weight: bold;
+        padding-left: 10vw;
+        background-color: #c4e3ff;
+        width: 70vw;
+        margin: auto;
+        border-radius: 3vw;
+        padding: 3vw;
+        margin-top: 6vw;
+        font-size: 3.5vw;
+    }
+
+    .display-status {
+        font-size: 4vw;
+        font-weight: bold;
+    }
+
+    .display-dayoff-new button {
+        color: #0b6bc1;
+        font-size: 16px;
+        font-weight: bold;
+        border: 0;
+        width: 6vw;
+        background-color: transparent;
+        border-radius: 1vw;
+    }
+
+    .display-dayoff-new button:hover {
+        background-color: #0b6bc1; /* เปลี่ยนสีพื้นหลังเมื่อโฮเวอร์ */
+        color: #fff;
+    }
+
+    .button {
+        display: flex;
+        justify-content: center;
+        margin-top: 3vw;
+        gap: 2vw;
+    }
+
+    .button input {
+        width: 18vw;
+        border: 0;
+        font-size: 16px;
+        border-radius: 2vw;
+        font-weight: bold;
+        padding: 1vw;
+        color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border: 3px solid #f7f9fb !important;
+    }
+
+    .button .submit input {
+        background-color: #f1ba3d;
+    }
+
+    .button .reject input {
+        background-color: #ff5643;
+    }
+
+    /* --ปรับขนาดปุ่มยืนยันและยกเลิก-- */
+    .swal2-confirm.swal2-styled.swal2-default-outline,
+    .swal2-cancel.swal2-styled.swal2-default-outline {
+        width: 15vw !important;
+        padding: 2vw;
+        font-size: 3.5vw;
+        margin-top: 2vw !important;
+    }
+
+    /* --ปรับขนาดของกล่อง-- */
+    .swal2-popup.swal2-modal.swal2-show {
+        width: 80vw !important;
+        height: auto;
+        border-radius: 5vw !important;
+        padding-left: 2vw !important;
+        padding-right: 2vw !important;
+    }
+
+    .swal2-popup.swal2-modal.custom-popup-class.swal2-show {
+        width: 80vw !important;
+        height: auto;
+        border-radius: 5vw !important;
+        padding: 0 !important;
+        padding-bottom: 3vw !important;
+    }
+
+    .img {
+        width: 15vw !important;
+        height: 15vw !important;
+        margin-top: 2vw;
+    }
+}

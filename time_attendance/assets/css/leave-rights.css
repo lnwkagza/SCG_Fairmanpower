@@ -1,0 +1,494 @@
+/* desktop */
+@media only screen and (min-width: 1025px) {
+    .mobile,
+    footer {
+        display: none !important;
+    }
+
+    *:focus {
+        outline: none;
+    }
+}
+
+/* tablet */
+@media only screen and (min-width: 481px) and (max-width: 1024px) {
+    .desktop {
+        display: none !important;
+    }
+
+    *:focus {
+        outline: none;
+    }
+
+    body {
+        margin-bottom: 10%;
+    }
+
+    .button-3 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 3vw 0vw 4vw 0vw;
+        gap: 10vw;
+    }
+
+    .button-4 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 3vw 0vw 4vw 0vw;
+        gap: 7vw;
+    }
+
+    .button-5 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 3vw 0vw 4vw 0vw;
+        gap: 5vw;
+    }
+
+    .step {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 15vw;
+        height: 25vw;
+    }
+
+    .step div {
+        width: 13vw;
+        height: 13vw;
+        background-color: #f8d700;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .step a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 15vw;
+        height: 15vw;
+    }
+
+    .step img {
+        width: 50%;
+    }
+
+    .step span {
+        color: #0b6bc1;
+        font-size: 3vw;
+        font-weight: bold;
+        white-space: nowrap;
+        height: 4vw;
+        margin-top: 1vw;
+    }
+
+    .haveLeave-team {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #0b6bc1;
+        font-weight: bold;
+        margin-bottom: 3vw;
+    }
+
+    .haveLeave-team span {
+        font-size: 5vw;
+        font-weight: bold;
+    }
+
+    .searchEm {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2vw;
+        gap: 2vw;
+    }
+
+    .searchEm select {
+        border: 0;
+        border: 1px solid #0b6bc1;
+        border-radius: 5vw;
+        width: 60vw;
+        height: 7vw;
+        color: #0b6bc1;
+        font-size: 3.5vw;
+    }
+
+    .searchEm a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 8vw;
+        height: 8vw;
+    }
+
+    .searchEm button {
+        border: 0;
+        background-color: transparent;
+        width: 8vw;
+        height: 8vw;
+    }
+
+    .searchEm img {
+        width: 100%;
+    }
+
+    .box-nameEmployee {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        flex-direction: column;
+        color: #0b6bc1;
+        border-radius: 3vw;
+        box-shadow: 2px 2px 10px 5px rgba(94, 93, 93, 0.25);
+        padding: 2vw 0 2vw 0;
+        width: 80vw;
+        height: auto;
+        margin: auto;
+        font-weight: bold;
+        border: 2px solid #0b6bc1;
+        margin-bottom: 1vw;
+        font-size: 4vw;
+        gap: 1vw;
+    }
+
+    .break {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 2vw;
+        margin-bottom: 100px;
+    }
+
+    .box {
+        color: #ffff;
+        background: linear-gradient(180deg, #0b6bc1 0%, #00b0db 100%);
+        border-radius: 3vw;
+        box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+        width: 88vw;
+        height: auto;
+        padding-top: 1vw;
+        padding-bottom: 1vw;
+        margin-top: 2vw;
+        margin-bottom: 2vw;
+    }
+
+    .topic-text {
+        display: flex;
+        flex-direction: column;
+        font-weight: bold;
+        padding-right: 3vw;
+        padding-left: 9vw;
+    }
+
+    .topic-text span {
+        font-size: 4vw;
+    }
+
+    .topic-text hr {
+        margin: 1vw 0 2vw 0;
+    }
+
+    .dataDate {
+        font-weight: bold;
+        display: flex;
+        justify-content: space-between;
+        white-space: nowrap;
+        align-items: center;
+        margin: auto;
+        padding-left: 2vw;
+        padding-right: 2vw;
+        margin-bottom: 1vw;
+    }
+
+    .imgDate {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 10vw;
+    }
+
+    .imgDate img {
+        width: 100%; /* ปรับขนาดตามความต้องการ */
+    }
+
+    .boxLeft,
+    .boxRight {
+        display: flex;
+        flex-direction: column;
+        white-space: nowrap;
+        width: 35vw;
+        margin-left: 1vw;
+        font-size: 3.5vw;
+    }
+
+    .boxLeft div,
+    .boxRight div {
+        height: 7vw;
+        display: flex;
+        /* align-items: center; */
+        padding-left: 0.5vw;
+    }
+
+    .boxRight .div-1,
+    .boxRight .div-2,
+    .boxRight .div-3 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-right: 7vw;
+    }
+
+    .boxRight input {
+        width: 7vw;
+    }
+}
+
+/* mobile */
+@media only screen and (max-width: 480px) {
+    .desktop {
+        display: none !important;
+    }
+
+    *:focus {
+        outline: none;
+    }
+
+    body {
+        margin-bottom: 10%;
+    }
+
+    .button-3 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 3vw 0vw 4vw 0vw;
+        gap: 8vw;
+    }
+
+    .button-4 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 3vw 0vw 4vw 0vw;
+        gap: 9vw;
+    }
+
+    .button-5 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 3vw 0vw 4vw 0vw;
+        gap: 5vw;
+    }
+
+    .step {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 15vw;
+        height: 25vw;
+    }
+
+    .step div {
+        width: 15vw;
+        height: 15vw;
+        background-color: #f8d700;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .step a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 15vw;
+        height: 15vw;
+    }
+
+    .step img {
+        width: 50%;
+    }
+
+    .step span {
+        color: #0b6bc1;
+        font-size: 3vw;
+        font-weight: bold;
+        white-space: nowrap;
+        height: 4vw;
+        margin-top: 1vw;
+    }
+
+    .haveLeave-team {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #0b6bc1;
+        font-weight: bold;
+        margin-bottom: 3vw;
+    }
+
+    .haveLeave-team span {
+        font-size: 5vw;
+        font-weight: bold;
+    }
+
+    .searchEm {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2vw;
+        gap: 2vw;
+    }
+
+    .searchEm select {
+        border: 0;
+        border: 1px solid #0b6bc1;
+        border-radius: 5vw;
+        width: 60vw;
+        height: 7vw;
+        color: #0b6bc1;
+        font-size: 3.5vw;
+    }
+
+    .searchEm a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 8vw;
+        height: 8vw;
+    }
+
+    .searchEm button {
+        border: 0;
+        background-color: transparent;
+        width: 8vw;
+        height: 8vw;
+    }
+
+    .searchEm img {
+        width: 100%;
+    }
+
+    .box-nameEmployee {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        flex-direction: column;
+        color: #0b6bc1;
+        border-radius: 3vw;
+        box-shadow: 2px 2px 10px 5px rgba(94, 93, 93, 0.25);
+        padding: 2vw 0 2vw 0;
+        width: 80vw;
+        height: auto;
+        margin: auto;
+        font-weight: bold;
+        border: 2px solid #0b6bc1;
+        margin-bottom: 1vh;
+        gap: 1vw;
+    }
+
+    .break {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 2vw;
+        margin-bottom: 100px;
+    }
+
+    .box {
+        color: #ffff;
+        background: linear-gradient(180deg, #0b6bc1 0%, #00b0db 100%);
+        border-radius: 3vw;
+        box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+        width: 90vw;
+        height: auto;
+        padding-top: 2vw;
+        padding-bottom: 1vw;
+        margin-top: 2vw;
+        margin-bottom: 2vw;
+    }
+
+    .topic-text {
+        display: flex;
+        flex-direction: column;
+        font-weight: bold;
+        padding-right: 3vw;
+        padding-left: 9vw;
+    }
+
+    .topic-text span {
+        font-size: 4.5vw;
+    }
+
+    .topic-text hr {
+        margin: 1vw 0 2vw 0;
+    }
+
+    .dataDate {
+        font-weight: bold;
+        display: flex;
+        justify-content: space-between;
+        white-space: nowrap;
+        align-items: center;
+        margin: auto;
+        padding-left: 2vw;
+        padding-right: 2vw;
+        margin-bottom: 1vw;
+    }
+
+    .imgDate {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 10vw;
+    }
+
+    .imgDate img {
+        width: 100%; /* ปรับขนาดตามความต้องการ */
+    }
+
+    .boxLeft,
+    .boxRight {
+        display: flex;
+        flex-direction: column;
+        white-space: nowrap;
+        width: 35vw;
+        margin-left: 1vw;
+        font-size: 3.3vw;
+    }
+
+    .boxLeft div,
+    .boxRight div {
+        height: 6vw;
+        display: flex;
+        /* align-items: center; */
+        padding-left: 0.5vw;
+    }
+
+    .boxRight .div-1,
+    .boxRight .div-2,
+    .boxRight .div-3 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-right: 7vw;
+    }
+
+    .boxRight input {
+        width: 7vw;
+    }
+}

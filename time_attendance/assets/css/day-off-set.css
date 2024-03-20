@@ -1,0 +1,460 @@
+/* desktop */
+@media only screen and (min-width: 1025px) {
+    .mobile,
+    footer {
+        display: none !important;
+    }
+
+    *:focus {
+        outline: none;
+    }
+}
+
+/* tablet */
+@media only screen and (min-width: 481px) and (max-width: 1024px) {
+    *:focus {
+        outline: none;
+    }
+
+    .container {
+        background-color: rgb(253, 252, 251);
+        width: 85vw;
+        margin: auto;
+        margin-top: 5vw;
+        text-align: center;
+        border: 1px solid #0b6bc1;
+        padding: 5px;
+        border-radius: 3vw;
+        height: 131vw;
+    }
+
+    .container-head {
+        background-color: rgb(253, 252, 251);
+        width: 85vw;
+        margin: auto;
+        margin-top: 5vw;
+        text-align: center;
+        border: 1px solid #0b6bc1;
+        padding: 5px;
+        border-radius: 3vw;
+        height: 85vw;
+    }
+
+    .select-employee {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    span.dayTopic {
+        color: #0b6bc1;
+        font-weight: bold;
+        border-radius: 2vw;
+    }
+
+    .boxSearch {
+        display: flex;
+        margin-top: 3vw;
+        gap: 2vw;
+    }
+
+    .boxSearch input {
+        background-color: #c4e3ff;
+        border: 0;
+        border-radius: 3vw;
+        text-align: center;
+        width: 50vw;
+        height: 8vw;
+        box-shadow: 0px 4px 10px 0px rgba(83, 83, 83, 0.25);
+        color: #0b6bc1;
+        font-weight: bold;
+    }
+
+    .boxSearch input::placeholder {
+        color: #0b6bc1;
+        font-weight: bold;
+    }
+
+    .boxSearch button {
+        background-color: transparent;
+        border: 0;
+    }
+
+    .boxSearch button img {
+        width: 8vw;
+    }
+
+    .display-dayoff-old,
+    .display-dayoff-new {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .display-dayoff-old,
+    .display-dayoff-new {
+        margin-top: 2vw;
+    }
+
+    .display-day-week {
+        display: flex;
+        justify-content: center;
+        gap: 5vw;
+        margin-top: 3vw;
+        background-color: #c4e3ff;
+        width: 55vw;
+        height: 5vw;
+        color: #0b6bc1;
+        font-weight: bold;
+        padding: 3vw;
+        border-radius: 2vw;
+        box-shadow: 0px 4px 10px 0px rgba(70, 69, 69, 0.25);
+        width: 70vw;
+    }
+
+    .display-day-week span {
+        width: 5vw;
+    }
+
+    .display-day-week span.dayoff {
+        color: #fff;
+        background-color: #0b6bc1;
+        border-radius: 1vw;
+        width: 6vw;
+    }
+
+    .display-dayoff-new button {
+        color: #0b6bc1;
+        font-size: 16px;
+        font-weight: bold;
+        border: 0;
+        width: 6vw;
+        background-color: transparent;
+        border-radius: 1vw;
+    }
+
+    .display-dayoff-new button:hover {
+        background-color: #0b6bc1; /* เปลี่ยนสีพื้นหลังเมื่อโฮเวอร์ */
+        color: #fff;
+    }
+
+    .display-date-dayoff {
+        display: flex;
+        justify-content: center;
+        margin-top: 2vw;
+        gap: 10vw;
+    }
+
+    .display-date-dayoff input {
+        margin-top: 2vw;
+        border: 0;
+        background-color: #c4e3ff;
+        border-radius: 2vw;
+        padding: 1vw;
+        color: #0b6bc1;
+        font-weight: bold;
+        box-shadow: 0px 4px 10px 0px rgba(70, 69, 69, 0.25);
+    }
+
+    .date-start,
+    .date-end {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .col-6 {
+        display: flex;
+        justify-content: center;
+        margin-top: 2vw;
+    }
+
+    .col-6 input {
+        background-color: #eccd03;
+        font-size: 14px;
+        width: 15vw;
+        border: 0;
+        padding: 1vw;
+        border-radius: 2vw;
+        font-weight: bold;
+        color: #0b6bc1;
+        box-shadow: 0px 4px 10px 0px rgba(70, 69, 69, 0.25);
+    }
+
+    span.dayTopic {
+        color: #0b6bc1;
+        font-weight: bold;
+        border-radius: 2vw;
+    }
+
+    .select-inspector {
+        color: #0b6bc1;
+        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+    }
+
+    input[type="radio"] {
+        width: 4vw;
+        height: 4vw;
+        border: 1px solid #0b6bc1;
+        border-radius: 10vw;
+        outline: none;
+        margin-right: 1vw;
+        margin-top: 3vw;
+    }
+
+    #inspector {
+        background-color: #0b6bc1;
+        width: 40vw;
+        height: 6vw;
+        border-radius: 2vw;
+        color: #fff;
+        font-weight: bold;
+    }
+
+    .show-approve {
+        margin-top: 2vw;
+    }
+
+    .detail-approve {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        padding-left: 5vw;
+        padding-top: 3vw;
+        background-color: #c4e3ff;
+        width: 65vw;
+        margin: auto;
+        height: 13vw;
+        border-radius: 2vw;
+        margin-top: 2vw;
+    }
+}
+/* mobile */
+@media only screen and (max-width: 480px) {
+    *:focus {
+        outline: none;
+    }
+
+    .container {
+        background-color: rgb(253, 252, 251);
+        width: 85vw;
+        margin: auto;
+        margin-top: 5vw;
+        text-align: center;
+        border: 1px solid #0b6bc1;
+        padding: 5px;
+        border-radius: 3vw;
+        height: 131vw;
+    }
+
+    .container-head {
+        background-color: rgb(253, 252, 251);
+        width: 85vw;
+        margin: auto;
+        margin-top: 5vw;
+        text-align: center;
+        border: 1px solid #0b6bc1;
+        padding: 5px;
+        border-radius: 3vw;
+        height: 85vw;
+    }
+
+    .select-employee {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    span.dayTopic {
+        color: #0b6bc1;
+        font-weight: bold;
+        border-radius: 2vw;
+    }
+
+    .boxSearch {
+        display: flex;
+        margin-top: 3vw;
+        gap: 2vw;
+    }
+
+    .boxSearch input {
+        background-color: #c4e3ff;
+        border: 0;
+        border-radius: 3vw;
+        text-align: center;
+        width: 50vw;
+        height: 8vw;
+        box-shadow: 0px 4px 10px 0px rgba(83, 83, 83, 0.25);
+        color: #0b6bc1;
+        font-weight: bold;
+    }
+
+    .boxSearch input::placeholder {
+        color: #0b6bc1;
+        font-weight: bold;
+    }
+
+    .boxSearch button {
+        background-color: transparent;
+        border: 0;
+    }
+
+    .boxSearch button img {
+        width: 8vw;
+    }
+
+    .display-dayoff-old,
+    .display-dayoff-new {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .display-dayoff-old,
+    .display-dayoff-new {
+        margin-top: 2vw;
+    }
+
+    .display-day-week {
+        display: flex;
+        justify-content: center;
+        gap: 5vw;
+        margin-top: 3vw;
+        background-color: #c4e3ff;
+        width: 55vw;
+        height: 5vw;
+        color: #0b6bc1;
+        font-weight: bold;
+        padding: 3vw;
+        border-radius: 2vw;
+        box-shadow: 0px 4px 10px 0px rgba(70, 69, 69, 0.25);
+        width: 70vw;
+    }
+
+    .display-day-week span {
+        width: 5vw;
+    }
+
+    .display-day-week span.dayoff {
+        color: #fff;
+        background-color: #0b6bc1;
+        border-radius: 1vw;
+        width: 6vw;
+    }
+
+    .display-dayoff-new button {
+        color: #0b6bc1;
+        font-size: 16px;
+        font-weight: bold;
+        border: 0;
+        width: 6vw;
+        background-color: transparent;
+        border-radius: 1vw;
+    }
+
+    .display-dayoff-new button:hover {
+        background-color: #0b6bc1; /* เปลี่ยนสีพื้นหลังเมื่อโฮเวอร์ */
+        color: #fff;
+    }
+
+    .display-date-dayoff {
+        display: flex;
+        justify-content: center;
+        margin-top: 2vw;
+        gap: 10vw;
+    }
+
+    .display-date-dayoff input {
+        margin-top: 2vw;
+        border: 0;
+        background-color: #c4e3ff;
+        border-radius: 2vw;
+        padding: 1vw;
+        color: #0b6bc1;
+        font-weight: bold;
+        box-shadow: 0px 4px 10px 0px rgba(70, 69, 69, 0.25);
+    }
+
+    .date-start,
+    .date-end {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .col-6 {
+        display: flex;
+        justify-content: center;
+        margin-top: 2vw;
+    }
+
+    .col-6 input {
+        background-color: #eccd03;
+        font-size: 14px;
+        width: 15vw;
+        border: 0;
+        padding: 1vw;
+        border-radius: 2vw;
+        font-weight: bold;
+        color: #0b6bc1;
+        box-shadow: 0px 4px 10px 0px rgba(70, 69, 69, 0.25);
+    }
+
+    span.dayTopic {
+        color: #0b6bc1;
+        font-weight: bold;
+        border-radius: 2vw;
+    }
+
+    .select-inspector {
+        color: #0b6bc1;
+        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+    }
+
+    input[type="radio"] {
+        width: 4vw;
+        height: 4vw;
+        border: 1px solid #0b6bc1;
+        border-radius: 10vw;
+        outline: none;
+        margin-right: 1vw;
+        margin-top: 3vw;
+    }
+
+    #inspector {
+        background-color: #0b6bc1;
+        width: 40vw;
+        height: 6vw;
+        border-radius: 2vw;
+        color: #fff;
+        font-weight: bold;
+    }
+
+    .show-approve {
+        margin-top: 2vw;
+    }
+
+    .detail-approve {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        padding-left: 5vw;
+        padding-top: 3vw;
+        background-color: #c4e3ff;
+        width: 65vw;
+        margin: auto;
+        height: 13vw;
+        border-radius: 2vw;
+        margin-top: 2vw;
+    }
+}

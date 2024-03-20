@@ -1,0 +1,1230 @@
+/* desktop */
+@media only screen and (min-width: 1025px) {
+    .mobile,
+    footer {
+        display: none !important;
+    }
+
+    *:focus {
+        outline: none;
+    }
+}
+
+/* tablet */
+@media only screen and (min-width: 481px) and (max-width: 1024px) {
+    .desktop {
+        display: none !important;
+    }
+
+    *:focus {
+        outline: none;
+    }
+
+    body {
+        margin-bottom: 10%;
+    }
+
+    .btn-top-3 {
+        display: flex;
+        justify-content: center;
+        margin: 2vw;
+        gap: 12%;
+        margin-bottom: 5vw;
+    }
+
+    .btn-top-4 {
+        display: flex;
+        justify-content: center;
+        margin: 2vw;
+        gap: 2vw;
+        margin-bottom: 5vw;
+    }
+
+    .display-icon button {
+        background-color: #f8d700;
+        width: 12vw;
+        height: 12vw;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        border: 0;
+        position: relative;
+        overflow: hidden;
+        transition: background-color 0.3s ease; /* เพิ่มการเปลี่ยนสีพื้นหลังด้วยการส่งเสริม */
+        box-shadow: 0px 4px 10px 0px rgba(83, 83, 83, 0.25);
+    }
+    .display-icon button:hover {
+        background-color: #ffc400; /* เปลี่ยนสีพื้นหลังเมื่อโฮเวอร์ */
+    }
+
+    .btn-1 .display-icon img {
+        width: 7vw;
+        height: 7vw;
+        /* padding: 3vw; */
+    }
+
+    .btn-2 .display-icon img,
+    .btn-3 .display-icon img,
+    .btn-4 .display-icon img {
+        width: 6vw;
+        height: 6vw;
+        /* padding: 3vw; */
+    }
+
+    .btn-1,
+    .btn-2,
+    .btn-3,
+    .btn-4 {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .btn-1 span,
+    .btn-2 span,
+    .btn-3 span,
+    .btn-4 span {
+        font-size: 2.5vw;
+        font-weight: bold;
+        color: #0b6bc1;
+        margin-top: 2vw;
+        white-space: nowrap;
+    }
+
+    /* ---ส่วนของเลือกช่วงเวลาที่ต้องการดู--- */
+    .display-dayOff {
+        width: 85vw;
+        font-size: 3vw;
+        font-weight: bold;
+        color: #616061;
+        margin: auto;
+        margin-bottom: 2vw;
+        border-radius: 2vw;
+        border: 0.6vw solid #d6d7d7; /* สีและขนาดขอบตามที่ต้องการ */
+        padding: 3vw; /* ขอบระยะห่างของเนื้อหา */
+        background-color: #fffefe;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+
+    .select-time {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .search-time,
+    .search-section {
+        display: flex;
+        gap: 2vw;
+    }
+
+    .search-section select {
+        width: 50vw;
+    }
+
+    .search-section {
+        margin-bottom: 2vw;
+    }
+
+    .search-section select {
+        border: 0.5vw solid #bebdbe;
+        border-radius: 2vw;
+        padding: 1vw;
+        font-size: 3vw;
+        width: 50vw;
+    }
+
+    .search-time select {
+        border: 0.22vw solid #616061;
+        border-radius: 2vw;
+        padding: 1vw;
+        font-size: 3vw;
+        width: 20vw;
+    }
+
+    .search-time button {
+        border-radius: 2vw;
+        padding: 1vw;
+        background-color: #0b6bc1;
+        color: #fff;
+        font-weight: bold;
+        font-size: 3vw;
+        border: 2px solid #fff;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        cursor: pointer;
+    }
+
+    .display-dayOff-week,
+    .display-dayOff-tradition {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        overflow-y: auto;
+        scrollbar-width: none;
+    }
+
+    .display-dayOff-tradition,
+    .display-dayOff-team {
+        margin-top: 2vw;
+    }
+
+    .display-dayOff-week span.dayTopic,
+    span.dayTopic {
+        background-color: #f8d700;
+        color: #0b6bc1;
+        font-size: 3.5vw;
+        font-weight: bold;
+        border-radius: 2vw;
+        padding: 0 2vw;
+        margin-bottom: 3vw;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border: 5px solid #f7f9fb !important;
+    }
+
+    .dayTopic-dayoff {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90vw;
+        margin: auto;
+    }
+
+    .dayTopic-dayoff span {
+        background-color: #f8d700;
+        color: #0b6bc1;
+        font-size: 3.5vw;
+        font-weight: bold;
+        border-radius: 2vw;
+        padding-top: 0.5vw;
+        margin-bottom: 3vw;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border: 5px solid #f7f9fb !important;
+    }
+
+    /* --ส่วนแสดงวันหยุดตามประเพณี-- */
+    .display-day-week {
+        display: flex;
+        gap: 5vw;
+        margin-bottom: 3vw;
+        background-color: #c4e3ff;
+        width: 55vw;
+        color: #0b6bc1;
+        font-weight: bold;
+        padding: 0;
+        border-radius: 3vw;
+        box-shadow: 0 0 0 4px #0b6bc1, 0 0 0 1px #dfdede;
+        width: 90vw;
+        overflow-x: auto;
+        scrollbar-width: none;
+        font-size: 3vw;
+    }
+
+    .display-day-week table {
+        overflow: hidden;
+        overflow-x: scroll;
+        /* Webkit (Chrome, Safari) and Blink (Opera) */
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    .day-off {
+        color: #fff;
+        background-color: #ae250a;
+        padding: 0.5vw 1vw 1vw 1vw;
+        border-radius: 2vw;
+    }
+
+    .display-day-week td {
+        border: 1px solid #b9cbda;
+        background-color: #fdfefe;
+        padding: 1vw 3vw 2vw 2vw;
+        vertical-align: top; /* ชิดขอบบน */
+    }
+
+    .btn-scoll button {
+        border: 0;
+        font-weight: bold;
+        background-color: #c4e3ff;
+        color: #0b6bc1 !important;
+        border-radius: 1vw;
+    }
+
+    .display-dayOff-tradition {
+        overflow-y: auto;
+        scrollbar-width: none;
+    }
+
+    .display-day-month {
+        display: flex;
+        gap: 2vw;
+        margin-bottom: 3vw;
+        margin-left: auto; /* เพิ่ม margin ทางซ้าย */
+        margin-right: auto; /* เพิ่ม margin ทางขวา */
+    }
+
+    .display-day span.dayNum {
+        font-size: 5vw;
+    }
+
+    .display-day {
+        display: flex;
+        /* flex-direction: column; */
+        justify-content: center;
+        align-items: center;
+        padding: 2vw 2vw;
+        gap: 1vw;
+        color: #0b6bc1;
+        font-size: 4vw;
+        font-weight: bold;
+        background-color: #c4e3ff;
+        border-radius: 2vw;
+        box-shadow: 0px 4px 10px 0px rgba(70, 69, 69, 0.25);
+        margin-top: 2vw;
+        margin-left: auto; /* เพิ่ม margin ทางซ้าย */
+        margin-right: auto; /* เพิ่ม margin ทางขวา */
+    }
+
+    .display-day > span {
+        width: 27vw;
+        font-size: 3vw;
+        overflow-y: auto;
+        text-align: left;
+        background-color: #f7f9fb;
+        border-radius: 2vw;
+        padding: 1vw;
+        height: 19vw;
+    }
+
+    .display-num-day {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #0b6bc1;
+        border-radius: 2vw;
+        padding: 1vw;
+        width: 12vw;
+        color: #fff;
+        height: 19vw;
+    }
+
+    /* ---แสดงตารางวันหยุดทีม--- */
+    .topic-dateTeam {
+        display: flex;
+        margin: auto;
+        justify-content: center;
+    }
+
+    .display-table-dayTeam {
+        display: flex;
+        width: 90vw;
+        margin: auto;
+        box-shadow: 0 0 0 2px #0b6bc1, 0 0 0 1px #0b0b0b;
+        border-radius: 3vw;
+        margin-bottom: 15vw;
+    }
+
+    .display-table-dayTeam #table1 {
+        border-collapse: collapse;
+        margin: auto;
+        border-top-left-radius: 2vw;
+        font-size: 3vw;
+        overflow-x: auto;
+    }
+
+    .display-table-dayTeam #table2 {
+        border-collapse: collapse;
+        margin: auto;
+        font-size: 3vw;
+        overflow-x: auto;
+    }
+
+    #table1 tr:last-child > td {
+        border-bottom-left-radius: 2vw !important;
+        border: 0;
+        border-right: 1px solid #b9cbda;
+    }
+
+    .table-name,
+    .table-date {
+        font-weight: bold;
+    }
+
+    .table-name table,
+    .table-date table {
+        border-collapse: collapse;
+        overflow: hidden;
+    }
+
+    th,
+    td {
+        border: 1px solid #b9cbda;
+    }
+
+    .table-date {
+        overflow: scroll;
+        border-top-right-radius: 2vw;
+        border-bottom-right-radius: 2vw;
+
+        /* Firefox */
+        scrollbar-width: none;
+
+        /* Webkit (Chrome, Safari) and Blink (Opera) */
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    .table-date td {
+        color: #616061;
+    }
+
+    td {
+        font-size: 2.5vw;
+    }
+
+    .table-name {
+        background-color: #c4e3ff;
+        color: #0b6bc1 !important;
+        border-top-left-radius: 2vw;
+        border-bottom-left-radius: 2vw;
+    }
+
+    .display-table-dayTeam th.nameEm {
+        white-space: nowrap;
+        padding: 2.3vw 8vw 2.2vw 8vw;
+        background-color: #0b6bc1;
+        color: #fff;
+        border: 0;
+        font-size: 3vw;
+        border-top-left-radius: 2vw;
+    }
+
+    .display-table-dayTeam th.dayWeek {
+        padding: 0 3vw 0 3vw;
+        background-color: #0b6bc1;
+        color: #fff;
+        border-left: 1px solid #f8f9fa;
+        border-right: 1px solid #f8f9fa;
+        border-top: none;
+        text-align: center;
+    }
+
+    .display-table-dayTeam td {
+        padding: 3vw 2vw;
+        color: #616061;
+        font-weight: bold;
+        white-space: nowrap;
+        text-align: center;
+    }
+
+    .display-table-dayTeam td.nameEm {
+        text-align: left;
+    }
+
+    span.show-dayoff {
+        padding: 1vw;
+        border-radius: 2vw;
+        background-color: #ae250a;
+        color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border: 3px solid #f7f9fb !important;
+
+    }
+
+    span.show-daywork {
+        padding: 1vw;
+        border-radius: 2vw;
+        background-color: #d3d2d2;
+        /* color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+    }
+
+    .img-work {
+        width: 3vw;
+        align-items: center;
+    }
+
+    .topic-wait-approve {
+        display: flex;
+        justify-content: center;
+        margin-top: -5vw;
+    }
+
+    .topic-wait-approve span {
+        font-size: 3.5vw;
+        background-color: #0b6bc1;
+        padding: 1vw;
+        color: #fff;
+        border-radius: 2vw;
+
+    }
+
+    .table-container.table1 {
+        margin-bottom: 15vw;
+    }
+
+    /* แต่ง data table */
+    .table-container {
+        margin-top: 3vw;
+    }
+
+    .row {
+        display: flex !important;
+        align-items: center !important;
+        font-size: 3.5vw;
+    }
+
+    .dataTables_length {
+        width: 10vw;
+        font-weight: bold;
+        text-align: left !important;
+    }
+
+    .col-sm-12.col-md-6 input {
+        width: 25vw !important;
+        height: 2vw !important;
+        padding: 1vw !important;
+    }
+    .col-sm-12.col-md-6 {
+        width: 45vw;
+        margin-left: 3.5vw;
+    }
+
+    /* แต่งปุ่ม select กับ input บนตาราง */
+    div.dataTables_wrapper div.dataTables_length label,
+    div.dataTables_wrapper div.dataTables_filter label {
+        font-weight: bold !important;
+        text-align: left;
+        white-space: nowrap;
+        color: #616262;
+    }
+
+    div.dataTables_wrapper div.dataTables_filter input {
+        height: 2vw !important;
+    }
+
+    .table-container table {
+        width: 80vw;
+        border-collapse: collapse;
+        border-radius: 2vw;
+        overflow: hidden;
+        box-shadow: 0 0 1px 2px #0b6bc1, 0 0 0 0 #fbfafa;
+        margin: auto;
+        margin-top: 3vw;
+    }
+
+    .table-container th {
+        color: #f9fafa !important;
+        font-size: 3.5vw;
+        font-weight: bold;
+        padding: 1vw;
+        text-align: center !important;
+        background-color: #0b6bc1 !important;
+        border: 1px solid #427eb3;
+        width: 15vw;
+        white-space: nowrap !important;
+    }
+
+    .table-container th.status {
+        width: 5vw;
+    }
+
+    .table-container th.action {
+        width: 8vw;
+    }
+
+    button.detail {
+        font-size: 3vw;
+        padding: 0.7vw;
+        border: 1px solid #fff;
+        border-radius: 2vw;
+        background-color: #818080;
+        font-weight: bold;
+        color: #f8fafa;
+        box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+        cursor: pointer !important;
+        font-size: 2.3vw;
+    }
+
+    .table-container td {
+        font-size: 3vw;
+        font-weight: bold;
+        padding: 1vw;
+        text-align: center;
+        border: 1px solid #97abbc;
+        color: #616061 !important;
+    }
+
+    .table-container td.name {
+        text-align: left;
+    }
+
+    div.dt-length {
+        display: none !important;
+    }
+
+    div.dt-container .row {
+        --bs-gutter-y: 0 !important;
+    }
+
+    div.dt-container div.dt-paging ul.pagination {
+        flex-wrap: nowrap !important;
+        white-space: nowrap !important;
+        font-size: 3.5vw; /* กำหนดขนาด font เป็น 3.5vw */
+    }
+
+    .dt-search {
+        width: 100vw;
+        display: flex!important;
+        justify-content: center;
+        align-items: center!important;
+        margin: auto;
+        font-size: 3.5vw;
+    }
+
+    .dt-search input {
+        padding: 2vw;
+    }
+
+    .col-md-auto.me-auto,
+    .col-md-auto.ms-auto {
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        font-size: 3vw !important;
+    }
+
+    .pagination {
+        --bs-pagination-font-size: 3vw !important;
+    }
+}
+
+/* mobile */
+@media only screen and (max-width: 480px) {
+    .desktop {
+        display: none !important;
+    }
+
+    *:focus {
+        outline: none;
+    }
+
+    *,
+    ::after,
+    ::before {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin-bottom: 10%;
+    }
+
+    .btn-top-3 {
+        display: flex;
+        justify-content: center;
+        margin: 2vw;
+        gap: 10%;
+        margin-bottom: 5vw;
+    }
+
+    .btn-top-4 {
+        display: flex;
+        justify-content: center;
+        margin: 2vw;
+        gap: 4vw;
+        margin-bottom: 5vw;
+    }
+
+    .display-icon button {
+        background-color: #f8d700;
+        width: 14vw;
+        height: 14vw;
+        border-radius: 10vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        border: 0;
+        overflow: hidden;
+        transition: background-color 0.3s ease; /* เพิ่มการเปลี่ยนสีพื้นหลังด้วยการส่งเสริม */
+        box-shadow: 0px 4px 10px 0px rgba(83, 83, 83, 0.25);
+    }
+    .display-icon button:hover {
+        background-color: #ffc400; /* เปลี่ยนสีพื้นหลังเมื่อโฮเวอร์ */
+    }
+
+    .btn-1 .display-icon img {
+        width: 60%;
+    }
+
+    .btn-2 .display-icon img,
+    .btn-3 .display-icon img,
+    .btn-4 .display-icon img {
+        width: 50%;
+    }
+
+    .btn-1,
+    .btn-2,
+    .btn-3,
+    .btn-4 {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        width: 20vw;
+    }
+
+    .btn-1 span,
+    .btn-2 span,
+    .btn-3 span,
+    .btn-4 span {
+        font-size: 2.8vw;
+        font-weight: bold;
+        color: #0b6bc1;
+        margin-top: 1vw;
+        white-space: nowrap;
+    }
+
+    /* ---ส่วนของเลือกช่วงเวลาที่ต้องการดู--- */
+    .display-dayOff {
+        width: 85vw;
+        font-size: 3.5vw;
+        font-weight: bold;
+        color: #616061;
+        margin: auto;
+        margin-bottom: 2vw;
+        border-radius: 2vw;
+        border: 0.6vw solid #d6d7d7; /* สีและขนาดขอบตามที่ต้องการ */
+        padding: 3vw; /* ขอบระยะห่างของเนื้อหา */
+        background-color: #fffefe;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+
+    .select-time {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .search-time,
+    .search-section {
+        display: flex;
+        align-items: center;
+        gap: 2vw;
+    }
+
+    .search-section {
+        margin-bottom: 2vw;
+    }
+
+    .search-section select {
+        border: 0.5vw solid #bebdbe;
+        border-radius: 2vw;
+        padding: 1vw;
+        font-size: 3vw;
+        width: 50vw;
+    }
+
+    .search-time select {
+        border: 0.5vw solid #bebdbe;
+        border-radius: 2vw;
+        padding: 1vw;
+        font-size: 3vw;
+        width: 22vw;
+    }
+
+    .search-time button {
+        border-radius: 2vw;
+        padding: 1vw;
+        background-color: #0b6bc1;
+        color: #fff;
+        font-weight: bold;
+        font-size: 3vw;
+        border: 2px solid #fff;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        cursor: pointer;
+    }
+
+    .display-dayOff-week {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        overflow-y: auto;
+        scrollbar-width: none;
+    }
+
+    .display-dayOff-tradition,
+    .display-dayOff-team {
+        margin-top: 2vw;
+    }
+
+    .display-dayOff-week span.dayTopic,
+    span.dayTopic {
+        background-color: #f8d700;
+        color: #0b6bc1;
+        font-size: 3.5vw;
+        font-weight: bold;
+        border-radius: 2vw;
+        padding: 0.5vw;
+        margin-bottom: 3vw;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border: 3px solid #f7f9fb !important;
+    }
+
+    .dayTopic-dayoff {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90vw;
+        margin: auto;
+    }
+
+    .dayTopic-dayoff span {
+        background-color: #f8d700;
+        color: #0b6bc1;
+        font-size: 3.5vw;
+        font-weight: bold;
+        border-radius: 2vw;
+        padding-top: 1vw;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border: 3px solid #f7f9fb !important;
+    }
+
+    /* --ส่วนแสดงวันหยุดตามประเพณี-- */
+    .display-day-week {
+        display: flex;
+        gap: 5vw;
+        margin-bottom: 3vw;
+        background-color: #c4e3ff;
+        width: 55vw;
+        color: #0b6bc1;
+        font-weight: bold;
+        padding: 0;
+        border-radius: 3vw;
+        box-shadow: 0 0 0 2px #0b6bc1, 0 0 0 1px #dfdede;
+        width: 90vw;
+        overflow-x: auto;
+        scrollbar-width: none;
+        font-size: 3vw;
+    }
+
+    .display-day-week table {
+        overflow: hidden;
+        overflow-x: scroll;
+        /* Webkit (Chrome, Safari) and Blink (Opera) */
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    .day-off {
+        color: #fff;
+        background-color: #ae250a;
+        padding: 0.5vw 1vw 1vw 1vw;
+        border-radius: 2vw;
+    }
+
+    .display-day-week td {
+        border: 1px solid #b9cbda;
+        background-color: #fdfefe;
+        padding: 1vw 3vw 2vw 2vw;
+        vertical-align: top; /* ชิดขอบบน */
+    }
+
+    .btn-scoll button {
+        border: 0;
+        font-weight: bold;
+        background-color: #c4e3ff;
+        color: #0b6bc1 !important;
+        border-radius: 1vw;
+    }
+
+    .display-dayOff-tradition {
+        overflow-y: auto;
+        scrollbar-width: none;
+    }
+
+    .display-day-month {
+        display: flex;
+        gap: 2vw;
+        margin-bottom: 3vw;
+        margin-left: auto; /* เพิ่ม margin ทางซ้าย */
+        margin-right: auto; /* เพิ่ม margin ทางขวา */
+    }
+
+    .display-day span.dayNum {
+        font-size: 5vw;
+    }
+
+    .display-day {
+        display: flex;
+        /* flex-direction: column; */
+        justify-content: center;
+        align-items: center;
+        padding: 2vw 2vw;
+        gap: 1vw;
+        color: #0b6bc1;
+        font-size: 4vw;
+        font-weight: bold;
+        background-color: #c4e3ff;
+        border-radius: 2vw;
+        box-shadow: 0px 4px 10px 0px rgba(70, 69, 69, 0.25);
+        margin-top: 2vw;
+        margin-left: auto; /* เพิ่ม margin ทางซ้าย */
+        margin-right: auto; /* เพิ่ม margin ทางขวา */
+    }
+
+    .display-day > span {
+        width: 28.5vw;
+        font-size: 3vw;
+        overflow-y: auto;
+        background-color: #f7f9fb;
+        border-radius: 2vw;
+        padding: 1vw;
+        height: 19vw;
+    }
+
+    .display-num-day {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #0b6bc1;
+        border-radius: 2vw;
+        padding: 1vw;
+        width: 12vw;
+        color: #fff;
+        height: 19vw;
+    }
+
+    /* ---แสดงตารางวันหยุดทีม--- */
+    .topic-dateTeam {
+        display: flex;
+        margin: auto;
+        justify-content: center;
+    }
+
+    .display-table-dayTeam {
+        display: flex;
+        width: 90vw;
+        margin: auto;
+        box-shadow: 0 0 0 2px #0b6bc1, 0 0 0 1px #0b0b0b;
+        border-radius: 3vw;
+        margin-bottom: 15vw;
+    }
+
+    .display-table-dayTeam #table1 {
+        border-collapse: collapse;
+        margin: auto;
+        border-top-left-radius: 2vw;
+        font-size: 3vw;
+        overflow-x: auto;
+    }
+
+    .display-table-dayTeam #table2 {
+        border-collapse: collapse;
+        margin: auto;
+        font-size: 3vw;
+        overflow-x: auto;
+    }
+
+    #table1 tr:last-child > td {
+        border-bottom-left-radius: 2vw !important;
+        border: 0;
+        border-right: 1px solid #b9cbda;
+    }
+
+    .table-name,
+    .table-date {
+        white-space: nowrap;
+        font-weight: bold;
+    }
+
+    .table-name table,
+    .table-date table {
+        border-collapse: collapse;
+        overflow: hidden;
+    }
+
+    .table-name {
+        background-color: #c4e3ff;
+        color: #0b6bc1 !important;
+        border-top-left-radius: 2vw;
+        border-bottom-left-radius: 2vw;
+    }
+
+    .display-table-dayTeam th,
+    .display-table-dayTeam td {
+        border: 1px solid #b9cbda;
+        text-align: center;
+    }
+
+    .table-date {
+        overflow: scroll;
+        border-top-right-radius: 2vw;
+        border-bottom-right-radius: 2vw;
+
+        /* Firefox */
+        scrollbar-width: none;
+
+        /* Webkit (Chrome, Safari) and Blink (Opera) */
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    .display-table-dayTeam th.nameEm {
+        text-align: center;
+        white-space: nowrap;
+        padding: 2.4vw;
+        background-color: #0b6bc1;
+        color: #fff;
+        border-left: none;
+        border-right: 1px solid #f8f9fa;
+        border-top: none;
+        font-size: 3.5vw;
+        border-top-left-radius: 2vw;
+    }
+    .display-table-dayTeam th.dayWeek {
+        padding: 2.7vw;
+        background-color: #0b6bc1;
+        color: #fff;
+        border-left: 1px solid #f8f9fa;
+        border-right: 1px solid #f8f9fa;
+        border-top: none;
+    }
+
+    .display-table-dayTeam td {
+        padding: 3vw 2vw;
+        color: #616061;
+        font-weight: bold;
+        white-space: nowrap;
+    }
+
+    .display-table-dayTeam td.nameEm {
+        text-align: left;
+    }
+
+    span.show-dayoff {
+        padding: 1vw;
+        border-radius: 2vw;
+        background-color: #ae250a;
+        color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border: 2px solid #f7f9fb !important;
+
+    }
+
+    span.show-daywork {
+        padding: 1vw;
+        border-radius: 2vw;
+        background-color: #d3d2d2;
+        /* color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+    }
+
+    .img-work {
+        width: 4vw;
+    }
+
+    .topic-wait-approve {
+        display: flex;
+        justify-content: center;
+        margin-top: -5vw;
+    }
+
+    .topic-wait-approve span {
+        font-size: 3.5vw;
+        background-color: #0b6bc1;
+        padding: 1vw;
+        color: #fff;
+        border-radius: 2vw;
+
+    }
+
+    .table-container.table1 {
+        margin-bottom: 15vw;
+    }
+
+    /* แต่ง data table */
+    .table-container {
+        margin-top: 3vw;
+    }
+
+    .row {
+        display: flex !important;
+        align-items: center !important;
+        font-size: 3.5vw;
+    }
+
+    .dataTables_length {
+        width: 10vw;
+        font-weight: bold;
+        text-align: left !important;
+    }
+
+    .col-sm-12.col-md-6 input {
+        width: 25vw !important;
+        height: 2vw !important;
+        padding: 1vw !important;
+    }
+    .col-sm-12.col-md-6 {
+        width: 45vw;
+        margin-left: 3.5vw;
+    }
+
+    /* แต่งปุ่ม select กับ input บนตาราง */
+    div.dataTables_wrapper div.dataTables_length label,
+    div.dataTables_wrapper div.dataTables_filter label {
+        font-weight: bold !important;
+        text-align: left;
+        white-space: nowrap;
+        color: #616262;
+    }
+
+    div.dataTables_wrapper div.dataTables_filter input {
+        height: 2vw !important;
+    }
+
+    .table-container table {
+        width: 80vw;
+        border-collapse: collapse;
+        border-radius: 2vw;
+        overflow: hidden;
+        box-shadow: 0 0 1px 2px #0b6bc1, 0 0 0 0 #fbfafa;
+        margin: auto;
+        margin-top: 3vw;
+    }
+
+    .table-container th {
+        color: #f9fafa !important;
+        font-size: 3.5vw;
+        font-weight: bold;
+        padding: 1vw;
+        text-align: center !important;
+        background-color: #0b6bc1 !important;
+        border: 1px solid #427eb3;
+        width: 15vw;
+        white-space: nowrap !important;
+    }
+
+    .table-container th.status {
+        width: 5vw;
+    }
+
+    .table-container th.action {
+        width: 8vw;
+    }
+
+    button.detail {
+        font-size: 3vw;
+        padding: 0.7vw;
+        border: 1px solid #fff;
+        border-radius: 2vw;
+        background-color: #818080;
+        font-weight: bold;
+        color: #f8fafa;
+        box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+        cursor: pointer !important;
+        font-size: 2.3vw;
+    }
+
+    .table-container td {
+        font-size: 3vw;
+        font-weight: bold;
+        padding: 1vw;
+        text-align: center;
+        border: 1px solid #97abbc;
+        color: #616061 !important;
+        white-space: nowrap;
+    }
+
+    .table-container td.name {
+        text-align: left;
+    }
+
+    div.dt-length {
+        display: none !important;
+    }
+
+    div.dt-container .row {
+        --bs-gutter-y: 0 !important;
+    }
+
+    div.dt-container div.dt-paging ul.pagination {
+        flex-wrap: nowrap !important;
+        white-space: nowrap !important;
+        font-size: 3.5vw; /* กำหนดขนาด font เป็น 3.5vw */
+    }
+
+    .pagination {
+        --bs-pagination-font-size: 3.5vw !important;
+    }
+
+    /* ---modal show day off--- */
+    /* Style the popup text */
+    .popup-text {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+        z-index: 1;
+    }
+
+    /* Style the modal */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 2;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    /* Style the modal content */
+    /* Style the modal content */
+    .modal-content {
+        background-color: #fefefe;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+    }
+
+    /* Style the close button */
+    .close {
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        position: absolute;
+        top: -5px;
+        right: 10px;
+        z-index: 1;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+}

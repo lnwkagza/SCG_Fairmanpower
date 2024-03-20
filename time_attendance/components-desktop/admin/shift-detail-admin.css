@@ -1,0 +1,101 @@
+@media only screen and (min-width: 1025px) {
+    .card-box {
+        /*กล่องสีฟ้า*/
+        background-color: #cbeaef;
+        border: 2px solid #5db5d2;
+    }
+
+    .row {
+        display: flex;
+        justify-content: center;
+    }
+
+    .wizard-content {
+        padding: 10px 0;
+        border-radius: 5px;
+        margin-top: 20px;
+        background-color: #fff;
+    }
+
+    .wizard-content label {
+        font-size: 15px;
+        font-weight: 600;
+        color: #00000095;
+        width: 100px;
+        white-space: nowrap;
+        margin-bottom: 0;
+    }
+
+    .form-control {
+        width: 70%;
+    }
+
+    .form-group > div {
+        display: flex;
+        gap: 2%;
+    }
+
+    .shift-new {
+        display: flex;
+    }
+
+    .shift-new input {
+        width: 50%;
+    }
+
+    .shift-new input:first-child {
+        margin-right: 30px;
+    }
+
+    .shift-new label {
+        width: 100px;
+        white-space: nowrap;
+        gap: 10%;
+    }
+
+    .display-status input {
+        width: 40%;
+    }
+
+    .display-status .approve {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        color: #5baf33;
+        background-color: transparent;
+        font-weight: bold;
+        font-size: 20px;
+        border: 1px solid;
+        padding: 10px 0;
+        border-radius: 5px;
+        box-shadow: 0px 4px 8px 0px rgba(89, 89, 89, 0.25);
+    }
+
+    .display-status .wait {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        color: #efcf00;
+        background-color: transparent;
+        font-weight: bold;
+        font-size: 20px;
+        border: 1px solid;
+        padding: 10px 0;
+        border-radius: 5px;
+        box-shadow: 0px 4px 8px 0px rgba(89, 89, 89, 0.25);
+    }
+
+    .display-status .reject {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        color: #ff5643;
+        background-color: transparent;
+        font-weight: bold;
+        font-size: 20px;
+        border: 1px solid;
+        padding: 10px 0;
+        border-radius: 5px;
+        box-shadow: 0px 4px 8px 0px rgba(89, 89, 89, 0.25);
+    }
+}

@@ -1,0 +1,1032 @@
+@media only screen and (min-width: 1025px) {
+    .mobile,
+    footer {
+        display: none !important;
+    }
+
+    *:focus {
+        outline: none;
+    }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 1024px) {
+    .desktop {
+        display: none !important;
+    }
+
+    *:focus {
+        outline: none;
+    }
+
+    .box-add-team {
+        background-color: #c4e3ff;
+        padding: 3vw;
+        border-radius: 3vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .box-add-team-admin {
+        background-color: #c4e3ff;
+        padding: 3vw;
+        border-radius: 3vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 8vw;
+    }
+
+    .box-add-team-head {
+        background-color: #c4e3ff;
+        padding: 3vw;
+        border-radius: 3vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 8vw;
+    }
+
+    .box-add-team span.topic,
+    .box-add-team-admin span.topic,
+    .box-add-team-head span.topic {
+        background-color: #0b6bc1;
+        padding: 1vw;
+        border-radius: 3vw;
+        font-weight: bold;
+        color: #fff;
+        width: 50vw;
+        font-size: 3.5vw;
+    }
+
+    .search-em {
+        display: flex;
+        gap: 2vw;
+        padding: 1vw;
+        font-size: 3vw;
+        margin-top: 1vw;
+    }
+
+    .search-em input {
+        padding: 1vw;
+        border-radius: 2vw;
+        width: 43vw;
+        text-align: center;
+        border: 1px solid #a2a1a2;
+        color: #616061;
+    }
+
+    .search-em img {
+        width: 7vw;
+        height: 7vw;
+    }
+
+    .display-nameEm {
+        display: flex;
+        flex-direction: column;
+        color: #616061;
+        font-weight: bold;
+        font-size: 3.5vw;
+        margin-bottom: 2vw;
+        border-radius: 2vw;
+        padding: 2vw 0 2vw 0;
+        background-color: #f5f5f5;
+        margin-top: 2vw;
+    }
+
+    span.cost-center {
+        font-size: 4vw;
+        margin-top: 2vw;
+    }
+
+    /* ส่วนของ transection table */
+
+    .row {
+        display: flex !important;
+        align-items: center !important;
+        font-size: 3.5vw;
+        margin: auto !important;
+        margin-top: 5vw !important;
+    }
+    .row input {
+        width: 40vw !important;
+        padding: 1.5vw !important;
+        border-radius: 2vw !important;
+        margin-bottom: 1vw;
+        display: flex;
+        align-items: center;
+    }
+
+    .dataTables_length {
+        display: none !important;
+    }
+
+    #example {
+        z-index: 0 !important;
+    }
+
+    div.dataTables_wrapper div.dataTables_length select {
+        padding: 1vw !important;
+        width: 10vw !important;
+        font-size: 2.5vw !important;
+    }
+
+    .col-sm-12.col-md-6 {
+        width: 55vw;
+    }
+
+    .col-12 {
+        margin-top: -7vw !important;
+    }
+
+    .col-md-5 {
+        width: 40vw !important;
+        margin-left: 18vw;
+        font-size: 2.5vw !important;
+    }
+
+    .col-md-7 {
+        width: 54vw !important;
+    }
+
+    .display-transaction {
+        margin-top: -4vw;
+    }
+
+    div.dt-container div.dt-search {
+        display: flex !important;
+        justify-content: center !important;
+    }
+
+    .table.table-striped {
+        width: 80vw !important;
+    }
+
+    .table.table-striped th.idEm {
+        width: 20vw;
+        text-align: center;
+    }
+
+    .table.table-striped th.nameEm {
+        width: 5vw;
+        text-align: center;
+    }
+
+    .table.table-striped td.name {
+        width: 20vw;
+        text-align: left;
+        padding: -5vw;
+    }
+
+    .table.table-striped td.id {
+        width: 10vw;
+        height: 2vw !important;
+    }
+
+    .display-transaction table {
+        width: 60vw;
+        border-collapse: collapse;
+        border-radius: 2vw;
+        overflow: hidden;
+        box-shadow: 0 0 1px 2px #0b6bc1, 0 0 0 0 #fbfafa;
+        margin: auto;
+        margin-top: 3vw;
+    }
+
+    .display-transaction th {
+        color: #f9fafa !important;
+        font-size: 3.5vw;
+        font-weight: bold;
+        text-align: center;
+        background-color: #0b6bc1 !important;
+        border: 1px solid #427eb3;
+    }
+
+    .display-transaction td {
+        font-size: 3vw;
+        font-weight: bold;
+        text-align: center;
+        border: 1px solid #97abbc;
+        color: #616061 !important;
+        height: 2vw !important;
+    }
+
+    #example_previous {
+        width: 15vw;
+    }
+
+    .page-link {
+        z-index: 0 !important;
+        font-size: 3vw !important;
+    }
+
+    .page-link.first,
+    .page-link.previous,
+    .page-link.next,
+    .page-link.last {
+        color: #757575 !important;
+    }
+
+    .pagination {
+        width: 70vw !important;
+        display: flex !important;
+        justify-content: center !important;
+        margin: auto !important;
+    }
+
+    div.dt-container div.dt-info {
+        padding-top: 0 !important;
+    }
+
+    .col-md-auto {
+        flex: 0 0 auto;
+        width: 82vw !important;
+    }
+
+    /* --ส่วนของจัดการทีม-- */
+
+    .select-emTeam {
+        display: flex;
+        flex-direction: column;
+        margin-top: 3vw;
+        align-items: center;
+        text-align: center;
+    }
+
+    .select-emTeam span.topic {
+        background-color: #0b6bc1;
+        padding: 1vw;
+        border-radius: 3vw;
+        font-weight: bold;
+        color: #fff;
+        font-size: 3vw;
+        width: 40vw;
+    }
+
+    .select-detail {
+        background-color: #c4e3ff;
+        padding: 3vw;
+        border-radius: 3vw;
+        margin-top: 3vw;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        width: 88vw;
+    }
+
+    .btn-action {
+        display: flex;
+        justify-content: right;
+        gap: 1vw;
+    }
+
+    .addTeam,
+    .editTeam {
+        display: flex;
+        justify-content: flex-end;
+        gap: 2vw;
+    }
+
+    .addTeam img,
+    .editTeam img {
+        width: 3vw;
+    }
+    .addTeam button,
+    .editTeam button {
+        font-weight: bold;
+        color: #616061;
+        font-size: 3.1vw;
+        padding: 0.5vw;
+        width: 20vw;
+        background-color: #e69232;
+        border-radius: 2vw;
+        cursor: pointer;
+        color: #fff;
+        border: 1px solid #e69232;
+        box-shadow: 0px 4px 10px 8px #fff(252, 251, 251, 0.25);
+    }
+
+    .editTeam button {
+        width: 18vw;
+    }
+
+    .display-editWork {
+        display: none;
+        font-size: 3.5vw;
+    }
+
+    .display-editWork {
+        border: 1px solid #8d8d8e !important;
+        padding: 2vw;
+        margin-top: 2vw;
+        background-color: #fff;
+        border-radius: 3vw;
+    }
+
+    .display-name {
+        display: flex;
+        margin-bottom: 1vw;
+        gap: 2vw;
+    }
+
+    .display-name-all {
+        display: flex;
+        margin-bottom: 1vw;
+        flex-direction: column;
+        margin-top: 1vw;
+        padding-left: 3vw;
+    }
+
+    .display-name img {
+        width: 5vw;
+        height: 5vw;
+    }
+
+    .display-name span {
+        width: 45vw;
+    }
+
+    .selectTeam,
+    .select-em,
+    .select-inspector,
+    .display-head {
+        padding: 2vw;
+        color: #616061;
+        font-weight: bold;
+    }
+
+    .selectTeam select,
+    .select-em select,
+    .select-inspector select {
+        width: 73vw;
+        padding: 1.5vw;
+        color: #616061;
+        border-radius: 2vw;
+        border: 1px solid #cac8ca;
+        background-color: #eeeeee;
+    }
+
+    .selectTeam select option,
+    .select-em select option,
+    .select-inspector select option {
+        padding: 10px; /* กำหนดช่องว่างใน option */
+        background-color: #f8f8f8; /* กำหนดสีพื้นหลังของ option */
+        color: #333; /* กำหนดสีตัวอักษรของ option */
+        font-size: 3.5vw; /* กำหนดขนาดตัวอักษร */
+        border: none; /* กำหนดเส้นขอบ */
+        outline: none; /* กำหนดเส้นขอบเมื่อได้รับโฟกัส */
+        width: 20vw;
+    }
+
+    .display-head .head {
+        width: 100%;
+        padding: 1.5vw;
+        color: #616061;
+        border-radius: 2vw;
+        border: 1px solid #cac8ca;
+        font-weight: 100;
+        background-color: #eeee;
+    }
+
+    .detail-select-total {
+        display: flex;
+        flex-direction: column;
+        background-color: #eae8e8;
+        padding: 2vw;
+        border-radius: 2vw;
+        color: #616061;
+        font-weight: bold;
+        font-size: 3.5vw;
+        width: 73vw;
+        margin: auto;
+        margin-top: 2vw;
+    }
+
+    .detail-select-total-all {
+        display: flex;
+        flex-direction: column;
+        /* text-align: center; */
+        background-color: #ffffff;
+        padding: 2vw;
+        border-radius: 2vw;
+        color: #616061;
+        font-weight: bold;
+        font-size: 3vw;
+        width: 70vw;
+        margin: auto;
+        margin-top: 2vw;
+    }
+
+    .row-btn {
+        display: flex;
+        margin-top: 3vw;
+    }
+
+    .col-6 {
+        align-items: center;
+        width: 100% !important;
+        display: flex;
+        justify-content: center;
+    }
+
+    .col-6 input {
+        background-color: #29ab29;
+        font-size: 3.5vw;
+        width: 15vw;
+        border: 0;
+        padding: 1vw;
+        border-radius: 2vw;
+        font-weight: bold;
+        color: #1867ad;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border: 5px solid #f7f9fb !important;
+    }
+
+    /* แต่ง swal */
+
+    .custom-swal-container {
+        width: 100vw;
+    }
+    .custom-swal-container .topic {
+        font-size: 4.5vw;
+        font-weight: bold;
+        color: #616061;
+        margin-bottom: 4vw;
+        margin-top: 4vw;
+    }
+
+    .custom-swal-container .content1 {
+        font-size: 16px;
+        font-weight: bold;
+        margin-top: -2vw;
+    }
+
+    .custom-swal-container input {
+        border: 2px solid #a09fa0 !important;
+        border-radius: 2.5vw;
+        padding: 2vw;
+        text-align: center;
+        width: 60vw;
+        background-color: #efedef;
+        font-size: 4vw;
+    }
+
+    .swal2-actions {
+        font-weight: bold;
+    }
+
+    /* --ปรับขนาดปุ่มยืนยันและยกเลิก-- */
+    .swal2-confirm.swal2-styled.swal2-default-outline,
+    .swal2-cancel.swal2-styled.swal2-default-outline {
+        width: 13vw !important;
+        padding: 2vw;
+        font-size: 3.5vw;
+    }
+
+    /* --ปรับขนาดของกล่อง-- */
+    .swal2-popup.swal2-modal.swal2-show {
+        width: 80vw !important;
+        height: 55vw;
+        border-radius: 5vw !important;
+    }
+
+    .swal2-popup.swal2-modal.custom-popup-class.swal2-show {
+        width: auto !important;
+        height: auto;
+        border-radius: 5vw !important;
+    }
+
+    .form-control-head {
+        background-color: transparent !important;
+        border: 0 !important;
+        padding: 0 !important;
+        font-size: 3.5vw !important;
+        color: #616061;
+    }
+
+    .img {
+        width: 15vw !important;
+        height: 15vw !important;
+        margin-top: 2vw;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .desktop {
+        display: none !important;
+    }
+
+    *:focus {
+        outline: none;
+    }
+
+    .box-add-team {
+        background-color: #c4e3ff;
+        padding: 3vw;
+        border-radius: 3vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .box-add-team-admin {
+        background-color: #c4e3ff;
+        padding: 3vw;
+        border-radius: 3vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 8vw;
+    }
+
+    .box-add-team-head {
+        background-color: #c4e3ff;
+        padding: 3vw;
+        border-radius: 3vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 8vw;
+    }
+
+    .box-add-team span.topic,
+    .box-add-team-admin span.topic,
+    .box-add-team-head span.topic {
+        background-color: #0b6bc1;
+        padding: 1vw;
+        border-radius: 3vw;
+        font-weight: bold;
+        color: #fff;
+        width: 50vw;
+        font-size: 3.5vw;
+    }
+
+    .search-em {
+        display: flex;
+        gap: 2vw;
+        padding: 1vw;
+        font-size: 3vw;
+        margin-top: 1vw;
+    }
+
+    .search-em input {
+        padding: 1vw;
+        border-radius: 2vw;
+        width: 43vw;
+        text-align: center;
+        border: 1px solid #a2a1a2;
+        color: #616061;
+    }
+
+    .search-em img {
+        width: 7vw;
+        height: 7vw;
+    }
+
+    .display-nameEm {
+        display: flex;
+        flex-direction: column;
+        color: #616061;
+        font-weight: bold;
+        font-size: 3.5vw;
+        margin-bottom: 2vw;
+        border-radius: 2vw;
+        padding: 2vw;
+        background-color: #f5f5f5;
+        margin-top: 2vw;
+    }
+
+    span.cost-center {
+        font-size: 4vw;
+        margin-top: 2vw;
+    }
+
+    /* แต่ง data table */
+
+    .row {
+        display: flex !important;
+        /* margin-left: 5vw !important; */
+        align-items: center !important;
+        /* flex-direction: row !important; */
+        font-size: 3.5vw;
+        padding: 0 !important;
+    }
+    .row input {
+        width: 40vw !important;
+        padding: 1.5vw !important;
+        border-radius: 2vw !important;
+        margin-bottom: 1vw;
+        display: flex;
+        align-items: center;
+    }
+
+    .dataTables_length {
+        display: none !important;
+    }
+
+    #example {
+        z-index: 0 !important;
+    }
+
+    .col-12 {
+        margin-top: -2vw !important;
+    }
+
+    .col-sm-12.col-md-6 {
+        width: 25vw;
+    }
+
+    .display-transaction {
+        margin-top: 1vw;
+    }
+
+    .table.table-striped {
+        width: 80vw !important;
+    }
+
+    .table.table-striped th,
+    .table.table-striped td {
+        white-space: nowrap;
+    }
+
+    .table.table-striped th.idEm {
+        width: 5vw;
+        text-align: center;
+    }
+
+    .table.table-striped th.nameEm {
+        width: 10vw;
+        text-align: center;
+    }
+
+    .table.table-striped td.name {
+        width: 20vw;
+        text-align: left;
+        padding: -5vw;
+    }
+
+    .table.table-striped td.id {
+        width: 10vw;
+        height: 2vw !important;
+    }
+
+    .display-transaction table {
+        width: 60vw;
+        border-collapse: collapse;
+        border-radius: 2vw;
+        overflow: hidden;
+        box-shadow: 0 0 1px 2px #0b6bc1, 0 0 0 0 #fbfafa;
+        margin: auto;
+        margin-top: 3vw;
+    }
+
+    .display-transaction th {
+        color: #f9fafa !important;
+        font-size: 3.5vw;
+        font-weight: bold;
+        text-align: center !important;
+        background-color: #0b6bc1 !important;
+        border: 1px solid #427eb3;
+    }
+
+    .display-transaction td {
+        font-size: 3vw;
+        font-weight: bold;
+        text-align: center;
+        border: 1px solid #97abbc;
+        color: #616061 !important;
+        height: 2vw !important;
+    }
+
+    #example_previous {
+        width: 20vw;
+    }
+
+    .page-link {
+        z-index: 0 !important;
+        font-size: 3vw !important;
+    }
+
+    .page-link.first,
+    .page-link.previous,
+    .page-link.next,
+    .page-link.last {
+        color: #757575 !important;
+    }
+
+    div.dt-search {
+        /* display: flex !important; */
+        justify-content: center !important;
+        margin-top: -5vw !important;
+    }
+
+    .img {
+        width: 15vw !important;
+        height: 15vw !important;
+        margin-top: -3vw;
+    }
+
+    /* --ส่วนของจัดการทีม-- */
+
+    .row-btn {
+        display: flex;
+        margin-top: 3vw;
+    }
+
+    .col-6 {
+        align-items: center;
+        width: 100% !important;
+        display: flex;
+        justify-content: center;
+    }
+
+    .col-6 input {
+        background-color: #29ab29;
+        font-size: 14px;
+        width: 15vw;
+        border: 0;
+        padding: 1vw;
+        border-radius: 2vw;
+        font-weight: bold;
+        color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border: 3px solid #f7f9fb !important;
+    }
+
+    .select-emTeam {
+        display: flex;
+        flex-direction: column;
+        margin-top: 3vw;
+        align-items: center;
+        text-align: center;
+    }
+
+    .select-emTeam span.topic {
+        background-color: #0b6bc1;
+        padding: 1vw;
+        border-radius: 3vw;
+        font-weight: bold;
+        color: #fff;
+        font-size: 3vw;
+        width: 40vw;
+    }
+
+    .select-detail {
+        background-color: #c4e3ff;
+        padding: 3vw;
+        border-radius: 3vw;
+        margin-top: 3vw;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        width: 88vw;
+    }
+
+    .btn-action {
+        display: flex;
+        justify-content: right;
+        gap: 1vw;
+    }
+
+    .addTeam,
+    .editTeam {
+        display: flex;
+        justify-content: flex-end;
+        gap: 2vw;
+    }
+
+    .addTeam img,
+    .editTeam img {
+        width: 3vw;
+    }
+    .addTeam button,
+    .editTeam button {
+        font-weight: bold;
+        color: #616061;
+        font-size: 3.1vw;
+        padding: 0.5vw;
+        width: 20vw;
+        background-color: #e69232;
+        border-radius: 2vw;
+        cursor: pointer;
+        color: #fff;
+        border: 1px solid #e69232;
+        box-shadow: 0px 4px 10px 8px #fff(252, 251, 251, 0.25);
+    }
+
+    .editTeam button {
+        width: 18vw;
+    }
+
+    .display-editWork {
+        display: none;
+        border: 1px solid #8d8d8e !important;
+        padding: 2vw;
+        margin-top: 2vw;
+        background-color: #fff;
+        border-radius: 3vw;
+        font-size: 3.5vw;
+    }
+
+    .display-name {
+        display: flex;
+        margin-bottom: 1vw;
+        gap: 2vw;
+    }
+
+    .display-name-all {
+        display: flex;
+        margin-bottom: 1vw;
+        flex-direction: column;
+        padding-left: 3vw;
+    }
+
+    .display-name img {
+        width: 4vw;
+        height: 4vw;
+    }
+
+    .display-name span {
+        width: 45vw;
+    }
+
+    .selectTeam,
+    .select-em,
+    .select-inspector,
+    .display-head {
+        padding: 2vw;
+        color: #616061;
+        font-weight: bold;
+    }
+
+    .selectTeam select,
+    .select-em select,
+    .select-inspector select {
+        width: 73vw;
+        padding: 1.5vw;
+        color: #616061;
+        border-radius: 2vw;
+        border: 1px solid #cac8ca;
+        background-color: #eeeeee;
+    }
+
+    .display-head .head {
+        width: 100%;
+        padding: 1.5vw;
+        color: #616061;
+        border-radius: 2vw;
+        border: 1px solid #cac8ca;
+        font-weight: 100;
+        background-color: #eeee;
+    }
+
+    .detail-select-total {
+        display: flex;
+        flex-direction: column;
+        background-color: #eae8e8;
+        padding: 2vw;
+        border-radius: 2vw;
+        color: #616061;
+        font-weight: bold;
+        font-size: 3.5vw;
+        margin: auto;
+        margin-top: 2vw;
+        width: 73vw;
+        border: 1px solid #c8c8c8;
+    }
+
+    .detail-select-total-all {
+        display: flex;
+        flex-direction: column;
+        /* text-align: center; */
+        background-color: #ffffff;
+        padding: 2vw;
+        border-radius: 2vw;
+        color: #616061;
+        font-weight: bold;
+        font-size: 3vw;
+        width: 70vw;
+        margin: auto;
+        margin-top: 2vw;
+    }
+
+    /* แต่ง swal */
+
+    .custom-swal-container {
+        width: 100vw;
+    }
+    .custom-swal-container .topic {
+        font-size: 18px;
+        font-weight: bold;
+        color: #616061;
+        margin-bottom: 3vw;
+    }
+
+    .custom-swal-container .content1 {
+        font-size: 16px;
+        font-weight: bold;
+        margin-top: -2vw;
+    }
+
+    .custom-swal-container input {
+        border: 2px solid #a09fa0 !important;
+        border-radius: 2.5vw;
+        padding: 2vw;
+        text-align: center;
+        width: 60vw;
+        background-color: #efedef;
+        font-size: 4vw;
+    }
+
+    .swal2-actions {
+        font-weight: bold;
+    }
+
+    /* --ปรับขนาดปุ่มยืนยันและยกเลิก-- */
+    .swal2-confirm.swal2-styled.swal2-default-outline,
+    .swal2-cancel.swal2-styled.swal2-default-outline {
+        width: 15vw !important;
+        padding: 2vw;
+        font-size: 3.5vw;
+        margin-top: 2vw !important;
+    }
+
+    /* --ปรับขนาดของกล่อง-- */
+    .swal2-popup.swal2-modal.swal2-show {
+        width: 90vw !important;
+        height: auto;
+        border-radius: 5vw !important;
+        padding: 2vw !important;
+    }
+
+    .swal2-popup.swal2-modal.custom-popup-class.swal2-show {
+        width: 90vw !important;
+        height: 70vw;
+        border-radius: 5vw !important;
+        padding: 0 !important;
+        padding-bottom: 3vw !important;
+    }
+
+    .form-control-head {
+        background-color: transparent !important;
+        border: 0 !important;
+        padding: 0 !important;
+        font-size: 3.5vw !important;
+    }
+
+    /* ---modal show day off--- */
+    /* Style the popup text */
+    .popup-text {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+        z-index: 1;
+    }
+
+    /* Style the modal */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 2;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    /* Style the modal content */
+    /* Style the modal content */
+    .modal-content {
+        background-color: #fefefe;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+    }
+
+    /* Style the close button */
+    .close {
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        position: absolute;
+        top: -5px;
+        right: 10px;
+        z-index: 1;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+}

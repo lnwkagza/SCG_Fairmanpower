@@ -1,0 +1,367 @@
+/* desktop */
+@media only screen and (min-width: 1025px) {
+    .mobile,
+    footer {
+        display: none !important;
+    }
+
+    *:focus {
+        outline: none;
+    }
+}
+
+/* tablet */
+@media only screen and (min-width: 481px) and (max-width: 1024px) {
+    .desktop {
+        display: none !important;
+    }
+
+    body {
+        margin-bottom: 10%;
+    }
+
+    *:focus {
+        outline: none;
+    }
+
+    .container {
+        background-color: rgb(253, 252, 251);
+        width: 85vw;
+        margin: auto;
+        margin-top: 5vw;
+        text-align: center;
+        border: 1px solid #bcbdbe;
+        padding: 5px;
+        border-radius: 2vw;
+        /* height: 130vw; */
+        display: flex;
+        flex-direction: column;
+        font-weight: bold;
+        color: #0b6bc1;
+    }
+
+    .display-date-start,
+    .display-date-end,
+    .display-old,
+    .display-new,
+    .display-day-old,
+    .display-day-new,
+    .display-shift,
+    .display-detail-change,
+    .select-nameEm {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        padding: 1vw;
+    }
+
+    form span {
+        font-size: 3.5vw;
+    }
+
+    input {
+        width: 81vw;
+        background-color: #c4e3ff;
+        padding: 2vw;
+        border: 0;
+        color: #0b6bc1 !important;
+        border-radius: 1vw;
+        font-size: 3.5vw;
+        font-weight: bold;
+        box-shadow: 0px 4px 8px 0px rgba(136, 135, 135, 0.25);
+        margin-top: 1vw;
+    }
+
+    select {
+        background-color: #c4e3ff;
+        padding: 2vw;
+        border: 0;
+        color: #0b6bc1;
+        border-radius: 1vw;
+        font-size: 3.5vw;
+        font-weight: bold;
+        box-shadow: 0px 4px 8px 0px rgba(136, 135, 135, 0.25);
+        margin-top: 1vw;
+    }
+
+    select.dayoff,
+    select.newFormat {
+        width: 44vw;
+        font-size: 3.5vw;
+        margin-top: 1vw;
+    }
+
+    span.add-detail {
+        background-color: #c4e3ff;
+        padding: 1.2vw;
+        border: 0;
+        border-radius: 1vw;
+        font-size: 3.5vw;
+        box-shadow: 0px 4px 8px 0px rgba(136, 135, 135, 0.25);
+        margin-top: 1vw;
+    }
+
+    span.detailSpan {
+        background-color: #c4e3ff;
+        border-radius: 1vw;
+        padding: 2.2vw;
+        font-size: 3.5vw;
+        width: 35vw;
+        box-shadow: 0px 4px 8px 0px rgba(136, 135, 135, 0.25);
+        margin-top: 1vw;
+    }
+
+    .display-format {
+        display: flex;
+        justify-content: left;
+    }
+
+    .display-dayOff {
+        display: flex;
+        justify-content: left;
+    }
+
+    .button {
+        display: flex;
+        justify-content: center;
+        margin-top: 1vw;
+        gap: 2vw;
+        margin-bottom: 15vw;
+    }
+
+    .confirm input {
+        width: 20vw;
+        background-color: #29ab29;
+        font-size: 3.5vw;
+        border: 0;
+        padding: 1vw 3vw;
+        border-radius: 2vw;
+        font-weight: 500;
+        color: #fff !important;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border: 5px solid #f7f9fb !important;
+    }
+
+    .reject input {
+        width: 20vw;
+        background-color: #e1574b;
+        font-size: 3.5vw;
+        border: 0;
+        padding: 1vw 3vw;
+        border-radius: 2vw;
+        font-weight: 500;
+        color: #fff !important;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border: 5px solid #f7f9fb !important;
+    }
+
+    /* --ปรับขนาดปุ่มยืนยันและยกเลิก-- */
+    .swal2-confirm.swal2-styled.swal2-default-outline,
+    .swal2-cancel.swal2-styled.swal2-default-outline {
+        width: 15vw !important;
+        padding: 2vw;
+        font-size: 3.5vw;
+        margin-top: 2vw !important;
+    }
+
+    /* --ปรับขนาดของกล่อง-- */
+    .swal2-popup.swal2-modal.swal2-show {
+        width: 80vw !important;
+        height: auto;
+        border-radius: 5vw !important;
+        padding-left: 2vw !important;
+        padding-right: 2vw !important;
+    }
+
+    .swal2-popup.swal2-modal.custom-popup-class.swal2-show {
+        width: 80vw !important;
+        height: auto;
+        border-radius: 5vw !important;
+        padding: 0 !important;
+        padding-bottom: 3vw !important;
+    }
+
+    .img {
+        width: 15vw !important;
+        height: 15vw !important;
+        margin-top: 2vw;
+    }
+}
+
+/* mobile */
+@media only screen and (max-width: 480px) {
+    .desktop {
+        display: none !important;
+    }
+
+    *:focus {
+        outline: none;
+    }
+
+    .container {
+        background-color: rgb(253, 252, 251);
+        width: 85vw;
+        margin: auto;
+        margin-top: 5vw;
+        text-align: center;
+        border: 1px solid #bcbdbe;
+        padding: 5px;
+        border-radius: 2vw;
+        /* height: 130vw; */
+        display: flex;
+        flex-direction: column;
+        font-weight: bold;
+        color: #0b6bc1;
+    }
+
+    .display-date-start,
+    .display-date-end,
+    .display-old,
+    .display-new,
+    .display-day-old,
+    .display-day-new,
+    .display-shift,
+    .display-detail-change,
+    .select-nameEm {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        padding: 2vw;
+    }
+
+    form span {
+        font-size: 3.5vw;
+    }
+
+    input {
+        width: 78vw;
+        background-color: #c4e3ff;
+        padding: 2vw;
+        border: 0;
+        color: #0b6bc1 !important;
+        border-radius: 1vw;
+        font-size: 3.5vw;
+        font-weight: bold;
+        box-shadow: 0px 4px 8px 0px rgba(136, 135, 135, 0.25);
+        margin-top: 1vw;
+    }
+
+    select {
+        background-color: #c4e3ff;
+        padding: 2.3vw;
+        border: 0;
+        color: #0b6bc1;
+        border-radius: 1vw;
+        font-size: 3.5vw;
+        font-weight: bold;
+        box-shadow: 0px 4px 8px 0px rgba(136, 135, 135, 0.25);
+        margin-top: 1vw;
+    }
+
+    select.dayoff,
+    select.newFormat {
+        width: 39vw;
+        font-size: 3.5vw;
+        margin-top: 1vw;
+        font-weight: bold;
+    }
+
+    span.add-detail {
+        background-color: #c4e3ff;
+        padding: 1.2vw;
+        border: 0;
+        border-radius: 1vw;
+        font-size: 3.5vw;
+        box-shadow: 0px 4px 8px 0px rgba(136, 135, 135, 0.25);
+        margin-top: 1vw;
+    }
+
+    span.detailSpan {
+        background-color: #c4e3ff;
+        border-radius: 1vw;
+        padding: 2.2vw;
+        font-size: 3.5vw;
+        width: 35vw;
+        box-shadow: 0px 4px 8px 0px rgba(136, 135, 135, 0.25);
+        margin-top: 1vw;
+    }
+
+    .display-format {
+        display: flex;
+    }
+
+    .display-old {
+        white-space: nowrap;
+    }
+
+    .display-dayOff {
+        display: flex;
+        justify-content: left;
+    }
+
+    .button {
+        display: flex;
+        justify-content: center;
+        margin-top: 3vw;
+        gap: 2vw;
+        margin-bottom: 15vw;
+    }
+
+    .confirm input {
+        width: 20vw;
+        background-color: #29ab29;
+        font-size: 3.5vw;
+        border: 0;
+        padding: 2vw 3vw;
+        border-radius: 2vw;
+        font-weight: 500;
+        color: #fff !important;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border: 3px solid #f7f9fb !important;
+    }
+
+    .reject input {
+        width: 20vw;
+        background-color: #e1574b;
+        font-size: 3.5vw;
+        border: 0;
+        padding: 2vw 3vw;
+        border-radius: 2vw;
+        font-weight: 500;
+        color: #fff !important;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border: 3px solid #f7f9fb !important;
+    }
+
+    /* --ปรับขนาดปุ่มยืนยันและยกเลิก-- */
+    .swal2-confirm.swal2-styled.swal2-default-outline,
+    .swal2-cancel.swal2-styled.swal2-default-outline {
+        width: 15vw !important;
+        padding: 2vw;
+        font-size: 3.5vw;
+        margin-top: 2vw !important;
+    }
+
+    /* --ปรับขนาดของกล่อง-- */
+    .swal2-popup.swal2-modal.swal2-show {
+        width: 80vw !important;
+        height: auto;
+        border-radius: 5vw !important;
+        padding-left: 2vw !important;
+        padding-right: 2vw !important;
+    }
+
+    .swal2-popup.swal2-modal.custom-popup-class.swal2-show {
+        width: 80vw !important;
+        height: auto;
+        border-radius: 5vw !important;
+        padding: 0 !important;
+        padding-bottom: 3vw !important;
+    }
+
+    .img {
+        width: 15vw !important;
+        height: 15vw !important;
+        margin-top: 2vw;
+    }
+}

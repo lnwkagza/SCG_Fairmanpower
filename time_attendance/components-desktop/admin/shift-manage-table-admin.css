@@ -1,0 +1,213 @@
+@media only screen and (min-width: 1025px) {
+    #card-box1 {
+        min-height: 750px;
+    }
+
+    #card-box2 {
+        min-height: 560px;
+    }
+
+    .bar {
+        display: flex;
+    }
+
+    .bar-2 {
+        display: flex;
+        position: relative;
+    }
+
+    .bar > h2,
+    .bar-2 > h2 {
+        color: #616262;
+    }
+
+    .btn-grad {
+        background-image: linear-gradient(
+            to right,
+            #4cb8c4 0%,
+            #3cd3ad 51%,
+            #4cb8c4 100%
+        );
+        margin: 10px;
+        padding: 15px 45px;
+        text-align: center;
+        text-transform: uppercase;
+        transition: 0.5s;
+        background-size: 200% auto;
+        color: white;
+        box-shadow: 0 0 20px #eee;
+        border-radius: 10px;
+        display: block;
+    }
+
+    .btn-grad:hover {
+        background-position: right center; /* change the direction of the change here */
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .cost-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .cost-center label {
+        font-size: 21px;
+        font-weight: 600;
+        color: #616262;
+    }
+
+    .button-bar {
+        display: flex;
+        position: absolute;
+        right: 0;
+        gap: 5px;
+    }
+
+    .button-bar button {
+        width: 120px !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .team-member {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        transition: opacity 1s ease-out;
+    }
+
+    .team-member > div {
+        display: flex;
+        flex-direction: column;
+        background-color: #ecf0f3;
+        border-radius: 10px;
+        padding: 15px;
+    }
+
+    .add-team .row {
+        display: flex;
+        justify-content: center;
+    }
+
+    .edit-team .row {
+        display: flex;
+        justify-content: center;
+    }
+
+    .edit-team,
+    .add-team {
+        background-color: #eae8e8;
+        border-radius: 10px;
+        padding: 15px 30px;
+        position: relative;
+        transition: opacity 1s ease-out;
+    }
+
+    .team-member label,
+    .add-team label,
+    .edit-team label {
+        color: #616262;
+        font-weight: 600;
+    }
+
+    .add-team > button.btn,
+    .edit-team > button.btn {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+    }
+
+    .add-team > button.btn:hover,
+    .edit-team > button.btn:hover {
+        color: #c42d2d;
+        border: 3px solid #c42d2d !important;
+    }
+
+    .label-table {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .team-member label:first-child,
+    .label-table label:first-child {
+        font-size: 21px;
+    }
+
+    .table-edit {
+        width: 100%;
+        overflow: auto;
+    }
+
+    .table-edit table td {
+        font-weight: 500;
+    }
+
+    .table-edit table td:first-child {
+        width: 10%;
+    }
+
+    .table-edit table td:nth-child(2) {
+        width: 20%;
+    }
+
+    .table-edit table td:nth-child(3) {
+        width: 30%;
+    }
+
+    .form-control[readonly] {
+        background-color: #fff !important;
+    }
+
+    .desktop-table-container {
+        width: 100%;
+    }
+
+    .desktop-table-container table {
+        width: 100% !important;
+        border-collapse: collapse;
+        overflow: hidden;
+        margin: auto;
+        table-layout: fixed;
+    }
+
+    .desktop-table-container th {
+        color: #f9fafa !important;
+        font-weight: bold;
+        text-align: center !important;
+        background-color: #1fbabf !important;
+        border: 0.95px solid #dddddd !important;
+    }
+
+    .desktop-table-container td {
+        color: #616061 !important;
+    }
+
+    .desktop-table-container td:first-child {
+        text-align: center;
+    }
+
+    .desktop-table-container th:first-child,
+    .desktop-table-container td:first-child {
+        width: 20%;
+    }
+
+    table.dataTable thead > tr > th.sorting:after,
+    table.dataTable thead > tr > th.sorting:before {
+        opacity: 1 !important;
+    }
+
+    .desktop-table-container tr:nth-of-type(2n + 1) > * {
+        background-color: #fff;
+        box-shadow: none !important;
+    }
+
+    .desktop-table-container tr:nth-of-type(2n + 2) > * {
+        background-color: #ecf0f3;
+        box-shadow: none;
+    }
+}

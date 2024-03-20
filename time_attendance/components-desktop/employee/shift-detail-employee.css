@@ -1,0 +1,54 @@
+@media only screen and (min-width: 1025px) {
+    .row {
+        display: flex;
+        justify-content: center;
+    }
+
+    .wizard-content {
+        padding: 10px 0;
+        border-radius: 5px;
+        margin-top: 20px;
+        background-color: #fff;
+    }
+
+    .wizard-content label {
+        font-size: 15px;
+        font-weight: 600;
+        color: #00000095;
+        width: 100px;
+        white-space: nowrap;
+        margin-bottom: 0;
+    }
+
+    .form-control {
+        width: 70%;
+    }
+
+    .form-group > div {
+        display: flex;
+        gap: 2%;
+    }
+
+    .shift-new {
+        display: flex;
+    }
+
+    .shift-new input {
+        width: 50%;
+    }
+
+    .shift-new input:first-child {
+        margin-right: 30px;
+    }
+
+    .shift-new label {
+        width: 100px;
+        white-space: nowrap;
+        gap: 10%;
+    }
+
+    .display-status .btn-danger {
+        font-weight: bold;
+        width: 70%;
+    }
+}

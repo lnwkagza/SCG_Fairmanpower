@@ -1,0 +1,531 @@
+
+/* desktop */
+@media only screen and (min-width: 1025px) {
+    .mobile,
+    footer {
+        display: none !important;
+    }
+
+    *:focus {
+        outline: none;
+    }
+}
+
+/* tablet */
+@media only screen and (min-width: 481px) and (max-width: 1024px) {
+    .checkInOut,
+    .detail-set {
+        margin-top: 2vw;
+        border: 1px solid #c0c0c0;
+        padding: 2vw;
+        border-radius: 2vw;
+        background-color: aliceblue;
+        font-weight: bold;
+        color: rgb(80, 80, 80);
+    }
+
+    .topic {
+        font-size: 4vw;
+        margin-top: 2vw;
+    }
+
+    .row.shift-type,
+    .col.date {
+        font-size: 3.5vw;
+    }
+
+    .box-detail-type {
+        font-size: 3.5vw;
+        margin-left: 3vw;
+    }
+
+    .detail-saveTime-all {
+        font-size: 4vw;
+    }
+
+    .location-checkInOut {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .location {
+        display: flex;
+        justify-content: center;
+        gap: 7vw;
+        font-size: 3.5vw;
+        margin: 2vw 0;
+    }
+
+    .location-checkIn,
+    .location-checkOut {
+        border: 2px solid #a6a6a7;
+        padding: 2vw;
+        border-radius: 2vw;
+        background-color: #d8d8d8;
+    }
+
+    .detail-location {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .topic-checkIn,
+    .topic-checkOut {
+        background-color: #686969;
+        text-align: center;
+        border-radius: 1vw;
+        color: #fff;
+    }
+
+    .btn-map {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2vw;
+        padding: 1vw;
+        border-radius: 2vw;
+    }
+
+    .btn-map button{
+        display: flex;
+        gap: 1vw;
+        align-items: center;
+        padding: 1vw;
+        border-radius: 2vw;
+        border: 0;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        background-color: #ebeef3;
+        color: rgb(103, 102, 102);
+        font-weight: bold;
+        font-size: 3vw;
+    }
+
+    .btn-map button:hover {
+        color: #0b6bc1;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .btn-map button:active {
+        transform: scale(0.95);
+        transition: transform 0.1s ease;
+    }
+
+    .btn-map img {
+        width: 5vw;
+    }
+
+    .radius {
+        display: flex;
+        justify-content: center;
+        font-size: 3.5vw;
+    }
+
+    .btnGPS-check-in {
+        display: flex;
+        justify-content: center;
+        margin-top: 3vw;
+        gap: 2vw;
+    }
+
+    .btnGPS-check-in button {
+        width: 33vw;
+        display: flex;
+        align-items: center;
+        color: #fff;
+        border-radius: 4vw;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border: 3px solid #f7f9fb !important;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 3.3vw;
+    }
+
+    .btnGPS-check-in button:hover {
+        color: #fefcfc;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .btnGPS-check-in button:active {
+        transform: scale(0.95);
+        transition: transform 0.1s ease;
+    }
+
+
+    .btnGPS-check-in img {
+        width: 10vw;
+    }
+
+    .detail-set {
+        margin-bottom: 20vw;
+    }
+
+    .date {
+        display: flex;
+        gap: 3vw;
+    }
+
+    span.add {
+        color: #0b6bc1 !important;
+    }
+
+    .set-longTerm,
+    .set-temporary {
+        background-color: #fff;
+        padding: 2vw;
+        border-radius: 2vw;
+        margin-bottom: 2vw;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+    .btn-request-approve {
+        display: flex;
+        justify-content: center;
+        margin-top: 1vw;
+    }
+
+    .btn-request-approve button {
+        border-radius: 2vw;
+        padding: 1vw;
+        background-color: #def8f2;
+        border: 2px solid #29ab29;
+        color: #25927a;
+        font-weight: bold;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+
+    .btn-request-approve button:hover {
+        background-color: #29ab29;
+        border: 2px solid #fff;
+        color: #fff;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .btn-request-approve button:active {
+        transform: scale(0.95);
+        transition: transform 0.1s ease;
+    }
+
+    /* ----- swal popup ----- */
+    #display-map {
+        width: 50vw;
+        height: 50vw;
+    }
+
+    .custom-popup-class {
+        padding: 0 !important;
+        width: 70vw;
+        border-radius: 5vw;
+    }
+
+    .custom-popup-class span {
+        font-size: 3.5vw;
+        font-weight: bold;
+        color: #818181;
+    }
+
+    .custom-popup-class .swal2-actions {
+        margin: 2vw 0;
+        font-size: 3.5vw;
+    }
+
+    /* ---- check-in GPS ----- */
+    .modal-title {
+        font-size: 5vw;
+        font-weight: bold;
+        text-align: center;
+        color: #505050;
+    }
+
+    #modal-checkIN-map,
+    #modal-checkOUT-map
+     {
+        height: 58vw;
+        width: 63vw !important;
+    }
+
+    .type-time,
+    .displayTime-gps,
+    .col-btn {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        justify-content: center;
+        align-items: center;
+        font-size: 3.5vw;
+        font-weight: bold;
+        color: #505050;
+    }
+
+    .modal-content {
+        width: 80vw;
+        margin: auto;
+    }
+
+    .col-btn button {
+        background-color: #29ab29;
+        padding: 2vw;
+        color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border: 5px solid #f7f9fb !important;
+        border-radius: 2vw;
+        font-size: 3.5vw;
+        font-weight: bold;
+    }
+}
+
+/* mobile */
+@media only screen and (max-width: 480px) {
+    .checkInOut,
+    .detail-set {
+        margin-top: 2vw;
+        border: 1px solid #c0c0c0;
+        padding: 2vw;
+        border-radius: 2vw;
+        background-color: aliceblue;
+        font-weight: bold;
+        color: rgb(80, 80, 80);
+    }
+
+    .topic {
+        font-size: 4.5vw;
+        margin-top: 2vw;
+    }
+
+    .row.shift-type,
+    .col.date {
+        font-size: 3.5vw;
+    }
+
+    .detail-saveTime-all {
+        font-size: 4vw;
+    }
+
+    .location-checkInOut {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .location {
+        display: flex;
+        justify-content: center;
+        gap: 7vw;
+        font-size: 3.5vw;
+        margin: 2vw 0;
+    }
+
+    .location-checkIn,
+    .location-checkOut {
+        border: 2px solid #a6a6a7;
+        padding: 2vw;
+        border-radius: 2vw;
+        background-color: #d8d8d8;
+    }
+
+    .detail-location {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .topic-checkIn,
+    .topic-checkOut {
+        background-color: #686969;
+        text-align: center;
+        border-radius: 1vw;
+        color: #fff;
+    }
+
+    .btn-map {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2vw;
+        padding: 1vw;
+        border-radius: 2vw;
+    }
+
+    .btn-map button{
+        display: flex;
+        gap: 1vw;
+        align-items: center;
+        padding: 1vw;
+        border-radius: 2vw;
+        border: 0;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        background-color: #ebeef3;
+        color: rgb(103, 102, 102);
+        font-weight: bold;
+        font-size: 3vw;
+    }
+
+    .btn-map button:hover {
+        color: #0b6bc1;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .btn-map button:active {
+        transform: scale(0.95);
+        transition: transform 0.1s ease;
+    }
+
+    .btn-map img {
+        width: 5vw;
+    }
+
+    .radius {
+        display: flex;
+        justify-content: center;
+        font-size: 3.5vw;
+    }
+
+    .btnGPS-check-in {
+        display: flex;
+        justify-content: center;
+        margin-top: 3vw;
+        gap: 2vw;
+    }
+
+    .btnGPS-check-in button {
+        width: 33vw;
+        display: flex;
+        align-items: center;
+        padding: 1vw;
+        color: #fff;
+        border-radius: 4vw;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border: 3px solid #f7f9fb !important;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 3.3vw;
+    }
+
+    .btnGPS-check-in button:hover {
+        color: #fefcfc;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .btnGPS-check-in button:active {
+        transform: scale(0.95);
+        transition: transform 0.1s ease;
+    }
+
+
+    .btnGPS-check-in img {
+        width: 10vw;
+    }
+
+    .detail-set {
+        margin-bottom: 20vw;
+    }
+
+    .date {
+        display: flex;
+        gap: 3vw;
+    }
+
+    span.add {
+        color: #0b6bc1 !important;
+    }
+
+    .set-longTerm,
+    .set-temporary {
+        background-color: #fff;
+        padding: 2vw;
+        border-radius: 2vw;
+        margin-bottom: 2vw;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+    .btn-request-approve {
+        display: flex;
+        justify-content: center;
+        margin-top: 1vw;
+    }
+
+    .btn-request-approve button {
+        border-radius: 2vw;
+        padding: 1vw;
+        background-color: #def8f2;
+        border: 2px solid #29ab29;
+        color: #25927a;
+        font-weight: bold;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+
+    .btn-request-approve button:hover {
+        background-color: #29ab29;
+        border: 2px solid #fff;
+        color: #fff;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .btn-request-approve button:active {
+        transform: scale(0.95);
+        transition: transform 0.1s ease;
+    }
+
+
+    /* ----- swal popup ----- */
+    #display-map {
+        width: 60vw;
+        height: 60vw;
+    }
+
+    .custom-popup-class {
+        padding: 0 !important;
+        width: 80vw;
+        border-radius: 5vw;
+    }
+
+    .custom-popup-class span {
+        font-size: 3.5vw;
+        font-weight: bold;
+        color: #818181;
+    }
+
+    .custom-popup-class .swal2-actions {
+        margin: 2vw 0;
+    }
+
+    /* ---- check-in GPS ----- */
+    .modal-title {
+        font-size: 5vw;
+        font-weight: bold;
+        text-align: center;
+        color: #505050;
+    }
+
+    #modal-checkIN-map,
+    #modal-checkOUT-map
+     {
+        height: 70vw;
+    }
+
+    .type-time,
+    .displayTime-gps,
+    .col-btn {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        justify-content: center;
+        align-items: center;
+        font-size: 3.5vw;
+        font-weight: bold;
+        color: #505050;
+    }
+
+    .modal-content {
+        width: 80vw;
+        margin: auto;
+    }
+
+    .col-btn button {
+        background-color: #29ab29;
+        padding: 2vw;
+        color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border: 3px solid #f7f9fb !important;
+        border-radius: 2vw;
+        font-size: 3.5vw;
+        font-weight: bold;
+    }
+}

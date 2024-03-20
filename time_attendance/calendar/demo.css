@@ -1,0 +1,26 @@
+.event-Miss {
+	background-color: #ffa24b !important;
+}
+
+.event-MissingWork {
+	background-color: #ff4b4b !important;
+}
+.event-leave {
+	background-color: #4be4ff !important;
+}
+.event-Punctual {
+	background-color: #a2ff4b !important;
+}
+.event-holiday {
+	background-color: #1b3d5e !important;
+}
+.event-weekend {
+	background-color: #3b8eea !important;
+}
+.demo-calendar {
+	background-color: #fff;
+	border: 1px solid #888;
+	border-radius: 4px;
+	font-size: 14px;
+	line-height: 1.42857143;
+}

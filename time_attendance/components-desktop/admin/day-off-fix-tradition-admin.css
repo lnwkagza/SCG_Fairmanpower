@@ -1,0 +1,202 @@
+@media only screen and (min-width: 1025px) {
+    .bar {
+        /*แถบเมนูสีขาว*/
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .button-add {
+        color: #fff;
+        background-image: linear-gradient(#1fbabf, #60d3aa);
+        transition: 0.3s ease-in-out;
+        box-shadow: 0px 2px 15px -8px #000000;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px 10px;
+        border-radius: 7px;
+        font-weight: bolder;
+        margin: 10px 0;
+        position: relative;
+    }
+
+    .button-add a {
+        color: #fff;
+    }
+
+    .display-calender {
+        display: flex;
+        flex-direction: column;
+        border-radius: 10px;
+        margin-top: 10px;
+        padding: 10px;
+    }
+
+    .display-monthNow {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        gap: 20px;
+        font-size: 20px;
+        font-weight: bold;
+        width: 100%;
+    }
+
+    .display-monthNow button {
+        padding: 10px 15px;
+        color: #fff;
+        background-color: #37babf;
+        border-radius: 10px;
+        border: 0;
+    }
+
+    .display-day-of-month {
+        margin-top: 10px;
+    }
+
+    .desktop-calendar {
+        width: 100%;
+        overflow-y: auto;
+        overflow-x: auto;
+        border: 0;
+    }
+
+    .desktop-calendar table {
+        background-color: #fdfdfd;
+        box-shadow: 0px 4px 10px 0px rgba(83, 83, 83, 0.25);
+        table-layout: fixed;
+    }
+
+    .desktop-calendar th {
+        font-size: 21px;
+        color: #fff;
+        text-align: center;
+        border: 0;
+        background-color: #1fbabf;
+    }
+
+    .desktop-calendar th:first-child {
+        border-top-left-radius: 10px;
+    }
+
+    .desktop-calendar th:last-child {
+        border-top-right-radius: 10px;
+    }
+
+    .desktop-calendar td {
+        border: 0;
+        text-align: center;
+        vertical-align: middle;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        white-space: nowrap;
+        width: 60px;
+        height: 60px;
+    }
+
+    .tradition {
+        background-color: #fdfdfd !important;
+        cursor: pointer;
+    }
+
+    .tradition-dayoff {
+        color: #fff;
+        background-color: #c02e2f !important;
+        border-radius: 50%; /* ทำให้เป็นวงกลม */
+        display: inline-block; /* เพิ่มเพื่อให้มันมีขนาดเท่ากันทั้งสี่ด้าน */
+        width: 30px; /* ปรับขนาดตามความต้องการ */
+        height: 30px; /* ปรับขนาดตามความต้องการ */
+        text-align: center; /* จัดเนื้อหาตรงกลาง */
+        line-height: 30px; /* จัดเนื้อหาตรงกลาง */
+        cursor: pointer;
+        margin: auto;
+    }
+
+    .dateFix {
+        margin-top: 10px;
+    }
+
+    .desktop-data-table-container {
+        display: flex;
+    }
+
+    .desktop-data-table-container table {
+        width: 100% !important;
+        table-layout: fixed;
+        border: 0.95px solid #dddddd !important;
+    }
+
+    .desktop-data-table-container th {
+        color: #f9fafa !important;
+        font-size: 18px !important;
+        font-weight: bold;
+        text-align: center !important;
+        background-color: #1fbabf !important;
+        border: 0.95px solid #dddddd !important;
+    }
+
+    .desktop-data-table-container td {
+        color: #616061 !important;
+        font-size: 16px !important;
+        text-align: center !important;
+        border: 0.95px solid #dddddd !important;
+        white-space: wrap !important;
+        text-align: left !important;
+        padding: 0.5rem;
+    }
+
+    .desktop-data-table-container td:last-child {
+        text-align: center !important;
+    }
+
+    .desktop-data-table-container th:first-child,
+    .desktop-data-table-container td:first-child {
+        width: 20% !important;
+    }
+
+    .desktop-data-table-container th:nth-child(2),
+    .desktop-data-table-container td:nth-child(2) {
+        width: 10% !important;
+    }
+
+    .desktop-data-table-container th:last-child,
+    .desktop-data-table-container td:last-child {
+        width: 15% !important;
+    }
+
+    .color-detail {
+        /*อธิบายรายละเอียด*/
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .color-detail > div {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    #status1 > div {
+        display: flex;
+        align-items: center;
+    }
+
+    #status1 button,
+    #status2 button,
+    #status3 button {
+        width: 20px;
+        height: 20px;
+        border: none;
+        border-radius: 2px;
+        margin-right: 10px;
+    }
+
+    #status1 span,
+    #status2 span,
+    #status3 span {
+        color: #555555;
+    }
+}

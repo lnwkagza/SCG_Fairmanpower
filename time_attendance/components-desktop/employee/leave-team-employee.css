@@ -1,0 +1,174 @@
+@media only screen and (min-width: 1025px) {
+    .bar {
+        /*แถบเมนูสีขาว*/
+        background-color: #ffff;
+        box-shadow: 10px 10px 10px #5350501a;
+        font-size: 18px;
+        padding: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 5px;
+        font-weight: bolder;
+        position: relative;
+    }
+
+    .form {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .form label {
+        margin-bottom: 0px !important;
+    }
+
+    .form-dep {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .form-date {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .button-add {
+        color: #fff;
+        background-image: linear-gradient(#1fbabf, #60d3aa);
+        transition: 0.3s ease-in-out;
+        box-shadow: 0px 2px 15px -8px #000000;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        width: 150px;
+        border-radius: 7px;
+        font-weight: bolder;
+        border: 0;
+        gap: 8px;
+    }
+
+    .desktop-table-container {
+        display: -ms-flexbox;
+        display: -webkit-box;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        height: 570px;
+        margin-top: 20px;
+    }
+
+    .desktop-table {
+        display: flex;
+        height: 570px;
+        overflow: auto;
+        cursor: default;
+    }
+
+    .desktop-table.left {
+        width: 40%;
+        scrollbar-width: none;
+    }
+
+    .desktop-table.right {
+        width: 60%;
+    }
+
+    .desktop-table.right::-webkit-scrollbar {
+        height: 10px;
+        width: 10px;
+    }
+
+    .desktop-table.left table {
+        width: 100%;
+        table-layout: fixed;
+    }
+
+    .desktop-table.right table {
+        width: 100%;
+        table-layout: fixed;
+        margin-bottom: 0.4rem;
+    }
+
+    .day,
+    .date {
+        height: 50px;
+    }
+
+    .name {
+        height: 100px;
+    }
+
+    .desktop-table.right th {
+        width: 70px;
+    }
+
+    .desktop-table.left .name {
+        position: -webkit-sticky; /* For Safari */
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    .desktop-table.right .day {
+        position: -webkit-sticky; /* For Safari */
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    .desktop-table.right .date {
+        position: -webkit-sticky; /* For Safari */
+        position: sticky;
+        top: 50px;
+        z-index: 1;
+    }
+
+    .desktop-table th {
+        color: #f9fafa !important;
+        font-weight: bold;
+        text-align: center !important;
+        background-color: #1fbabf !important;
+        border: 0.95px solid #dddddd !important;
+        white-space: nowrap;
+        vertical-align: middle !important;
+    }
+
+    .desktop-table td {
+        border: 0.95px solid #dddddd !important;
+        color: #616061 !important;
+        text-align: center !important;
+        height: 105px !important;
+    }
+
+    .desktop-table.right th,
+    .desktop-table.right td {
+        padding: 0.75rem 0 !important;
+    }
+
+    .stripe tbody tr:nth-of-type(even) {
+        background-color: rgba(7, 34, 98, 0.08);
+    }
+
+    .desktop-table.left td {
+        text-align: left !important;
+    }
+
+    .desktop-table.left tbody > tr > td > div {
+        display: flex;
+        flex-direction: row;
+        margin: 0 !important;
+        white-space: nowrap;
+    }
+
+    .employee > .row > div:first-child {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
